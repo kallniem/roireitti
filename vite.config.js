@@ -1,0 +1,80 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      workbox: {
+        // Workbox is Google's Service Worker library
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        // Specifies file patterns to cache
+        // ** means all directories, * means all files
+        runtimeCaching: [
+          {
+            // API request caching
+            urlPattern: /^https:\/\/api\.example\.com\/.*/i,
+            // Caches API requests matching this pattern
+            
+            handler: 'NetworkFirst',
+            // Tries network first, falls back to cache if offline
+            options: {
+              cacheName: 'api-cache',
+              // Name of the cache for API responses
+              expiration: {
+                maxEntries: 50,
+                // Max number of entries in this cache
+                maxAgeSeconds: 5 * 60, // 5 minutes
+                // Max age of cached entries
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+                // Only cache responses with these status codes
+              }
+            }
+          },
+          {
+            // Image caching
+            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+            // Caches image files
+            handler: 'CacheFirst',
+            // Tries cache first, falls back to network if not cached
+            options: {
+              cacheName: 'image-cache',
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
+              }
+            }
+          }
+        ]
+      },
+      includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+      manifest: {
+        name: 'Rovaniemi Pyöräillen',
+        short_name: 'Roireitti',
+        description: 'Rovaniemen pyöräilyreitit kartalla',
+        theme_color: '#ffffff',
+        background_color: '#ffffff',
+        display: 'standalone',
+        icons: [
+          {
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable'
+          }
+        ]
+      }
+    })
+  ],
+  base: '/roireitti/',
+})

@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Ounasvaaran kierros",
+        "slug": "ounasvaaran-kierros",
+        "type": "mountain",
+        "description": "Ounasvaaran kierros on suosittu maastopyöräreitti Rovaniemen Ounasvaaralla. Reitti tarjoaa vaihtelevia maastoja, kuten metsäpolkuja, juurakoita ja kalliopintoja, jotka tekevät siitä haastavan ja mielenkiintoisen maastopyöräilijöille. Reitin varrella on myös upeita maisemia Ounasvaaran luonnosta.",
+        "length": 5.2,
+        "difficulty": "Moderate",
+        "location": {
+            "latitude": 66.5039,
+            "longitude": 25.7294
+        }
+
+    },
+    {
+        "name": "Santa Claus Village Route",
+        "slug": "santa-claus-village-route",
+        "type": "winter",
+        "description": "Santa Claus Village Route on talvipyöräilyreitti Rovaniemellä, joka kulkee lähellä Joulupukin kylää. Reitti tarjoaa ainutlaatuisen mahdollisuuden kokea talvipyöräilyn ilo ja nähdä samalla joulun taikaa. Reitin varrella on kauniita lumisia maisemia ja mahdollisuus nähdä Joulupukin kylän nähtävyyksiä.",
+        "length": 3.5,
+        "difficulty": "Easy",
+        "location": {
+            "latitude": 66.4673,
+            "longitude": 27.5000
+        }
+    }
+]
