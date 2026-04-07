@@ -17,7 +17,7 @@ if ('serviceWorker' in navigator) {
   // Check if browser supports Service Worker
   window.addEventListener('load', () => {
     // Execute after page is fully loaded
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('/roireitti/sw.js')
       .then(registration => {
         console.log('SW registered: ', registration);
         // Registration successful
