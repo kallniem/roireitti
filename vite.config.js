@@ -57,8 +57,8 @@ export default defineConfig({
         name: 'Rovaniemi Pyöräillen',
         short_name: 'RoiReitti',
         description: 'Rovaniemen pyöräilyreitit kartalla',
-        theme_color: '#333333',
-        background_color: '#191919',
+        theme_color: '#191919',
+        background_color: '#333333',
         display: 'standalone',
         icons: [
           {
