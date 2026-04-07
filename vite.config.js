@@ -55,19 +55,19 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: 'Rovaniemi Pyöräillen',
-        short_name: 'Roireitti',
+        short_name: 'RoiReitti',
         description: 'Rovaniemen pyöräilyreitit kartalla',
-        theme_color: '#ffffff',
-        background_color: '#ffffff',
+        theme_color: '#333333',
+        background_color: '#191919',
         display: 'standalone',
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: 'web-app-manifest-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'pwa-512x512.png',
+            src: 'web-app-manifest-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'

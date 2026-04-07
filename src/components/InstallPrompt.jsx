@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function InstallPrompt() {
   // State to store the install prompt
@@ -59,12 +59,7 @@ function InstallPrompt() {
   }
   
   return (
-    <div style={{
-      position: 'fixed',
-      bottom: '20px',
-      right: '20px',
-      zIndex: 1000
-    }}>
+    <div>
       <button
         onClick={handleInstall}
         style={{
@@ -81,7 +76,7 @@ function InstallPrompt() {
           gap: '10px'
         }}
       >
-        📱 Install App
+        📱 Asenna appi
       </button>
     </div>
   );
