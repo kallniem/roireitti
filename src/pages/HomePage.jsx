@@ -1,9 +1,6 @@
 import InstallPrompt from "../components/InstallPrompt";
-import useOnlineStatus from "../hooks/useOnlineStatus";
-import Offline from "../components/Offline";
 
 function HomePage() {
-    const isOnline = useOnlineStatus();
     return (
         <div
         className="flex-column justify-center align-center"

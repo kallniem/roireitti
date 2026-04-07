@@ -52,7 +52,7 @@ export default defineConfig({
           }
         ]
       },
-      includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon.svg',],
       manifest: {
         name: 'Rovaniemi Pyöräillen',
         short_name: 'RoiReitti',
