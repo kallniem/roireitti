@@ -134,12 +134,16 @@ select:hover {
   background-color: var(--color-bg-hover); /* optional: var(--color-bg-hover); */
 }
 
-/* Table */
-th, td {
-  align-items: center;
-  align-content: center;
-  padding: 0.5rem;
-  text-align: center;
+/* Input */
+input[type="range"] {
+  margin: 0.5rem 0;
+}
+
+/* Mobile stacking */
+@media (max-width: 600px) {
+  .flex-row:not(nav, nav *) {
+    flex-direction: column;
+  }
 }
 
 /* ==============================

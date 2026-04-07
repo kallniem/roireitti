@@ -43,6 +43,7 @@ function TrailsPage() {
                         padding: "1rem",
                         borderRadius: "1rem",
                     }}>
+                    {/*
                     <form>
                         <table>
                             <thead>
@@ -68,6 +69,22 @@ function TrailsPage() {
                             </tbody>
                         </table>
                     </form>
+                    */}
+                    <div className="flex-row row-stack" style={{ gap: "0.5rem" }}>
+                        <div className="flex-column align-center justify-space-between">
+                            <p>Reittityypit</p>
+                            <select name="type" id="type" value={filters.type} onChange={e => setFilters({ ...filters, type: e.target.value })}>
+                                <option value="all">Kaikki reitit</option>
+                                {Object.entries(trailTypes).map(([key, label]) => (
+                                    <option key={key} value={key}>{label}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="flex-column align-center justify-space-between">
+                            <p>Pituus</p>
+                            <input type="range" name="length" id="length" min="0" max="20" step="0.1" onChange={e => setFilters({ ...filters, length: e.target.value })} />
+                        </div>
+                    </div>
                 </div>
                 <TrailList trails={trails.filter(trail => filters.type === "all" || trail.type === filters.type)} />
                 </>
