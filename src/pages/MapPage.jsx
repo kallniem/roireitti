@@ -1,6 +1,8 @@
 import Map from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
+const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY;
+
 function MapPage() {
     return (
             <div
@@ -16,8 +18,7 @@ function MapPage() {
                     longitude: 25.7294,
                     latitude: 66.5039,
                 }}
-                // API key allowed origin is taking care of misuse prevention, so we can safely include it in the client code
-                mapStyle="https://api.maptiler.com/maps/streets/style.json?key=wdyEO2ww7kJA1nDgVHFE"
+                mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${MAPTILER_API_KEY}`}
             />
         </div>
     );
