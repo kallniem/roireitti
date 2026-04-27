@@ -9,6 +9,27 @@
         "location": {
             "latitude": 66.5039,
             "longitude": 25.7294
+        },
+        "geojson": {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                            [25.7294, 66.5039, 120],
+                            [25.7300, 66.5045, 130],
+                            [25.7310, 66.5050, 140],
+                            [25.7320, 66.5055, 150],
+                            [25.7330, 66.5060, 160]
+                        ]
+                    },
+                    "properties": {
+                        "name": "Ounasvaaran kierros"
+                    }
+                }
+            ]
         }
 
     },

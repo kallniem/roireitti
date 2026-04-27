@@ -149,6 +149,11 @@ input[type="range"] {
   margin: 0.5rem 0;
 }
 
+/* Map styles */
+.maplibregl-map * {
+  color: #000000;
+}
+
 /* Mobile stacking */
 @media (max-width: 600px) {
   .flex-row:not(nav, nav *) {
