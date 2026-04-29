@@ -4,6 +4,10 @@ import { useEffect, useState } from 'react';
 
 const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY;
 
+/*  TODO: Show the start and end points with for example a flag icon
+    Add a histogram of elevation
+*/
+
 // const types = ["fill", "line", "symbol", "circle", "heatmap", "fill-extrusion", "raster", "hillshade", "color-relief", "background"];
 
 function TrailView({ trail }) {
@@ -36,7 +40,7 @@ function TrailView({ trail }) {
             }
         }
         
-        if (nearestDist < 0.2) { // Only consider points within 100m
+        if (nearestDist < 0.5) { // Only consider points within 500m
             return nearest;
         }
     }
@@ -44,8 +48,10 @@ function TrailView({ trail }) {
     useEffect(() => {
 
             function splitIntoSegments(feature) {
-                const coords = feature.geometry.coordinates;
                 const segments = [];
+                const coords = feature.geometry.type === 'MultiLineString'
+                    ? feature.geometry.coordinates.flat()
+                    : feature.geometry.coordinates;
 
                 for (let i = 0; i < coords.length - 1; i++) {
                     const start = coords[i];
@@ -66,14 +72,23 @@ function TrailView({ trail }) {
                 return segments;
             }
 
-        const geojsonData = trail.geojson;
-
-        if (!geojsonData) return;
+        const geojsonData = {
+            type: "FeatureCollection",
+            features: [
+                {
+                    type: "Feature",
+                    geometry: trail.geometry,
+                    properties: {
+                        name: trail.name
+                    }
+                }
+            ]
+        };
 
         const newGeojsonData = {
             type: 'FeatureCollection',
             features: geojsonData.features.flatMap(feature => {
-                if (feature.geometry.type === 'LineString') {
+                if (feature.geometry.type === 'LineString' || feature.geometry.type === 'MultiLineString') {
                     return splitIntoSegments(feature);
                 }
                 return feature;
@@ -86,6 +101,10 @@ function TrailView({ trail }) {
             ]);
             
     }, [trail]);
+
+    const initialTrailCoordinate = trail.geometry.type === 'LineString'
+        ? trail.geometry.coordinates[0]
+        : trail.geometry.coordinates[0]?.[0];
     
     return (
             <div className="flex-row" style={{ gap: "2rem"}}>
@@ -119,20 +138,25 @@ function TrailView({ trail }) {
                         }}
                         >
                             <h2>Reittitiedot</h2>
-                            <p><strong>Pituus:</strong> {trail.length} km</p>
+                            <p><strong>Pituus:</strong> {trail.lengthKm} km</p>
                             <p><strong>Vaativuus:</strong> {trail.difficulty}</p>
                             <Map
                                 interactiveLayerIds={['route-line']}
                                 initialViewState={{
-                                    longitude: trail.location.longitude,
-                                    latitude: trail.location.latitude,
+                                    longitude: initialTrailCoordinate?.[0],
+                                    latitude: initialTrailCoordinate?.[1],
                                     zoom: 14
                                 }}
                                 mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${MAPTILER_API_KEY}`}
                                 onMouseMove={(e) => {
                                     if (!geojson) return;
 
-                                    const points = geojson.features.flatMap(f => f.geometry.coordinates)
+                                    const points = geojson.features.flatMap(f => {
+                                        const coords = f.geometry.coordinates;
+                                        return f.geometry.type === 'LineString'
+                                            ? coords
+                                            : coords.flat();
+                                    });
 
                                     const nearest = getNearestPoint(e.lngLat, points);
 
@@ -146,67 +170,61 @@ function TrailView({ trail }) {
                                         setHoverInfo(null);
                                     }
                                 }}>
+                                <Source id='route' type='geojson' data={geojson}>
+                                    <Layer
+                                    id='route-line'
+                                    type='line'
+                                    paint={{
+                                            'line-width': 5,
 
-                                {geojson &&
-                                    <>
-                                        <Source id='route' type='geojson' data={geojson}>
-                                        <Layer
-                                        id='route-line'
-                                        type='line'
-                                        paint={{
-                                                'line-width': 5,
+                                            // Color by elevation
+                                            'line-color': [
+                                            'interpolate',
+                                            ['linear'],
+                                            ['get', 'elevation'],
+                                            elevationRange[0], '#0000ff',     // low (blue)
+                                            elevationRange[0] + (elevationRange[1] - elevationRange[0]) * 0.25, '#00ffff',
+                                            elevationRange[0] + (elevationRange[1] - elevationRange[0]) * 0.5, '#ffff00',
+                                            elevationRange[0] + (elevationRange[1] - elevationRange[0]) * 0.75, '#ff0000',
+                                            elevationRange[1], '#d7191c'    // high (red)
+                                            ]
+                                        }}
+                                    />
+                                </Source>
 
-                                                // Color by elevation
-                                                'line-color': [
-                                                'interpolate',
-                                                ['linear'],
-                                                ['get', 'elevation'],
-                                                elevationRange[0], '#2c7bb6',     // low (blue)
-                                                elevationRange[0] + (elevationRange[1] - elevationRange[0]) * 0.25, '#abd9e9',
-                                                elevationRange[0] + (elevationRange[1] - elevationRange[0]) * 0.5, '#ffffbf',
-                                                elevationRange[0] + (elevationRange[1] - elevationRange[0]) * 0.75, '#fdae61',
-                                                elevationRange[1], '#d7191c'    // high (red)
-                                                ]
-                                            }}
-                                        />
-                                    </Source>
-                                    
-                                    <>
-                                    {hoverInfo && (
-                                    <>
-                                        <Marker
+                                {hoverInfo && (
+                                <>
+                                    <Marker
+                                    longitude={hoverInfo.longitude}
+                                    latitude={hoverInfo.latitude}
+                                    anchor="center"
+                                    >
+                                    <div
+                                        style={{
+                                        width: 20,
+                                        height: 20,
+                                        background: '#333333',
+                                        borderRadius: '50%',
+                                        border: '2px solid white',
+                                        }}
+                                    />
+                                    </Marker>
+
+
+                                    <Popup
                                         longitude={hoverInfo.longitude}
                                         latitude={hoverInfo.latitude}
-                                        anchor="center"
-                                        >
-                                        <div
-                                            style={{
-                                            width: 20,
-                                            height: 20,
-                                            background: '#333333',
-                                            borderRadius: '50%',
-                                            border: '2px solid white',
-                                            }}
-                                        />
-                                        </Marker>
-
-
-                                        <Popup
-                                            longitude={hoverInfo.longitude}
-                                            latitude={hoverInfo.latitude}
-                                            closeButton={false}
-                                            closeOnClick={false}
-                                            offset={10}
-                                        >
-                                            <div>
-                                            <strong>Korkeus:</strong> {Math.round(hoverInfo.elevation)} m
-                                            </div>
-                                        </Popup>
-                                    </>
-                                    )}
-                                    </>
+                                        closeButton={false}
+                                        closeOnClick={false}
+                                        offset={10}
+                                    >
+                                        <div>
+                                        <strong>Korkeus:</strong> {Math.round(hoverInfo.elevation)} m
+                                        </div>
+                                    </Popup>
                                 </>
-                                }
+                                )}
+                                
                             </Map>
                         </div>
                     </div>

@@ -26,7 +26,7 @@ function App() {
             <Route element={<DefaultLayout />}>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/trails" element={<TrailsPage />} />
-                <Route path="/trails/:slug" element={<TrailsPage />} />
+                <Route path="/trails/:id" element={<TrailsPage />} />
             </Route>
 
             <Route element={<FullscreenLayout />}>

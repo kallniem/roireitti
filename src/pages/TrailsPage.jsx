@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router";
 import dummyTrails from "../dummyTrails.json";
 import { useState } from "react";
 import TrailView from "../components/TrailView";
+import { fetchRovaniemiBikeRoutes } from "../functions/lipas";
 
 const trailTypes = {
     city: "Kaupunkipyöräily",
@@ -11,11 +12,16 @@ const trailTypes = {
 
 function TrailsPage() {
 
-    const { slug } = useParams();
+    const { id } = useParams();
     const [filters, setFilters] = useState({ type: "all" });
 
     const trails = dummyTrails; // In a real app, you'd fetch this data from an API
-    const trail = trails.find(t => t.slug === slug);
+    const trail = trails.find(t => t.id === parseInt(id));
+
+    useState(() => {
+        //fetchRovaniemiBikeRoutes().then(console.log);
+    }, []);
+
 
     return (
         <>
@@ -74,9 +80,9 @@ function TrailList({ trails }) {
             <div className="flex-column" style={{ gap: "1rem", marginTop: "2rem" }}>
                 {trails.map(trail => (
                     <div
-                    key={trail.slug}
+                    key={trail.id}
                     className="flex-row justify-space-between align-center secondary"
-                    onClick={() => navigate(`/trails/${trail.slug}`)}
+                    onClick={() => navigate(`/trails/${trail.id}`)}
                     style={{
                         width: "100%",
                         padding: "1rem",
