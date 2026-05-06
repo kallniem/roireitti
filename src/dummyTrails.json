@@ -1,7 +1,7 @@
 [
   {
-    "id": 613762,
-    "name": "Arctic by Cycle: Central Lapland Gravel Loop",
+    "name": "Central Lapland Gravel Loop",
+    "group": "Arctic by Cycle",
     "category": "cycling",
     "lengthKm": 1148,
     "municipality": "Rovaniemi",
@@ -21963,8 +21963,8 @@
     }
   },
   {
-    "id": 613828,
-    "name": "Arctic by Cycle: Santa's Eastern Gravel Loop",
+    "name": "Santa's Eastern Gravel Loop",
+    "group": "Arctic by Cycle",
     "category": "cycling",
     "lengthKm": 472,
     "municipality": "Rovaniemi",
@@ -32395,8 +32395,8 @@
     }
   },
   {
-    "id": 613791,
-    "name": "Arctic by Cycle: Santa's Western Gravel Loop",
+    "name": "Santa's Western Gravel Loop",
+    "group": "Arctic by Cycle",
     "category": "cycling",
     "lengthKm": 493,
     "municipality": "Rovaniemi",
@@ -42995,8 +42995,8 @@
     }
   },
   {
-    "id": 619172,
-    "name": "Ounasvaara Bike Park - Linkka",
+    "name": "Linkka",
+    "group": "Ounasvaara Bike Park",
     "category": "mtb",
     "lengthKm": 1.35,
     "municipality": "Rovaniemi",
@@ -43212,8 +43212,8 @@
     }
   },
   {
-    "id": 619173,
-    "name": "Ounasvaara Bike Park - Vinha",
+    "name": "Vinha",
+    "group": "Ounasvaara Bike Park",
     "category": "mtb",
     "lengthKm": 0.81,
     "municipality": "Rovaniemi",
@@ -43374,8 +43374,8 @@
     }
   },
   {
-    "id": 619056,
-    "name": "Ounasvaara Trail Center - Loimu",
+    "name": "Loimu",
+    "group": "Ounasvaara Trail Center",
     "category": "mtb",
     "lengthKm": 1.79,
     "municipality": "Rovaniemi",
@@ -43641,8 +43641,8 @@
     }
   },
   {
-    "id": 619226,
-    "name": "Ounasvaara Trail Center - Mini Trail Park",
+    "name": "Mini Trail Park",
+    "group": "Ounasvaara Trail Center",
     "category": "mtb",
     "lengthKm": 0.46,
     "description": "Mini Trail Park on täydellinen paikka ottaa ensiaskeleet maastopyöräilyn maailmaan. Puiston helppokulkuiset ja turvalliset reitit tarjoavat koko perheelle hauskaa tekemistä – ilman aiempaa kokemusta. Mini Trail Parkissa lapset, nuoret ja aloittelijat voivat harjoitella tasapainoa, jarruttamista ja kurvailua omassa tahdissaan. Selkeät linjat, matalat kumpareet ja pelottamattomat kaarteet tekevät ajamisesta motivoivaa ja palkitsevaa.\nTäällä into pyöräilyyn syttyy kuin itsestään – tule kokeilemaan ja löydä onnistumisen ilo!",
@@ -43846,8 +43846,8 @@
     }
   },
   {
-    "id": 619057,
-    "name": "Ounasvaara Trail Center - Törmä",
+    "name": "Törmä",
+    "group": "Ounasvaara Trail Center",
     "category": "mtb",
     "lengthKm": 0.55,
     "municipality": "Rovaniemi",
@@ -44023,7 +44023,6 @@
     }
   },
   {
-    "id": 527767,
     "name": "Rollo MTB -maastopyöräilyreitti",
     "category": "mtb",
     "lengthKm": 23,
@@ -49050,7 +49049,6 @@
     }
   },
   {
-    "id": 618973,
     "name": "Tonttumetsän pyöräilypuisto -Santa's Trail",
     "category": "mtb",
     "lengthKm": 4.38,

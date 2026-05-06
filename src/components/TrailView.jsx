@@ -4,9 +4,7 @@ import { useEffect, useState } from 'react';
 
 const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY;
 
-/*  TODO: Show the start and end points with for example a flag icon
-    Add a histogram of elevation
-*/
+//  TODO: Show the start and end points with for example a flag icon
 
 // const types = ["fill", "line", "symbol", "circle", "heatmap", "fill-extrusion", "raster", "hillshade", "color-relief", "background"];
 
@@ -14,8 +12,11 @@ function TrailView({ trail }) {
 
     const [geojson, setGeojson] = useState(null);
     const [elevationRange, setElevationRange] = useState([0, 0]);
-    const [colorScale, setColorScale] = useState(() => () => '#000');
     const [hoverInfo, setHoverInfo] = useState(null);
+    const [elevationProfile, setElevationProfile] = useState([]);
+    const [routeColors, setRouteColors] = useState({});
+
+    const colors = ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#a65628', '#f781bf', '#999999'];
 
     const getNearestPoint = (lngLat, points) => {
         // This needs to work for extreme latitudes, so treat each point as a point on a sphere rather than using simple Cartesian distance
@@ -49,27 +50,46 @@ function TrailView({ trail }) {
 
             function splitIntoSegments(feature) {
                 const segments = [];
-                const coords = feature.geometry.type === 'MultiLineString'
-                    ? feature.geometry.coordinates.flat()
-                    : feature.geometry.coordinates;
+                const isMulti = feature.geometry.type === 'MultiLineString';
+                const lineStrings = isMulti
+                    ? feature.geometry.coordinates
+                    : [feature.geometry.coordinates];
 
-                for (let i = 0; i < coords.length - 1; i++) {
-                    const start = coords[i];
-                    const end = coords[i + 1];
+                lineStrings.forEach((coords, routeIndex) => {
+                    for (let i = 0; i < coords.length - 1; i++) {
+                        const start = coords[i];
+                        const end = coords[i + 1];
+                        const elevation = (start[2] + end[2]) / 2;
 
-                    const elevation = (start[2] + end[2]) / 2;
-
-                    segments.push({
-                    type: 'Feature',
-                    properties: { elevation },
-                    geometry: {
-                        type: 'LineString',
-                        coordinates: [start, end]
+                        segments.push({
+                            type: 'Feature',
+                            properties: { elevation, routeIndex },
+                            geometry: {
+                                type: 'LineString',
+                                coordinates: [start, end]
+                            }
+                        });
                     }
-                    });
-                }
+                });
 
                 return segments;
+            }
+
+            function calculateDistance(coord1, coord2) {
+                const R = 6371; // Earth radius in km
+                const toRadians = (deg) => deg * Math.PI / 180;
+                const [lng1, lat1, elev1] = coord1;
+                const [lng2, lat2, elev2] = coord2;
+                
+                const dLat = toRadians(lat2) - toRadians(lat1);
+                const dLng = toRadians(lng2) - toRadians(lng1);
+                const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) * Math.sin(dLng / 2) ** 2;
+                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                const horizontalDist = R * c;
+                
+                // Include elevation change in distance
+                const elevDiff = (elev2 - elev1) / 1000;
+                return Math.sqrt(horizontalDist ** 2 + elevDiff ** 2);
             }
 
         const geojsonData = {
@@ -99,6 +119,36 @@ function TrailView({ trail }) {
             Math.min(...newGeojsonData.features.map(f => f.properties.elevation)),
             Math.max(...newGeojsonData.features.map(f => f.properties.elevation))
             ]);
+
+        // Calculate elevation profile for each route
+        const isMulti = trail.geometry.type === 'MultiLineString';
+        const lineStrings = isMulti
+            ? trail.geometry.coordinates
+            : [trail.geometry.coordinates];
+        
+        const profiles = [];
+        const colorMap = {};
+        
+        lineStrings.forEach((coords, routeIndex) => {
+            colorMap[routeIndex] = colors[routeIndex % colors.length];
+            const profile = [];
+            let cumulativeDistance = 0;
+            
+            for (let i = 0; i < coords.length; i++) {
+                if (i > 0) {
+                    cumulativeDistance += calculateDistance(coords[i - 1], coords[i]);
+                }
+                profile.push({
+                    distance: cumulativeDistance,
+                    elevation: coords[i][2] || 0,
+                    routeIndex
+                });
+            }
+            profiles.push(profile);
+        });
+        
+        setRouteColors(colorMap);
+        setElevationProfile(profiles);
             
     }, [trail]);
 
@@ -115,7 +165,6 @@ function TrailView({ trail }) {
                         className="flex-column justify-start secondary"
                         style={{
                         width: "100%",
-                        aspectRatio: "4/3",
                         padding: "1rem",
                         borderRadius: "1rem",
                         }}
@@ -132,7 +181,6 @@ function TrailView({ trail }) {
                         className="flex-column justify-center align-center secondary"
                         style={{
                         width: "100%",
-                        aspectRatio: "4/3",
                         padding: "1rem",
                         borderRadius: "1rem",
                         }}
@@ -141,6 +189,10 @@ function TrailView({ trail }) {
                             <p><strong>Pituus:</strong> {trail.lengthKm} km</p>
                             <p><strong>Vaativuus:</strong> {trail.difficulty}</p>
                             <Map
+                                style={{
+                                    minHeight: "30rem",
+                                    width: "100%",
+                                }}
                                 interactiveLayerIds={['route-line']}
                                 initialViewState={{
                                     longitude: initialTrailCoordinate?.[0],
@@ -176,17 +228,13 @@ function TrailView({ trail }) {
                                     type='line'
                                     paint={{
                                             'line-width': 5,
-
-                                            // Color by elevation
                                             'line-color': [
-                                            'interpolate',
-                                            ['linear'],
-                                            ['get', 'elevation'],
-                                            elevationRange[0], '#0000ff',     // low (blue)
-                                            elevationRange[0] + (elevationRange[1] - elevationRange[0]) * 0.25, '#00ffff',
-                                            elevationRange[0] + (elevationRange[1] - elevationRange[0]) * 0.5, '#ffff00',
-                                            elevationRange[0] + (elevationRange[1] - elevationRange[0]) * 0.75, '#ff0000',
-                                            elevationRange[1], '#d7191c'    // high (red)
+                                                'case',
+                                                ...Object.entries(routeColors).flatMap(([routeIdx, color]) => [
+                                                    ['==', ['get', 'routeIndex'], parseInt(routeIdx)],
+                                                    color
+                                                ]),
+                                                '#999999'
                                             ]
                                         }}
                                     />
@@ -226,6 +274,105 @@ function TrailView({ trail }) {
                                 )}
                                 
                             </Map>
+                            <h3>Korkeusprofiili</h3>
+                            {elevationProfile.length > 0 ? (
+                                <svg
+                                className="flex-column justify-center align-center"
+                                style={{
+                                width: "100%",
+                                height: "100%",
+                                }}
+                                >
+                                    {(() => {
+                                        const width = 800;
+                                        const height = 200;
+                                        const padding = 40;
+                                        const maxDist = Math.max(...elevationProfile.flat().map(p => p.distance));
+                                        const [minElev, maxElev] = elevationRange;
+                                        const elevRange = maxElev - minElev || 1;
+                                        
+                                        return (
+                                            <>
+                                                {elevationProfile.map((profileData, routeIdx) => {
+                                                    const points = profileData.map(p => ({
+                                                        x: padding + (p.distance / maxDist) * (width - 2 * padding),
+                                                        y: height - padding - ((p.elevation - minElev) / elevRange) * (height - 2 * padding)
+                                                    }));
+                                                    const pathData = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+                                                    return (
+                                                        <path key={`route-${routeIdx}`} d={pathData} stroke={routeColors[routeIdx]} strokeWidth="2" fill="none" />
+                                                    );
+                                                })}
+                                                
+                                                {/* X-axis */}
+                                                <line x1={padding} y1={height - padding} x2={width - padding} y2={height - padding} stroke="#333" strokeWidth="1" />
+                                                
+                                                {/* Y-axis */}
+                                                <line x1={padding} y1={padding} x2={padding} y2={height - padding} stroke="#333" strokeWidth="1" />
+                                                
+                                                {/* X-axis label */}
+                                                <text x={width / 2} y={height - 5} textAnchor="middle" fontSize="12" fill="#666">
+                                                    Matka (km)
+                                                </text>
+                                                
+                                                {/* Y-axis label */}
+                                                <text x="15" y={height / 2} textAnchor="middle" fontSize="12" fill="#666" transform={`rotate(-90 15 ${height / 2})`}>
+                                                    Korkeus (m)
+                                                </text>
+                                                
+                                                {/* Tick marks and labels */}
+                                                {[0, 0.25, 0.5, 0.75, 1].map(frac => (
+                                                    <g key={`x-${frac}`}>
+                                                        <line 
+                                                            x1={padding + frac * (width - 2 * padding)} 
+                                                            y1={height - padding} 
+                                                            x2={padding + frac * (width - 2 * padding)} 
+                                                            y2={height - padding + 5} 
+                                                            stroke="#333" 
+                                                            strokeWidth="1" 
+                                                        />
+                                                        <text 
+                                                            x={padding + frac * (width - 2 * padding)} 
+                                                            y={height - padding + 18} 
+                                                            textAnchor="middle" 
+                                                            fontSize="11" 
+                                                            fill="#666"
+                                                        >
+                                                            {(frac * maxDist).toFixed(1)}
+                                                        </text>
+                                                    </g>
+                                                ))}
+                                                
+                                                {[0, 0.25, 0.5, 0.75, 1].map(frac => (
+                                                    <g key={`y-${frac}`}>
+                                                        <line 
+                                                            x1={padding - 5} 
+                                                            y1={height - padding - frac * (height - 2 * padding)} 
+                                                            x2={padding} 
+                                                            y2={height - padding - frac * (height - 2 * padding)} 
+                                                            stroke="#333" 
+                                                            strokeWidth="1" 
+                                                        />
+                                                        <text 
+                                                            x={padding - 10} 
+                                                            y={height - padding - frac * (height - 2 * padding) + 4} 
+                                                            textAnchor="end" 
+                                                            fontSize="11" 
+                                                            fill="#666"
+                                                        >
+                                                            {Math.round(minElev + frac * elevRange)}
+                                                        </text>
+                                                    </g>
+                                                ))}
+                                            </>
+                                        );
+                                    })()}
+                                </svg>
+                            ) : (
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#999' }}>
+                                    Ladataan korkeustietoja...
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

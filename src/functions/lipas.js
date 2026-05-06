@@ -73,3 +73,8 @@ export async function fetchRovaniemiBikeRoutes() {
     a.name.localeCompare(b.name, "fi")
   );
 }
+
+async function fetchNatureSpots() {
+  const res = await fetch("https://lipas.fi/geoserver/lipas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=lipas:lipas_301_laavu_kota_kammi&srsName=EPSG:4326&outputFormat=application/json")
+  return
+}

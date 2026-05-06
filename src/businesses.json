@@ -1,0 +1,2940 @@
+[
+  {
+    "id": "cab367e8-aadb-4ea0-acec-878f7e906ead",
+    "businessEntity": {
+      "businessId": "0892158-4"
+    },
+    "businessName": "Lapland Safaris",
+    "officialName": "Lapland Safaris Group Oy",
+    "description": "Lapland Safaris are specialists in Lapland’s nature and the Lappish lifestyle. Since 1982, we have provided tourists visiting Lapland with exciting nature activities and memorable travel experiences.\n\nCOOL AND PURE EXPERIENCES SINCE 1982\nLapland Safaris are specialists in Lapland’s nature and the Lappish lifestyle. Since 1982, we have provided tourists visiting Lapland with exciting nature activities and memorable travel experiences. At the heart of our activities lies the culture of Lapland. We draw inspiration from the local history and day-to-day ‘Lappishness’. The stories and legends related to these principles form the basis of the programme packages offered to our customers.\n\nLearn, take part, laugh\nLapland Safaris has high-quality standards for its products and its employees, in particular with safety issues. Lapland Safaris was awarded an ISO 9001 quality certificate in 2000 – the first event organisation agency in the world to receive one. In 2011, Lapland Safaris received the National Tourism Safety award. First in Lapland and first in the business.\n\nThe principle ”learn, take part, laugh” provides a guideline for our quality policy. Every guest is taken into the middle of the action to participate in and learn about new, interesting experiences – all in the spirit of good fun, of course. Guests get to conquer the wilderness of Lapland while knowing that they are safe at all times.\n\nIGLOOS: Imagine a world of ice and snow!\nTHE NORTHERN LIGHTS:The Northern Lights in their full glory.\nSNOWMOBILING: Experience the thrill of driving a snowmobile through snowy forests.\nARCTIC ANIMALS: Reindeer safari, Husky safari, Ranua Zoo.\nCROSS-COUNTRY SKIING & SNOWSHOES\nICE-FISHING SAFARIS\nMIDNIGHT SUN: Experience the magical nights of the Arctic summer\nTHE SANTA CLAUS VILLAGE\nRIVER CRUISES: An enchanting river full of experiences\nYou can explore Lapland’s nature independently, too. Lapland Safaris offer hikers tips about attractions and a wide selection of quality hiking and outdoor equipment for hire, such as snowshoes and winter clothing.\n\nOur hearts beat for the arctic nature\nThe nature of Lapland is the most sensitive member of our team. We observe the principles of sustainable development and scale all of our activities according to the tolerance of the natural environment. We guide our guests to respect nature and to get close with it in a Lappish way, allowing them to enjoy their nature outing with a clean conscience.\n\nBiggest and most experienced event organiser in the Nordic countries\nWe are active in seven locations across Lapland: Rovaniemi, Ylläs, Saariselkä, Kemi, Levi, Luosto, Olos – all within an hour’s drive from an airport.\n\nCapacity to accept 8,000 guests a day.\nWinter gear available for 12,500 and summer gear for 850 people.\n500 trained employees in season.\n50 employees around the year.\n150,000 guests a year.\n450 snowmobiles, 40 canoes and 7 punt-boats.\nOwn guide school.\nPrivately-owned DMC and member of AFTA.",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/b29ea130-056c-11ec-86a9-47e748b09f87-Lapland%20Safaris_harmaa90.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/b29ea130-056c-11ec-86a9-47e748b09f87-Lapland%20Safaris_harmaa90.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96200",
+        "streetName": "Koskikatu 1",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "info@laplandsafaris.fi",
+        "phone": "0163311200"
+      }
+    ],
+    "webshopUrl": "http://www.laplandsafaris.com",
+    "websiteUrl": "http://www.laplandsafaris.com",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "youtube",
+          "verifiedLink": {
+            "url": "https://www.youtube.com/c/LaplandSafarisGroup"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/laplandsafaris/"
+          }
+        },
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/laplandsafarisrovaniemi"
+          }
+        }
+      ]
+    },
+    "coordinates": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w1109628847",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.737059000000045,
+              66.501425
+            ]
+          },
+          "bbox": [
+            25.737059,
+            66.501425,
+            25.737059,
+            66.501425
+          ],
+          "center": [
+            25.737059000000045,
+            66.501425
+          ],
+          "place_name": "Koskikatu 1, 96200 Rovaniemi, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 1,
+          "id": "address.14698737",
+          "text": "Koskikatu",
+          "context": [
+            {
+              "ref": "osm:w38400059",
+              "id": "postal_code.871911",
+              "text": "96200",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:n10159440808",
+              "id": "place.3379935",
+              "text": "Keskusta",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:r8544985",
+              "id": "major_landform.2784141",
+              "text": "Kemijoki",
+              "country_code": "fi",
+              "wikidata": "Q214779",
+              "feature_tags": {
+                "destination": "Baltic Sea",
+                "wikipedia": "fi:Kemijoki",
+                "type": "waterway",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "1"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w38400059",
+            "country_code": "fi"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.730860108516367,
+              66.50300641355378
+            ]
+          },
+          "bbox": [
+            25.70790323156709,
+            66.497371461826,
+            25.745594277977947,
+            66.51413565416223
+          ],
+          "center": [
+            25.730860108516367,
+            66.50300641355378
+          ],
+          "place_name": "96200, Suomi / Finland",
+          "place_type": [
+            "postal_code"
+          ],
+          "relevance": 0.685185,
+          "id": "postal_code.871911",
+          "text": "96200",
+          "context": [
+            {
+              "ref": "osm:n10159440808",
+              "id": "place.3379935",
+              "text": "Keskusta",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:r8544985",
+              "id": "major_landform.2784141",
+              "text": "Kemijoki",
+              "country_code": "fi",
+              "wikidata": "Q214779",
+              "feature_tags": {
+                "destination": "Baltic Sea",
+                "wikipedia": "fi:Kemijoki",
+                "type": "waterway",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:r2528474",
+            "country_code": "fi",
+            "wikidata": "Q103717",
+            "kind": "admin_area",
+            "place_designation": "city"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.730391182005405,
+              66.50255371948874
+            ]
+          },
+          "bbox": [
+            24.73657976835966,
+            66.15551379503523,
+            27.326643504202366,
+            67.17711180399628
+          ],
+          "center": [
+            25.730391182005405,
+            66.50255371948874
+          ],
+          "place_name": "Rovaniemi, Suomi / Finland",
+          "place_type": [
+            "municipality"
+          ],
+          "relevance": 0.577778,
+          "id": "municipality.91971",
+          "text": "Rovaniemi",
+          "context": [
+            {
+              "ref": "osm:r8544985",
+              "id": "major_landform.2784141",
+              "text": "Kemijoki",
+              "country_code": "fi",
+              "wikidata": "Q214779",
+              "feature_tags": {
+                "destination": "Baltic Sea",
+                "wikipedia": "fi:Kemijoki",
+                "type": "waterway",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w1070206707",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              29.763337999999976,
+              62.599412
+            ]
+          },
+          "bbox": [
+            29.763338,
+            62.599412,
+            29.763338,
+            62.599412
+          ],
+          "center": [
+            29.763337999999976,
+            62.599412
+          ],
+          "place_name": "Koskikatu 1, 80100 Joensuu, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 0.5,
+          "id": "address.9899077",
+          "text": "Koskikatu",
+          "context": [
+            {
+              "ref": "osm:w654991288",
+              "id": "postal_code.258273",
+              "text": "80100",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:n9807808284",
+              "id": "place.3215897",
+              "text": "Keskusta",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r14662699",
+              "id": "locality.154772",
+              "text": "III",
+              "country_code": "fi",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r12709864",
+              "id": "municipal_district.73080",
+              "text": "Joensuun kantakaupunki",
+              "country_code": "fi",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r2521759",
+              "id": "municipality.89658",
+              "text": "Joensuu",
+              "country_code": "fi",
+              "wikidata": "Q186237",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:w514979709",
+              "id": "major_landform.2431414",
+              "text": "Joensuun kanava",
+              "country_code": "fi",
+              "feature_tags": {
+                "lock": "yes",
+                "waterway": "canal"
+              },
+              "categories": [
+                "canal"
+              ]
+            },
+            {
+              "ref": "osm:r6442828",
+              "id": "joint_municipality.11271",
+              "text": "Joensuun seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q1191311",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1999428",
+              "id": "region.1030",
+              "text": "Pohjois-Karjala",
+              "country_code": "fi",
+              "wikidata": "Q5703",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "1"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w1171434890",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              28.776020000000017,
+              61.195913
+            ]
+          },
+          "bbox": [
+            28.77602,
+            61.195913,
+            28.77602,
+            61.195913
+          ],
+          "center": [
+            28.776020000000017,
+            61.195913
+          ],
+          "place_name": "Koskikatu 1, 55120 Imatra, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 0.5,
+          "id": "address.6750026",
+          "text": "Koskikatu",
+          "context": [
+            {
+              "ref": "osm:w370398020",
+              "id": "postal_code.1799924",
+              "text": "55120",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:r18772477",
+              "id": "municipal_district.150525",
+              "text": "Mansikkala",
+              "country_code": "fi",
+              "kind": "admin_area",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r2259189",
+              "id": "municipality.84539",
+              "text": "Imatra",
+              "country_code": "fi",
+              "wikidata": "Q211020",
+              "kind": "admin_area",
+              "place_designation": "town"
+            },
+            {
+              "ref": "osm:r7390251",
+              "id": "major_landform.3106893",
+              "text": "Вуокса",
+              "country_code": "ru,fi",
+              "wikidata": "Q819448",
+              "feature_tags": {
+                "destination": "Ладожское озеро",
+                "wikipedia": "ru:Вуокса (река)",
+                "gvr:code": "01040300212102000009188",
+                "type": "waterway",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6443002",
+              "id": "joint_municipality.11284",
+              "text": "Imatran seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q296196",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r2067231",
+              "id": "region.1056",
+              "text": "Etelä-Karjala",
+              "country_code": "fi",
+              "wikidata": "Q5691",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "1"
+        }
+      ],
+      "query": [
+        "koskikatu",
+        "1",
+        "96200",
+        "rovaniemi"
+      ],
+      "attribution": "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
+    }
+  },
+  {
+    "id": "dd0f17d6-3adb-4178-923b-a57ef40e71fe",
+    "businessEntity": {
+      "businessId": "2899280-6"
+    },
+    "businessName": "Beebike",
+    "officialName": "Beebike Oy",
+    "description": "Beebike is a bike shop and service in the centre of Rovaniemi. We also rent bikes! Everyone bike touring and bikepacking are warmly welcome. When you mention that you are on the road you will be serviced swiftly. Don't be shy. Our staff speaks several languages. ",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/b61afef0-a861-11ed-8293-b180f16c14ff.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/b61afef0-a861-11ed-8293-b180f16c14ff.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96100",
+        "streetName": "Kansankatu 3",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "huolto@beebike.fi",
+        "phone": "040 636 1959"
+      }
+    ],
+    "webshopUrl": "https://www.beebike.fi",
+    "websiteUrl": "https://www.beebike.fi",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/BeebikeRovaniemi/"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/beebikerovaniemi/"
+          }
+        }
+      ]
+    },
+    "coordinates": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w28512590",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.722628999999984,
+              66.498255
+            ]
+          },
+          "bbox": [
+            25.722629,
+            66.498255,
+            25.722629,
+            66.498255
+          ],
+          "center": [
+            25.722628999999984,
+            66.498255
+          ],
+          "place_name": "Kansankatu 3, 96100 Rovaniemi, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 1,
+          "id": "address.5654939",
+          "text": "Kansankatu",
+          "context": [
+            {
+              "ref": "osm:w757891210",
+              "id": "postal_code.2210127",
+              "text": "96100",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:n10159440808",
+              "id": "place.3379935",
+              "text": "Keskusta",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:r8544985",
+              "id": "major_landform.2784141",
+              "text": "Kemijoki",
+              "country_code": "fi",
+              "wikidata": "Q214779",
+              "feature_tags": {
+                "destination": "Baltic Sea",
+                "wikipedia": "fi:Kemijoki",
+                "type": "waterway",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "3"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w757891210",
+            "country_code": "fi"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.650920139940126,
+              66.55531829999737
+            ]
+          },
+          "bbox": [
+            25.55733508205526,
+            66.49372490587918,
+            25.735424078220518,
+            66.61399410172795
+          ],
+          "center": [
+            25.650920139940126,
+            66.55531829999737
+          ],
+          "place_name": "96100, Suomi / Finland",
+          "place_type": [
+            "postal_code"
+          ],
+          "relevance": 0.592593,
+          "id": "postal_code.2210127",
+          "text": "96100",
+          "context": [
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w23098853",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              27.273275000000012,
+              61.694186
+            ]
+          },
+          "bbox": [
+            27.273275,
+            61.694186,
+            27.273275,
+            61.694186
+          ],
+          "center": [
+            27.273275000000012,
+            61.694186
+          ],
+          "place_name": "Kansankatu 3, 50100 Mikkeli, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 0.5,
+          "id": "address.15609131",
+          "text": "Kansankatu",
+          "context": [
+            {
+              "ref": "osm:n6168071721",
+              "id": "postal_code.1289526",
+              "text": "50100",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:n599715457",
+              "id": "place.262378",
+              "text": "Savilahti",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r2752683",
+              "id": "municipality.95895",
+              "text": "Mikkeli",
+              "country_code": "fi",
+              "wikidata": "Q190583",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:w47067889",
+              "id": "major_landform.2927969",
+              "text": "Saksalanjoki",
+              "country_code": "fi",
+              "feature_tags": {
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442549",
+              "id": "joint_municipality.11266",
+              "text": "Mikkelin seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q296381",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r918897",
+              "id": "region.488",
+              "text": "Etelä-Savo",
+              "country_code": "fi",
+              "wikidata": "Q5693",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "3"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w29293533",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.516442960344307,
+              60.98864393784338
+            ]
+          },
+          "bbox": [
+            25.515560321509838,
+            60.98681261292766,
+            25.517172343081448,
+            60.99046760828922
+          ],
+          "center": [
+            25.516442960344307,
+            60.98864393784338
+          ],
+          "place_name": "Kansankatu, 15870 Hollola, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 0.495,
+          "id": "address.12793701",
+          "text": "Kansankatu",
+          "context": [
+            {
+              "ref": "osm:w91275584",
+              "id": "postal_code.1760255",
+              "text": "15870",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:n318637067",
+              "id": "place.114017",
+              "text": "Salpakangas",
+              "country_code": "fi",
+              "wikidata": "Q11892144",
+              "kind": "place",
+              "place_designation": "town"
+            },
+            {
+              "ref": "osm:r20050827",
+              "id": "locality.177148",
+              "text": "Kankaantila",
+              "country_code": "fi",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r37186",
+              "id": "municipality.10889",
+              "text": "Hollola",
+              "country_code": "fi",
+              "wikidata": "Q990578",
+              "kind": "admin_area",
+              "place_designation": "town"
+            },
+            {
+              "ref": "osm:r6440397",
+              "id": "joint_municipality.12700",
+              "text": "Lahden seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q971536",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1703362",
+              "id": "region.804",
+              "text": "Päijät-Häme",
+              "country_code": "fi",
+              "wikidata": "Q5708",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w27742043",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              24.845118159266462,
+              60.6338958439652
+            ]
+          },
+          "bbox": [
+            24.842869591731713,
+            60.6310058162659,
+            24.848026894032955,
+            60.6359669518776
+          ],
+          "center": [
+            24.845118159266462,
+            60.6338958439652
+          ],
+          "place_name": "Kansankatu, 05900 Hyvinkää, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 0.495,
+          "id": "address.13611937",
+          "text": "Kansankatu",
+          "context": [
+            {
+              "ref": "osm:w292853522",
+              "id": "postal_code.3043547",
+              "text": "05900",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:r19137515",
+              "id": "locality.168896",
+              "text": "Vieremä",
+              "country_code": "fi",
+              "kind": "admin_area",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r36101",
+              "id": "municipality.9214",
+              "text": "Hyvinkää",
+              "country_code": "fi",
+              "wikidata": "Q207753",
+              "kind": "admin_area",
+              "place_designation": "town"
+            },
+            {
+              "ref": "osm:r38101",
+              "id": "joint_municipality.150",
+              "text": "Helsingin seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q940914",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r37355",
+              "id": "region.133",
+              "text": "Uusimaa",
+              "country_code": "fi",
+              "wikidata": "Q5711",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        }
+      ],
+      "query": [
+        "kansankatu",
+        "3",
+        "96100",
+        "rovaniemi"
+      ],
+      "attribution": "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
+    }
+  },
+  {
+    "id": "7705bc39-3072-4ae7-960a-9cc08c88a95c",
+    "businessEntity": {
+      "businessId": "0357771-0"
+    },
+    "businessName": "Santa Claus Holiday Village",
+    "officialName": "Santa Claus Holiday Village Oy",
+    "description": "Bucket list vacation at Santa Claus Holiday Village!\n\nChristmas magic all year round! All of our rooms include sauna, kitchenette and your own Christmas tree! You can choose your accommodation from our classic or superior cabin rooms or different type of suites.\n\nWe offer high class accommodation, restaurants and safari products every day of the year. Our special product is that you can book the Santa Claus himself to visit your room!\nChoose your own accommodation package according to your needs from below or ask more.\n\nSanta Claus Holiday Village:\n159 rooms\nReception open 24/7\nChoose apartment between the Classic cottages, Superior cottages or Suites\n3 restaurants\nSafaris & Santa's office\n3 souvenir shops\nA fantastic location\n- 5 minutes from the Rovaniemi airport.\n- 1 minutes walk to visit Santa Claus",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/5c7f5e10-edd6-11ef-82bd-bd0293da0d2e.jpeg?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/5c7f5e10-edd6-11ef-82bd-bd0293da0d2e.jpeg",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96930",
+        "streetName": "Tähtikuja 2",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "info@schv.fi",
+        "phone": "+358 40 030 6273"
+      }
+    ],
+    "webshopUrl": "https://www.santaclausholidayvillage.fi/",
+    "websiteUrl": "https://www.santaclausholidayvillage.fi/",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/santaclausholidayvillage"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/santaclausholidayvillage/"
+          }
+        },
+        {
+          "linkType": "tik_tok",
+          "verifiedLink": {
+            "url": "https://www.tiktok.com/@santaclausholidayvillage"
+          }
+        },
+        {
+          "linkType": "linkedin",
+          "verifiedLink": {
+            "url": "https://www.linkedin.com/company/santaclausholidayvillage"
+          }
+        }
+      ]
+    },
+    "coordinates": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w368027906",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.844804000000067,
+              66.543064
+            ]
+          },
+          "bbox": [
+            25.844804,
+            66.543064,
+            25.844804,
+            66.543064
+          ],
+          "center": [
+            25.844804000000067,
+            66.543064
+          ],
+          "place_name": "Tähtikuja 2, 96930 Rovaniemi, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 1,
+          "id": "address.8374644",
+          "text": "Tähtikuja",
+          "context": [
+            {
+              "ref": "osm:w995444703",
+              "id": "postal_code.1598877",
+              "text": "96930",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:n9191949151",
+              "id": "place.4698391",
+              "text": "Napapiiri",
+              "country_code": "fi",
+              "kind": "place"
+            },
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "2"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w995444703",
+            "country_code": "fi"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.84906060209221,
+              66.54279556021942
+            ]
+          },
+          "bbox": [
+            25.797222635555503,
+            66.53869771247427,
+            25.863643221492477,
+            66.5459576180884
+          ],
+          "center": [
+            25.84906060209221,
+            66.54279556021942
+          ],
+          "place_name": "96930, Suomi / Finland",
+          "place_type": [
+            "postal_code"
+          ],
+          "relevance": 0.592593,
+          "id": "postal_code.1598877",
+          "text": "96930",
+          "context": [
+            {
+              "ref": "osm:n9191949151",
+              "id": "place.4698391",
+              "text": "Napapiiri",
+              "country_code": "fi",
+              "kind": "place"
+            },
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w46044098",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.65972499999998,
+              60.926996
+            ]
+          },
+          "bbox": [
+            25.659725,
+            60.926996,
+            25.659725,
+            60.926996
+          ],
+          "center": [
+            25.65972499999998,
+            60.926996
+          ],
+          "place_name": "Tähtikuja 2, 15680 Lahti, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 0.5,
+          "id": "address.7545561",
+          "text": "Tähtikuja",
+          "context": [
+            {
+              "ref": "osm:w48482550",
+              "id": "postal_code.2004618",
+              "text": "15680",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:r19186246",
+              "id": "locality.171366",
+              "text": "Renkomäki",
+              "country_code": "fi",
+              "wikidata": "Q11890559",
+              "kind": "admin_area",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r345901",
+              "id": "municipality.28202",
+              "text": "Lahti",
+              "country_code": "fi",
+              "wikidata": "Q28911",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:r6440397",
+              "id": "joint_municipality.12700",
+              "text": "Lahden seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q971536",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1703362",
+              "id": "region.804",
+              "text": "Päijät-Häme",
+              "country_code": "fi",
+              "wikidata": "Q5708",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "2"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w23115863",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              24.68177800000001,
+              60.247926
+            ]
+          },
+          "bbox": [
+            24.681778,
+            60.247926,
+            24.681778,
+            60.247926
+          ],
+          "center": [
+            24.68177800000001,
+            60.247926
+          ],
+          "place_name": "Tahtikuja 2, 02940 Espoo, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 0.5,
+          "id": "address.1512446",
+          "text": "Tahtikuja",
+          "context": [
+            {
+              "ref": "osm:w1153857132",
+              "id": "postal_code.1051738",
+              "text": "02940",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:n13064835488",
+              "id": "place.3924642",
+              "text": "Hanabäck",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "neighbourhood"
+            },
+            {
+              "ref": "osm:r11918950",
+              "id": "locality.146008",
+              "text": "Högnäs",
+              "country_code": "fi",
+              "wikidata": "Q10532331",
+              "kind": "admin_area",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r3209618",
+              "id": "municipal_district.11614",
+              "text": "Vanha-Espoo",
+              "country_code": "fi",
+              "wikidata": "Q196007",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r36097",
+              "id": "municipality.9206",
+              "text": "Espoo",
+              "country_code": "fi",
+              "wikidata": "Q47034",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:w1347318470",
+              "id": "major_landform.2499047",
+              "text": "Hanabäck",
+              "country_code": "fi",
+              "feature_tags": {
+                "waterway": "stream"
+              },
+              "categories": [
+                "stream"
+              ]
+            },
+            {
+              "ref": "osm:r38101",
+              "id": "joint_municipality.150",
+              "text": "Helsingin seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q940914",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r37355",
+              "id": "region.133",
+              "text": "Uusimaa",
+              "country_code": "fi",
+              "wikidata": "Q5711",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "2"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w224036320",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              21.423399000000018,
+              60.819451
+            ]
+          },
+          "bbox": [
+            21.423399,
+            60.819451,
+            21.423399,
+            60.819451
+          ],
+          "center": [
+            21.423399000000018,
+            60.819451
+          ],
+          "place_name": "Tähtikuja 2, 23500 Uusikaupunki, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 0.5,
+          "id": "address.11941347",
+          "text": "Tähtikuja",
+          "context": [
+            {
+              "ref": "osm:n13331507844",
+              "id": "postal_code.2949853",
+              "text": "23500",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:n5200798436",
+              "id": "place.1783920",
+              "text": "Palomettä",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r2376177",
+              "id": "municipality.88447",
+              "text": "Uusikaupunki",
+              "country_code": "fi",
+              "wikidata": "Q207295",
+              "kind": "admin_area",
+              "place_designation": "town"
+            },
+            {
+              "ref": "osm:r6440456",
+              "id": "joint_municipality.12703",
+              "text": "Vakka-Suomen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q844608",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r38092",
+              "id": "region.149",
+              "text": "Varsinais-Suomi",
+              "country_code": "fi",
+              "wikidata": "Q5712",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "2"
+        }
+      ],
+      "query": [
+        "tähtikuja",
+        "2",
+        "96930",
+        "rovaniemi"
+      ],
+      "attribution": "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
+    }
+  },
+  {
+    "id": "98eb46dd-ac99-416b-b21a-574a2417215d",
+    "businessEntity": {
+      "businessId": "2931080-3"
+    },
+    "businessName": "Silver Birch Resort",
+    "officialName": "Wild About Lapland Oy",
+    "description": "Step into a wonderful world at Silver Birch Resort,\nwhere every moment is a journey into the magic of\nFinnish Lapland. Nestled amidst the breathtaking\nbeauty of nature, our exclusive, lake-view cabins\noffer the perfect sanctuary for a 3- or 4-night Arctic\nretreat within 5 hectares of pristine wilderness.\n\nWe take care of every detail, arranging your airport\nand city center transfers, and offering delicious\nbreakfasts and dinners served daily in our private\nrestaurant, exclusive to resort guests. Our chefs\ncreate delicious menus with family-friendly options,\nensuring tasty meals for even the most finicky of eaters.\nThroughout the day, embark on spectacular tours\nfor unforgettable glimpses into Lapland’s magic.\n\nAt Silver Birch Resort, each of our guests will find joy,\nexcitement, and relaxation in the heart of Finnish Lapland.",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/f6232770-2591-11f0-b240-a11cd099c040.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/f6232770-2591-11f0-b240-a11cd099c040.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "97610",
+        "streetName": "Alaniemenpolku 52",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "sales@thesilverbirchresort.com",
+        "phone": "+358 40 655 5507"
+      }
+    ],
+    "webshopUrl": "",
+    "websiteUrl": "https://thesilverbirchresort.com/",
+    "businessHours": {
+      "default": [
+        {
+          "closes": "16:00:00",
+          "open": true,
+          "opens": "09:00:00",
+          "weekday": "monday"
+        },
+        {
+          "closes": "16:00:00",
+          "open": true,
+          "opens": "09:00:00",
+          "weekday": "tuesday"
+        },
+        {
+          "closes": "16:00:00",
+          "open": true,
+          "opens": "09:00:00",
+          "weekday": "wednesday"
+        },
+        {
+          "closes": "16:00:00",
+          "open": true,
+          "opens": "09:00:00",
+          "weekday": "thursday"
+        },
+        {
+          "closes": "16:00:00",
+          "open": true,
+          "opens": "09:00:00",
+          "weekday": "friday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "saturday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "sunday"
+        }
+      ]
+    },
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/people/Silver-Birch-Resort-Lapland/61566301841860/"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/silverbirchlapland/#"
+          }
+        },
+        {
+          "linkType": "youtube",
+          "verifiedLink": {
+            "url": "https://www.youtube.com/@SilverBirchResortLapland"
+          }
+        }
+      ]
+    },
+    "coordinates": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w1454133969",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              26.132720999999947,
+              66.46805
+            ]
+          },
+          "bbox": [
+            26.132721,
+            66.46805,
+            26.132721,
+            66.46805
+          ],
+          "center": [
+            26.132720999999947,
+            66.46805
+          ],
+          "place_name": "Alaniemenpolku 52, 97610 Rovaniemi, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 1,
+          "id": "address.1669409",
+          "text": "Alaniemenpolku",
+          "context": [
+            {
+              "ref": "osm:n13257863843",
+              "id": "postal_code.380930",
+              "text": "97610",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:w780624365",
+              "id": "place.4333308",
+              "text": "Oikarainen",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "village"
+            },
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:w24851756",
+              "id": "major_landform.2389062",
+              "text": "Raudanjoki",
+              "country_code": "fi",
+              "wikidata": "Q1420058",
+              "feature_tags": {
+                "intermittent": "no",
+                "width": "100",
+                "wikipedia": "fi:Raudanjoki",
+                "boat": "yes",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "52"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:n13257863843",
+            "country_code": "fi"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              26.078599132597446,
+              66.47266052134854
+            ]
+          },
+          "bbox": [
+            26.01076517254114,
+            66.46805005028229,
+            26.13272119313479,
+            66.48078180746775
+          ],
+          "center": [
+            26.078599132597446,
+            66.47266052134854
+          ],
+          "place_name": "97610, Suomi / Finland",
+          "place_type": [
+            "postal_code"
+          ],
+          "relevance": 0.592593,
+          "id": "postal_code.380930",
+          "text": "97610",
+          "context": [
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:w24851756",
+              "id": "major_landform.2389062",
+              "text": "Raudanjoki",
+              "country_code": "fi",
+              "wikidata": "Q1420058",
+              "feature_tags": {
+                "intermittent": "no",
+                "width": "100",
+                "wikipedia": "fi:Raudanjoki",
+                "boat": "yes",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:r2528474",
+            "country_code": "fi",
+            "wikidata": "Q103717",
+            "kind": "admin_area",
+            "place_designation": "city"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.730391182005405,
+              66.50255371948874
+            ]
+          },
+          "bbox": [
+            24.73657976835966,
+            66.15551379503523,
+            27.326643504202366,
+            67.17711180399628
+          ],
+          "center": [
+            25.730391182005405,
+            66.50255371948874
+          ],
+          "place_name": "Rovaniemi, Suomi / Finland",
+          "place_type": [
+            "municipality"
+          ],
+          "relevance": 0.474074,
+          "id": "municipality.91971",
+          "text": "Rovaniemi",
+          "context": [
+            {
+              "ref": "osm:r8544985",
+              "id": "major_landform.2784141",
+              "text": "Kemijoki",
+              "country_code": "fi",
+              "wikidata": "Q214779",
+              "feature_tags": {
+                "destination": "Baltic Sea",
+                "wikipedia": "fi:Kemijoki",
+                "type": "waterway",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:r5807666",
+            "country_code": "in",
+            "wikidata": "Q25203063",
+            "kind": "road"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              75.6550728200707,
+              22.77651618650489
+            ]
+          },
+          "bbox": [
+            74.30832590907812,
+            14.663616614545047,
+            76.89946252852678,
+            30.221163270684716
+          ],
+          "center": [
+            75.6550728200707,
+            22.77651618650489
+          ],
+          "place_name": "NH 52 in Punjab, Madhya Pradesh, India",
+          "place_type": [
+            "road"
+          ],
+          "relevance": 0.388889,
+          "id": "road.415489",
+          "text": "NH 52 in Punjab",
+          "matching_text": "52",
+          "matching_place_name": "52, India",
+          "context": [
+            {
+              "ref": "osm:r16636380",
+              "id": "municipal_district.120275",
+              "text": "Karariya",
+              "country_code": "in",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r9692120",
+              "id": "county.8986",
+              "text": "Hatod Tahsil",
+              "country_code": "in",
+              "wikidata": "Q20600071",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1976160",
+              "id": "subregion.964",
+              "text": "Indore",
+              "country_code": "in",
+              "wikidata": "Q742938",
+              "kind": "admin_area",
+              "place_designation": "county"
+            },
+            {
+              "ref": "osm:r1950071",
+              "id": "region.974",
+              "text": "Madhya Pradesh",
+              "country_code": "in",
+              "wikidata": "Q1188",
+              "kind": "admin_area",
+              "place_designation": "state"
+            },
+            {
+              "ref": "osm:r304716",
+              "id": "country.170",
+              "text": "India",
+              "country_code": "in",
+              "wikidata": "Q668",
+              "kind": "admin_area",
+              "place_designation": "town"
+            },
+            {
+              "ref": "osm:n36966065",
+              "id": "continental_marine.5",
+              "text": "Asia",
+              "wikidata": "Q48",
+              "feature_tags": {
+                "sqkm": "44614500",
+                "place": "continent",
+                "wikipedia": "en:Asia",
+                "population": "4950360147"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:r271863",
+            "country_code": "us",
+            "wikidata": "Q409832",
+            "kind": "road"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -89.74507697577849,
+              41.99808486584616
+            ]
+          },
+          "bbox": [
+            -102.55156841129066,
+            32.79609637774351,
+            -79.7453922405839,
+            48.998546276631416
+          ],
+          "center": [
+            -89.74507697577849,
+            41.99808486584616
+          ],
+          "place_name": "US 52 (super), Illinois, United States",
+          "place_type": [
+            "road"
+          ],
+          "relevance": 0.388889,
+          "id": "road.1002950",
+          "text": "US 52 (super)",
+          "context": [
+            {
+              "ref": "usTiger:61051",
+              "id": "postal_code.3342822",
+              "text": "61051",
+              "country_code": "us"
+            },
+            {
+              "ref": "osm:w443889648",
+              "id": "major_landform.3984942",
+              "text": "Elkhorn Creek",
+              "country_code": "us",
+              "feature_tags": {},
+              "categories": []
+            },
+            {
+              "ref": "osm:r1792161",
+              "id": "county.18088",
+              "text": "Carroll",
+              "country_code": "us",
+              "wikidata": "Q488553",
+              "kind": "admin_area",
+              "place_designation": "county"
+            },
+            {
+              "ref": "osm:r122586",
+              "id": "region.2019",
+              "text": "Illinois",
+              "country_code": "us",
+              "wikidata": "Q1204",
+              "kind": "admin_area",
+              "place_designation": "state"
+            },
+            {
+              "ref": "osm:r148838",
+              "id": "country.207",
+              "text": "United States",
+              "country_code": "us",
+              "wikidata": "Q30",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n36966063",
+              "id": "continental_marine.4",
+              "text": "North America",
+              "wikidata": "Q49",
+              "feature_tags": {
+                "note": "https://lists.openstreetmap.org/pipermail/talk/2019-December/083609.html",
+                "sqkm": "24709000",
+                "place": "continent",
+                "wikipedia": "en:North America",
+                "population": "528720588"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        }
+      ],
+      "query": [
+        "alaniemenpolku",
+        "52",
+        "97610",
+        "rovaniemi"
+      ],
+      "attribution": "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
+    }
+  },
+  {
+    "id": "bf719280-6988-4f70-a74e-557ab1e87ca2",
+    "businessEntity": {
+      "businessId": "2931080-3"
+    },
+    "businessName": "Wild About Lapland",
+    "officialName": "Wild About Lapland Oy",
+    "description": "We are Wild About Lapland, a lead company that provides high-quality tours and experiences to travelers and small groups in Rovaniemi, the capital town of Finnish Lapland and home town of Santa Claus. We are passionate about sharing our lifestyle and it is what we do best. Our main goal in Wild About Lapland is to provide tours that allow all individuals to experience exactly what they wish for, whether it be to experience the Northern Lights, learn how to ice fish, take a reindeer ride, meet Santa or simply explore the Taiga forests.",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/79968f30-00ba-11ec-83fd-ed0ac6631472-logo_rgb_square_color(1).png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/79968f30-00ba-11ec-83fd-ed0ac6631472-logo_rgb_square_color(1).png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96200",
+        "streetName": "Rovakatu 24",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "wildaboutlapland@gmail.com",
+        "phone": "+358407583316"
+      }
+    ],
+    "webshopUrl": "https://wildaboutlapland.com/",
+    "websiteUrl": "https://wildaboutlapland.com/",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/wildaboutlapland/"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/wildaboutlapland/"
+          }
+        },
+        {
+          "linkType": "youtube",
+          "verifiedLink": {
+            "url": "https://www.youtube.com/channel/UCGwoLKZdRh-UX8eEzjbNQ2w"
+          }
+        },
+        {
+          "linkType": "tik_tok",
+          "verifiedLink": {
+            "url": "https://www.tiktok.com/@wildaboutlapland"
+          }
+        }
+      ]
+    },
+    "coordinates": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w1164844873",
+            "country_code": "fi",
+            "kind": "street"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.72791099999995,
+              66.501371
+            ]
+          },
+          "bbox": [
+            25.727911,
+            66.501371,
+            25.727911,
+            66.501371
+          ],
+          "center": [
+            25.72791099999995,
+            66.501371
+          ],
+          "place_name": "Rovakatu 24, 96200 Rovaniemi, Suomi / Finland",
+          "place_type": [
+            "address"
+          ],
+          "relevance": 1,
+          "id": "address.3035949",
+          "text": "Rovakatu",
+          "context": [
+            {
+              "ref": "osm:w38400059",
+              "id": "postal_code.871911",
+              "text": "96200",
+              "country_code": "fi"
+            },
+            {
+              "ref": "osm:n10159440808",
+              "id": "place.3379935",
+              "text": "Keskusta",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:r8544985",
+              "id": "major_landform.2784141",
+              "text": "Kemijoki",
+              "country_code": "fi",
+              "wikidata": "Q214779",
+              "feature_tags": {
+                "destination": "Baltic Sea",
+                "wikipedia": "fi:Kemijoki",
+                "type": "waterway",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ],
+          "address": "24"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:w38400059",
+            "country_code": "fi"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.730860108516367,
+              66.50300641355378
+            ]
+          },
+          "bbox": [
+            25.70790323156709,
+            66.497371461826,
+            25.745594277977947,
+            66.51413565416223
+          ],
+          "center": [
+            25.730860108516367,
+            66.50300641355378
+          ],
+          "place_name": "96200, Suomi / Finland",
+          "place_type": [
+            "postal_code"
+          ],
+          "relevance": 0.685185,
+          "id": "postal_code.871911",
+          "text": "96200",
+          "context": [
+            {
+              "ref": "osm:n10159440808",
+              "id": "place.3379935",
+              "text": "Keskusta",
+              "country_code": "fi",
+              "kind": "place",
+              "place_designation": "suburb"
+            },
+            {
+              "ref": "osm:r2528474",
+              "id": "municipality.91971",
+              "text": "Rovaniemi",
+              "country_code": "fi",
+              "wikidata": "Q103717",
+              "kind": "admin_area",
+              "place_designation": "city"
+            },
+            {
+              "ref": "osm:r8544985",
+              "id": "major_landform.2784141",
+              "text": "Kemijoki",
+              "country_code": "fi",
+              "wikidata": "Q214779",
+              "feature_tags": {
+                "destination": "Baltic Sea",
+                "wikipedia": "fi:Kemijoki",
+                "type": "waterway",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:r2528474",
+            "country_code": "fi",
+            "wikidata": "Q103717",
+            "kind": "admin_area",
+            "place_designation": "city"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              25.730391182005405,
+              66.50255371948874
+            ]
+          },
+          "bbox": [
+            24.73657976835966,
+            66.15551379503523,
+            27.326643504202366,
+            67.17711180399628
+          ],
+          "center": [
+            25.730391182005405,
+            66.50255371948874
+          ],
+          "place_name": "Rovaniemi, Suomi / Finland",
+          "place_type": [
+            "municipality"
+          ],
+          "relevance": 0.577778,
+          "id": "municipality.91971",
+          "text": "Rovaniemi",
+          "context": [
+            {
+              "ref": "osm:r8544985",
+              "id": "major_landform.2784141",
+              "text": "Kemijoki",
+              "country_code": "fi",
+              "wikidata": "Q214779",
+              "feature_tags": {
+                "destination": "Baltic Sea",
+                "wikipedia": "fi:Kemijoki",
+                "type": "waterway",
+                "waterway": "river"
+              },
+              "categories": [
+                "river"
+              ]
+            },
+            {
+              "ref": "osm:r6442913",
+              "id": "joint_municipality.11277",
+              "text": "Rovaniemen seutukunta",
+              "country_code": "fi",
+              "wikidata": "Q839601",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1724359",
+              "id": "region.723",
+              "text": "Lappi",
+              "country_code": "fi",
+              "wikidata": "Q5700",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r54224",
+              "id": "country.44",
+              "text": "Suomi / Finland",
+              "country_code": "fi",
+              "wikidata": "Q33",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n25871341",
+              "id": "continental_marine.1",
+              "text": "Europe",
+              "wikidata": "Q46",
+              "feature_tags": {
+                "sqkm": "10180000",
+                "place": "continent",
+                "wikipedia": "eo:Eŭropo",
+                "population": "739165030"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:r2281186",
+            "country_code": "jp",
+            "wikidata": "Q1058171",
+            "kind": "road"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              135.62450042706848,
+              34.502358942995286
+            ]
+          },
+          "bbox": [
+            135.1687853783369,
+            34.22556568296604,
+            135.82300432026386,
+            34.99631940223662
+          ],
+          "center": [
+            135.62450042706848,
+            34.502358942995286
+          ],
+          "place_name": "国道24号, 日本",
+          "place_type": [
+            "road"
+          ],
+          "relevance": 0.388889,
+          "id": "road.437478",
+          "text": "国道24号",
+          "matching_text": "24",
+          "matching_place_name": "24, 日本",
+          "context": [
+            {
+              "ref": "osm:n1422992345",
+              "id": "postal_code.2245901",
+              "text": "584-0042",
+              "country_code": "jp"
+            },
+            {
+              "ref": "osm:n8096930544",
+              "id": "place.2633523",
+              "text": "山城",
+              "country_code": "jp",
+              "kind": "place",
+              "place_designation": "neighbourhood"
+            },
+            {
+              "ref": "osm:r358776",
+              "id": "municipality.32343",
+              "text": "河南町",
+              "country_code": "jp",
+              "wikidata": "Q2305508",
+              "kind": "admin_area",
+              "place_designation": "town"
+            },
+            {
+              "ref": "osm:r358775",
+              "id": "joint_municipality.337",
+              "text": "南河内郡",
+              "country_code": "jp",
+              "wikidata": "Q1347323",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r341906",
+              "id": "subregion.399",
+              "text": "大阪府",
+              "country_code": "jp",
+              "wikidata": "Q122723",
+              "kind": "admin_area",
+              "place_designation": "province"
+            },
+            {
+              "ref": "osm:r6677259",
+              "id": "major_landform.4068560",
+              "text": "本州",
+              "country_code": "jp",
+              "wikidata": "Q13989",
+              "feature_tags": {
+                "place": "island",
+                "wikipedia": "ja:本州",
+                "type": "multipolygon"
+              },
+              "categories": [
+                "island"
+              ]
+            },
+            {
+              "ref": "osm:r382313",
+              "id": "country.157",
+              "text": "日本",
+              "country_code": "jp",
+              "wikidata": "Q17",
+              "kind": "admin_area",
+              "place_designation": "country"
+            },
+            {
+              "ref": "osm:n36966065",
+              "id": "continental_marine.5",
+              "text": "Asia",
+              "wikidata": "Q48",
+              "feature_tags": {
+                "sqkm": "44614500",
+                "place": "continent",
+                "wikipedia": "en:Asia",
+                "population": "4950360147"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "ref": "osm:r3223253",
+            "country_code": "in",
+            "wikidata": "Q25351509",
+            "kind": "road"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              83.44493371707097,
+              26.331834031500545
+            ]
+          },
+          "bbox": [
+            83.25113531202079,
+            25.249052137848434,
+            83.61516337841749,
+            27.475920999962735
+          ],
+          "center": [
+            83.44493371707097,
+            26.331834031500545
+          ],
+          "place_name": "NH24, Uttar Pradesh, India",
+          "place_type": [
+            "road"
+          ],
+          "relevance": 0.388889,
+          "id": "road.567731",
+          "text": "NH24",
+          "matching_text": "24",
+          "matching_place_name": "24, India",
+          "context": [
+            {
+              "ref": "osm:r10034963",
+              "id": "county.10025",
+              "text": "Gola",
+              "country_code": "in",
+              "wikidata": "Q123259655",
+              "kind": "admin_area"
+            },
+            {
+              "ref": "osm:r1959872",
+              "id": "subregion.1204",
+              "text": "Gorakhpur",
+              "country_code": "in",
+              "wikidata": "Q1144349",
+              "kind": "admin_area",
+              "place_designation": "county"
+            },
+            {
+              "ref": "osm:r1942587",
+              "id": "region.970",
+              "text": "Uttar Pradesh",
+              "country_code": "in",
+              "wikidata": "Q1498",
+              "kind": "admin_area",
+              "place_designation": "state"
+            },
+            {
+              "ref": "osm:r304716",
+              "id": "country.170",
+              "text": "India",
+              "country_code": "in",
+              "wikidata": "Q668",
+              "kind": "admin_area",
+              "place_designation": "town"
+            },
+            {
+              "ref": "osm:n36966065",
+              "id": "continental_marine.5",
+              "text": "Asia",
+              "wikidata": "Q48",
+              "feature_tags": {
+                "sqkm": "44614500",
+                "place": "continent",
+                "wikipedia": "en:Asia",
+                "population": "4950360147"
+              },
+              "categories": [
+                "continent"
+              ]
+            }
+          ]
+        }
+      ],
+      "query": [
+        "rovakatu",
+        "24",
+        "96200",
+        "rovaniemi"
+      ],
+      "attribution": "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>"
+    }
+  }
+]
