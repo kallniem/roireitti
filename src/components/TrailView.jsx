@@ -1,6 +1,7 @@
 import { Map, Layer, Source, Popup, Marker } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useState } from 'react';
+import MapView from './MapView';
 
 const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY;
 
@@ -15,6 +16,11 @@ function TrailView({ trail }) {
     const [hoverInfo, setHoverInfo] = useState(null);
     const [elevationProfile, setElevationProfile] = useState([]);
     const [routeColors, setRouteColors] = useState({});
+    const [viewState, setViewState] = useState({
+        zoom: 14,
+        longitude: 25.7294,
+        latitude: 66.5039,
+    })
 
     const colors = ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#a65628', '#f781bf', '#999999'];
 
@@ -149,12 +155,13 @@ function TrailView({ trail }) {
         
         setRouteColors(colorMap);
         setElevationProfile(profiles);
+        setViewState({
+            longitude: newGeojsonData.features[0].geometry.coordinates[0][0],
+            latitude: newGeojsonData.features[0].geometry.coordinates[0][1],
+            zoom: 14
+        })
             
     }, [trail]);
-
-    const initialTrailCoordinate = trail.geometry.type === 'LineString'
-        ? trail.geometry.coordinates[0]
-        : trail.geometry.coordinates[0]?.[0];
     
     return (
             <div className="flex-row" style={{ gap: "2rem"}}>
@@ -188,17 +195,14 @@ function TrailView({ trail }) {
                             <h2>Reittitiedot</h2>
                             <p><strong>Pituus:</strong> {trail.lengthKm} km</p>
                             <p><strong>Vaativuus:</strong> {trail.difficulty}</p>
-                            <Map
+                            <MapView
+                                {...viewState}
+                                onMove={evt => setViewState(evt.viewState)}
                                 style={{
                                     minHeight: "30rem",
                                     width: "100%",
                                 }}
                                 interactiveLayerIds={['route-line']}
-                                initialViewState={{
-                                    longitude: initialTrailCoordinate?.[0],
-                                    latitude: initialTrailCoordinate?.[1],
-                                    zoom: 14
-                                }}
                                 mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${MAPTILER_API_KEY}`}
                                 onMouseMove={(e) => {
                                     if (!geojson) return;
@@ -272,8 +276,7 @@ function TrailView({ trail }) {
                                     </Popup>
                                 </>
                                 )}
-                                
-                            </Map>
+                            </MapView>
                             <h3>Korkeusprofiili</h3>
                             {elevationProfile.length > 0 ? (
                                 <svg
