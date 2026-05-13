@@ -1,38 +1,19 @@
+import { useState } from 'react';
 import MapView from '../components/MapView';
+import TrailList from '../components/TrailList';
+import dummyTrails from "../dummyTrails.json";
+import TrailLine from '../components/TrailLine';
+import InfoCard from '../components/InfoCard';
 
-const businessMarkerStyle = {
-    width: '28px',
-    height: '28px',
-    backgroundColor: '#2563EB',
-    color: 'white',
-    border: '3px solid white',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '14px',
-    fontWeight: 700,
-    cursor: 'pointer',
-    boxShadow: '0 1px 6px rgba(0, 0, 0, 0.25)',
-};
+function MapPage({ onMarkerClick }) {
 
-const hutMarkerStyle = {
-    width: '28px',
-    height: '28px',
-    backgroundColor: '#009900',
-    color: 'white',
-    border: '3px solid white',
-    borderRadius: '10px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '14px',
-    fontWeight: 700,
-    cursor: 'pointer',
-    boxShadow: '0 1px 6px rgba(0, 0, 0, 0.25)',
-};
+    const trails = dummyTrails; // In a real app, you'd fetch this data from an API
+    const [selectedMarker, setSelectedMarker] = useState(null);
 
-function MapPage() {
+    const handleFilterChange = (filters) => {
+        console.log(filters)
+    }
+
     return (
         <div
             className="flex-column justify-center align-center"
@@ -42,8 +23,32 @@ function MapPage() {
             }}
         >
             <MapView
-                interactiveLayerIds={[/* layer ids here */]}
-            />
+                onMarkerClick={(marker) => setSelectedMarker(marker)}
+                interactiveLayerIds={[/* layer ids here */]}>
+                <div className='flex-column' style={{
+                    position: 'absolute',
+                    top: 0,
+                    bottom: 0,
+                    left: 0,
+                    maxWidth: '20rem',
+                    backgroundColor: 'white',
+                    padding: '15px',
+                    boxShadow: '0 -2px 10px rgba(0,0,0,0.2)',
+                    zIndex: 10,
+                    borderTop: '1px solid #ddd',
+                    borderRadius: '1rem',
+                    margin: '2rem',
+                    overflowY: 'clip'
+                    }}>
+                        <TrailList trails={trails} onFilterChange={(filters) => handleFilterChange(filters)}/>
+                </div>
+                {selectedMarker &&
+                    <InfoCard item={selectedMarker} onClose={() => setSelectedMarker(null)}/>
+                }
+                {trails.map((trail, index) => (
+                    <TrailLine key={index} trail={trail} index={index} />
+                ))}
+            </MapView>
         </div>
     );
 }

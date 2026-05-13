@@ -40,6 +40,37 @@ body {
 .align-end             { align-items: end; }
 .secondary             { background-color: var(--color-bg-secondary); }
 
+.info-card {
+  animation: slide-up 220ms ease-out forwards;
+  transform-origin: bottom center;
+}
+
+.info-card.closing {
+  animation: slide-down 220ms ease-in forwards;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
 /* Wrapper */
 .wrapper {
   display:flex;
@@ -134,14 +165,14 @@ select {
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  background-color: var(--color-bg-secondary);
+  background-color: inherit;
   color: var(--color-text-body);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 select:hover {
   border-color: var(--color-text-link);
-  background-color: var(--color-bg-hover); /* optional: var(--color-bg-hover); */
+  background-color: inherit
 }
 
 /* Input */
@@ -156,7 +187,7 @@ input[type="range"] {
 
 /* Mobile stacking */
 @media (max-width: 600px) {
-  .flex-row:not(nav, nav *) {
+  .flex-row:not(nav, nav *,.no-stack) {
     flex-direction: column;
   }
 }
