@@ -14,11 +14,29 @@ function MapPage({ onMarkerClick }) {
 
     const trails = dummyTrails; // In a real app, you'd fetch this data from an API
     const [selectedMarker, setSelectedMarker] = useState(null);
+    const [viewState, setViewState] = useState({
+        zoom: 14,
+        longitude: 25.7294,
+        latitude: 66.5039,
+    });
     const [filter, setFilter] = useState({ type: '' });
 
     const handleFilterChange = (filters) => {
         console.log(filters);
         setFilter(filters);
+    }
+
+    const handleMapMove = (evt) => {
+        setViewState(evt.viewState);
+    }
+
+    const handleMarkerSelect = (marker) => {
+        setSelectedMarker(marker);
+        setViewState((current) => ({
+            ...current,
+            longitude: marker.longitude,
+            latitude: marker.latitude,
+        }));
     }
 
     return (
@@ -30,7 +48,9 @@ function MapPage({ onMarkerClick }) {
             }}
         >
             <MapView
-                onMarkerClick={(marker) => setSelectedMarker(marker)}
+                viewState={viewState}
+                onMove={handleMapMove}
+                onMarkerClick={(marker) => handleMarkerSelect(marker)}
                 interactiveLayerIds={[/* layer ids here */]}>
                 <div className='flex-column' style={{
                     position: 'absolute',
