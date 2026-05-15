@@ -2,6 +2,9 @@ import businesses from "../businesses.json";
 import huts from "../huts.json"
 import hutIcon from "../assets/hut.svg"
 import shopIcon from "../assets/shop.svg"
+import bicycleIcon from "../assets/bicycle.svg"
+import experienceIcon from "../assets/experience.svg"
+import accommodationIcon from "../assets/accommodation.svg"
 import { Marker } from 'react-map-gl/maplibre';
 
 const markerStyle = {
@@ -21,8 +24,28 @@ function PoiMarkers({ onMarkerClick }) {
 
     return (
         <>
-        {businesses.map((business) => (
-                    business.coordinates && (
+        {businesses.map((business) => {
+
+            let backgroundColor = '#2563EB'; // Default color
+            let icon = shopIcon; // Default icon
+
+            if (!business.coordinates) return null; // Skip if no coordinates
+            switch (business.category) {
+                case 'activity':
+                    backgroundColor = '#9900ff';
+                    icon = experienceIcon;
+                    break;
+                case 'accommodation':
+                    backgroundColor = '#00aac0';
+                    icon = accommodationIcon;
+                    break;
+                case 'bicycle_shop':
+                    backgroundColor = '#ffbb00';
+                    icon = bicycleIcon;
+                    break;
+            }
+
+            return (
                         <Marker
                             key={business.id}
                             longitude={business.coordinates[0]}
@@ -38,12 +61,12 @@ function PoiMarkers({ onMarkerClick }) {
                                 dataSource: business.data_source,
                             })}
                         >
-                            <div style={{ ...markerStyle, backgroundColor: '#2563EB', border: '3px solid white', borderRadius: '50%', boxShadow: '0 1px 6px rgba(0, 0, 0, 0.25)'}}>
-                                <img src={shopIcon} style={{ ...markerStyle, padding: '0.4rem'}}/>
+                            <div style={{ ...markerStyle, backgroundColor: backgroundColor, border: '3px solid white', borderRadius: '50%', boxShadow: '0 1px 6px rgba(0, 0, 0, 0.25)'}}>
+                                <img src={icon} style={{ ...markerStyle, padding: '0.4rem'}}/>
                             </div>
                         </Marker>
                     )
-                ))}
+        })}
                 {huts.features.map((hut) => (
                         <Marker
                             key={hut.id}

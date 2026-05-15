@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 import { Source, Layer, Marker, Popup } from "react-map-gl/maplibre";
 
-function TrailLine({ trail, index }) {
+function TrailLine({ trail, index, categoryColor = '#377eb8' }) {
 
     const [geojson, setGeojson] = useState(null);
     const [elevationRange, setElevationRange] = useState([0, 0]);
     const [hoverInfo, setHoverInfo] = useState(null);
     const [elevationProfile, setElevationProfile] = useState([]);
-    const [routeColors, setRouteColors] = useState({});
     const [viewState, setViewState] = useState({
         zoom: 14,
         longitude: 25.7294,
         latitude: 66.5039,
     })
-
-    const colors = ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#a65628', '#f781bf', '#999999'];
 
     const getNearestPoint = (lngLat, points) => {
         // This needs to work for extreme latitudes, so treat each point as a point on a sphere rather than using simple Cartesian distance
@@ -128,10 +125,8 @@ function TrailLine({ trail, index }) {
                 : [trail.geometry.coordinates];
             
             const profiles = [];
-            const colorMap = {};
             
             lineStrings.forEach((coords, routeIndex) => {
-                colorMap[routeIndex] = colors[routeIndex % colors.length];
                 const profile = [];
                 let cumulativeDistance = 0;
                 
@@ -149,7 +144,6 @@ function TrailLine({ trail, index }) {
             });
             
             setGeojson(newGeojsonData);
-            setRouteColors(colorMap);
             setElevationProfile(profiles);
             setViewState({
                 longitude: newGeojsonData.features[0].geometry.coordinates[0][0],
@@ -168,14 +162,7 @@ function TrailLine({ trail, index }) {
                 type='line'
                 paint={{
                         'line-width': 5,
-                        'line-color': [
-                            'case',
-                            ...Object.entries(routeColors).flatMap(([routeIdx, color]) => [
-                                ['==', ['get', 'routeIndex'], parseInt(routeIdx)],
-                                color
-                            ]),
-                            '#999999'
-                        ]
+                        'line-color': categoryColor
                     }}
                 />
             </Source>

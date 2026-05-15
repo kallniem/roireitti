@@ -52,7 +52,8 @@
     "coordinates": [
       25.737059000000045,
       66.501425
-    ]
+    ],
+    "category": "activity"
   },
   {
     "id": "dd0f17d6-3adb-4178-923b-a57ef40e71fe",
@@ -101,7 +102,8 @@
     "coordinates": [
       25.722628999999984,
       66.498255
-    ]
+    ],
+    "category": "bicycle_shop"
   },
   {
     "id": "7705bc39-3072-4ae7-960a-9cc08c88a95c",
@@ -162,7 +164,8 @@
     "coordinates": [
       25.844804000000067,
       66.543064
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "98eb46dd-ac99-416b-b21a-574a2417215d",
@@ -262,7 +265,8 @@
     "coordinates": [
       26.132720999999947,
       66.46805
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "bf719280-6988-4f70-a74e-557ab1e87ca2",
@@ -323,6 +327,7 @@
     "coordinates": [
       25.72791099999995,
       66.501371
-    ]
+    ],
+    "category": "activity"
   }
 ]

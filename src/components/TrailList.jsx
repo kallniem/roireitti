@@ -3,6 +3,11 @@ import { useState } from "react";
 import { fetchRovaniemiBikeRoutes } from "../functions/lipas";
 import slugify from "../functions/slugify";
 
+const categoryColors = {
+    mtb: '#377eb8',
+    cycling: '#4daf4a',
+}
+
 const typeLabels = {
     mtb: "Maastopyöräilyreitit",
     cycling: "Pyöräilyreitit",
@@ -44,16 +49,15 @@ function TrailList({trails, onFilterChange}) {
 
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", height: "calc(100vh - 120px)" }}>
+        <div style={{ display: "flex", flexDirection: "column", height: "100%", minHeight: 0 }}>
             <div
                     style={{
-                    padding: "1rem",
-                    borderRadius: "1rem",
+                    marginBottom: "0.5rem",
                 }}>
-                <div className="flex-row" style={{ gap: "0.5rem" }}>
+                <div className="flex-row no-stack" style={{ gap: "0.5rem" }}>
                     <div className="flex-column align-center justify-space-between">
                         <p>Reittityypit</p>
-                        <select name="type" id="type" value={filters.type} onChange={e => handleFilterChange({ ...filters, type: e.target.value })}>
+                        <select name="type" id="type" value={filters.type} onChange={e => handleFilterChange({ ...filters, type: e.target.value })} style={categoryColors[filters.type] ? { borderColor: categoryColors[filters.type] } : {}}>
                             <option value="">Kaikki reitit</option>
                             {Object.entries(types).map(([index, label]) => (
                                 <option key={index} value={label}>{typeLabels[label]}</option>
@@ -66,7 +70,7 @@ function TrailList({trails, onFilterChange}) {
                     </div>
                 </div>
             </div>
-            <div style={{ flex: 1, overflowY: "auto" }}>
+            <div style={{ flex: 1, minHeight: 0, overflowY: "auto",  border: "1px solid #ddd", borderRadius: "1rem", boxShadow: "0 1px 6px rgba(0,0,0,0.1)" }}>
                 <ListView trails={trails} groups={groups} filters={filters} />
             </div>
         </div>
@@ -88,13 +92,14 @@ function ListView({ trails, groups, filters }) {
     const navigate = useNavigate();
 
     return (
-        <div className="flex-column" style={{ padding: "1rem", gap: "0.5rem" }}>
+        <div className="flex-column" style={{ height: "100%", padding: "1rem", gap: "0.5rem" }}>
             {shownGroups.map(g => (
                 <div key={g}>
                     <h2>{g}</h2>
                     <div className="flex-column" style={{ gap: "0.5rem" }}>
                         {shownTrails.filter(t => t.group === g).map(t => (
                             <div key={t.name} style={{ marginLeft: "1rem", cursor: "pointer" }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
+                                <circle style={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: categoryColors[t.category], display: "inline-block", marginRight: "0.5rem" }}></circle>
                                 <span>{t.name}</span>
                             </div>
                         ))}
@@ -107,6 +112,7 @@ function ListView({ trails, groups, filters }) {
                     <div className="flex-column" style={{ gap: "0.5rem" }}>
                         {shownTrails.filter(t => !t.group).map(t => (
                             <div key={t.name} style={{ marginLeft: "1rem", cursor: "pointer" }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
+                                <circle style={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: categoryColors[t.category], display: "inline-block", marginRight: "0.5rem" }}></circle>
                                 <span>{t.name}</span>
                             </div>
                         ))}
