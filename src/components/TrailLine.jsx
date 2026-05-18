@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
 import { Source, Layer, Marker, Popup } from "react-map-gl/maplibre";
 
-function TrailLine({ trail, index, categoryColor = '#377eb8' }) {
-
+function TrailLine({ trail, index, categoryColor = '#377eb8', isSelected = false, onSelect }) {
     const [geojson, setGeojson] = useState(null);
     const [elevationRange, setElevationRange] = useState([0, 0]);
     const [hoverInfo, setHoverInfo] = useState(null);
     const [elevationProfile, setElevationProfile] = useState([]);
-    const [viewState, setViewState] = useState({
-        zoom: 14,
-        longitude: 25.7294,
-        latitude: 66.5039,
-    })
+    
 
     const getNearestPoint = (lngLat, points) => {
         // This needs to work for extreme latitudes, so treat each point as a point on a sphere rather than using simple Cartesian distance
@@ -145,25 +140,32 @@ function TrailLine({ trail, index, categoryColor = '#377eb8' }) {
             
             setGeojson(newGeojsonData);
             setElevationProfile(profiles);
-            setViewState({
-                longitude: newGeojsonData.features[0].geometry.coordinates[0][0],
-                latitude: newGeojsonData.features[0].geometry.coordinates[0][1],
-                zoom: 14
-            })
             
     }, [trail]);
 
+
+    if (!geojson) return null;
 
     return (
         <>
             <Source id={`route-${index}`} type='geojson' data={geojson}>
                 <Layer
-                id={`route-line-${index}`}
-                type='line'
-                paint={{
-                        'line-width': 5,
-                        'line-color': categoryColor
+                    id={`route-line-halo-${index}`}
+                    type='line'
+                    paint={{
+                        'line-width': isSelected ? 12 : 0,
+                        'line-color': 'rgba(0,0,0,0.15)'
                     }}
+                />
+                <Layer
+                    id={`route-line-${index}`}
+                    type='line'
+                    paint={{
+                        'line-width': isSelected ? 8 : 5,
+                        'line-color': categoryColor,
+                        'line-opacity': isSelected ? 1 : 0.9
+                    }}
+                    onClick={() => { if (typeof onSelect === 'function') onSelect(); }}
                 />
             </Source>
         </>

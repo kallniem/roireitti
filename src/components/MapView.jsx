@@ -5,7 +5,7 @@ import PoiMarkers from './PoiMarkers';
 
 const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY;
 
-function MapView({ children, viewState: externalViewState, onMove, onMarkerClick, ...props }) {
+function MapView({ children, viewState: externalViewState, onMove, onMarkerClick, onMapClick, ...props }) {
 
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [internalViewState, setInternalViewState] = useState({
@@ -33,11 +33,18 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
         }
     }
 
+    const handleMapClick = (evt) => {
+        if (typeof onMapClick === 'function') {
+            onMapClick(evt);
+        }
+    }
+
     return (
             <Map
                 {...currentViewState}
                 {...props}
                 onMove={handleMove}
+                onClick={handleMapClick}
                 mapStyle={`https://api.maptiler.com/maps/topo-v4/style.json?key=${MAPTILER_API_KEY}`}>
                 {selectedMarker && (
                     <Popup

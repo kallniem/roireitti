@@ -14,6 +14,7 @@ function MapPage({ onMarkerClick }) {
 
     const trails = dummyTrails; // In a real app, you'd fetch this data from an API
     const [selectedMarker, setSelectedMarker] = useState(null);
+    const [selectedTrailIdx, setSelectedTrailIdx] = useState(null);
     const [viewState, setViewState] = useState({
         zoom: 14,
         longitude: 25.7294,
@@ -39,6 +40,21 @@ function MapPage({ onMarkerClick }) {
         }));
     }
 
+    const interactiveLayerIds = trails.map((_, i) => `route-line-${i}`);
+
+    const handleMapClick = (evt) => {
+        const features = evt?.features;
+        if (features && features.length > 0) {
+            const layerId = features[0].layer?.id;
+            if (layerId && layerId.startsWith('route-line-')) {
+                const idx = parseInt(layerId.replace('route-line-', ''), 10);
+                if (!Number.isNaN(idx)) {
+                    setSelectedTrailIdx(idx);
+                }
+            }
+        }
+    }
+
     return (
         <div
             className="flex-column justify-center align-center"
@@ -50,8 +66,9 @@ function MapPage({ onMarkerClick }) {
             <MapView
                 viewState={viewState}
                 onMove={handleMapMove}
+                onMapClick={handleMapClick}
                 onMarkerClick={(marker) => handleMarkerSelect(marker)}
-                interactiveLayerIds={[/* layer ids here */]}>
+                interactiveLayerIds={interactiveLayerIds}>
                 <div className='flex-column' style={{
                     position: 'absolute',
                     top: 0,
@@ -73,7 +90,14 @@ function MapPage({ onMarkerClick }) {
                     <InfoCard item={selectedMarker} onClose={() => setSelectedMarker(null)}/>
                 }
                 {trails.filter(trail => trail.category === filter.type || filter.type === '').map((trail, index) => (
-                    <TrailLine key={index} trail={trail} index={index} categoryColor={categoryColors[trail.category]} />
+                    <TrailLine
+                        key={index}
+                        trail={trail}
+                        index={index}
+                        isSelected={selectedTrailIdx === index}
+                        onSelect={() => setSelectedTrailIdx(index)}
+                        categoryColor={categoryColors[trail.category]}
+                    />
                 ))}
             </MapView>
         </div>
