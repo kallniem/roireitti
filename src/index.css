@@ -185,10 +185,30 @@ input[type="range"] {
   color: #000000;
 }
 
+.trail-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 24rem;
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  z-index: 10;
+  border-top: 1px solid #ddd;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  overflow: hidden;
+}
+
 /* Mobile stacking */
 @media (max-width: 600px) {
   .flex-row:not(nav, nav *,.no-stack) {
     flex-direction: column;
+  }
+  .trail-menu {
+    max-width: 100%;
   }
 }
 

@@ -21,6 +21,7 @@ function TrailList({trails, onFilterChange}) {
     const [filters, setFilters] = useState({
         type: "",
         length: 20,
+        sort: "shortest",
     });
 
     useState(() => {
@@ -65,9 +66,19 @@ function TrailList({trails, onFilterChange}) {
                         </select>
                     </div>
                     <div className="flex-column align-center justify-space-between">
+                        <p>Järjestys</p>
+                        <select name="sort" id="sort" value={filters.sort} onChange={e => handleFilterChange({ ...filters, sort: e.target.value })}>
+                            <option value="shortest">Lyhyin ensin</option>
+                            <option value="longest">Pisin ensin</option>
+                        </select>
+                    </div>
+                    {/*
+                    TODO: Replace with two-pronged slider
+                    <div className="flex-column align-center justify-space-between">
                         <p>Pituus</p>
                         <input type="range" name="length" id="length" min="0" max="20" step="0.1" style={{ width: "100%" }} onChange={e => handleFilterChange({ ...filters, length: e.target.value })} />
                     </div>
+                    */}
                 </div>
             </div>
             <div style={{ flex: 1, minHeight: 0, overflowY: "auto",  border: "1px solid #ddd", borderRadius: "1rem", boxShadow: "0 1px 6px rgba(0,0,0,0.1)" }}>
@@ -81,12 +92,20 @@ export default TrailList;
 
 function ListView({ trails, groups, filters }) {
 
-    const shownTrails = trails.filter(t => {
-        if (filters.type && t.category !== filters.type) {
-            return false;
-        }
-        return true;
-    });
+    const shownTrails = trails
+        .filter(t => {
+            if (filters.type && t.category !== filters.type) {
+                return false;
+            }
+            return true;
+        })
+        .slice()
+        .sort((a, b) => {
+            if (filters.sort === "shortest") {
+                return (a.lengthKm ?? 0) - (b.lengthKm ?? 0);
+            }
+            return (b.lengthKm ?? 0) - (a.lengthKm ?? 0);
+        });
     const shownGroups = groups.filter(g => shownTrails.some(t => t.group === g));
 
     const navigate = useNavigate();
@@ -98,9 +117,9 @@ function ListView({ trails, groups, filters }) {
                     <h2>{g}</h2>
                     <div className="flex-column" style={{ gap: "0.5rem" }}>
                         {shownTrails.filter(t => t.group === g).map(t => (
-                            <div key={t.name} style={{ marginLeft: "1rem", cursor: "pointer" }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
-                                <circle style={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: categoryColors[t.category], display: "inline-block", marginRight: "0.5rem" }}></circle>
+                            <div className="flex-column" key={t.name} style={{ padding: '0.5rem', borderRadius: "0.5rem", cursor: "pointer", boxShadow: `0 0 3px 0px ${categoryColors[t.category]}` }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
                                 <span>{t.name}</span>
+                                <span style={{fontSize: 10, fontWeight: "bold"}}>{t.lengthKm} km</span>
                             </div>
                         ))}
                     </div>
@@ -111,9 +130,9 @@ function ListView({ trails, groups, filters }) {
                     <h2>Yksittäiset reitit</h2>
                     <div className="flex-column" style={{ gap: "0.5rem" }}>
                         {shownTrails.filter(t => !t.group).map(t => (
-                            <div key={t.name} style={{ marginLeft: "1rem", cursor: "pointer" }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
-                                <circle style={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: categoryColors[t.category], display: "inline-block", marginRight: "0.5rem" }}></circle>
+                            <div className="flex-column" key={t.name} style={{ padding: '0.5rem', borderRadius: "0.5rem", cursor: "pointer", boxShadow: `0 0 3px 0px ${categoryColors[t.category]}` }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
                                 <span>{t.name}</span>
+                                <span style={{fontSize: 10, fontWeight: "bold"}}>{t.lengthKm} km</span>
                             </div>
                         ))}
                     </div>

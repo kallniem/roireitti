@@ -4,6 +4,7 @@ import TrailList from '../components/TrailList';
 import dummyTrails from "../dummyTrails.json";
 import TrailLine from '../components/TrailLine';
 import InfoCard from '../components/InfoCard';
+import routeIcon from "../assets/route.svg"
 
 const categoryColors = {
     mtb: '#377eb8',
@@ -13,7 +14,6 @@ const categoryColors = {
 function MapPage({ onMarkerClick }) {
 
     const trails = dummyTrails; // In a real app, you'd fetch this data from an API
-    const [selectedMarker, setSelectedMarker] = useState(null);
     const [selectedTrailIdx, setSelectedTrailIdx] = useState(null);
     const [viewState, setViewState] = useState({
         zoom: 14,
@@ -21,6 +21,11 @@ function MapPage({ onMarkerClick }) {
         latitude: 66.5039,
     });
     const [filter, setFilter] = useState({ type: '' });
+    const [showMenu, setShowMenu] = useState(false)
+    const [selected, setSelected] = useState({
+        "object": null,
+        "type": null
+    })
 
     const handleFilterChange = (filters) => {
         console.log(filters);
@@ -32,7 +37,7 @@ function MapPage({ onMarkerClick }) {
     }
 
     const handleMarkerSelect = (marker) => {
-        setSelectedMarker(marker);
+        setSelected({"object": marker, type: "marker"});
         setViewState((current) => ({
             ...current,
             longitude: marker.longitude,
@@ -69,25 +74,38 @@ function MapPage({ onMarkerClick }) {
                 onMapClick={handleMapClick}
                 onMarkerClick={(marker) => handleMarkerSelect(marker)}
                 interactiveLayerIds={interactiveLayerIds}>
+                
+                {showMenu?
+                <div className='flex-column trail-menu'>
+                        <div className='flex-row align-center justify-center' style={{ cursor: 'pointer', width: '2rem', height: '2rem', borderRadius: '50%', border: '1px solid black'}} onClick={() => {setShowMenu(false)}}>✕</div>
+                        <TrailList trails={trails} onFilterChange={(filters) => handleFilterChange(filters)}/>
+                </div>
+                :
                 <div className='flex-column' style={{
+                    cursor: 'pointer',
                     position: 'absolute',
                     top: 0,
                     left: 0,
-                    right: 0,
-                    height: '20rem',
+                    width: '3rem',
+                    height: '3rem',
                     backgroundColor: 'white',
                     padding: '15px',
                     boxShadow: '0 -2px 10px rgba(0,0,0,0.2)',
                     zIndex: 10,
                     borderTop: '1px solid #ddd',
-                    borderRadius: '1rem',
+                    borderRadius: '50%',
                     margin: '0.5rem',
                     overflow: 'hidden',
-                    }}>
-                        <TrailList trails={trails} onFilterChange={(filters) => handleFilterChange(filters)}/>
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignContent: 'center'
+                }} onClick={() => {setShowMenu(true)}}>
+                    <img src={routeIcon} />
                 </div>
-                {selectedMarker &&
-                    <InfoCard item={selectedMarker} onClose={() => setSelectedMarker(null)}/>
+                }
+
+                {selected.object &&
+                    <InfoCard item={selected} onClose={() => setSelected({object: null, type: null})}/>
                 }
                 {trails.filter(trail => trail.category === filter.type || filter.type === '').map((trail, index) => (
                     <TrailLine
