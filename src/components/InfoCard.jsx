@@ -163,28 +163,28 @@ function CardBase({ children, dataSource = "Please set the data source", onClose
                     borderTop: '1px solid #ddd',
                     borderRadius: '1rem 1rem 0 0',
                 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                    <div style={{ flex: 1 }}>
-                        { children }
-                        {dataSource && (
-                            <em style={{ color: '#666' }}>{dataSource}</em>
-                        )}
-                    </div>
-                    <button 
-                        onClick={handleClose}
-                        style={{
-                            aspectRatio: '1/1',
-                            marginLeft: '15px',
-                            padding: '5px 10px',
-                            backgroundColor: '#f0f0f0',
-                            border: '1px solid #ccc',
-                            borderRadius: '50%',
-                            cursor: 'pointer'
-                        }}
-                    >
-                        ✕
-                    </button>
-                </div>
+                <button
+                    onClick={handleClose}
+                    style={{
+                        position: 'absolute',
+                        top: '1rem',
+                        right: '1rem',
+                        width: '34px',
+                        height: '34px',
+                        backgroundColor: '#f0f0f0',
+                        border: '1px solid #ccc',
+                        borderRadius: '50%',
+                        cursor: 'pointer',
+                        display: 'grid',
+                        placeItems: 'center'
+                    }}
+                >
+                    ✕
+                </button>
+                    { children }
+                    {dataSource && (
+                        <em style={{ color: '#666' }}>{dataSource}</em>
+                    )}
             </div>
     )
 }
