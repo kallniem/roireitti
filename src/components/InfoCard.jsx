@@ -8,9 +8,12 @@ import websiteIcon from "../assets/website.svg";
 
 import cyclistProducts from "../cyclist-certified-products.json";
 import welcomCyclistIcon from "../assets/welcome-cyclist.png";
+import { useNavigate } from "react-router";
+import slugify from "../functions/slugify";
 
 function InfoCard({ item, onClose }) {
     const [isClosing, setIsClosing] = useState(false);
+    const navigate = useNavigate();
 
     const handleClose = () => {
         if (!isClosing) {
@@ -108,12 +111,30 @@ function InfoCard({ item, onClose }) {
                     <p style={{ fontSize: 'medium', margin: '0 0 8px 0' }}>
                         <strong>Kategoria:</strong> {category}<br/>
                         <strong>Pituus:</strong> {length} km<br/>
-                        <strong>Vaikeus:</strong> {difficulty}<br/><br/>
+                        <strong>Vaikeus:</strong> --<br/><br/>
                     </p>
+                    {description?.length > 0 &&
                     <div style={{ maxHeight: '10rem', overflowY: 'scroll', margin: '1rem' }}>
                         <p style={{ fontSize: 'medium', margin: '0 0 8px 0', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
                             {description}
                         </p>
+                    </div>
+                    }
+                    <div className="flex-column align-center justify-center">
+                        <button style={{
+                            backgroundColor: 'inherit',
+                            border: '2px solid grey',
+                            color: 'black',
+                            padding: '10px 20px',
+                            borderRadius: '2rem',
+                            fontSize: '14px',
+                            cursor: 'pointer',
+                            marginTop: '1rem'
+                        }} onClick={() => {
+                            navigate(`/trails/${slugify(name)}`);
+                        }}>
+                            Avaa reittikortti
+                        </button>
                     </div>
                 </CardBase>
             )
