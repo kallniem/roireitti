@@ -106,6 +106,66 @@ async function fetchBusinesses() {
         return newData;
 };
 
+async function fetchCyclistCertifiedProducts() {
+    const response = await fetch("https://api.businessfinland.fi/traveldatahub", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "ocp-apim-subscription-key": TRAVELDATAHUB_API_KEY,
+        },
+        //GraphQL query
+        body: JSON.stringify({
+            query: `
+                    query WelcomeCyclistCertifiedProducts {
+                        certificate {
+                            name
+                        }
+                        product(
+                            where: {
+                                productCertificates: { certificate: { _eq: "welcome_cyclist_certificate" } }
+                                postalAddresses: { city: { _eq: "Rovaniemi" } }
+                            }
+                        ) {
+                            id
+                            type
+                            urlPrimary
+                            webshopUrlPrimary
+                            contactDetails {
+                                email
+                                phone
+                            }
+                            productCertificates {
+                                certificate
+                            }
+                            postalAddresses {
+                                id
+                                city
+                                postalCode
+                                streetName
+                                location
+                            }
+                            company {
+                                id
+                                businessName
+                                officialName
+                                websiteUrl
+                            }
+                            productInformations {
+                                id
+                                language
+                                name
+                                description
+                            }
+                        }
+                    }
+                    `,
+            }),
+        });
+
+    const data = await response.json();
+    return data.data;
+}
+
 // Write a JSON file with the fetched data
 // const data = await fetchBusinesses();
 // fs.writeFileSync("businesses.json", JSON.stringify(data, null, 2));
