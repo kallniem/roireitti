@@ -1,0 +1,1070 @@
+{
+  "certificate": [
+    {
+      "name": "welcome_cyclist_certificate"
+    },
+    {
+      "name": "stf_certificate"
+    }
+  ],
+  "product": [
+    {
+      "id": "1a9b815c-7bf3-4c01-9064-46e70a0ecd68",
+      "type": "rental_service",
+      "urlPrimary": "https://www.beebike.fi/en/welcome/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "huolto@beebike.fi",
+          "phone": "+35840 553 9866"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "64a15670-a6cb-4b31-bfae-f5966f20dbd9",
+          "city": "Rovaniemi",
+          "postalCode": "96100",
+          "streetName": "Kansankatu 3",
+          "location": "(66.4982552,25.7226292)"
+        }
+      ],
+      "company": {
+        "id": "dd0f17d6-3adb-4178-923b-a57ef40e71fe",
+        "businessName": "Beebike",
+        "officialName": "Beebike Oy",
+        "websiteUrl": "https://www.beebike.fi"
+      },
+      "productInformations": [
+        {
+          "id": "5d9c8fbf-ceb1-4643-8994-5237cda07e9a",
+          "language": "fi",
+          "name": "Pyörävuokrausta Rovaniemellä",
+          "description": "Meiltä voit vuokrata polkupyörän käyttöösi, jos tutustua kaupunkiin tai paikallisiin maastopyöräreitteihin polkien. Vuokraamme kaupunkipyöriä, maastopyöriä sekä sähköpyöriä. Ota yhteyttä liikkeeseen vuokrataksesi pyörän. Toimimme Rovaniemellä."
+        },
+        {
+          "id": "c43f4557-7f07-4889-9b0a-a49dad321424",
+          "language": "en",
+          "name": "Bike Rental in Rovaniemi",
+          "description": "You can rent a bicycle from us if you wish to tour around the city or explore local mountain bike routes. We rent city bikes, mountain bikes and electric bikes. Contact the store for more information and to rent a bike in Rovaniemi."
+        }
+      ]
+    },
+    {
+      "id": "22f8de45-8c07-4f97-9f0f-47fd8d186149",
+      "type": "shop",
+      "urlPrimary": "https://www.beebike.fi/en/welcome/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "huolto@beebike.fi",
+          "phone": "+358 40 636 1959"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "6c9fac7c-790a-4425-88b5-fc3e8559799d",
+          "city": "Rovaniemi",
+          "postalCode": "96100",
+          "streetName": "Kansankatu 3",
+          "location": "(66.4982552,25.7226292)"
+        }
+      ],
+      "company": {
+        "id": "dd0f17d6-3adb-4178-923b-a57ef40e71fe",
+        "businessName": "Beebike",
+        "officialName": "Beebike Oy",
+        "websiteUrl": "https://www.beebike.fi"
+      },
+      "productInformations": [
+        {
+          "id": "d5ca40f8-ed56-4dcf-ac4f-f42c569ba3d2",
+          "language": "en",
+          "name": "Bike Repair and Service in Rovaniemi",
+          "description": "We do bicycle maintenance and repair for all brands of bikes, including electric bikes in Rovaniemi. You can also find spare parts and accessories in our store. Everyone bike touring and bikepacking are warmly welcome. When you mention that you are on the road you will be serviced swiftly."
+        },
+        {
+          "id": "cc58b575-4d1d-466a-a5ef-e2333ffd51af",
+          "language": "fi",
+          "name": "Pyörähuolto ja -kauppa Rovaniemellä",
+          "description": "Teemme polkupyörien huoltoa ja korjausta kaiken merkkisille pyörille, myös sähköpyörille Rovaniemellä. Myymälästämme löydät myös varaosia ja pyörätarvikkeita. Kaikki retkipyöräilijät ovat lämpimästi tervetulleita. Kun mainitset olevasi reissussa, huollamme pyöräsi ripeästi, jotta pääset jatkamaan matkaasi."
+        }
+      ]
+    },
+    {
+      "id": "4b2eed3b-5d83-4b6f-859e-94d542adf968",
+      "type": "accommodation",
+      "urlPrimary": "https://www.ranchkuulas.com/stay/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "sales@ranchkuulas.com",
+          "phone": "+358445130720"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "be545e0f-58ab-4547-9708-5b2b823d5601",
+          "city": "Rovaniemi",
+          "postalCode": "97530",
+          "streetName": "Haukilammentie 189",
+          "location": "(66.8514019,26.1789358)"
+        }
+      ],
+      "company": {
+        "id": "d96f345d-88c1-468f-9e16-c928c501fe03",
+        "businessName": "Ranch Kuulas",
+        "officialName": "Laenlammen tila Oy",
+        "websiteUrl": "https://www.ranchkuulas.com/"
+      },
+      "productInformations": [
+        {
+          "id": "488ad692-3a9d-49be-ba39-dfc11a767136",
+          "language": "en",
+          "name": "Ranch Kuulas",
+          "description": "Opens summer 2026!\n\nOur luhtiaitta in Rovaniemi offers comfortable rooms for 1 or 2 guests, perfect for those looking for a peaceful retreat in the heart of nature. Each room is designed to reflect the charm of historical farm life, while providing all the essentials for a good night’s rest. Step back in time and imagine living like the farmhands and maids of old, surrounded by the beauty of Lapland.\n\nJust like in the old days, the sauna and showers are shared and accessed from outside. After a day of adventures or simply relaxing in nature, enjoy the warmth of our traditional Finnish sauna. It’s the perfect way to end the day before retreating to your cozy room in the barnhouse.\n\nAt Ranch Kuulas, you won’t just visit, you’ll step into a piece of history. Our accommodation offers a unique experience, where you can disconnect from the rush of modern life and reconnect with the simplicity of nature and tradition. Come and sleep like the farmhands and maids once did, but with a modern twist of comfort and relaxation."
+        },
+        {
+          "id": "85b6fa4f-984d-417e-9c06-8244661538d6",
+          "language": "fi",
+          "name": "Ranch Kuulas",
+          "description": "Aukeaa kesällä 2026!\n\nLuhtiaittamme Rovaniemellä tarjoaa mukavat huoneet yhdelle tai kahdelle hengelle, täydellinen valinta sinulle, joka kaipaat rauhallista hengähdyshetkeä luonnon keskellä. Jokainen huone on sisustettu historiallista maalaiselämää kunnioittaen, mutta tarjoaa kaiken olennaisen hyvään yöuneen. Astu ajassa taaksepäin ja kuvittele, millaista oli elää entisaikojen piiankamarissa tai renkien tuvassa, Lapin kauneuden ympäröimänä.\n\nKuten vanhaan aikaan, sauna ja suihkut löytyvät piharakennuksesta ja ovat yhteiskäytössä. Päivän seikkailujen tai luonnon rauhasta nauttimisen jälkeen pääset rentoutumaan perinteisessä suomalaisessa puusaunassa,  täydellinen päätös ennen vetäytymistä omaan viihtyisään aittahuoneeseen.\n\nRanch Kuulaassa et vain vieraile, astut osaksi elävää historiaa. Majoitus tarjoaa ainutlaatuisen kokemuksen, jossa voit irrottautua arjen kiireistä ja palata yksinkertaisen luonnon ja perinteen äärelle. Tule nukkumaan kuin entisajan maalaistalon väki, mutta nykyaikaisella twistillä ja mukavuudella."
+        }
+      ]
+    },
+    {
+      "id": "995e73d9-4890-49fd-af4d-95a3c151fca5",
+      "type": "experience",
+      "urlPrimary": "https://www.ranchkuulas.com/midnight-sun-horseback-ride-to-the-hill/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "sales@ranchkuulas.com",
+          "phone": "+358445130720"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "cbca42e5-9e21-4dbb-86b2-72f648400c87",
+          "city": "Rovaniemi",
+          "postalCode": "97530",
+          "streetName": "Haukilammentie 189",
+          "location": "(66.8514019,26.1789358)"
+        }
+      ],
+      "company": {
+        "id": "d96f345d-88c1-468f-9e16-c928c501fe03",
+        "businessName": "Ranch Kuulas",
+        "officialName": "Laenlammen tila Oy",
+        "websiteUrl": "https://www.ranchkuulas.com/"
+      },
+      "productInformations": [
+        {
+          "id": "42aefba9-d375-4cba-bf57-6708fb06f9c2",
+          "language": "en",
+          "name": "Midnight sun riding to the hill ",
+          "description": "The midnight sun horseback riding excursion in Lapland, Rovaniemi, is an unforgettable experience for horse and nature enthusiasts. This unique adventure offers the opportunity to experience the magic of an Lapland summer night on horseback where the sun never sets below the horizon. The stunning colors of the sky and the peacefulness of the surrounding nature make this journey a truly memorable experience.\n\nThis horseback riding excursion is specifically designed for those who enjoy a relaxed pace while riding. This exursion is suitable for beginners and advanced riders. Your journey begins at the stables, where you’ll meet our horses and get matched with the right partner for your ride. Laenlammen Tila is the home for many Finn horses. The guide will equip them ready to set out. Our guide will give a quick introduction to riding and ensure everyone feels confident before setting off. Safety and comfort are our top priorities, and the guide will be there to support you every step of the way.\n\nThis journey promises a magical experience in the heart of Lappish nature. Our ride goes to the hill, forest and near by lake. If you're lucky, you might spot various animals like reindeer and birds during the journey. We primarily ride at a walk pace under the guidance of our trail guide. \n\nAs the \"night\" descends over Lapland, we return to the stable. There, we will dismount and return the equipment, allowing the horses to return to their paddock.\n\nThe Midnight sun riding over the hills is a perfect introduction to the wilderness of Lapland, slow, scenic, and unforgettable. The midnight sun horseback riding excursion is suitable for individuals of all riding levels, including beginners.\n\nWhat’s Included?\n✔️ Guided horseback riding tour (approx. 1h 45min)\n✔️ Experienced guide (Finnish & English)\n✔️ Certified VG1 riding helmet\n\nCome and discover the magic of the Arctic summer night with us – an experience you will never forget!"
+        },
+        {
+          "id": "7f5eb778-5b90-48a1-8425-be6eb9890ee2",
+          "language": "fi",
+          "name": "Yöttömän yön ratsastusvaellus",
+          "description": "Koe Lapin yöttömän yön taika hevosen selässä! Tällä unohtumattomalla ratsastusretkellä pääset kulkemaan upeiden maisemien halki keskiyön auringon valaistessa luonnon loputtomassa iltahämärässä. Hiljaisuus, rauha ja taivaan upeat värit tekevät tästä elämyksestä ainutlaatuisen.\n\nTämä rauhallinen vaellus on suunniteltu erityisesti niille, jotka haluavat nauttia luonnosta kiireettömästi ja rennossa tahdissa. Retki alkaa tallilla, jossa tutustumme hevosiin ja valitsemme jokaiselle sopivan ratsun. Tämän jälkeen varustamme hevoset ja suuntaamme ratsastusreitille, joka kulkee metsien halki ja vie meidät upeille vaaroille ihailemaan keskiyön auringon valaisemia Lapin maisemia.\n\nKeskiyön auringon ratsastusvaellus sopii kaiken tasoisille ratsastajille, myös aloittelijoille.\n\nMitä hintaan sisältyy?\n✔️ Opastettu ratsastusvaellus (n. 1h 45min)\n✔️ Kokenut opas (suomi & englanti)\n✔️ VG1-hyväksytty ratsastuskypärä\n\nLähde kanssamme kokemaan arktisen kesäyön taika Rovaniemellä – tämä on elämys, jota et unohda!"
+        }
+      ]
+    },
+    {
+      "id": "255454c4-9428-4563-b922-e31f129b0ed7",
+      "type": "experience",
+      "urlPrimary": "https://www.santaclausholidayvillage.fi/destination/meet-santa",
+      "webshopUrlPrimary": "https://www.santaclausholidayvillage.fi/experiences",
+      "contactDetails": [
+        {
+          "email": "info@schv.fi",
+          "phone": "+358 40 030 6273"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "aaa27c08-dc1a-4af1-93b6-66bb7c6c1f91",
+          "city": "Rovaniemi",
+          "postalCode": "96930",
+          "streetName": "Tähtikuja 2",
+          "location": "(66.5430772200137,25.8433870109164)"
+        }
+      ],
+      "company": {
+        "id": "7705bc39-3072-4ae7-960a-9cc08c88a95c",
+        "businessName": "Santa Claus Holiday Village",
+        "officialName": "Santa Claus Holiday Village Oy",
+        "websiteUrl": "https://www.santaclausholidayvillage.fi/"
+      },
+      "productInformations": [
+        {
+          "id": "2b8d8bf8-0133-491f-b2d8-54f78010ec63",
+          "language": "en",
+          "name": "Santa Claus Private Visit - Santa Claus Holiday Village",
+          "description": "In the Santa Claus Holiday Village, you can visit Santa Claus for free. However, if you want to avoid queuing, invite Santa Claus to visit your cabin. You can ask Santa Claus a variety of questions that preoccupy your mind, or you can listen what Santa Claus wants to tell you and your family. When Santa Claus visits your cabin you can take as many photographs as you wish. You can also request Santa Claus to distribute personal gifts when he comes to visit.\n\nOnly for the residents of hotel Santa Claus Holiday Village.If you want Santa Claus distributes the gifts, please deliver them to the Christmas House store before 4 pm on the day of the meeting.\n"
+        }
+      ]
+    },
+    {
+      "id": "2881c3c2-bd01-40f7-8b2d-0e8ceac7462d",
+      "type": "experience",
+      "urlPrimary": "https://www.ranchkuulas.com/summer/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "sales@ranchkuulas.com",
+          "phone": "+358445130720"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "366ae67b-f57b-48d3-b093-319914c33858",
+          "city": "Rovaniemi",
+          "postalCode": "97530",
+          "streetName": "Haukilammentie 189",
+          "location": "(66.8514019,26.1789358)"
+        }
+      ],
+      "company": {
+        "id": "d96f345d-88c1-468f-9e16-c928c501fe03",
+        "businessName": "Ranch Kuulas",
+        "officialName": "Laenlammen tila Oy",
+        "websiteUrl": "https://www.ranchkuulas.com/"
+      },
+      "productInformations": [
+        {
+          "id": "4a610e0e-57c7-47dc-95b4-e9d12ff86a09",
+          "language": "en",
+          "name": "Finnish sauna ceremony",
+          "description": "This sauna experience is designed to take you on a journey that awakens all your senses, offering peace of mind and a sense of well-being.\nYou’ll be treated to a sauna session that leads you through various moods and pleasures. Enjoy the sauna’s heat and relax, indulge in a hot tub, and don’t forget the foot baths and refreshing dips in the cool natural spring lake.\nProgram:\nWelcoming initiation by the Sauna Host\nReception and direction to the saunas Journey into the sauna realm\nSauna story and instructions on sauna usage\nPrepare for relaxation: Introduction to sauna necessities and getting ready A toast to relaxation:\nPreparations and raising the sauna bowl In the Sauna\nBlending warmth and pleasure: Sauna sessions and hot tub relaxation, daring souls dip into the cool spring\nSoothing feet: Relaxing foot baths\nTaste delights in the heat: Sauna cocktails and delicious sauna treats\nNourishing skin treatments: Peat masks and sauna honey treatments, ending with invigorating final steam\nTime for yourself: Calm dressing and moments by the spring\nTasty grilling: Skewers grilled over a campfire\nSweet conclusion: Sooty pot coffee and fresh tea blends with dessert\nJoin us and let yourself be immersed in a world of ultimate relaxation. This is more than just a sauna evening – it’s an experience that awakens all your senses and leaves you refreshed and content.\n\n– Sauna, hot tub, swimming lake, campfire spot\n– Sauna host Mielutar guiding the experience\n– Parking in front of the main building\n– Towels, bathrobe and slippers\n– Beverage and food service: refreshing water, non alcohol Lappish sauna sparkling, savory Finnish sauna snack, sauna cocktail, grilled treats for the campfire, fire coffee, and tea with dessert.\n– Sauna whisk, foot bath, peat mask, and sauna honey\n"
+        }
+      ]
+    },
+    {
+      "id": "73b10010-4f21-4816-9661-ffb4be932b2f",
+      "type": "experience",
+      "urlPrimary": "https://rolloutdoors.com/en/rovaniemi/guided-bike-tours-rovaniemi/",
+      "webshopUrlPrimary": "https://www.rolloutdoorsrovaniemi.com/tour/scenic-electric-fat-bike-group-ride-in-rovaniemi",
+      "contactDetails": [
+        {
+          "email": "rovaniemi@rolloutdoors.com",
+          "phone": "+358400380063"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "a8c83847-a051-404e-a4cc-278fef440e05",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Pekankatu 2",
+          "location": "(66.501142614949,25.7333406567408)"
+        }
+      ],
+      "company": {
+        "id": "a3c517d3-9906-4247-8e81-83d2e8025f97",
+        "businessName": "Roll Outdoors",
+        "officialName": "Roll Outdoors Oy",
+        "websiteUrl": "https://www.rolloutdoors.com/en"
+      },
+      "productInformations": [
+        {
+          "id": "c1a4795e-2242-4d46-b314-0f1c3daa7722",
+          "language": "en",
+          "name": "Scenic electric fat bike ride in Rovaniemi",
+          "description": "Would you like to reach the best views around Rovaniemi and get unique winter cycling experience of a lifetime? Join our group ride on Mondays, Wednesdays and Fridays with us on electric assisted wide tyre bikes to the top of Ounasvaara hill and follow your guide through the magical snowy white trails.\n\nThis trip is perfect for people new to mountain biking. As long as you can ride a regular bike, you are ready to enjoy the trip! Our special e-fatbikes make even riding uphill easy and fun on the snowy winter trails!\n\nWe’ll start the trip from Hostel Cafe Koti in the city center. In just few minutes we arrive in the snowy, silent forest of Ounasvaara. We bike to the top of the hill and back to the city using forest roads and winter trails.  Ps. the ride ends just perfectly to enjoy a tasty lunch at Hostel Cafe Koti after the ride!"
+        }
+      ]
+    },
+    {
+      "id": "0a675912-dc0f-40b1-9d04-4f02996d47f0",
+      "type": "experience",
+      "urlPrimary": "https://rolloutdoors.com/en/rovaniemi/guided-bike-tours-rovaniemi/guided-private-bike-tour-rovaniemi",
+      "webshopUrlPrimary": "https://www.rolloutdoorsrovaniemi.com/tour/private-electric-fat-bike-winter-tour-in-rovaniemi",
+      "contactDetails": [
+        {
+          "email": "rovaniemi@rolloutdoors.com",
+          "phone": "+358400380063"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "6265ab2a-5d77-47be-9381-f28153c01804",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Pekankatu 2",
+          "location": "(66.5011689508627,25.7333084866747)"
+        }
+      ],
+      "company": {
+        "id": "a3c517d3-9906-4247-8e81-83d2e8025f97",
+        "businessName": "Roll Outdoors",
+        "officialName": "Roll Outdoors Oy",
+        "websiteUrl": "https://www.rolloutdoors.com/en"
+      },
+      "productInformations": [
+        {
+          "id": "978422a4-bc24-44b0-a0bd-573e23ba9e82",
+          "language": "en",
+          "name": "Private electric fat bike winter tour in Rovaniemi",
+          "description": "Want to find the best sceneries and funniest trails? Need some coaching for mountain biking? Interested about a photography bike tour? Or just like to do it private with no other riders and no need to care about speed and skills of anybody. You can hire a guide and book a private tour with us. The route is always tailored to suit your wishes and abilities. \n\nThis trip is perfect for people new to mountain biking to experts. We tailor the experience to suit your riding abilities! As long as you can ride a regular bike, you are ready to enjoy the trip! Our special e-fatbikes make even riding uphill easy and fun on the snowy winter trails! \n\nWe’ll start the trip from Hostel Cafe Koti in Rovaniemi in the city center. In just few minutes we arrive in the snowy, silent forest of Ounasvaara. We bike to the top of the hill and back to the city using forest roads and winter trails. Ps. the ride ends just perfectly to enjoy a tasty lunch at Hostel Cafe Koti after the ride!"
+        }
+      ]
+    },
+    {
+      "id": "b2f16d41-86de-4641-a223-342f3dc40e5e",
+      "type": "accommodation",
+      "urlPrimary": "https://hostelcafekoti.fi/en",
+      "webshopUrlPrimary": "https://hostelcafekoti.fi/en",
+      "contactDetails": [
+        {
+          "email": "info@hostelcafekoti.fi",
+          "phone": "+358 20 7304722"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "33a32899-0803-4f19-bd9f-0bf47a8620e5",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Valtakatu 21",
+          "location": "(66.50122,25.73397)"
+        }
+      ],
+      "company": {
+        "id": "ae04de0f-d072-49b6-8228-0a98a37258fd",
+        "businessName": "Hostel Café Koti",
+        "officialName": "Atsuuri Oy",
+        "websiteUrl": "https://hostelcafekoti.fi/en"
+      },
+      "productInformations": [
+        {
+          "id": "f86fad06-ced4-49e4-87cb-6dbfdb1d77db",
+          "language": "fi",
+          "name": "Hostel Café Koti",
+          "description": "Rovaniemen ydinkeskustassa sijaitseva hostelli on remontoitu vanhaan pankkikiinteistöön, joka on alun perin rakennettu Pohjoismaiden Yhdyspankille. Kiinteistössä on haluttu säilyttää sen alkuperäinen jykevä kauneus, mutta elävöittää sitä modernilla ja kodikkaalla kosketuksella. \n\nHostellissa on 23 huonetta, kolme dormia ja yksi huoneisto. Kaikissa yksityishuoneissa on omat kylpyhuoneet ja aamupala sisältyy huoneen hintaan. Yhteismajoitustiloissa yöpyville puolestaan löytyy yksityiset wc- ja suihkutilat huoneiden välittömästä läheisyydestä. Hostellin tiloista löytyy myös hyvin varusteltu keittiö asiakkaiden käyttöön, mukava oleskelualue ja aito suomalainen sauna.\n\nCafé Koti on kiinteistön katutasossa ja kahvilan isoista ikkunoista voi kurkistella Rovaniemen menoa. Kahvilasta löytyy noin 80 asiakaspaikkaa ja haluamme vieraidemme viihtyvän ja saavan pienen tauon arjen hulinoista. Café Koti tarjoaa erinomaista kahvia, juomia, leivonnaisia ja ruokaa rennossa ja vaivattomassa ilmapiirissä. Järjestämme kahvilassa silloin tällöin erilaisia tapahtumia ja pyrimme pitämään menon mahdollisimman simppelinä ja aitona. Kahvilassa on nähtävillä myös paikallisten taitilijoiden vaihtuvia taidenäyttelyitä.\n\nTavoitteenamme on tarjota asiakkaillemme lämmin, rentouttava ja paikallinen tapa kokea Rovaniemi. Lämpimästi tervetuloa!\n\nVoit seurata taivaltamme: Facebookissa Hostel Café Koti Instagramissa @hostelcafekoti"
+        },
+        {
+          "id": "aa3f4091-75bf-4d8e-ac46-315a019f44c3",
+          "language": "en",
+          "name": "Hostel Café Koti",
+          "description": "Book your stay at cozy hostel in the heart of Rovaniemi city center. We have 24 private rooms, 2 dorms and 1 apartment in our hostel, altogether 79 beds. Private rooms have their own bathrooms and light breakfast is included in the room price. There is a well equipped kitchen and relaxing area, as well as a genuine Finnish sauna for guests use.\n\n"
+        }
+      ]
+    },
+    {
+      "id": "57041498-3952-4293-8dae-c1d630960332",
+      "type": "rental_service",
+      "urlPrimary": "https://rolloutdoors.com/en/rovaniemi/bike-rental-rovaniemi",
+      "webshopUrlPrimary": "https://book.rolloutdoors.com/l/rovaniemi/shop?lang=en",
+      "contactDetails": [
+        {
+          "email": "rovaniemi@rolloutdoors.com",
+          "phone": "+358400380063"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "133ba6b3-2107-4175-9480-19c576cbdea2",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Pekankatu 2",
+          "location": "(66.501111566609,25.7332905029751)"
+        }
+      ],
+      "company": {
+        "id": "a3c517d3-9906-4247-8e81-83d2e8025f97",
+        "businessName": "Roll Outdoors",
+        "officialName": "Roll Outdoors Oy",
+        "websiteUrl": "https://www.rolloutdoors.com/en"
+      },
+      "productInformations": [
+        {
+          "id": "09531f18-ce82-442f-8482-d1b91ac1c7ed",
+          "language": "en",
+          "name": "E-fatbike Rental",
+          "description": "Hire an electrically assisted mountain bike and explore the Rovaniemi surroundings by yourself.\n\nOur garage is located in the middle of the Rovaniemi city center where from it's very easy to reach the beautiful nature of Ounasvaara hill. Also you can ride alongside the rivers Kemijoki and Ounasjoki or maybe visit mr Santa Claus at his office at the Arctic Circle. Also overnight rentals available. \n\nHelmet is always included. Our staff will help to adjust the bike for you and guide you how to use it. And of course we will give you more good tips and maps where to go. "
+        }
+      ]
+    },
+    {
+      "id": "6a19503a-95c9-4195-bf48-e1251a7fc256",
+      "type": "experience",
+      "urlPrimary": "https://www.laplandsafaris.com/en/activities",
+      "webshopUrlPrimary": "https://www.laplandsafaris.com/en/activity-search/rovaniemi",
+      "contactDetails": [
+        {
+          "email": "info@laplandsafaris.fi",
+          "phone": "+35816 33 11 200"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "30d29b9f-edd9-43e5-b4b3-b65cfa733887",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Koskikatu 1",
+          "location": "(66.501343,25.7371228)"
+        }
+      ],
+      "company": {
+        "id": "d8e078b4-36c7-4607-8fc0-b68e44a60ef1",
+        "businessName": "Lapland Safaris",
+        "officialName": "Lapland Hotels Oy",
+        "websiteUrl": "https://www.laplandsafaris.com/en"
+      },
+      "productInformations": [
+        {
+          "id": "4415d5ce-0492-4fd5-8f19-3d2c0b5f1eb4",
+          "language": "en",
+          "name": "Lapland Safaris Rovaniemi guided tours",
+          "description": "Experiences for all your senses. From our wide range of activities, you can choose the perfect way to explore the unique nature of the North and the endless opportunities it offers in every season. Chase the Northern Lights deep in the forest by snowmobile, feel the thrill of speed on a husky sleigh ride, or discover the magic of a Lapland summer by bike or on a river cruise.\n\nJoin us – and let us show you the very best of the North!"
+        },
+        {
+          "id": "f394e4c0-5b03-45f8-a631-115892a690b8",
+          "language": "fi",
+          "name": "Lapland Safaris Rovaniemi opastetut retket",
+          "description": "Elämyksiä kaikille aisteille. Monipuolisista aktiviteeteistamme voit valita itsellesi sopivimman tavan tutustua pohjoisen ainutlaatuiseen luontoon ja sen tarjoamiin mahdollisuuksiin kaikkina vuodenaikoina. Bongaa vaikka metsästä revontulia moottorikelkan selässä, nauti vauhdin hurmasta koiravaljakon kyydissä tai koe Lapin kesän taika pyöräillen tai joella risteillen.\n\nHyppää mukaan – me esittelemme pohjoisen parhaat palat!"
+        }
+      ]
+    },
+    {
+      "id": "98364151-40d6-43f9-8dfd-aaf09ad1eef9",
+      "type": "restaurant",
+      "urlPrimary": "https://www.pandakeidas.com",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "yulan0966@gmail.com",
+          "phone": "+35816737205"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "d3ec50cc-2c1d-4be1-b122-b97edfb0845b",
+          "city": "Rovaniemi",
+          "postalCode": "97540",
+          "streetName": "Sodankyläntie 6789",
+          "location": "(66.9560700285962,26.2963877855075)"
+        }
+      ],
+      "company": {
+        "id": "a02d3ab2-01d7-4fca-a7dc-87ffb91ee6d5",
+        "businessName": "Polar Taste",
+        "officialName": "Panda YZF Oy",
+        "websiteUrl": "https://pandakeidas.com"
+      },
+      "productInformations": [
+        {
+          "id": "260b977e-b357-4871-8957-42fdd7c6953b",
+          "language": "zh",
+          "name": "Käyrämön Keidas",
+          "description": "位于Käyrämö Keidas长期以来一直是一家传统的北欧餐厅，同时也提供正宗的中国菜，作为芬兰最北端的中国菜之一而广受欢迎。\n该餐厅距离罗瓦涅米 68 公里，沿 E-4 公路向 Sodankylä 方向行驶。餐厅位置优越，是前往芬兰北部著名滑雪场萨利色尔卡（Saariselka）和前往挪威北角(North Cape)的必经之路，餐厅距离芬兰景点罗斯托（Luosto），欧洲仅存的一座仍在开採的紫晶矿开车仅半小时车程。餐厅设有 144 个座位，提供为不同规模的团体预定团餐，自助餐以及个人顾客点餐预定四川火锅服务。餐厅常年提供四川特色红烧牛肉面，哨子面及美味的特色拉普兰红烧驯鹿肉面。"
+        },
+        {
+          "id": "baa2f838-9372-4553-939a-79ce1d86ddba",
+          "language": "sv",
+          "name": "Käyrämön Keidas",
+          "description": "Käyrämön keidas är en traditionell restaurang som har funnits länge och som även har det kinesiska köket som vunnit stor popularitet som ett av Finlands nordligaste kinesiska kök.\nOasen ligger 68 km från Rovaniemi i riktning mot Sodankylä längs väg E-4. Restaurangen har 144 sittplatser och servar gärna grupper såväl som enskilda kunder."
+        },
+        {
+          "id": "a67170c1-306f-4b9d-882f-68e8f43f1768",
+          "language": "fi",
+          "name": "Käyrämön Keidas",
+          "description": "Käyrämön Keidas on pitkään toiminut perinteisenä pohjoismaisena ravintolana, jossa on myös aito kiinalainen keittiö, joka on saavuttanut suurta suosiota yhtenä Suomen pohjoisimpana kiinalaisena keittiönä.\nKeidas sijaitsee 68 km Rovaniemeltä Sodankylän suuntaan E-4 tien varrella. Ravintola on 144 paikkainen ja palvelee mielellään eri kokoisia ryhmiä kuten myös yksittäisiä asiakkaita."
+        },
+        {
+          "id": "19af2c8f-bec9-4671-b16c-5081322c146f",
+          "language": "en",
+          "name": "Polar Taste Restaurant",
+          "description": "Käyrämön Keidas has long operated as a traditional Nordic restaurant, which also has authentic Chinese cuisine, which has gained great popularity as one of Finland's northernmost Chinese cuisines.\nThe oasis is located 68 km from Rovaniemi in the direction of Sodankylä along the E-4 road. The restaurant has 144 seats and is happy to serve groups of different sizes as well as individual customers."
+        }
+      ]
+    },
+    {
+      "id": "db18c123-984c-4e52-9b03-d1d6aa18987c",
+      "type": "experience",
+      "urlPrimary": "https://rolloutdoors.com/en/rovaniemi/guided-bike-tours-rovaniemi/guided-private-bike-tour-rovaniemi-2/",
+      "webshopUrlPrimary": "https://www.rolloutdoorsrovaniemi.com/tour/private-scenic-e-bike-ride-in-rovaniemi",
+      "contactDetails": [
+        {
+          "email": "rovaniemi@rolloutdoors.com",
+          "phone": "+358400380063"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "0abeb9e7-b4bb-4b9b-831c-8de65cd18241",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Pekankatu 2",
+          "location": "(66.5014702,25.7303113)"
+        }
+      ],
+      "company": {
+        "id": "a3c517d3-9906-4247-8e81-83d2e8025f97",
+        "businessName": "Roll Outdoors",
+        "officialName": "Roll Outdoors Oy",
+        "websiteUrl": "https://www.rolloutdoors.com/en"
+      },
+      "productInformations": [
+        {
+          "id": "a517e7ec-a853-443c-a4ee-57f27c67a0ca",
+          "language": "en",
+          "name": "Private Scenic E-Bike Ride in Rovaniemi",
+          "description": "Have fun on an electric mountain bike and follow your guide to the best trails and viewpoints in Ounasvaara!\n\nWant to discover the most beautiful scenery in Rovaniemi and enjoy the unique mountain biking experience in Lapland? This private guided bike tour is just for you – and only for you. Together with your guide, you can choose the routes that suit your wishes and skill level. We can take it as easy or as hard as you want. Our guides know Ounasvaara’s terrain like the back of their hands and will certainly know how to lead you to comfortable and suitable trails.\n\nOur guided private bike tour starts from our garage in the centre of Rovaniemi. In a few minutes we cross the Kemijoki River on the iconic Lumberjack’s Candle Bridge. Soon you’ll find yourself in the middle of the forest enjoying Rovaniemi’s nearby nature. After a couple of hours of adventure, it’s nice to descend along the flow paths back to the city for refreshing services.\n\nHave a nice trip!!"
+        }
+      ]
+    },
+    {
+      "id": "43992730-ffdc-459e-85e1-b84d2dbc413b",
+      "type": "venue",
+      "urlPrimary": "https://hostelcafekoti.fi/meetings-and-occasions",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "sales@hostelcafekoti.fi",
+          "phone": "+358447961333"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "6091c8ff-5b49-4a73-9628-3e88a7865347",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Valtakatu 21",
+          "location": "(66.5012268,25.7340021)"
+        }
+      ],
+      "company": {
+        "id": "ae04de0f-d072-49b6-8228-0a98a37258fd",
+        "businessName": "Hostel Café Koti",
+        "officialName": "Atsuuri Oy",
+        "websiteUrl": "https://hostelcafekoti.fi/en"
+      },
+      "productInformations": [
+        {
+          "id": "c2eef931-6375-4678-a600-2ed9eac38836",
+          "language": "en",
+          "name": "Hostel Café Koti Events",
+          "description": "In the heart of Rovaniemi, Hostel Café Koti offers you different meeting and conference facilities that adapt to your needs. We offer basic conference technology and HDMI-cable.You can also request our Café to host a private or public event.\n\nBUNKKERI\n\nSuitable for 2-10 person. Meeting room Bunkkeri locates downstairs from our cafeteria. It is peaceful space for smaller groups or private meetings.\n\nNAAPURI\n\nSuitable for 10-25 person. Meeting room Naapuri locates next door from our cafeteria. Naapuri is accessible space.The space can also be used for atmospheric private events.\n\nWe also prepare various savory and sweet delicacies to complement your meeting day. \n\nBook your meeting space easily online via our website, or alternatively submit a request for proposals for meetings and events by email:\nsales@hostelcafekoti.fi"
+        },
+        {
+          "id": "0af8c3c1-b8a6-4536-9d0d-1d40d56dbd0b",
+          "language": "fi",
+          "name": "Hostel Café Koti - Tilavuokrat",
+          "description": "Kokous, juhlat tai tarve rauhalliselle työskentelytilalle - Rovaniemen kaupungin ytimessä sijaitsevasta Hostel Café Kodista löydät tilat ja haluamasi tarjoilut tilaisuuteesi. \n\nKokostilamme:\n\nBUNKKERI\n\n2-10 hengelle sopiva yksityinen kokoustila. Kokoustila Bunkkeri sijaitsee kahvilamme alakerrassa ja se on rauhallinen tila pienempien ryhmien neuvotteluihin ja kokouksiin. \n\nVarustelu:\nlangaton verkkoyhteys \nkiinteä näyttö 55''\nvalkotaulu\nHDMI-kaapeli\n\nNAAPURI\n\n10-25 hengelle sopiva kokous -ja neuvottelutila. Kokoustila Naapuri sijaitsee kahvilamme vieressä katutasossa. Naapuri muotoutuu myös erinomaisesti tunnelmallisiin yksityistilaisuuksiin. Tila on esteetön.\n\nVarustelu: \nLangaton verkkoyhteys\nVideotykki HDMI-liitännällä\nValkokangas\nFläppitaulu\n\n\nMeiltä voit kysyä myös kahvilamme vuokrausta yleisö- tai yksityistilaisuutta varten. Kahvilasta löytyy 50 istumapaikkaa, ja tiloissa mahtuu oleskelemaan yhtä aikaa120 henkilöä.\n\n\nVaraa työtila tai kokoustila helposti nettisivuiltamme, tai lähetä tarjouspyyntö osoitteeseen:\nsales@hostelcafekoti.fi"
+        }
+      ]
+    },
+    {
+      "id": "95ddf103-832c-41c5-8507-19488ff5be2b",
+      "type": "restaurant",
+      "urlPrimary": "https://hostelcafekoti.fi/cafe",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "info@hostelcafekoti.fi",
+          "phone": "+3582070304722"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "80c0619f-dfa9-4046-876c-c172c84a8650",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Valtakatu 21",
+          "location": "(66.5012268,25.7340021)"
+        }
+      ],
+      "company": {
+        "id": "ae04de0f-d072-49b6-8228-0a98a37258fd",
+        "businessName": "Hostel Café Koti",
+        "officialName": "Atsuuri Oy",
+        "websiteUrl": "https://hostelcafekoti.fi/en"
+      },
+      "productInformations": [
+        {
+          "id": "7eb36137-4173-476b-89a7-6aae5d3dcca1",
+          "language": "en",
+          "name": "Café Koti",
+          "description": "Welcome to Café Koti, a cozy and relaxed café nestled in the heart of Rovaniemi. Every morning, we serve a delicious breakfast to start your day right. From Monday to Friday, you can also enjoy our delightful lunch buffet, featuring a variety of tasty options. We take pride in crafting all our coffees and baked goods by hand, ensuring every bite is made with love. We warmly invite you to come and enjoy a lovely experience with us!"
+        },
+        {
+          "id": "3112e82d-bc01-474f-867f-21f6fc05347b",
+          "language": "fi",
+          "name": "Café Koti",
+          "description": "Café Koti on rento  ja kodikas kahvila Rovaniemen sydämessä. Valmistamme suolaiset ja makeat herkut käsityönä. Tarjolla on päivittäin herkullinen aamupala ja maanantaista perjantaihin maistuva lounasbuffet. Meiltä saat kaupungin parasta kahvia! "
+        }
+      ]
+    },
+    {
+      "id": "5a8e49e6-34c2-4667-8b49-f8362a5b50d4",
+      "type": "experience",
+      "urlPrimary": "https://www.ranchkuulas.com/midnight-sun-ride-over-the-hills-advanced-riders/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "sales@ranchkuulas.com",
+          "phone": "+358445130720"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "c641076e-c343-4cf0-9420-fff10b0fe8e4",
+          "city": "Rovaniemi",
+          "postalCode": "97530",
+          "streetName": "Haukilammentie 189",
+          "location": "(66.8514019,26.1789358)"
+        }
+      ],
+      "company": {
+        "id": "d96f345d-88c1-468f-9e16-c928c501fe03",
+        "businessName": "Ranch Kuulas",
+        "officialName": "Laenlammen tila Oy",
+        "websiteUrl": "https://www.ranchkuulas.com/"
+      },
+      "productInformations": [
+        {
+          "id": "079645a6-d54a-49d6-995b-6a9871b54530",
+          "language": "en",
+          "name": "Midnight sun riding over the hill 4h",
+          "description": "The midnight sun horseback riding excursion in Lapland, Rovaniemi, is an unforgettable experience for horse and nature enthusiasts. This unique adventure offers the opportunity to experience the magic of an Lapland summer night on horseback where the sun never sets below the horizon. The stunning colors of the sky and the peacefulness of the surrounding nature make this journey a truly memorable experience.\n\nThis horseback riding excursion is specifically designed for advanced riders. Your journey begins at the stables, where you’ll meet our horses and get matched with the right partner for your ride. Laenlammen Tila is the home for many Finn horses. The guide will equip them ready to set out. Our guide will give a quick introduction to riding and ensure everyone feels confident before setting off. Safety and comfort are our top priorities, and the guide will be there to support you every step of the way.\n\nThe riding route takes us to the magnificent hills, where we can admire the beauty of Lapland's nature and soak in the atmosphere of the endless night. If you're lucky, you might spot various animals like reindeer and birds during the journey. \n\nAs the \"night\" descends over Lapland, we return to the stable. There, we will dismount and return the equipment, allowing the horses to return to their paddock.\n\nThe midnight sun horseback riding excursion in Lapland is more than just a riding journey; it's an opportunity to experience the enchantment and magic of the endless night in Lapland from the back of a horse. Join us on this unforgettable adventure in the stunning landscapes of Rovaniemi!\nThe route mainly follows forest trails and the slopes of the hills, which brings you to some beautiful views of the midsummersun deep in lappish nature. \n\nWhat’s Included?\n✔️ Approx. 4-hour guided trail ride\n✔️ Horse care & preparation\n✔️ Experienced guide (Finnish & English)\n✔️ Certified VG1 riding helmet"
+        },
+        {
+          "id": "b10a2102-b065-4683-af70-7f57cda284e1",
+          "language": "fi",
+          "name": "Yöttömän yön vaellus vaaroille 4h",
+          "description": "Keskiyön auringon ratsastusretki Lapissa, Rovaniemellä, on unohtumaton kokemus hevosten ja luonnon ystäville. Tämä ainutlaatuinen seikkailu tarjoaa mahdollisuuden kokea Lapin kesäyön taika hevosen selässä, kun aurinko ei laske horisontin alapuolelle. Taivaan upeat värit ja ympäröivän luonnon rauha tekevät tästä matkasta todella mieleenpainuvan elämyksen.\n\nTämä ratsastusretki on suunniteltu erityisesti kokeneille ratsastajille. Matka alkaa tallilta, jossa tapaat hevoset ja sinulle etsitään sopiva ratsu. Laenlammen Tila on monen suomenhevosen koti. Opas varustaa hevoset lähtöä varten. Hän antaa lyhyen ratsastusopastuksen ja varmistaa, että kaikilla on varma olo ennen matkaan lähtöä. Turvallisuus ja mukavuus ovat meille ensisijaisia, ja opas on mukana tukemassa joka vaiheessa.\n\nReitti kulkee upeille tuntureille, joissa voimme ihailla Lapin luonnon kauneutta ja aistia päättymättömän yön tunnelman. Jos olet onnekas, voit nähdä matkalla erilaisia eläimiä, kuten poroja ja lintuja.\n\nKun “yö” laskeutuu Lapin ylle, palaamme tallille. Siellä laskeudumme satulasta ja palautamme varusteet, jotta hevoset pääsevät takaisin tarhaan.\n\nKeskiyön auringon ratsastusretki Lapissa on paljon enemmän kuin vain ratsastusmatka – se on mahdollisuus kokea Lapin loputtoman yön lumo ja taika hevosen selästä käsin. Tule mukaan tälle unohtumattomalle retkelle upeisiin Rovaniemen maisemiin! Reitti kulkee pääasiassa metsäpolkuja ja tunturien rinteitä pitkin, jotka johdattavat sinut nauttimaan keskiyön auringon kauneudesta syvällä Lapin luonnossa.\n\nMitä hintaan sisältyy?\n✔️ Noin 4 tunnin opastettu maastoratsastus\n✔️ Hevosten hoito ja varustaminen\n✔️ Kokenut opas (suomi & englanti)\n✔️ VG1-sertifioitu ratsastuskypärä"
+        }
+      ]
+    },
+    {
+      "id": "4b232437-cf37-4926-b34f-11be99706854",
+      "type": "rental_service",
+      "urlPrimary": "https://hostelcafekoti.fi/en",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "info@hostelcafekoti.fi",
+          "phone": "+35820 7304722"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "32154641-b56b-40c0-8ade-9c1a7457c482",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Valtakatu 21",
+          "location": "(66.50124355,25.7337564442905)"
+        }
+      ],
+      "company": {
+        "id": "ae04de0f-d072-49b6-8228-0a98a37258fd",
+        "businessName": "Hostel Café Koti",
+        "officialName": "Atsuuri Oy",
+        "websiteUrl": "https://hostelcafekoti.fi/en"
+      },
+      "productInformations": [
+        {
+          "id": "32c8d8e8-8bbb-4da0-b003-7f308a367bab",
+          "language": "fi",
+          "name": "Hostel Cafe Koti Polkupyörät",
+          "description": "Hostel Café Kodin vastaanotosta vuokrattavissa kaupunkipyöriä. Vaihteettomia ja helppokäyttöisiä perus mummopyöriä Rovaniemellä – täydellisiä kaupungissa liikkumiseen! \n\nPyörät vuokrattavissa vastaanottomme aukioloaikana. Pyörävuokran hintaan sisältyy myös pyöräilykypärä. "
+        },
+        {
+          "id": "8c88a3c9-b155-4d36-b59f-e52a36300b62",
+          "language": "en",
+          "name": "City Bikes for Rental - Hostel Café Koti",
+          "description": "We have easy-to-ride, gearless bikes – just what you need to get around the city! No frills, just simple bikes that’ll take you wherever you want to go. Perfect for cruising around and exploring the city of Rovaniemi. Hop on and enjoy the ride!\n\nBike rentals are available at our reception during opening hours."
+        }
+      ]
+    },
+    {
+      "id": "3f7f5a51-ee37-4aad-b9f2-2b6d894548c5",
+      "type": "restaurant",
+      "urlPrimary": "https://www.santaclausholidayvillage.fi/en/restaurants/three-elves-restaurant-en-us/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "threeelves@schv.fi",
+          "phone": "+358 040 750 3891"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "82c22056-27b8-41c7-801c-98dd95b353b6",
+          "city": "Rovaniemi",
+          "postalCode": "96930",
+          "streetName": "Tähtikuja 2",
+          "location": "(66.5430334,25.8448901657876)"
+        }
+      ],
+      "company": {
+        "id": "7705bc39-3072-4ae7-960a-9cc08c88a95c",
+        "businessName": "Santa Claus Holiday Village",
+        "officialName": "Santa Claus Holiday Village Oy",
+        "websiteUrl": "https://www.santaclausholidayvillage.fi/"
+      },
+      "productInformations": [
+        {
+          "id": "a7436d43-abe9-495c-8dfd-f94b55766c71",
+          "language": "en",
+          "name": "Three Elves Restaurant ",
+          "description": "Three Elves Restaurant serves customers in the heart of the Santa Claus  Holiday Village in Rovaniemi, making it the magical dining destination that brings the spirit of Christmas to life year-round.  Our atmospheric restaurant offers culinary experiences full of pure, genuine flavors and featuring Lappish ingredients.\nFrom traditional salmon dishes to succulent reindeer steaks, the menu offers a delightful culinary journey through the Arctic flavors, accompanying with occasional visits from Santa Claus.\n\nWhether you're dining solo or with a larger group, our restaurant can accommodate approximately 160 guests.\n\nAs a part of Santa Claus Holiday Village restaurant its open all year around. \nWe serve ala carte dinner.  \nOpen every day from 3:00 PM. \n\nMake a reservation for your christmas dining experience!\n\nWe also offer the unique experience to enjoy your meal at our wonderful glass igloos.\nGlass igloos experience can be booked separately. \n\nWhether you're dining solo or with a larger group, our restaurant can accommodate approximately 160 guests."
+        }
+      ]
+    },
+    {
+      "id": "4122a9a3-c9f1-4692-82f5-45998df340c3",
+      "type": "experience",
+      "urlPrimary": "https://www.ranchkuulas.com/horse-ride-to-the-hill/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "sales@ranchkuulas.com",
+          "phone": "+358445130720"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "adb48275-dff1-42ff-89a0-dc35717368f5",
+          "city": "Rovaniemi",
+          "postalCode": "97530",
+          "streetName": "Haukilammentie 189",
+          "location": "(66.8514019,26.1789358)"
+        }
+      ],
+      "company": {
+        "id": "d96f345d-88c1-468f-9e16-c928c501fe03",
+        "businessName": "Ranch Kuulas",
+        "officialName": "Laenlammen tila Oy",
+        "websiteUrl": "https://www.ranchkuulas.com/"
+      },
+      "productInformations": [
+        {
+          "id": "410e1ad8-0f0a-4cf0-8bf2-954c393eff1f",
+          "language": "en",
+          "name": "Horse ride to the hill",
+          "description": "Discover the wonders of Lapland with our 2-hour horseback riding adventure on our home fell Laenlammen vaara. It is an unique experience to enjoy Lappish nature in Rovaniemi. View the beautifull fells that Lapland has, the amazing forests and gorgeous views all on horseback. \n\nThis horseback riding excursion is specifically designed for those who enjoy a relaxed pace while riding. This exursion is suitable for beginners and advanced riders. Your journey begins at the stables, where you’ll meet our horses and get matched with the right partner for your ride. Laenlammen Tila is the home for many Finn horses. The guide will equip them ready to set out. Our guide will give a quick introduction to riding and ensure everyone feels confident before setting off. Safety and comfort are our top priorities, and the guide will be there to support you every step of the way.\n\nThis journey promises a magical experience in the heart of Lappish nature. Our ride goes to the hill, forest and near by lake. If you're lucky, you might spot various animals like reindeer and birds during the journey. We primarily ride at a walk pace under the guidance of our trail guide.\n\nAfter the exursion you will return to the stable where we will dismount and return the equipment,  allowing the horses to return to their paddock.\n\nThe Horse Ride to the Hill is a perfect introduction to the wilderness of Lapland, slow, scenic, and unforgettable. This excursion is suitable for individuals of all riding levels, including beginners. \n\nWhat’s Included?\n✔️ Approx. 1.5-hour guided trail ride\n✔️ Horse care & preparation\n✔️ Experienced guide (Finnish & English)\n✔️ Certified VG1 riding helmet"
+        },
+        {
+          "id": "697fe597-09d0-4370-b461-94d958480ad6",
+          "language": "fi",
+          "name": "Laenlammen kierros",
+          "description": "Löydä Lapin ihmeet kahden tunnin ratsastusretkellä kotitunturillamme Laenlammen vaaralla, Rovaniemellä. Tämä on ainutlaatuinen kokemus nauttia Lapin luonnosta. Näe Lapin kauniit tunturit, upeat metsät ja henkeäsalpaavat maisemat hevosen selästä.\n\nTämä ratsastusretki on suunniteltu erityisesti niille, jotka nauttivat rauhallisesta tahdista ratsastaessa. Retki sopii sekä aloittelijoille että kokeneille ratsastajille. Matka alkaa tallilta, jossa tapaat hevoset ja sinulle etsitään sopiva ratsu. Laenlammen Tila on monen suomenhevosen koti. Opas varustaa hevoset lähtöä varten. Hän antaa lyhyen ratsastusopastuksen ja varmistaa, että kaikilla on varma olo ennen matkaan lähtöä. Turvallisuus ja mukavuus ovat meille ensisijaisia, ja opas on mukana tukemassa joka vaiheessa.\n\nTämä retki tarjoaa taianomaisen elämyksen keskellä Lapin luontoa. Reitti kulkee tunturille, metsään ja läheisen järven rannalle. Jos olet onnekas, voit nähdä matkalla erilaisia eläimiä, kuten poroja ja lintuja. Ratsastamme pääosin käyntiä oppaan johdolla.\n\nRetken jälkeen palaamme tallille, jossa laskeudutaan satulasta ja palautetaan varusteet. Hevoset pääsevät takaisin tarhaan.\n\nRatsastusretki Tunturille on täydellinen johdatus Lapin erämaahan – rauhallinen, maisemiltaan upea ja unohtumaton. Retki sopii kaiken tasoisille ratsastajille, myös aloittelijoille.\n\nMitä hintaan sisältyy?\n✔️ Noin 1,5 tunnin opastettu maastoratsastus\n✔️ Hevosten hoito ja varustaminen\n✔️ Kokenut opas (suomi & englanti)\n✔️ VG1-sertifioitu ratsastuskypärä"
+        }
+      ]
+    },
+    {
+      "id": "21cf3854-2715-46b6-8c6d-bf745e82fd8d",
+      "type": "rental_service",
+      "urlPrimary": "https://www.laplandsafaris.com/en/rentals",
+      "webshopUrlPrimary": "https://rentle.store/laplandsafarisrovaniemi/shop",
+      "contactDetails": [
+        {
+          "email": "info@laplandsafaris.fi",
+          "phone": "+35816 33 11 200"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "c8223144-4b7f-468a-a331-ce0f26070fc3",
+          "city": "Rovaniemi",
+          "postalCode": "96200",
+          "streetName": "Koskikatu 1",
+          "location": "(66.501343,25.7371228)"
+        }
+      ],
+      "company": {
+        "id": "d8e078b4-36c7-4607-8fc0-b68e44a60ef1",
+        "businessName": "Lapland Safaris",
+        "officialName": "Lapland Hotels Oy",
+        "websiteUrl": "https://www.laplandsafaris.com/en"
+      },
+      "productInformations": [
+        {
+          "id": "4e08d4a7-2463-4956-a8db-5728dd2f0d95",
+          "language": "en",
+          "name": "Lapland Safaris Rovaniemi rentals",
+          "description": "Lapland Safaris offers a wide range of outdoor equipment and gear for independent adventurers to rent. Well-maintained, high-quality, and functional equipment will be waiting for you at your destination — so you can travel lighter and enjoy a more relaxed holiday.\n\nLapland Safaris’ Rovaniemi rental shop offers a wide range of equipment for activities in every season.\n\nOur rental selection includes, for example, electric bikes, camping equipment, winter clothing, and other outdoor accessories."
+        },
+        {
+          "id": "ec016321-38d8-45e5-a749-1b370cd3365a",
+          "language": "fi",
+          "name": "Lapland Safaris Rovaniemi vuokravälineet",
+          "description": "Lapland Safaris tarjoaa omatoimisille retkeilijöille laajan valikoiman retkeilyvarusteita ja -välineitä vuokrattavaksi. Hyvin huolletut, laadukkaat ja toimivat varusteet odottavat matkakohteessa, joten lomailijat voivat ottaa rennommin ja matkustaa kevyemmin.\n\nLapland Safariksen Rovaniemen toimipisteen vuokraamosta löytyy monipuolinen valikoima välineitä joka sesongin aktiviteetteihin. \n\nValikoimastamme löytyy mm. sähköavusteisia pyöriä, retkeilyvarusteita, talvivaatevarusteita ja muita ulkoiluvarusteita. \n"
+        }
+      ]
+    },
+    {
+      "id": "019d0a79-2607-44f8-87c0-f647a08589bc",
+      "type": "shop",
+      "urlPrimary": "https://www.santaclausholidayvillage.fi/destination/shop",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "market@schv.fi",
+          "phone": "+358406372843"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "665af345-5c07-4bb0-8388-9e60ab64a5a3",
+          "city": "Rovaniemi",
+          "postalCode": "96930",
+          "streetName": "Tähtikuja 2 B",
+          "location": "(66.5428786309803,25.8413993866821)"
+        }
+      ],
+      "company": {
+        "id": "7705bc39-3072-4ae7-960a-9cc08c88a95c",
+        "businessName": "Santa Claus Holiday Village",
+        "officialName": "Santa Claus Holiday Village Oy",
+        "websiteUrl": "https://www.santaclausholidayvillage.fi/"
+      },
+      "productInformations": [
+        {
+          "id": "4cb66ae1-1546-4802-8512-183b251a9f4d",
+          "language": "en",
+          "name": "Santa's Foodmarket ",
+          "description": "In our grocery store, you will always find fresh local delicacies as well as a wide range of everyday essentials. Our shelves are stocked with fresh fruits, vegetables, baked goods, snacks, and refreshing juices, soft drinks, and other beverages. We also offer high-quality local products and a selection of hygiene items for your journey. Welcome to shop with us every day of the year in Rovaniemi!"
+        },
+        {
+          "id": "eb6eabee-62e3-46ec-b5fe-ca7ad6d5045b",
+          "language": "fi",
+          "name": "Santa's Foodmarket ",
+          "description": "Myymälästämme Rovaniemeltä löydät aina tuoreet paikalliset herkut sekä monipuolisen valikoiman arjen tarpeisiin. Hyllyiltä löytyy tuoreita hedelmiä, vihanneksia, leivonnaisia, välipaloja sekä virkistäviä mehuja, virvoitusjuomia ja muita juomia. Tarjoamme myös laadukkaita paikallisia tuotteita sekä valikoiman hygieniatuotteita matkasi varrelle. Tervetuloa ostoksille jokaisena päivänä ympäri vuoden!"
+        }
+      ]
+    },
+    {
+      "id": "9cd492e6-bc4c-4567-b454-45fbf2fdefbe",
+      "type": "restaurant",
+      "urlPrimary": "https://www.ranchkuulas.com/restaurant/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "sales@ranchkuulas.com",
+          "phone": "+358445130720"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "f45ae817-553d-476f-9a16-ce3ec71b64cf",
+          "city": "Rovaniemi",
+          "postalCode": "97530",
+          "streetName": "Haukilammentie 189",
+          "location": "(66.8513356,26.179143)"
+        }
+      ],
+      "company": {
+        "id": "d96f345d-88c1-468f-9e16-c928c501fe03",
+        "businessName": "Ranch Kuulas",
+        "officialName": "Laenlammen tila Oy",
+        "websiteUrl": "https://www.ranchkuulas.com/"
+      },
+      "productInformations": [
+        {
+          "id": "27dcb36b-4633-4fe8-8d78-9315aeb46958",
+          "language": "en",
+          "name": "Ranch Kuulas restaurant Loimu",
+          "description": "Set in a beautifully restored historic log building, Ranch Kuulas Restaurant \"Loimu\" is a charming and intimate dining retreat nestled amid the serene wilderness just 35 minutes from Rovaniemi. Originally serving as a village bank in the 1910s, the structure was meticulously reassembled log by log at its current location in 2023, giving every visit a sense of living history.\n\nExpect to be enveloped by the subtle scent of aged pine, the soft glow from a crackling fireplace, and the gentle warmth radiating off a traditional wood‑burning oven. These touches create an atmosphere of comfort and timeless charm, perfect for intimate meals or reflective solitude.\n\nLoimu takes pride in serving traditional Finnish dishes made from pure, seasonal ingredients that are carefully sourced from nearby forests, lakes, and small farms. Each dish speaks of simplicity, authenticity, and thoughtful care. Complement your meal with a glass of wine or a local craft beer for a complete taste of Lapland."
+        }
+      ]
+    },
+    {
+      "id": "3e969cde-3f5d-40dc-878c-3e3e3cd6aa91",
+      "type": "experience",
+      "urlPrimary": "https://www.ranchkuulas.com/lesson-horseback-archery-training/",
+      "webshopUrlPrimary": null,
+      "contactDetails": [
+        {
+          "email": "sales@ranchkuulas.com",
+          "phone": "+358445130720"
+        }
+      ],
+      "productCertificates": [
+        {
+          "certificate": "welcome_cyclist_certificate"
+        },
+        {
+          "certificate": "stf_certificate"
+        }
+      ],
+      "postalAddresses": [
+        {
+          "id": "3739ebb4-049e-4a76-9d2c-ec3c41c2f2bc",
+          "city": "Rovaniemi",
+          "postalCode": "97530",
+          "streetName": "Haukilammentie 189",
+          "location": "(66.8514019,26.1789358)"
+        }
+      ],
+      "company": {
+        "id": "d96f345d-88c1-468f-9e16-c928c501fe03",
+        "businessName": "Ranch Kuulas",
+        "officialName": "Laenlammen tila Oy",
+        "websiteUrl": "https://www.ranchkuulas.com/"
+      },
+      "productInformations": [
+        {
+          "id": "f53dca9e-5577-4bb9-9cc8-92ebcaf7d5dd",
+          "language": "fi",
+          "name": "Ratsastusjousiammunta",
+          "description": "Ratsastusjousiammunta on vanha taistelu- ja taitolaji, jossa ratsastaja ampuu vaistojousella hevosen selästä, halliten sekä ratsastuksen että jousiammunnan hienoudet. Laji tarjoaa vaativan, mutta palkitsevan yhdistelmän, jossa jokainen harjoituskerta vie sinua eteenpäin kohti tarkkuutta ja hallittua liikettä hevosen selässä.\n\nMeillä voit harjoitella turvallisesti ammattilaisten opastamana. Ratsastusjousiammunnan opetuksesta vastaa Valtteri Männikkö, ja tilallamme vierailee säännöllisesti lajin huippuosaajia jakamassa tietotaitoaan. Käytössämme on seitsemän koulutettua ”soturihevosta”, jotka on totutettu jousiammunnan liikkeisiin ja ääniin – jokainen niistä tukee sinua kehittymään lajin parissa.\n\nHarjoittelurata antaa mahdollisuuden monipuolisiin harjoitteisiin, ja kesällä 2024 valmistunut täysimittainen kilparata sähköisellä ajanotolla, jossa on myös torni, tarjoaa täydelliset puitteet kokeneemmille ratsujousiampujille sekä kilpailuihin.\n\nLämpimästi tervetuloa kokemaan ratsastusjousiammunnan taika ja haastamaan itsesi tämän ikivanhan taidon parissa!\n\nTarjoamme kattavan valikoiman kursseja ja tapahtumia, jotka on suunniteltu kaikenikäisille ja -tasoisille ratsastusjousiammunnan harrastajille. Olitpa kiinnostunut perusteellisesta alkeiskurssista tai etsimässä haastavaa treeniä kokeneille ampujille, löydät varmasti sopivan vaihtoehdon meiltä. Jokainen kurssi on huolella suunniteltu tarjoamaan juuri oikean tasoista opastusta ja uusia haasteita lajin kehittymiseen. Sijaitsemme Rovaniemellä."
+        },
+        {
+          "id": "8147c037-0bf4-430a-a052-3189e10856b6",
+          "language": "en",
+          "name": "Horseback archery",
+          "description": "Horseback archery is an ancient martial and skill-based discipline, where the rider shoots with an instinctive bow from horseback, mastering both the subtleties of riding and archery. This demanding yet deeply rewarding sport offers a unique combination of physical control and mental focus—each training session brings you closer to precision and harmony in motion.\n\nAt Ranch Kuulas, you can practice safely under the guidance of professionals. Our horseback archery training is led by Valtteri Männikkö, and we regularly host top-level experts in the sport who share their knowledge and skills with our community. We have seven specially trained “warrior horses,” all accustomed to the movements and sounds of archery—each one there to help you grow in the discipline.\n\nOur practice track allows for diverse exercises, and in summer 2024, we completed a full-scale competition track with electronic timing and a raised shooting tower. These facilities provide an ideal environment for advanced riders and competitive archers alike.\n\nYou are warmly welcome to experience the magic of horseback archery and challenge yourself with this age-old skill!\n\nWe offer a comprehensive selection of horseback archery courses and events designed for all ages and skill levels. Whether you're looking to start from the basics or seeking high-level training as an experienced archer, you'll find a suitable program with us. Each course is carefully designed to provide the right level of instruction and new challenges to support your development in the sport. We are located in Rovaniemi."
+        }
+      ]
+    }
+  ]
+}

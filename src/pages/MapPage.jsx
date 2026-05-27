@@ -55,6 +55,7 @@ function MapPage({ onMarkerClick }) {
                 const idx = parseInt(layerId.replace('route-line-', ''), 10);
                 if (!Number.isNaN(idx)) {
                     setSelectedTrailIdx(idx);
+                    setSelected({"object": trails[idx], type: "trail"});
                 }
             }
         }
@@ -113,7 +114,6 @@ function MapPage({ onMarkerClick }) {
                         trail={trail}
                         index={index}
                         isSelected={selectedTrailIdx === index}
-                        onSelect={() => setSelectedTrailIdx(index)}
                         categoryColor={categoryColors[trail.category]}
                     />
                 ))}
