@@ -49049,15 +49049,14 @@
     }
   },
   {
-    "name": "Tonttumetsän pyöräilypuisto -Santa's Trail",
+    "name": "Tonttumetsän pyöräilypuisto - Santa's Trail - Loiva",
     "category": "mtb",
-    "lengthKm": 4.38,
-    "description": "Joulupukin Pajakylän Tonttumetsässä risteilee neljä lyhyttä, selkeästi merkittyä maastopyöräreittiä. Kolme niistä – Loiva, Hupi ja Lysti – ovat yksisuuntaisia, kun taas kaksisuuntainen Luppo yhdistää polut toisiinsa. Reitit (0,5–1,5 km) kulkevat satumaisen metsikön kumpuilevassa maastossa, missä pyöräilijät pääsevät nauttimaan loivista kaarteista, kalliopinnoista ja tasaisesta sorapohjasta. Uudet polut yhdistyvät sujuvasti Ounasvaaran hiihtostadionille ja Rovaniemen keskustaan kevyen liikenteen väyliä pitkin, mikä tekee niistä helposti saavutettavia niin paikallisille kuin matkailijoillekin. Reittiopastus löytyy myös sähköisenä Etiäinen palvelusta (etiainen.fi). Tonttumetsän pyöräilypuistossa ei ole saatavilla juomapistettä, joten varaa vesipullo mukaan reitille.",
+    "lengthKm": 0.5,
+    "description": "",
     "municipality": "Rovaniemi",
     "geometry": {
-      "type": "MultiLineString",
+      "type": "LineString",
       "coordinates": [
-        [
           [
             25.844252,
             66.542411,
@@ -49458,8 +49457,18 @@
             66.525653,
             90.199
           ]
-        ],
-        [
+      ]
+    }
+  },
+  {
+    "name": "Tonttumetsän pyöräilypuisto - Santa's Trail - Hupi",
+    "category": "mtb",
+    "lengthKm": 0.5,
+    "description": "",
+    "municipality": "Rovaniemi",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
           [
             25.851859,
             66.53866,
@@ -49505,8 +49514,18 @@
             66.538158,
             173.96
           ]
-        ],
-        [
+      ]
+    }
+  },
+    {
+    "name": "Tonttumetsän pyöräilypuisto - Santa's Trail - Lysti",
+    "category": "mtb",
+    "lengthKm": 0.5,
+    "description": "",
+    "municipality": "Rovaniemi",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
           [
             25.855785,
             66.538145,
@@ -49577,8 +49596,18 @@
             66.538625,
             162.02
           ]
-        ],
-        [
+      ]
+    }
+  },
+    {
+    "name": "Tonttumetsän pyöräilypuisto - Santa's Trail",
+    "category": "mtb",
+    "lengthKm": 0.5,
+    "description": "",
+    "municipality": "Rovaniemi",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
           [
             25.855871,
             66.538135,
@@ -49714,7 +49743,6 @@
             66.53719,
             149.15
           ]
-        ]
       ]
     }
   }
