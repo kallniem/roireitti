@@ -34,6 +34,33 @@ function TrailPage() {
 
     const colors = ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#a65628', '#f781bf', '#999999'];
 
+    const getTrailEndpoints = (geometry) => {
+        if (!geometry) return [];
+
+        const lineStrings = geometry.type === 'MultiLineString'
+            ? geometry.coordinates
+            : [geometry.coordinates];
+
+        const start = lineStrings[0]?.[0];
+        const lastLine = lineStrings[lineStrings.length - 1] ?? [];
+        const end = lastLine[lastLine.length - 1];
+
+        if (!start || !end) return [];
+
+        const samePoint = start[0] === end[0] && start[1] === end[1];
+
+        if (samePoint) {
+            return [{ type: 'both', coordinate: start }];
+        }
+
+        return [
+            { type: 'start', coordinate: start },
+            { type: 'end', coordinate: end }
+        ];
+    };
+
+    const endpointMarkers = getTrailEndpoints(trail.geometry);
+
     const getNearestPoint = (lngLat, points) => {
         // This needs to work for extreme latitudes, so treat each point as a point on a sphere rather than using simple Cartesian distance
         const R = 6371; // Earth radius in km
@@ -221,6 +248,43 @@ function TrailPage() {
                                         }
                                     }}>
                                     <TrailLine trail={trail} />
+                                    {endpointMarkers.map((endpoint) => {
+                                        const [lng, lat] = endpoint.coordinate;
+                                        const label = endpoint.type === 'start' ? 'S' : endpoint.type === 'end' ? 'E' : 'S/E';
+                                        const background = endpoint.type === 'start'
+                                            ? '#4daf4a'
+                                            : endpoint.type === 'end'
+                                                ? '#e41a1c'
+                                                : '#4f4f9f';
+
+                                        return (
+                                            <Marker
+                                                key={`${endpoint.type}-${lng}-${lat}`}
+                                                longitude={lng}
+                                                latitude={lat}
+                                                anchor="bottom"
+                                            >
+                                                <div
+                                                    style={{
+                                                        width: 28,
+                                                        height: 28,
+                                                        borderRadius: '50%',
+                                                        background,
+                                                        color: '#fff',
+                                                        border: '2px solid white',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        fontWeight: 700,
+                                                        fontSize: '0.75rem',
+                                                        boxShadow: '0 0 6px rgba(0,0,0,0.25)'
+                                                    }}
+                                                >
+                                                    {label}
+                                                </div>
+                                            </Marker>
+                                        );
+                                    })}
                                         {hoverInfo && (
                                         <>
                                             <Marker
