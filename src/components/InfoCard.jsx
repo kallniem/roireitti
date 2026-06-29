@@ -35,7 +35,7 @@ function InfoCard({ item, onClose }) {
         case "marker":
             const title = item.object.title;
             description = item.object.description;
-            dataSource = item.object.dataSource;
+            dataSource = item.object.data_source;
             const socialMedia = item.object.socialMedia;
             const companyProducts = cyclistProducts.product.filter((p) => p.company.businessName === item.object.title);
 
@@ -100,7 +100,7 @@ function InfoCard({ item, onClose }) {
             const category = item.object.category;
             const length = item.object.lengthKm;
             const difficulty = item.object.difficulty;
-            dataSource = "LIPAS";
+            dataSource = item.object.data_source;
             description = item.object.description;
             
             return (

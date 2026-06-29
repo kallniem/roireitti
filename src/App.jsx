@@ -31,10 +31,6 @@ function App() {
                 <Route path="/map" element={<MapPage />} />
             </Route>
         </Routes>
-
-        <div className="page-footer" style={{padding: "1rem"}}>
-          <span>Frostbit Software Laboratory, Lapin ammattikorkeakoulu</span>
-        </div>
       </div>
   );
 }
@@ -43,9 +39,14 @@ export default App;
 
 function DefaultLayout() {
   return (
+    <>
     <div className="page-body" style={{padding: "2rem"}}>
       <Outlet />
     </div>
+    <div className="page-footer" style={{padding: "1rem"}}>
+        <span>Frostbit Software Laboratory, Lapin ammattikorkeakoulu</span>
+    </div>
+    </>
   );
 }
 

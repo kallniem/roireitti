@@ -58,7 +58,7 @@ function PoiMarkers({ onMarkerClick }) {
                                 title: business.businessName,
                                 description: business.description,
                                 socialMedia: business.socialMedia,
-                                dataSource: business.data_source,
+                                data_source: business.data_source,
                             })}
                         >
                             <div style={{ ...markerStyle, backgroundColor: backgroundColor, border: '3px solid white', borderRadius: '50%', boxShadow: '0 1px 6px rgba(0, 0, 0, 0.25)'}}>
