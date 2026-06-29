@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchRovaniemiBikeRoutes } from "../functions/lipas";
 import slugify from "../functions/slugify";
 
@@ -13,19 +13,13 @@ const typeLabels = {
     cycling: "Pyöräilyreitit",
 }
 
-function TrailList({trails, onFilterChange}) {
+function TrailList({trails, filters = { type: "", length: 20, sort: "shortest" }, onFilterChange}) {
 
     const navigate = useNavigate();
     const [types, setTypes] = useState([]);
     const [groups, setGroups] = useState([]);
-    const [filters, setFilters] = useState({
-        type: "",
-        length: 20,
-        sort: "shortest",
-    });
 
-    useState(() => {
-        //fetchRovaniemiBikeRoutes().then(console.log);
+    useEffect(() => {
         const types = []
         for (const t of trails) {
             if (!types.includes(t.category)) {
@@ -41,11 +35,10 @@ function TrailList({trails, onFilterChange}) {
             }
         }
         setGroups(groups);
-    }, []);
+    }, [trails]);
 
-    const handleFilterChange = (filters) => {
-        setFilters(filters)
-        onFilterChange(filters)
+    const handleFilterChange = (nextFilters) => {
+        onFilterChange(nextFilters)
     }
 
 

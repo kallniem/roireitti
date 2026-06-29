@@ -20,7 +20,11 @@ function MapPage({ onMarkerClick }) {
         longitude: 25.7294,
         latitude: 66.5039,
     });
-    const [filter, setFilter] = useState({ type: '' });
+    const [filter, setFilter] = useState({
+        type: '',
+        length: 20,
+        sort: 'shortest',
+    });
     const [showMenu, setShowMenu] = useState(false)
     const [selected, setSelected] = useState({
         "object": null,
@@ -45,7 +49,11 @@ function MapPage({ onMarkerClick }) {
         }));
     }
 
-    const interactiveLayerIds = trails.map((_, i) => `route-line-${i}`);
+    const filteredTrails = trails
+        .map((trail, originalIndex) => ({ trail, originalIndex }))
+        .filter(({ trail }) => trail.category === filter.type || filter.type === '');
+
+    const interactiveLayerIds = filteredTrails.map(({ originalIndex }) => `route-line-${originalIndex}`);
 
     const handleMapClick = (evt) => {
         const features = evt?.features;
@@ -79,7 +87,7 @@ function MapPage({ onMarkerClick }) {
                 {showMenu?
                 <div className='flex-column trail-menu'>
                         <div className='flex-row align-center justify-center' style={{ cursor: 'pointer', width: '2rem', height: '2rem', borderRadius: '50%', border: '1px solid black'}} onClick={() => {setShowMenu(false)}}>✕</div>
-                        <TrailList trails={trails} onFilterChange={(filters) => handleFilterChange(filters)}/>
+                        <TrailList trails={trails} filters={filter} onFilterChange={(filters) => handleFilterChange(filters)}/>
                 </div>
                 :
                 <div className='flex-column' style={{
@@ -108,12 +116,12 @@ function MapPage({ onMarkerClick }) {
                 {selected.object &&
                     <InfoCard item={selected} onClose={() => setSelected({object: null, type: null})}/>
                 }
-                {trails.filter(trail => trail.category === filter.type || filter.type === '').map((trail, index) => (
+                {filteredTrails.map(({ trail, originalIndex }) => (
                     <TrailLine
-                        key={index}
+                        key={originalIndex}
                         trail={trail}
-                        index={index}
-                        isSelected={selectedTrailIdx === index}
+                        index={originalIndex}
+                        isSelected={selectedTrailIdx === originalIndex}
                         categoryColor={categoryColors[trail.category]}
                     />
                 ))}
