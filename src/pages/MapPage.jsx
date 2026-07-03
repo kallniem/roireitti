@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import MapView from '../components/MapView';
 import TrailList from '../components/TrailList';
-import dummyTrails from "../dummyTrails.json";
+import trails from "../offline-data/trails.json";
 import TrailLine from '../components/TrailLine';
 import InfoCard from '../components/InfoCard';
 import routeIcon from "../assets/route.svg"
@@ -13,12 +13,12 @@ const categoryColors = {
 
 function MapPage({ onMarkerClick }) {
 
-    const trails = dummyTrails; // In a real app, you'd fetch this data from an API
     const [selectedTrailIdx, setSelectedTrailIdx] = useState(null);
     const [viewState, setViewState] = useState({
         zoom: 14,
         longitude: 25.7294,
         latitude: 66.5039,
+        pitch: 70,
     });
     const [filter, setFilter] = useState({
         type: '',
@@ -31,6 +31,8 @@ function MapPage({ onMarkerClick }) {
         "type": null
     })
 
+    const selectedMarkerId = selected.type === 'marker' ? selected.object?.id : null;
+
     const handleFilterChange = (filters) => {
         console.log(filters);
         setFilter(filters);
@@ -42,18 +44,17 @@ function MapPage({ onMarkerClick }) {
 
     const handleMarkerSelect = (marker) => {
         setSelected({"object": marker, type: "marker"});
-        setViewState((current) => ({
-            ...current,
-            longitude: marker.longitude,
-            latitude: marker.latitude,
-        }));
+        setSelectedTrailIdx(null);
     }
 
     const filteredTrails = trails
         .map((trail, originalIndex) => ({ trail, originalIndex }))
         .filter(({ trail }) => trail.category === filter.type || filter.type === '');
 
-    const interactiveLayerIds = filteredTrails.map(({ originalIndex }) => `route-line-${originalIndex}`);
+    const interactiveLayerIds = [
+        ...filteredTrails.map(({ originalIndex }) => `route-line-${originalIndex}`),
+        'poi-circle',
+    ];
 
     const handleMapClick = (evt) => {
         const features = evt?.features;
@@ -82,6 +83,7 @@ function MapPage({ onMarkerClick }) {
                 onMove={handleMapMove}
                 onMapClick={handleMapClick}
                 onMarkerClick={(marker) => handleMarkerSelect(marker)}
+                selectedMarkerId={selectedMarkerId}
                 interactiveLayerIds={interactiveLayerIds}>
                 
                 {showMenu?
@@ -97,7 +99,7 @@ function MapPage({ onMarkerClick }) {
                     left: 0,
                     width: '3rem',
                     height: '3rem',
-                    backgroundColor: 'white',
+                    backgroundColor: 'rgba(255, 255, 255, 0.92)',
                     padding: '15px',
                     boxShadow: '0 -2px 10px rgba(0,0,0,0.2)',
                     zIndex: 10,
@@ -114,7 +116,7 @@ function MapPage({ onMarkerClick }) {
                 }
 
                 {selected.object &&
-                    <InfoCard item={selected} onClose={() => setSelected({object: null, type: null})}/>
+                    <InfoCard key={`${selected.type}-${selected.object.id || selected.object.name}`} item={selected} onClose={() => setSelected({object: null, type: null})}/>
                 }
                 {filteredTrails.map(({ trail, originalIndex }) => (
                     <TrailLine

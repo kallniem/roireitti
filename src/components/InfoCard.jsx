@@ -6,7 +6,7 @@ import facebookIcon from "../assets/facebook.svg";
 import tiktokIcon from "../assets/tiktok.svg";
 import websiteIcon from "../assets/website.svg";
 
-import cyclistProducts from "../cyclist-certified-products.json";
+import cyclistProducts from "../offline-data/cyclist-certified-products.json";
 import welcomCyclistIcon from "../assets/welcome-cyclist.png";
 import { useNavigate } from "react-router";
 import slugify from "../functions/slugify";
@@ -36,7 +36,12 @@ function InfoCard({ item, onClose }) {
             const title = item.object.title;
             description = item.object.description;
             dataSource = item.object.data_source;
-            const socialMedia = item.object.socialMedia;
+
+            const raw = item.object.socialMedia;
+            const socialMedia = typeof raw === "string"
+            ? (() => { try { return JSON.parse(raw); } catch (e) { console.warn("socialMedia parse failed", e); return {}; } })()
+            : (raw || {});
+
             const companyProducts = cyclistProducts.product.filter((p) => p.company.businessName === item.object.title);
 
             return (
@@ -51,7 +56,7 @@ function InfoCard({ item, onClose }) {
                         </p>
                     </div>
                     <div className='flex-row align-center no-stack' style={{gap: '0.5rem'}}>
-                        {socialMedia && (
+                        {Object.keys(socialMedia).length > 0 && (
                         socialMedia.socialMediaLinks.map((link, index) => 
                         {
                             let icon = '';
@@ -154,8 +159,8 @@ function CardBase({ children, dataSource = "Please set the data source", onClose
                 style={{
                     position: 'absolute',
                     bottom: 0,
-                    left: 0,
-                    right: 0,
+                    left: "0.5rem",
+                    right: "0.5rem",
                     backgroundColor: 'white',
                     padding: '1rem',
                     boxShadow: '0 -2px 10px rgba(0,0,0,0.2)',

@@ -42994,7 +42994,8 @@
           ]
         ]
       ]
-    }
+    },
+    "data_source": "LIPAS"
   },
   {
     "name": "Linkka",
@@ -49057,7 +49058,8 @@
     "data_source": "LIPAS"
   },
   {
-    "name": "Tonttumetsän pyöräilypuisto - Santa's Trail - Loiva",
+    "name": "Loiva",
+    "group": "Tonttumetsän pyöräilypuisto - Santa's Trail",
     "category": "mtb",
     "lengthKm": 0.5,
     "description": "",
@@ -49470,7 +49472,8 @@
     "data_source": "LIPAS"
   },
   {
-    "name": "Tonttumetsän pyöräilypuisto - Santa's Trail - Hupi",
+    "name": "Hupi",
+    "group": "Tonttumetsän pyöräilypuisto - Santa's Trail",
     "category": "mtb",
     "lengthKm": 0.5,
     "description": "",
@@ -49528,7 +49531,8 @@
     "data_source": "LIPAS"
   },
   {
-    "name": "Tonttumetsän pyöräilypuisto - Santa's Trail - Lysti",
+    "name": "Lysti",
+    "group": "Tonttumetsän pyöräilypuisto - Santa's Trail",
     "category": "mtb",
     "lengthKm": 0.5,
     "description": "",
@@ -49612,6 +49616,7 @@
   },
   {
     "name": "Tonttumetsän pyöräilypuisto - Santa's Trail",
+    "group": "Tonttumetsän pyöräilypuisto - Santa's Trail",
     "category": "mtb",
     "lengthKm": 0.5,
     "description": "",

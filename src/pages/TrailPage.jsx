@@ -3,9 +3,10 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useState } from 'react';
 import MapView from '../components/MapView';
 import slugify from '../functions/slugify';
-import dummyTrails from "../dummyTrails.json";
+import trails from "../offline-data/trails.json";
 import { useParams } from 'react-router';
 import TrailLine from '../components/TrailLine';
+import ElevationProfile from '../components/ElevationProfile';
 
 const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY;
 
@@ -22,9 +23,10 @@ const typeLabels = {
 function TrailPage() {
 
     const { slug } = useParams();
-    const trail = dummyTrails.find(t => slugify(t.name) === slug);
+    const trail = trails.find(t => slugify(t.name) === slug);
 
     const [geojson, setGeojson] = useState(null);
+    const [elevationData, setElevationData] = useState(null);
     const [hoverInfo, setHoverInfo] = useState(null);
     const [viewState, setViewState] = useState({
         zoom: 14,
@@ -159,11 +161,28 @@ function TrailPage() {
         };
         setGeojson(newGeojsonData);
 
-        // Calculate elevation profile for each route
+        // Build elevation series (distance in km, elevation in meters)
+        const pts = [];
         const isMulti = trail.geometry.type === 'MultiLineString';
-        const lineStrings = isMulti
-            ? trail.geometry.coordinates
-            : [trail.geometry.coordinates];
+        const lineStrings = isMulti ? trail.geometry.coordinates : [trail.geometry.coordinates];
+        lineStrings.forEach(ls => {
+            ls.forEach(coord => pts.push(coord));
+        });
+
+        const series = [];
+        let cum = 0;
+        if (pts.length > 0) {
+            series.push({ distance: 0, elevation: pts[0][2] ?? 0 });
+            for (let i = 1; i < pts.length; i++) {
+                const prev = pts[i - 1];
+                const cur = pts[i];
+                const d = calculateDistance(prev, cur);
+                cum += d;
+                series.push({ distance: cum, elevation: cur[2] ?? 0 });
+            }
+        }
+        setElevationData(series);
+
         
         setViewState({
             longitude: newGeojsonData.features[0].geometry.coordinates[0][0],
@@ -216,6 +235,12 @@ function TrailPage() {
                                 <h2>Reittitiedot</h2>
                                 <p><strong>Pituus:</strong> {trail.lengthKm} km</p>
                                 <p><strong>Vaativuus:</strong> {trail.difficulty}</p>
+                                {elevationData && (
+                                    <div style={{ width: '100%', marginTop: '1rem' }}>
+                                        <h3 style={{ margin: '0 0 0.5rem 0' }}>Korkeusprofiili</h3>
+                                        <ElevationProfile data={elevationData} />
+                                    </div>
+                                )}
                                 <MapView
                                     {...viewState}
                                     onMove={evt => setViewState(evt.viewState)}

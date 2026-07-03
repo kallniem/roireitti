@@ -1,0 +1,414 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7091881,
+          66.4797062
+        ]
+      },
+      "properties": {
+        "id": "node-1760950467",
+        "title": "Hirttiönniemi",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "node",
+        "osm_id": 1760950467,
+        "tags": {
+          "name": "Hirttiönniemi",
+          "natural": "beach",
+          "sport": "swimming"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7544203,
+          66.4793296
+        ]
+      },
+      "properties": {
+        "id": "way-49924798",
+        "title": "Uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 49924798,
+        "tags": {
+          "natural": "beach",
+          "sport": "volleyball"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7852958,
+          66.6291585
+        ]
+      },
+      "properties": {
+        "id": "way-237079607",
+        "title": "Uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 237079607,
+        "tags": {
+          "access": "yes",
+          "fee": "no",
+          "leisure": "swimming_area",
+          "lit": "no",
+          "natural": "beach",
+          "sport": "swimming",
+          "supervised": "no",
+          "surface": "sand"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.8428867,
+          66.5329943
+        ]
+      },
+      "properties": {
+        "id": "way-319060392",
+        "title": "Kaukolampi",
+        "description": "",
+        "category": "swimming_area",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 319060392,
+        "tags": {
+          "intermittent": "no",
+          "leisure": "swimming_area",
+          "name": "Kaukolampi",
+          "natural": "water",
+          "salt": "no",
+          "sport": "swimming",
+          "water": "pond"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7444787,
+          66.5187539
+        ]
+      },
+      "properties": {
+        "id": "way-379148082",
+        "title": "Ounaspaviljongin uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 379148082,
+        "tags": {
+          "access": "yes",
+          "fee": "no",
+          "leisure": "swimming_area",
+          "lit": "no",
+          "name": "Ounaspaviljongin uimaranta",
+          "natural": "beach",
+          "sport": "swimming",
+          "surface": "sand"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7434709,
+          66.5006252
+        ]
+      },
+      "properties": {
+        "id": "way-379148083",
+        "title": "Ounaskosken uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 379148083,
+        "tags": {
+          "leisure": "swimming_area",
+          "name": "Ounaskosken uimaranta",
+          "name:en": "Ounaskoski beach",
+          "natural": "beach",
+          "sport": "swimming",
+          "surface": "sand"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7290141,
+          66.5094797
+        ]
+      },
+      "properties": {
+        "id": "way-381661454",
+        "title": "Arktikumin ranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 381661454,
+        "tags": {
+          "name": "Arktikumin ranta",
+          "name:en": "Arktikum beach",
+          "natural": "beach",
+          "surface": "sand"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.825824,
+          66.5165666
+        ]
+      },
+      "properties": {
+        "id": "way-715881676",
+        "title": "Otvotien uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 715881676,
+        "tags": {
+          "access": "yes",
+          "fee": "no",
+          "leisure": "swimming_area",
+          "lit": "no",
+          "name": "Otvotien uimaranta",
+          "natural": "beach",
+          "sport": "swimming",
+          "surface": "sand"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7732832,
+          66.4863319
+        ]
+      },
+      "properties": {
+        "id": "way-827650251",
+        "title": "Keinuvuopajan uimaranta",
+        "description": "",
+        "category": "swimming_area",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 827650251,
+        "tags": {
+          "leisure": "swimming_area",
+          "name": "Keinuvuopajan uimaranta",
+          "natural": "sand",
+          "sport": "swimming"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7463443,
+          66.5035398
+        ]
+      },
+      "properties": {
+        "id": "way-895704477",
+        "title": "Uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 895704477,
+        "tags": {
+          "natural": "beach",
+          "surface": "sand"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7545748,
+          66.4796888
+        ]
+      },
+      "properties": {
+        "id": "way-1026088397",
+        "title": "Salmijärven uimaranta",
+        "description": "",
+        "category": "swimming_area",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 1026088397,
+        "tags": {
+          "access": "yes",
+          "fee": "yes",
+          "leisure": "swimming_area",
+          "lit": "no",
+          "name": "Salmijärven uimaranta",
+          "supervised": "no"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.6545936,
+          66.5663399
+        ]
+      },
+      "properties": {
+        "id": "way-1125719987",
+        "title": "Uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 1125719987,
+        "tags": {
+          "natural": "beach"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.6262927,
+          66.4776894
+        ]
+      },
+      "properties": {
+        "id": "way-1153370320",
+        "title": "Uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 1153370320,
+        "tags": {
+          "lifeguard": "no",
+          "natural": "beach",
+          "supervised": "no",
+          "surface": "sand"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.6785159,
+          66.5371235
+        ]
+      },
+      "properties": {
+        "id": "way-1418011340",
+        "title": "Ylikylän uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 1418011340,
+        "tags": {
+          "leisure": "bathing_place",
+          "lifeguard": "no",
+          "name": "Ylikylän uimaranta",
+          "natural": "beach",
+          "supervised": "no"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.8214323,
+          66.6036376
+        ]
+      },
+      "properties": {
+        "id": "way-1486259393",
+        "title": "Uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "way",
+        "osm_id": 1486259393,
+        "tags": {
+          "natural": "beach"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.8429392,
+          66.5330076
+        ]
+      },
+      "properties": {
+        "id": "relation-20176959",
+        "title": "Uimaranta",
+        "description": "",
+        "category": "beach",
+        "data_source": "OpenStreetMap / Overpass",
+        "osm_type": "relation",
+        "osm_id": 20176959,
+        "tags": {
+          "natural": "beach",
+          "sport": "swimming",
+          "surface": "sand",
+          "type": "multipolygon"
+        }
+      }
+    }
+  ]
+}

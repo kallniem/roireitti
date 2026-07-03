@@ -1374,7 +1374,8 @@
     "coordinates": [
       25.72963500000003,
       66.501427
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "c1f6a65e-31a3-41cf-ac41-8ca1aafb50af",
@@ -2712,7 +2713,8 @@
     "coordinates": [
       25.78882299999998,
       66.501886
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "80c65fd5-4c7f-4931-8353-934b90cba8e4",
@@ -4436,7 +4438,8 @@
     "coordinates": [
       25.737059000000045,
       66.501425
-    ]
+    ],
+    "category": "activity"
   },
   {
     "id": "fac1227a-6825-401e-b7e6-d711b19ac3ae",
