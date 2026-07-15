@@ -40,7 +40,7 @@ export default App;
 function DefaultLayout() {
   return (
     <>
-    <div className="page-body" style={{padding: "2rem"}}>
+    <div className="page-body" style={{padding: "0.5rem"}}>
       <Outlet />
     </div>
     <div className="page-footer" style={{padding: "1rem"}}>

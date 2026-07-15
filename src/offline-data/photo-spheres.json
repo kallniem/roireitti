@@ -1,0 +1,68 @@
+{
+    "valajaskosken-lenkki": [
+        {
+            "coordinates": [
+                25.625541115881514,
+                66.47659150921855
+            ],
+            "image": "valajaskosken-lenkki/alakorkalon-laavu.jpg",
+            "name": "Alakorkalon laavu"
+        },
+        {
+            "coordinates": [
+                25.6262927,
+                66.4776894
+            ],
+            "image": "valajaskosken-lenkki/alakorkalon-uimaranta.jpg",
+            "name": "Alakorkalon uimaranta"
+        },
+        {
+            "coordinates": [
+                25.53565079149741,
+                66.4383043998962
+            ],
+            "image": "valajaskosken-lenkki/risteys-valajaskoski.jpg",
+            "name": "Risteys Valajaskoski"
+        },
+        {
+            "coordinates": [
+                25.538527414783935,
+                66.42287557905351
+            ],
+            "image": "valajaskosken-lenkki/pysahdyspaikka-valajaskoski.jpg",
+            "name": "Pysähdyspaikka Valajaskoski"
+        },
+        {
+            "coordinates": [
+                25.582060285061587,
+                66.42021081215792
+            ],
+            "image": "valajaskosken-lenkki/pysahdyspaikka-niemi.jpg",
+            "name": "Pysähdyspaikka Niemi"
+        },
+        {
+            "coordinates": [
+                25.609121892394302,
+                66.43266674064711
+            ],
+            "image": "valajaskosken-lenkki/pysahdyspaikka-maki.jpg",
+            "name": "Pysähdyspaikka Mäki"
+        },
+        {
+            "coordinates": [
+                25.693258557821014,
+                66.47513149423908
+            ],
+            "image": "valajaskosken-lenkki/siirtyma-maantie-pyoratie.jpg",
+            "name": "Siirtymä maantie-pyörätie"
+        },
+        {
+            "coordinates": [
+                25.74483292173011,
+                66.47395370729302
+            ],
+            "image": "valajaskosken-lenkki/risteys-tervola-rovaniemi.jpg",
+            "name": "Risteys Tervola-Rovaniemi"
+        }
+    ]
+}

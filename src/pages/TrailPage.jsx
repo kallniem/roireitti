@@ -3,13 +3,16 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useState } from 'react';
 import MapView from '../components/MapView';
 import slugify from '../functions/slugify';
-import trails from "../offline-data/trails.json";
 import { useParams } from 'react-router';
 import TrailLine from '../components/TrailLine';
 import ElevationProfile from '../components/ElevationProfile';
 
-const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY;
+import trails from "../offline-data/trails.json";
+import photoSpheres from "../offline-data/photo-spheres.json";
 
+import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
+
+const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY;
 
 const typeLabels = {
     mtb: "Maastopyöräilyreitit",
@@ -27,7 +30,10 @@ function TrailPage() {
 
     const [geojson, setGeojson] = useState(null);
     const [elevationData, setElevationData] = useState(null);
+
     const [hoverInfo, setHoverInfo] = useState(null);
+    const [highlightedPano, setHighlightedPano] = useState(null);
+
     const [viewState, setViewState] = useState({
         zoom: 14,
         longitude: 25.7294,
@@ -204,7 +210,7 @@ function TrailPage() {
                     </ol>
                 </nav>
             
-                <div className="flex-row" style={{ gap: "2rem"}}>
+                <div className="flex-row" style={{ gap: "0.5rem"}}>
                     
                     <div style={{ flex: 1 }}>
                         <div>
@@ -218,6 +224,7 @@ function TrailPage() {
                             >
                                 <h1>{trail.name}</h1>
                                 <p>{trail.description}</p>
+                                <PhotoViewer images={photoSpheres[slug] || []} onHighlightedImage={(pano) => setHighlightedPano(pano)}/>
                             </div>
                         </div>
                     </div>
@@ -287,8 +294,7 @@ function TrailPage() {
                                                 key={`${endpoint.type}-${lng}-${lat}`}
                                                 longitude={lng}
                                                 latitude={lat}
-                                                anchor="bottom"
-                                            >
+                                                anchor="bottom">
                                                 <div
                                                     style={{
                                                         width: 28,
@@ -303,20 +309,19 @@ function TrailPage() {
                                                         fontWeight: 700,
                                                         fontSize: '0.75rem',
                                                         boxShadow: '0 0 6px rgba(0,0,0,0.25)'
-                                                    }}
-                                                >
+                                                    }}>
                                                     {label}
                                                 </div>
                                             </Marker>
                                         );
                                     })}
-                                        {hoverInfo && (
+
+                                        {hoverInfo &&
                                         <>
                                             <Marker
                                             longitude={hoverInfo.longitude}
                                             latitude={hoverInfo.latitude}
-                                            anchor="center"
-                                            >
+                                            anchor="center">
                                             <div
                                                 style={{
                                                 width: 20,
@@ -334,20 +339,71 @@ function TrailPage() {
                                                 latitude={hoverInfo.latitude}
                                                 closeButton={false}
                                                 closeOnClick={false}
-                                                offset={10}
-                                            >
+                                                offset={10}>
                                                 <div>
                                                 <strong>Korkeus:</strong> {Math.round(hoverInfo.elevation)} m
                                                 </div>
                                             </Popup>
                                         </>
-                                        )}
+                                        }
+
+                                        {highlightedPano &&
+                                            <Marker
+                                                longitude={highlightedPano.coordinates[0]}
+                                                latitude={highlightedPano.coordinates[1]}
+                                                anchor="center"
+                                                color="#DB5C2F">
+                                            </Marker>}
                                 </MapView>
                             </div>
                         </div>
                     </div>
                 </div>
             </>
+    )
+}
+
+function PhotoViewer({ images, onHighlightedImage }) {
+
+    if (!images || images.length === 0) {
+        return null;
+    }
+
+    const [selectedImage, setSelectedImage] = useState(images[0]);
+    onHighlightedImage(selectedImage);
+
+    const baseStyle = { flex: "1 1 calc(20% - 0.5rem)", minWidth: "100px", height: "100px", backgroundColor: "#ccc", borderRadius: "4px", border: "0.125rem solid transparent" };
+
+    return (
+        <>
+        <div className="flex-row no-stack" style={{ gap: "0.125rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+            {images.map((img, index) => (
+                <div
+                    key={index}
+                    style={{
+                            ...baseStyle,
+                            ...(selectedImage === img ? {borderRadius: "4px", border: "0.125rem solid #ff7300", boxShadow: "0 0 5px #DB5C2F"} : {})
+                        }}
+                    onClick={() => {
+                        setSelectedImage(img);
+                        onHighlightedImage(img);
+                    }}>
+                    <img
+                        src={img.image}
+                        alt={img.name}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "4px" }}/>
+                </div>
+            ))}
+        </div>
+        <ReactPhotoSphereViewer
+            src={selectedImage.image}
+            height={"30rem"}
+            width={"100%"}
+            navbar={false}
+            minFov={80}
+            loadingTxt={"Ladataan..."}>
+        </ReactPhotoSphereViewer>
+        </>
     )
 }
 
