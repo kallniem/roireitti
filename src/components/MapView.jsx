@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Map, Source, Layer } from 'react-map-gl/maplibre';
+import { useState, useEffect } from 'react';
+import { Map, Source, Layer, useMap } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import PoiMarkers from './PoiMarkers';
 
@@ -16,6 +16,23 @@ const sky = {
 
 const terrain = {source: 'terrain', exaggeration: 2};
 
+function FlyToMarker({ flyToLocation }) {
+    const { current: map } = useMap();
+
+    useEffect(() => {
+        if (!map || !flyToLocation) return;
+
+        map.flyTo({
+            center: flyToLocation,
+            speed: 0.5,
+            curve: 1,
+            essential: true,
+        });
+    }, [map, flyToLocation]);
+
+    return null;
+}
+
 function MapView({ children, viewState: externalViewState, onMove, onMarkerClick, onMapClick, selectedMarkerId, ...props }) {
 
     const [internalViewState, setInternalViewState] = useState({
@@ -23,6 +40,7 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
         longitude: 25.7294,
         latitude: 66.5039
     });
+    const [flyToLocation, setFlyToLocation] = useState(null);
 
     const currentViewState = externalViewState ?? internalViewState;
 
@@ -41,6 +59,7 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
             if (typeof onMarkerClick === 'function') {
                 onMarkerClick(poiFeature.properties);
             }
+            setFlyToLocation([poiFeature.properties.longitude, poiFeature.properties.latitude]);
             return;
         }
 
@@ -50,7 +69,9 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
     }
 
     return (
+        <>
             <Map
+                id="map"
                 {...currentViewState}
                 {...props}
                 onMove={handleMove}
@@ -61,6 +82,7 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
                 terrain={terrain}
                 >
                 <PoiMarkers selectedMarkerId={selectedMarkerId} />
+                <FlyToMarker flyToLocation={flyToLocation} />
                 { children }
                 <Source
                     id="terrain"
@@ -80,7 +102,8 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
                     paint={{'hillshade-shadow-color': '#473B24'}}
                 />
                 </Source>
-            </Map>
+                </Map>
+            </>
     );
 }
 
