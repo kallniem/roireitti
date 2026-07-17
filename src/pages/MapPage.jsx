@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router';
 import MapView from '../components/MapView';
 import TrailList from '../components/TrailList';
@@ -38,6 +38,30 @@ function MapPage({ onMarkerClick }) {
     })
 
     const selectedMarkerId = selected.type === 'marker' ? selected.object?.id : null;
+
+    const trailBounds = useMemo(() => {
+        if (selected.type !== 'trail' || !selected.object?.geometry) {
+            return null;
+        }
+
+        const lineStrings = selected.object.geometry.type === 'MultiLineString'
+            ? selected.object.geometry.coordinates
+            : [selected.object.geometry.coordinates];
+
+        const coordinates = lineStrings.flatMap((line) => line.map((coord) => [coord[0], coord[1]]));
+
+        if (coordinates.length === 0) {
+            return null;
+        }
+
+        const lngs = coordinates.map(([lng]) => lng);
+        const lats = coordinates.map(([, lat]) => lat);
+
+        return [
+            [Math.min(...lngs), Math.min(...lats)],
+            [Math.max(...lngs), Math.max(...lats)],
+        ];
+    }, [selected]);
 
     const handleFilterChange = (filters) => {
         console.log(filters);
@@ -91,6 +115,7 @@ function MapPage({ onMarkerClick }) {
                     onMapClick={handleMapClick}
                     onMarkerClick={(marker) => handleMarkerSelect(marker)}
                     selectedMarkerId={selectedMarkerId}
+                    fitBounds={trailBounds}
                     interactiveLayerIds={interactiveLayerIds}>
                     
                     <div className='flex-column map-side-buttons'>

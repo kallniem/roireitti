@@ -86,7 +86,7 @@ function TrailLine({ trail, index, categoryColor = '#377eb8', isSelected = false
                     type='line'
                     paint={{
                         'line-width': isSelected ? 12 : 0,
-                        'line-color': 'rgba(0,0,0,0.15)'
+                        'line-color': 'rgba(0,0,0,0.5)'
                     }}
                     layout={{
                         'line-cap': 'round',
@@ -97,7 +97,7 @@ function TrailLine({ trail, index, categoryColor = '#377eb8', isSelected = false
                     id={`route-line-${index}`}
                     type='line'
                     paint={{
-                        'line-width': isSelected ? 8 : 5,
+                        'line-width': isSelected ? 8 : 6,
                         'line-color': categoryColor,
                         'line-opacity': isSelected ? 1 : 0.9
                     }}

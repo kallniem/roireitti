@@ -33,7 +33,24 @@ function FlyToMarker({ flyToLocation }) {
     return null;
 }
 
-function MapView({ children, viewState: externalViewState, onMove, onMarkerClick, onMapClick, selectedMarkerId, ...props }) {
+function FitToBounds({ fitBounds }) {
+    const { current: map } = useMap();
+
+    useEffect(() => {
+        if (!map || !fitBounds) return;
+
+        map.fitBounds(fitBounds, {
+            padding: 20,
+            duration: 1000,
+            essential: true
+        });
+        
+    }, [map, fitBounds]);
+
+    return null;
+}
+
+function MapView({ children, viewState: externalViewState, onMove, onMarkerClick, onMapClick, selectedMarkerId, fitBounds, ...props }) {
 
     const [internalViewState, setInternalViewState] = useState({
         zoom: 14,
@@ -83,6 +100,7 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
                 >
                 <PoiMarkers selectedMarkerId={selectedMarkerId} />
                 <FlyToMarker flyToLocation={flyToLocation} />
+                <FitToBounds fitBounds={fitBounds} />
                 { children }
                 <Source
                     id="terrain"
