@@ -109,41 +109,14 @@ function PoiMarkers({ selectedMarkerId = -1 }) {
         };
     }, []);
 
+    const selectedIdStr = String(selectedMarkerId);
+
     return (
         <Source id="pois" type="geojson" data={poiGeojson}>
             <Layer
-                id="poi-circle"
-                type="circle"
-                paint={{
-                    'circle-radius': [
-                        'case',
-                        ['==', ['get', 'id'], selectedMarkerId],
-                        18,
-                        12,
-                    ],
-                    'circle-color': [
-                        'match',
-                        ['get', 'category'],
-                        'activity', '#9900ff',
-                        'accommodation', '#00aac0',
-                        'bicycle_shop', '#ffbb00',
-                        'hut', '#009900',
-                        'swimming_area', '#00aac0',
-                        '#2563EB',
-                    ],
-                    'circle-stroke-color': 'white',
-                    'circle-stroke-width': 2,
-                    'circle-opacity': [
-                        'case',
-                        ['==', ['get', 'id'], selectedMarkerId],
-                        1,
-                        0.3,
-                    ],
-                }}
-            />
-            <Layer
-                id="poi-symbol"
+                id="poi-unselected"
                 type="symbol"
+                filter={["!=", ["to-string", ["get", "id"]], selectedIdStr]}
                 layout={{
                     'icon-image': [
                         'match',
@@ -155,17 +128,37 @@ function PoiMarkers({ selectedMarkerId = -1 }) {
                         'swimming_area', 'swimming-icon',
                         'shop-icon',
                     ],
-                    'icon-size': 0.3,
+                    'icon-size': 0.5,
+                    'icon-allow-overlap': false,
+                    'icon-ignore-placement': false,
+                }}
+                paint={{
+                    'icon-opacity': 1,
+                }}
+            />
+
+            <Layer
+                id="poi-selected"
+                type="symbol"
+                
+                filter={["==", ["to-string", ["get", "id"]], selectedIdStr]}
+                layout={{
+                    'icon-image': [
+                        'match',
+                        ['get', 'category'],
+                        'activity', 'experience-icon',
+                        'accommodation', 'accommodation-icon',
+                        'bicycle_shop', 'bicycle-icon',
+                        'hut', 'hut-icon',
+                        'swimming_area', 'swimming-icon',
+                        'shop-icon',
+                    ],
+                    'icon-size': 0.7,
                     'icon-allow-overlap': true,
                     'icon-ignore-placement': true,
                 }}
                 paint={{
-                    'icon-opacity': [
-                        'case',
-                        ['==', ['get', 'id'], selectedMarkerId],
-                        1,
-                        0.8,
-                    ],
+                    'icon-opacity': 1,
                 }}
             />
         </Source>

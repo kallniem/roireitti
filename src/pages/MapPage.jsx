@@ -83,7 +83,7 @@ function MapPage({ onMarkerClick }) {
 
     const interactiveLayerIds = [
         ...filteredTrails.map(({ originalIndex }) => `route-line-${originalIndex}`),
-        'poi-circle',
+        'poi-unselected',
     ];
 
     const handleMapClick = (evt) => {

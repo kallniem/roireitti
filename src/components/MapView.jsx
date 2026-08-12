@@ -71,7 +71,7 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
     };
 
     const handleMapClick = (evt) => {
-        const poiFeature = evt?.features?.find((feature) => feature.layer?.id === 'poi-circle');
+        const poiFeature = evt?.features?.find((feature) => feature.layer?.id === 'poi-unselected');
         if (poiFeature) {
             if (typeof onMarkerClick === 'function') {
                 onMarkerClick(poiFeature.properties);

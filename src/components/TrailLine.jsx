@@ -82,6 +82,7 @@ function TrailLine({ trail, index, categoryColor = '#377eb8', isSelected = false
         <>
             <Source id={`route-${index}`} type='geojson' data={geojson}>
                 <Layer
+                    beforeId="poi-unselected"
                     id={`route-line-halo-${index}`}
                     type='line'
                     paint={{
@@ -94,6 +95,7 @@ function TrailLine({ trail, index, categoryColor = '#377eb8', isSelected = false
                     }}
                 />
                 <Layer
+                    beforeId="poi-unselected"
                     id={`route-line-${index}`}
                     type='line'
                     paint={{
