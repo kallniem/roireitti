@@ -46,6 +46,7 @@ function TrailPage() {
     const [elevationData, setElevationData] = useState(null);
     const [hoverInfo, setHoverInfo] = useState(null);
     const [panoramaIdx, setPanoramaIdx] = useState(null);
+    const [flyToLocation, setFlyToLocation] = useState(null);
     const [activeView, setActiveView] = useState("default")
 
     const trailBounds = useMemo(() => getTrailBounds({ type: 'trail', object: trail }), [trail]);
@@ -130,6 +131,12 @@ function TrailPage() {
         };
         setPanoramaIdx(newPanoramaIdx)
     }
+
+    useEffect(() => {
+        if (panoramaIdx == null) return;
+
+        setFlyToLocation(photoSpheres[slug][panoramaIdx].coordinates.slice(0, 2));
+    }, [panoramaIdx, slug]);
 
     useEffect(() => {
 
@@ -231,6 +238,7 @@ function TrailPage() {
             interactiveLayerIds={['route-line']}
             fitBounds={trailBounds}
             duration={0}
+            flyToLocation={flyToLocation}
             onMouseMove={(e) => {
                 if (!geojson) return;
 
@@ -461,52 +469,6 @@ function TrailPage() {
                 </div>
                 </>
             )}
-        </>
-    )
-}
-
-function PhotoViewer({ images, onHighlightedImage }) {
-
-    if (!images || images.length === 0) {
-        return null;
-    }
-
-    const [selectedImage, setSelectedImage] = useState(images[0]);
-    onHighlightedImage(selectedImage);
-
-    const baseStyle = { flex: "1 1 calc(20% - 0.5rem)", minWidth: "100px", height: "100px", backgroundColor: "#ccc", borderRadius: "4px", border: "0.125rem solid transparent" };
-
-    return (
-        <>
-        {/*
-        <div className="flex-row no-stack" style={{ gap: "0.125rem", flexWrap: "wrap", marginBottom: "1rem" }}>
-            {images.map((img, index) => (
-                <div
-                    key={index}
-                    style={{
-                            ...baseStyle,
-                            ...(selectedImage === img ? {borderRadius: "4px", border: "0.125rem solid #ff7300", boxShadow: "0 0 5px #DB5C2F"} : {})
-                        }}
-                    onClick={() => {
-                        setSelectedImage(img);
-                        onHighlightedImage(img);
-                    }}>
-                    <img
-                        src={img.image}
-                        alt={img.name}
-                        style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "4px" }}/>
-                </div>
-            ))}
-        </div>
-        */}
-        <ReactPhotoSphereViewer
-            src={selectedImage.image}
-            height={"100%"}
-            width={"100%"}
-            navbar={false}
-            minFov={80}
-            loadingTxt={"Ladataan..."}>
-        </ReactPhotoSphereViewer>
         </>
     )
 }

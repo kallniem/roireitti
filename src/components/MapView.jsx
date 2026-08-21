@@ -22,12 +22,17 @@ function FlyToMarker({ flyToLocation }) {
     useEffect(() => {
         if (!map || !flyToLocation) return;
 
-        map.flyTo({
-            center: flyToLocation,
-            speed: 0.5,
-            curve: 1,
-            essential: true,
+        const frame = requestAnimationFrame(() => {
+            map.resize();
+            map.flyTo({
+                center: flyToLocation,
+                speed: 0.5,
+                curve: 1,
+                essential: true,
+            });
         });
+
+        return () => cancelAnimationFrame(frame);
     }, [map, flyToLocation]);
 
     return null;
@@ -50,14 +55,15 @@ function FitToBounds({ fitBounds, duration = 1000 }) {
     return null;
 }
 
-function MapView({ children, viewState: externalViewState, onMove, onMarkerClick, onMapClick, selectedMarkerId, fitBounds, duration, ...props }) {
+function MapView({ children, viewState: externalViewState, onMove, onMarkerClick, onMapClick, selectedMarkerId, fitBounds, duration, flyToLocation: externalFlyToLocation, ...props }) {
 
     const [internalViewState, setInternalViewState] = useState({
         zoom: 14,
         longitude: 25.7294,
         latitude: 66.5039
     });
-    const [flyToLocation, setFlyToLocation] = useState(null);
+    const [internalFlyToLocation, setInternalFlyToLocation] = useState(null);
+    const flyToLocation = externalFlyToLocation ?? internalFlyToLocation;
 
     const currentViewState = externalViewState ?? internalViewState;
 
@@ -76,7 +82,7 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
             if (typeof onMarkerClick === 'function') {
                 onMarkerClick(poiFeature.properties);
             }
-            setFlyToLocation([poiFeature.properties.longitude, poiFeature.properties.latitude]);
+            setInternalFlyToLocation([poiFeature.properties.longitude, poiFeature.properties.latitude]);
             return;
         }
 
