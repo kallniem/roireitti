@@ -148,25 +148,19 @@ function InfoCard({ item, onClose }) {
                                 maxHeight: '200px',
                                 objectFit: 'cover',
                                 borderRadius: '1rem 1rem 0 0',
-                                marginBottom: '1rem',
                                 display: 'block'
                             }}
                         />
                     )}
-                    <div style={{ padding: '1rem'}}>
-                        <h3 style={{ margin: '0 0 8px 0', fontSize: 'large' }}>
-                            {name}
-                        </h3>
-                        <p style={{ fontSize: 'medium', margin: '0 0 8px 0' }}>
-                            {length} km | {category}<br/>
-                        </p>
-                        {description?.length > 0 &&
-                        <div style={{ maxHeight: '10rem', overflowY: 'scroll', margin: '1rem' }}>
-                            <p style={{ fontSize: 'medium', margin: '0 0 8px 0', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-                                {description}
+                    <div className="flex-row no-stack align-center justify-space-between" style={{ padding: '1rem'}}>
+                        <div>
+                            <h3 style={{ margin: 6, fontSize: 'large' }}>
+                                {name}
+                            </h3>
+                            <p style={{ fontSize: 'medium', margin: 6 }}>
+                                {length} km | {category}<br/>
                             </p>
                         </div>
-                        }
                         <div className="flex-column align-center justify-center">
                             <button style={{
                                 backgroundColor: 'inherit',
@@ -176,7 +170,6 @@ function InfoCard({ item, onClose }) {
                                 borderRadius: '2rem',
                                 fontSize: '14px',
                                 cursor: 'pointer',
-                                marginTop: '1rem'
                             }} onClick={() => {
                                 navigate(`/trails/${slug}`);
                             }}>

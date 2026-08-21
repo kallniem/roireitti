@@ -270,22 +270,20 @@ table td {
   overflow: hidden;
 }
 
-.bottom-buttons {
+.bottom-menu {
   cursor: pointer;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 1rem;
+  right: 1rem;
   z-index: 10;
-  padding: 0.5rem;
   overflow: hidden;
   gap: 0.5rem;
 }
 
-.bottom-buttons > div {
+.icon-button {
   cursor: pointer;
   width: 2rem;
   height: 2rem;
-  z-index: 10;
 }
 
 .marker-grow {

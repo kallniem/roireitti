@@ -3,7 +3,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useState, useMemo } from 'react';
 import MapView from '../components/MapView';
 import slugify from '../functions/slugify';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import TrailLine from '../components/TrailLine';
 import ElevationProfile from '../components/ElevationProfile';
 
@@ -14,6 +14,7 @@ import gaugeLowIcon from '../assets/gauge-low.svg';
 import panoramaIcon from '../assets/panorama.svg';
 import fullScreenIcon from '../assets/full-screen.svg';
 import minimizeIcon from '../assets/minimize.svg';
+import backIcon from '../assets/back.svg'
 
 import cameraIcon from '../assets/camera.svg'
 
@@ -39,6 +40,7 @@ function TrailPage() {
 
     const { slug } = useParams();
     const trail = trails.find(t => slugify(t.name) === slug);
+    const navigate = useNavigate();
 
     const [geojson, setGeojson] = useState(null);
     const [elevationData, setElevationData] = useState(null);
@@ -307,9 +309,9 @@ function TrailPage() {
                 </Marker>
             }
 
-            <div className='flex-row no-stack bottom-buttons'>
+            <div className='flex-row no-stack bottom-menu'>
                 <div className='flex-column justify-center' onClick={() => toggleView('map')}>
-                    <img src={activeView == "map" ? minimizeIcon : fullScreenIcon} alt="Map view" />
+                    <img className='icon-button' src={activeView == "map" ? minimizeIcon : fullScreenIcon} alt="Map view" />
                 </div>
             </div>
         </MapView>
@@ -383,6 +385,16 @@ function TrailPage() {
             )}
 
             {activeView !== 'map' && activeView !== 'panorama' && (
+                <>
+
+                {/* Back button */}
+                <div className='flex-column align-start justify-center' style={{
+                        position: 'absolute',
+                        top: '1rem',
+                        left: '1rem'}}>
+                    <img className='icon-button' src={backIcon} alt="Back" onClick={() => navigate('/')} />
+                </div>
+
                 <div className="flex-column" style={{ gap: "0.5rem"}}>
                     <div style={{ width: '100%', padding: '1rem' }}>
 
@@ -447,6 +459,7 @@ function TrailPage() {
                             <p>{trail.description}</p>
                     </div>
                 </div>
+                </>
             )}
         </>
     )
