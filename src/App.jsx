@@ -11,12 +11,12 @@ function App() {
         {/* Routes */}
         <Routes>
             <Route element={<DefaultLayout />}>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/trails/:slug" element={<TrailPage />} />
+                
             </Route>
 
             <Route element={<FullscreenLayout />}>
-                <Route path="/map" element={<MapPage />} />
+                <Route path="/" element={<MapPage />} />
+                <Route path="/trails/:slug" element={<TrailPage />} />
             </Route>
         </Routes>
       </div>

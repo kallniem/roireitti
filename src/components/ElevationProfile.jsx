@@ -42,7 +42,7 @@ function ElevationProfile({ data, height = 140 }) {
 
     return (
         <div style={{ width: '100%', overflow: 'hidden' }} aria-hidden>
-            <svg viewBox={`0 0 ${w} ${h}`} style={{ width: '100%', height }}>
+            <svg viewBox={`0 0 ${w} ${h}`}>
                 <defs>
                     <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
                         <stop offset="0%" stopColor="#4daf4a" stopOpacity="0.25" />

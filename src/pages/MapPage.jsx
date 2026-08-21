@@ -8,7 +8,10 @@ import InfoCard from '../components/InfoCard';
 
 import routeIcon from "../assets/route.svg"
 import homeIcon from "../assets/home.svg"
+import crossIcon from "../assets/cross.svg"
 import { MapProvider } from 'react-map-gl/maplibre';
+import PoiList from '../components/PoiList';
+import getTrailBounds from '../functions/trailBounds';
 
 const categoryColors = {
     mtb: '#377eb8',
@@ -39,29 +42,7 @@ function MapPage({ onMarkerClick }) {
 
     const selectedMarkerId = selected.type === 'marker' ? selected.object?.id : null;
 
-    const trailBounds = useMemo(() => {
-        if (selected.type !== 'trail' || !selected.object?.geometry) {
-            return null;
-        }
-
-        const lineStrings = selected.object.geometry.type === 'MultiLineString'
-            ? selected.object.geometry.coordinates
-            : [selected.object.geometry.coordinates];
-
-        const coordinates = lineStrings.flatMap((line) => line.map((coord) => [coord[0], coord[1]]));
-
-        if (coordinates.length === 0) {
-            return null;
-        }
-
-        const lngs = coordinates.map(([lng]) => lng);
-        const lats = coordinates.map(([, lat]) => lat);
-
-        return [
-            [Math.min(...lngs), Math.min(...lats)],
-            [Math.max(...lngs), Math.max(...lats)],
-        ];
-    }, [selected]);
+    const trailBounds = useMemo(() => getTrailBounds(selected), [selected]);
 
     const handleFilterChange = (filters) => {
         console.log(filters);
@@ -121,10 +102,10 @@ function MapPage({ onMarkerClick }) {
                     <div className='flex-column map-side-buttons'>
                         {!showMenu &&
                         <>
-                            <div className='flex-column justify-center' onClick={() => {setShowMenu(true)}}>
+                            <div className='flex-column justify-center' onClick={() => {setShowMenu("trail")}}>
                                 <img src={routeIcon} />
                             </div>
-                            <div className='flex-column justify-center' onClick={() => {navigateTo("/")}}>
+                            <div className='flex-column justify-center' onClick={() => {setShowMenu("poi")}}>
                                 <img src={homeIcon} />
                             </div>
                         </>
@@ -135,10 +116,29 @@ function MapPage({ onMarkerClick }) {
                         <InfoCard key={`${selected.type}-${selected.object.id || selected.object.name}`} item={selected} onClose={() => setSelected({object: null, type: null})}/>
                     }
 
-                    {showMenu &&
-                        <div className='flex-column trail-menu'>
-                                <div className='flex-row align-center justify-center' style={{ cursor: 'pointer', width: '2rem', height: '2rem', borderRadius: '50%', border: '1px solid black'}} onClick={() => {setShowMenu(false)}}>✕</div>
+                    {showMenu == "trail" &&
+                        <div className='flex-column side-menu'>
+                                <div className='flex-row justify-space-between align-center no-stack' style={{gap: "1rem", padding: "0 0.5rem"}}>
+                                    <div className='flex-row align-center no-stack' style={{gap: "1rem"}}>
+                                        <img width="24" height="24" src={routeIcon} />
+                                        <h2>Suodata reittejä</h2>
+                                    </div>
+                                    <img width="24" height="24" src={crossIcon} style={{ cursor: 'pointer'}} onClick={() => {setShowMenu(false)}} />
+                                </div>
                                 <TrailList trails={trails} filters={filter} onFilterChange={(filters) => handleFilterChange(filters)}/>
+                        </div>
+                    }
+
+                    {showMenu == "poi" &&
+                        <div className='flex-column side-menu'>
+                                <div className='flex-row justify-space-between align-center no-stack' style={{gap: "1rem", padding: "0 0.5rem"}}>
+                                    <div className='flex-row align-center no-stack' style={{gap: "1rem"}}>
+                                        <img width="24" height="24" src={homeIcon} />
+                                        <h2>Palvelut ja nähtävyydet</h2>
+                                    </div>
+                                    <img width="24" height="24" src={crossIcon} style={{ cursor: 'pointer'}} onClick={() => {setShowMenu(false)}} />
+                                </div>
+                                <PoiList />
                         </div>
                     }
 

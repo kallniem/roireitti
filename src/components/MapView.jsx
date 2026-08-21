@@ -33,7 +33,7 @@ function FlyToMarker({ flyToLocation }) {
     return null;
 }
 
-function FitToBounds({ fitBounds }) {
+function FitToBounds({ fitBounds, duration = 1000 }) {
     const { current: map } = useMap();
 
     useEffect(() => {
@@ -41,16 +41,16 @@ function FitToBounds({ fitBounds }) {
 
         map.fitBounds(fitBounds, {
             padding: 20,
-            duration: 1000,
+            duration,
             essential: true
         });
         
-    }, [map, fitBounds]);
+    }, [map, fitBounds, duration]);
 
     return null;
 }
 
-function MapView({ children, viewState: externalViewState, onMove, onMarkerClick, onMapClick, selectedMarkerId, fitBounds, ...props }) {
+function MapView({ children, viewState: externalViewState, onMove, onMarkerClick, onMapClick, selectedMarkerId, fitBounds, duration, ...props }) {
 
     const [internalViewState, setInternalViewState] = useState({
         zoom: 14,
@@ -97,10 +97,11 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
                 mapStyle={`https://api.maptiler.com/maps/topo-v4/style.json?key=${MAPTILER_API_KEY}`}
                 sky={sky}
                 terrain={terrain}
+                attributionControl={false}
                 >
                 <PoiMarkers selectedMarkerId={selectedMarkerId} />
                 <FlyToMarker flyToLocation={flyToLocation} />
-                <FitToBounds fitBounds={fitBounds} />
+                <FitToBounds fitBounds={fitBounds} duration={duration} />
                 { children }
                 <Source
                     id="terrain"

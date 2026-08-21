@@ -1,14 +1,26 @@
 import { Map, Layer, Source, Popup, Marker } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import MapView from '../components/MapView';
 import slugify from '../functions/slugify';
 import { useParams } from 'react-router';
 import TrailLine from '../components/TrailLine';
 import ElevationProfile from '../components/ElevationProfile';
 
+import rulerIcon from '../assets/ruler.svg';
+import clockIcon from '../assets/clock.svg';
+import gaugeLowIcon from '../assets/gauge-low.svg';
+
+import panoramaIcon from '../assets/panorama.svg';
+import fullScreenIcon from '../assets/full-screen.svg';
+import minimizeIcon from '../assets/minimize.svg';
+
+import cameraIcon from '../assets/camera.svg'
+
 import trails from "../offline-data/trails.json";
 import photoSpheres from "../offline-data/photo-spheres.json";
+
+import getTrailBounds from '../functions/trailBounds';
 
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 
@@ -30,15 +42,11 @@ function TrailPage() {
 
     const [geojson, setGeojson] = useState(null);
     const [elevationData, setElevationData] = useState(null);
-
     const [hoverInfo, setHoverInfo] = useState(null);
-    const [highlightedPano, setHighlightedPano] = useState(null);
+    const [panoramaIdx, setPanoramaIdx] = useState(null);
+    const [activeView, setActiveView] = useState("default")
 
-    const [viewState, setViewState] = useState({
-        zoom: 14,
-        longitude: 25.7294,
-        latitude: 66.5039,
-    })
+    const trailBounds = useMemo(() => getTrailBounds({ type: 'trail', object: trail }), [trail]);
 
     const colors = ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#a65628', '#f781bf', '#999999'];
 
@@ -95,6 +103,30 @@ function TrailPage() {
         if (nearestDist < 0.5) { // Only consider points within 500m
             return nearest;
         }
+    }
+
+    const toggleView = (view) => {
+        if (activeView == view) {
+            setActiveView("default")
+        } else {
+            setActiveView(view)
+        }
+    }
+
+    const switchToPano = (idx) => {
+        setPanoramaIdx(idx)
+        setActiveView("panorama")
+    }
+
+    const handlePanorama = (int) => {
+        let newPanoramaIdx = panoramaIdx + int;
+        if (newPanoramaIdx == photoSpheres[slug].length) {
+            newPanoramaIdx = 0;
+        };
+        if (newPanoramaIdx == -1) {
+            newPanoramaIdx = photoSpheres[slug].length -1;
+        };
+        setPanoramaIdx(newPanoramaIdx)
     }
 
     useEffect(() => {
@@ -188,179 +220,248 @@ function TrailPage() {
             }
         }
         setElevationData(series);
-
-        
-        setViewState({
-            longitude: newGeojsonData.features[0].geometry.coordinates[0][0],
-            latitude: newGeojsonData.features[0].geometry.coordinates[0][1],
-            zoom: 14
-        })
             
     }, [trail]);
-    
-    return (
-            <>
-                <nav className="breadcrumb">
-                    <ol>
-                        <li><span href="#">Reitit</span></li>
+
+    const customMap =   <MapView
+                            interactiveLayerIds={['route-line']}
+                            fitBounds={trailBounds}
+                            duration={0}
+                            onMouseMove={(e) => {
+                                if (!geojson) return;
+
+                                const points = geojson.features.flatMap(f => {
+                                    const coords = f.geometry.coordinates;
+                                    return f.geometry.type === 'LineString'
+                                        ? coords
+                                        : coords.flat();
+                                });
+
+                                const nearest = getNearestPoint(e.lngLat, points);
+
+                                if (nearest) {
+                                    setHoverInfo({
+                                    longitude: nearest[0],
+                                    latitude: nearest[1],
+                                    elevation: nearest[2]
+                                    });
+                                } else {
+                                    setHoverInfo(null);
+                                }
+                            }}>
+                            <TrailLine trail={trail} />
+                            {endpointMarkers.map((endpoint) => {
+                                const [lng, lat] = endpoint.coordinate;
+                                const label = endpoint.type === 'start' ? 'S' : endpoint.type === 'end' ? 'E' : 'S/E';
+                                const background = endpoint.type === 'start'
+                                    ? '#4daf4a'
+                                    : endpoint.type === 'end'
+                                        ? '#e41a1c'
+                                        : '#4f4f9f';
+
+                                return (
+                                    <Marker
+                                        key={`${endpoint.type}-${lng}-${lat}`}
+                                        longitude={lng}
+                                        latitude={lat}
+                                        anchor="center">
+                                        <div
+                                            style={{
+                                                width: 28,
+                                                height: 28,
+                                                borderRadius: '50%',
+                                                background,
+                                                color: '#fff',
+                                                border: '2px solid white',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                fontWeight: 700,
+                                                fontSize: '0.75rem',
+                                                boxShadow: '0 0 6px rgba(0,0,0,0.25)'
+                                            }}>
+                                            {label}
+                                        </div>
+                                    </Marker>
+                                );
+                            })}
+
+                            {hoverInfo && false &&
                             <>
-                            <li><span href="#">{typeLabels[trail.category]}</span></li>
-                            <li><span aria-label="Current page" href="#">{trail.name}</span></li>
+                                <Marker
+                                longitude={hoverInfo.longitude}
+                                latitude={hoverInfo.latitude}
+                                anchor="center">
+                                <div
+                                    style={{
+                                    width: 20,
+                                    height: 20,
+                                    background: '#333333',
+                                    borderRadius: '50%',
+                                    border: '2px solid white',
+                                    }}
+                                />
+                                </Marker>
+
+
+                                <Popup
+                                    longitude={hoverInfo.longitude}
+                                    latitude={hoverInfo.latitude}
+                                    closeButton={false}
+                                    closeOnClick={false}
+                                    offset={10}>
+                                    <div>
+                                    <strong>Korkeus:</strong> {Math.round(hoverInfo.elevation)} m
+                                    </div>
+                                </Popup>
                             </>
-                    </ol>
-                </nav>
-            
-                <div className="flex-row" style={{ gap: "0.5rem"}}>
-                    
-                    <div style={{ flex: 1 }}>
-                        <div>
-                            <div
-                            className="flex-column justify-start secondary"
-                            style={{
-                            width: "100%",
-                            padding: "1rem",
-                            borderRadius: "1rem",
-                            }}
-                            >
-                                <h1>{trail.name}</h1>
-                                <p>{trail.description}</p>
-                                <PhotoViewer images={photoSpheres[slug] || []} onHighlightedImage={(pano) => setHighlightedPano(pano)}/>
+                            }
+
+
+                            {photoSpheres[slug] && photoSpheres[slug].map((image, index) => 
+                                <Marker
+                                    key={index}
+                                    anchor="center"
+                                    longitude={image.coordinates[0]}
+                                    latitude={image.coordinates[1]}>
+                                        <img src={cameraIcon} style={{ width: 28, height: 28 }} onClick={() => {switchToPano(index)}} />
+                                </Marker>
+                            )}
+                            {panoramaIdx != null && activeView == "panorama" &&
+                            <Marker
+                                key={photoSpheres[slug][panoramaIdx].name}
+                                anchor="center"
+                                longitude={photoSpheres[slug][panoramaIdx].coordinates[0]}
+                                latitude={photoSpheres[slug][panoramaIdx].coordinates[1]}>
+                                <img className="marker-grow" src={cameraIcon} style={{ width: 28, height: 28 }} />
+                            </Marker>
+                            }
+
+
+                            <div className='flex-row no-stack bottom-buttons'>
+                                {/*
+                                activeView != "panorama" &&
+                                    <div className='flex-column justify-center' onClick={() => toggleView('panorama')}>
+                                        <img src={panoramaIcon} alt="Panorama view" />
+                                    </div>
+                                */}
+                                <div className='flex-column justify-center' onClick={() => toggleView('map')}>
+                                    <img src={activeView == "map" ? minimizeIcon : fullScreenIcon} alt="Map view" />
+                                </div>
                             </div>
+                        </MapView>
+    
+    switch (activeView) {
+        case "map":
+            return (
+                <>
+                    {customMap}
+                    {elevationData && (
+                        <div className="pip-elevation-profile">
+                            <ElevationProfile data={elevationData} height={80} />
                         </div>
+                    )}
+                </>
+            )
+        case "panorama":
+            return (
+                <>
+                <ReactPhotoSphereViewer
+                    src={photoSpheres[slug][panoramaIdx].image}
+                    height={"100%"}
+                    width={"100%"}
+                    navbar={false}
+                    loadingTxt={"Ladataan..."}>
+                </ReactPhotoSphereViewer>
+                <div className='flex-column align-center justify-center' style={{
+                        position: 'absolute',
+                        top: '0.5rem',
+                        width: '100%'}}>
+                    <div className='flex-row no-stack align-center justify-center' style={{ gap: '1rem' }}>
+                        <p style={{cursor: 'pointer'}} onClick={() => handlePanorama(-1)}>〈</p>
+                        <p>{trail.name}</p>
+                        <p style={{cursor: 'pointer'}} onClick={() => handlePanorama(1)}>〉</p>
+                    </div>
+                    <span><i>{photoSpheres[slug][panoramaIdx].name}</i></span>
+                </div>
+                <div className="pip-minimap">
+                    {customMap}
+                </div>
+                </>
+            )
+        default:
+            return (
+                <div className="flex-column" style={{ gap: "0.5rem"}}>
+                
+                    <div style={{ height: "60vh" }}>
+                    {customMap}
                     </div>
 
-                    <div style={{ flex: 1 }}>
-                        <div>
-                            <div
-                            className="flex-column justify-center align-center secondary"
-                            style={{
-                            width: "100%",
-                            padding: "1rem",
-                            borderRadius: "1rem",
-                            }}
-                            >
-                                <h2>Reittitiedot</h2>
-                                <p><strong>Pituus:</strong> {trail.lengthKm} km</p>
-                                <p><strong>Vaativuus:</strong> {trail.difficulty}</p>
-                                {elevationData && (
-                                    <div style={{ width: '100%', marginTop: '1rem' }}>
-                                        <h3 style={{ margin: '0 0 0.5rem 0' }}>Korkeusprofiili</h3>
-                                        <ElevationProfile data={elevationData} />
-                                    </div>
-                                )}
-                                <MapView
-                                    {...viewState}
-                                    onMove={evt => setViewState(evt.viewState)}
-                                    style={{
-                                        minHeight: "30rem",
-                                        width: "100%",
-                                    }}
-                                    interactiveLayerIds={['route-line']}
-                                    mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${MAPTILER_API_KEY}`}
-                                    onMouseMove={(e) => {
-                                        if (!geojson) return;
+                    <div style={{ width: '100%', padding: '1rem' }}>
 
-                                        const points = geojson.features.flatMap(f => {
-                                            const coords = f.geometry.coordinates;
-                                            return f.geometry.type === 'LineString'
-                                                ? coords
-                                                : coords.flat();
-                                        });
-
-                                        const nearest = getNearestPoint(e.lngLat, points);
-
-                                        if (nearest) {
-                                            setHoverInfo({
-                                            longitude: nearest[0],
-                                            latitude: nearest[1],
-                                            elevation: nearest[2]
-                                            });
-                                        } else {
-                                            setHoverInfo(null);
-                                        }
-                                    }}>
-                                    <TrailLine trail={trail} />
-                                    {endpointMarkers.map((endpoint) => {
-                                        const [lng, lat] = endpoint.coordinate;
-                                        const label = endpoint.type === 'start' ? 'S' : endpoint.type === 'end' ? 'E' : 'S/E';
-                                        const background = endpoint.type === 'start'
-                                            ? '#4daf4a'
-                                            : endpoint.type === 'end'
-                                                ? '#e41a1c'
-                                                : '#4f4f9f';
-
-                                        return (
-                                            <Marker
-                                                key={`${endpoint.type}-${lng}-${lat}`}
-                                                longitude={lng}
-                                                latitude={lat}
-                                                anchor="bottom">
-                                                <div
-                                                    style={{
-                                                        width: 28,
-                                                        height: 28,
-                                                        borderRadius: '50%',
-                                                        background,
-                                                        color: '#fff',
-                                                        border: '2px solid white',
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        justifyContent: 'center',
-                                                        fontWeight: 700,
-                                                        fontSize: '0.75rem',
-                                                        boxShadow: '0 0 6px rgba(0,0,0,0.25)'
-                                                    }}>
-                                                    {label}
-                                                </div>
-                                            </Marker>
-                                        );
-                                    })}
-
-                                        {hoverInfo &&
-                                        <>
-                                            <Marker
-                                            longitude={hoverInfo.longitude}
-                                            latitude={hoverInfo.latitude}
-                                            anchor="center">
-                                            <div
-                                                style={{
-                                                width: 20,
-                                                height: 20,
-                                                background: '#333333',
-                                                borderRadius: '50%',
-                                                border: '2px solid white',
-                                                }}
-                                            />
-                                            </Marker>
-
-
-                                            <Popup
-                                                longitude={hoverInfo.longitude}
-                                                latitude={hoverInfo.latitude}
-                                                closeButton={false}
-                                                closeOnClick={false}
-                                                offset={10}>
-                                                <div>
-                                                <strong>Korkeus:</strong> {Math.round(hoverInfo.elevation)} m
-                                                </div>
-                                            </Popup>
-                                        </>
-                                        }
-
-                                        {highlightedPano &&
-                                            <Marker
-                                                longitude={highlightedPano.coordinates[0]}
-                                                latitude={highlightedPano.coordinates[1]}
-                                                anchor="center"
-                                                color="#DB5C2F">
-                                            </Marker>}
-                                </MapView>
+                        {elevationData && (
+                            <div className="flex-row justify-space-between align-center reverse-on-stack">
+                                <div style={{width: "100%"}}>
+                                    <h2>{trail.name}</h2>
+                                    <p>—</p>
+                                </div>
+                                <ElevationProfile data={elevationData} height={80} />
                             </div>
+                        )}
+
+                        <div className="flex-column align-center" style={{ width: '100%', padding: '1rem' }}>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            <div className="flex-row no-stack justify-start align-center">
+                                                <img src={rulerIcon} alt="Test" style={{ width: 24, marginRight: 6 }} />
+                                                <strong>Pituus</strong>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="flex-row no-stack justify-start align-center">
+                                                <img src={clockIcon} alt="Test" style={{ width: 24, marginRight: 6 }} />
+                                                <strong>Kesto</strong>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="flex-row no-stack justify-start align-center">
+                                                <img src={gaugeLowIcon} alt="Test" style={{ width: 24, marginRight: 6 }} />
+                                                <strong>Vaikeusaste</strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
+                                                {trail.lengthKm ? `${trail.lengthKm} km` : '—'}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
+                                                {trail.duration ? trail.duration : '—'}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
+                                                {trail.difficulty ? trail.difficulty : '—'}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+
+                        <div style={{ display: 'block', width: '100%', height: '1px', backgroundColor: 'black'}}></div>
+                            <h4>Reittikuvaus</h4>
+                            <p>{trail.description}</p>
                     </div>
                 </div>
-            </>
-    )
+            )
+    }
 }
 
 function PhotoViewer({ images, onHighlightedImage }) {
@@ -376,6 +477,7 @@ function PhotoViewer({ images, onHighlightedImage }) {
 
     return (
         <>
+        {/*
         <div className="flex-row no-stack" style={{ gap: "0.125rem", flexWrap: "wrap", marginBottom: "1rem" }}>
             {images.map((img, index) => (
                 <div
@@ -395,9 +497,10 @@ function PhotoViewer({ images, onHighlightedImage }) {
                 </div>
             ))}
         </div>
+        */}
         <ReactPhotoSphereViewer
             src={selectedImage.image}
-            height={"30rem"}
+            height={"100%"}
             width={"100%"}
             navbar={false}
             minFov={80}

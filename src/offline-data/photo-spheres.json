@@ -2,19 +2,19 @@
     "valajaskosken-lenkki": [
         {
             "coordinates": [
-                25.625541115881514,
-                66.47659150921855
-            ],
-            "image": "valajaskosken-lenkki/alakorkalon-laavu.jpg",
-            "name": "Alakorkalon laavu"
-        },
-        {
-            "coordinates": [
                 25.6262927,
                 66.4776894
             ],
             "image": "valajaskosken-lenkki/alakorkalon-uimaranta.jpg",
             "name": "Alakorkalon uimaranta"
+        },
+        {
+            "coordinates": [
+                25.625541115881514,
+                66.47659150921855
+            ],
+            "image": "valajaskosken-lenkki/alakorkalon-laavu.jpg",
+            "name": "Alakorkalon laavu"
         },
         {
             "coordinates": [
