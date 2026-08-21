@@ -37,6 +37,21 @@ export default defineConfig({
             }
           },
           {
+            // MapTiler tiles caching: reduce flicker for map tiles
+            urlPattern: /^https:\/\/(api\.maptiler\.com|[a-z0-9-]+\.tiles\.maptiler\.com)\/.*/i,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'maptiler-tiles',
+              expiration: {
+                maxEntries: 1000,
+                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          {
             // Image caching
             urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
             // Caches image files

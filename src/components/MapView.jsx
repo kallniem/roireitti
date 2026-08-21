@@ -98,7 +98,10 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
                 sky={sky}
                 terrain={terrain}
                 attributionControl={false}
-                >
+                maxBounds={[
+                    [20.5, 59.7],
+                    [31.7, 70.1]
+                ]}>
                 <PoiMarkers selectedMarkerId={selectedMarkerId} />
                 <FlyToMarker flyToLocation={flyToLocation} />
                 <FitToBounds fitBounds={fitBounds} duration={duration} />
