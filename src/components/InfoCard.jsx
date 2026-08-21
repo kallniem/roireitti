@@ -138,20 +138,28 @@ function InfoCard({ item, onClose }) {
             
             return (
                 <CardBase dataSource={dataSource} onClose={onClose} isClosing={isClosing} handleAnimationEnd={handleAnimationEnd} handleClose={handleClose}>
-                    {hasThumb && (
-                        <img
-                            src={`${slug}/thumb.jpg`}
-                            alt={name}
-                            onError={() => setHasThumb(false)}
-                            style={{
-                                width: '100%',
-                                maxHeight: '200px',
-                                objectFit: 'cover',
-                                borderRadius: '1rem 1rem 0 0',
-                                display: 'block'
-                            }}
-                        />
-                    )}
+                    <div
+                        style={{
+                            width: '100%',
+                            height: '200px',
+                            borderRadius: '1rem 1rem 0 0',
+                            display: 'block',
+                            backgroundColor: '#CFE0A4'}}>
+                        {hasThumb && (
+                            <img
+                                src={`${slug}/thumb.jpg`}
+                                alt={name}
+                                onError={() => setHasThumb(false)}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                    borderRadius: '1rem 1rem 0 0'
+                                }}
+                            />
+                        )}
+                    </div>
+
                     <div className="flex-row no-stack align-center justify-space-between" style={{ padding: '1rem'}}>
                         <div>
                             <h3 style={{ margin: 6, fontSize: 'large' }}>
@@ -189,7 +197,7 @@ export default InfoCard;
 
 function CardBase({ children, dataSource = "Please set the data source", onClose, isClosing, handleAnimationEnd, handleClose }) {
     return (
-            <div className="flex-column align-center" style={{ width: '100%', backgroundColor: 'black' }}>
+            <div className="flex-column align-center" style={{ width: '100%' }}>
                 <div
                     className={`info-card${isClosing ? ' closing' : ''}`}
                     onAnimationEnd={handleAnimationEnd}>
