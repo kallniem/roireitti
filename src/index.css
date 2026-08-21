@@ -254,32 +254,6 @@ table td {
   transform: translateX(0rem);
 }
 
-.pip-minimap {
-  display: block;
-  position: absolute;
-  /* Responsive size: large enough to tap on phones, but capped on wide screens */
-  width: clamp(280px, 35vw, 40rem);
-  height: clamp(280px, 35vw, 20rem);
-  bottom: 0.5rem;
-  left: 0.5rem;
-  z-index: 11;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
-.pip-elevation-profile {
-  display: block;
-  position: absolute;
-  /* Responsive size: large enough to tap on phones, but capped on wide screens */
-  width: clamp(15rem, 70vw, 50rem);
-  background-color: #ffffff;
-  bottom: 0.5rem;
-  left: 0.5rem;
-  z-index: 11;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
 .side-menu {
   position: absolute;
   top: 0;

@@ -223,180 +223,167 @@ function TrailPage() {
             
     }, [trail]);
 
-    const customMap =   <MapView
-                            interactiveLayerIds={['route-line']}
-                            fitBounds={trailBounds}
-                            duration={0}
-                            onMouseMove={(e) => {
-                                if (!geojson) return;
+    // Render the MapView once and change its container styles so it stays mounted
+    const mapComponent = (
+        <MapView
+            interactiveLayerIds={['route-line']}
+            fitBounds={trailBounds}
+            duration={0}
+            onMouseMove={(e) => {
+                if (!geojson) return;
 
-                                const points = geojson.features.flatMap(f => {
-                                    const coords = f.geometry.coordinates;
-                                    return f.geometry.type === 'LineString'
-                                        ? coords
-                                        : coords.flat();
-                                });
+                const points = geojson.features.flatMap(f => {
+                    const coords = f.geometry.coordinates;
+                    return f.geometry.type === 'LineString'
+                        ? coords
+                        : coords.flat();
+                });
 
-                                const nearest = getNearestPoint(e.lngLat, points);
+                const nearest = getNearestPoint(e.lngLat, points);
 
-                                if (nearest) {
-                                    setHoverInfo({
-                                    longitude: nearest[0],
-                                    latitude: nearest[1],
-                                    elevation: nearest[2]
-                                    });
-                                } else {
-                                    setHoverInfo(null);
-                                }
+                if (nearest) {
+                    setHoverInfo({
+                        longitude: nearest[0],
+                        latitude: nearest[1],
+                        elevation: nearest[2]
+                    });
+                } else {
+                    setHoverInfo(null);
+                }
+            }}>
+            <TrailLine trail={trail} />
+            {endpointMarkers.map((endpoint) => {
+                const [lng, lat] = endpoint.coordinate;
+                const label = endpoint.type === 'start' ? 'S' : endpoint.type === 'end' ? 'E' : 'S/E';
+                const background = endpoint.type === 'start'
+                    ? '#4daf4a'
+                    : endpoint.type === 'end'
+                        ? '#e41a1c'
+                        : '#4f4f9f';
+
+                return (
+                    <Marker
+                        key={`${endpoint.type}-${lng}-${lat}`}
+                        longitude={lng}
+                        latitude={lat}
+                        anchor="center">
+                        <div
+                            style={{
+                                width: 28,
+                                height: 28,
+                                borderRadius: '50%',
+                                background,
+                                color: '#fff',
+                                border: '2px solid white',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontWeight: 700,
+                                fontSize: '0.75rem',
+                                boxShadow: '0 0 6px rgba(0,0,0,0.25)'
                             }}>
-                            <TrailLine trail={trail} />
-                            {endpointMarkers.map((endpoint) => {
-                                const [lng, lat] = endpoint.coordinate;
-                                const label = endpoint.type === 'start' ? 'S' : endpoint.type === 'end' ? 'E' : 'S/E';
-                                const background = endpoint.type === 'start'
-                                    ? '#4daf4a'
-                                    : endpoint.type === 'end'
-                                        ? '#e41a1c'
-                                        : '#4f4f9f';
-
-                                return (
-                                    <Marker
-                                        key={`${endpoint.type}-${lng}-${lat}`}
-                                        longitude={lng}
-                                        latitude={lat}
-                                        anchor="center">
-                                        <div
-                                            style={{
-                                                width: 28,
-                                                height: 28,
-                                                borderRadius: '50%',
-                                                background,
-                                                color: '#fff',
-                                                border: '2px solid white',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                fontWeight: 700,
-                                                fontSize: '0.75rem',
-                                                boxShadow: '0 0 6px rgba(0,0,0,0.25)'
-                                            }}>
-                                            {label}
-                                        </div>
-                                    </Marker>
-                                );
-                            })}
-
-                            {hoverInfo && false &&
-                            <>
-                                <Marker
-                                longitude={hoverInfo.longitude}
-                                latitude={hoverInfo.latitude}
-                                anchor="center">
-                                <div
-                                    style={{
-                                    width: 20,
-                                    height: 20,
-                                    background: '#333333',
-                                    borderRadius: '50%',
-                                    border: '2px solid white',
-                                    }}
-                                />
-                                </Marker>
-
-
-                                <Popup
-                                    longitude={hoverInfo.longitude}
-                                    latitude={hoverInfo.latitude}
-                                    closeButton={false}
-                                    closeOnClick={false}
-                                    offset={10}>
-                                    <div>
-                                    <strong>Korkeus:</strong> {Math.round(hoverInfo.elevation)} m
-                                    </div>
-                                </Popup>
-                            </>
-                            }
-
-
-                            {photoSpheres[slug] && photoSpheres[slug].map((image, index) => 
-                                <Marker
-                                    key={index}
-                                    anchor="center"
-                                    longitude={image.coordinates[0]}
-                                    latitude={image.coordinates[1]}>
-                                        <img src={cameraIcon} style={{ width: 28, height: 28 }} onClick={() => {switchToPano(index)}} />
-                                </Marker>
-                            )}
-                            {panoramaIdx != null && activeView == "panorama" &&
-                            <Marker
-                                key={photoSpheres[slug][panoramaIdx].name}
-                                anchor="center"
-                                longitude={photoSpheres[slug][panoramaIdx].coordinates[0]}
-                                latitude={photoSpheres[slug][panoramaIdx].coordinates[1]}>
-                                <img className="marker-grow" src={cameraIcon} style={{ width: 28, height: 28 }} />
-                            </Marker>
-                            }
-
-
-                            <div className='flex-row no-stack bottom-buttons'>
-                                {/*
-                                activeView != "panorama" &&
-                                    <div className='flex-column justify-center' onClick={() => toggleView('panorama')}>
-                                        <img src={panoramaIcon} alt="Panorama view" />
-                                    </div>
-                                */}
-                                <div className='flex-column justify-center' onClick={() => toggleView('map')}>
-                                    <img src={activeView == "map" ? minimizeIcon : fullScreenIcon} alt="Map view" />
-                                </div>
-                            </div>
-                        </MapView>
-    
-    switch (activeView) {
-        case "map":
-            return (
-                <>
-                    {customMap}
-                    {elevationData && (
-                        <div className="pip-elevation-profile">
-                            <ElevationProfile data={elevationData} height={80} />
+                            {label}
                         </div>
-                    )}
-                </>
-            )
-        case "panorama":
-            return (
-                <>
-                <ReactPhotoSphereViewer
-                    src={photoSpheres[slug][panoramaIdx].image}
-                    height={"100%"}
-                    width={"100%"}
-                    navbar={false}
-                    loadingTxt={"Ladataan..."}>
-                </ReactPhotoSphereViewer>
-                <div className='flex-column align-center justify-center' style={{
-                        position: 'absolute',
-                        top: '0.5rem',
-                        width: '100%'}}>
-                    <div className='flex-row no-stack align-center justify-center' style={{ gap: '1rem' }}>
-                        <p style={{cursor: 'pointer'}} onClick={() => handlePanorama(-1)}>〈</p>
-                        <p>{trail.name}</p>
-                        <p style={{cursor: 'pointer'}} onClick={() => handlePanorama(1)}>〉</p>
-                    </div>
-                    <span><i>{photoSpheres[slug][panoramaIdx].name}</i></span>
-                </div>
-                <div className="pip-minimap">
-                    {customMap}
-                </div>
-                </>
-            )
-        default:
-            return (
-                <div className="flex-column" style={{ gap: "0.5rem"}}>
-                
-                    <div style={{ height: "60vh" }}>
-                    {customMap}
-                    </div>
+                    </Marker>
+                );
+            })}
 
+            {photoSpheres[slug] && photoSpheres[slug].map((image, index) => 
+                <Marker
+                    key={index}
+                    anchor="center"
+                    longitude={image.coordinates[0]}
+                    latitude={image.coordinates[1]}>
+                        <img src={cameraIcon} style={{ width: 28, height: 28 }} onClick={() => {switchToPano(index)}} />
+                </Marker>
+            )}
+            {panoramaIdx != null && activeView == "panorama" &&
+                <Marker
+                    key={photoSpheres[slug][panoramaIdx].name}
+                    anchor="center"
+                    longitude={photoSpheres[slug][panoramaIdx].coordinates[0]}
+                    latitude={photoSpheres[slug][panoramaIdx].coordinates[1]}>
+                    <img className="marker-grow" src={cameraIcon} style={{ width: 28, height: 28 }} />
+                </Marker>
+            }
+
+            <div className='flex-row no-stack bottom-buttons'>
+                <div className='flex-column justify-center' onClick={() => toggleView('map')}>
+                    <img src={activeView == "map" ? minimizeIcon : fullScreenIcon} alt="Map view" />
+                </div>
+            </div>
+        </MapView>
+    );
+    
+    // Always render the map component so it stays mounted between view switches.
+    // Change container styles depending on `activeView` to emulate full-screen, minimap, or normal layouts.
+    const mapWrapperStyle = (() => {
+        if (activeView === 'map') {
+            return { position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1000 };
+        }
+        if (activeView === 'panorama') {
+            return {
+                position: 'absolute',
+                bottom: '1rem',
+                left: '1rem',
+                width: 'clamp(280px, 35vw, 40rem)',
+                height: 'clamp(280px, 35vw, 20rem)',
+                zIndex: 900,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+                borderRadius: '0.5rem',
+                overflow: 'hidden'
+            };
+        }
+        return { height: '60vh', width: '100%' };
+    })();
+
+    return (
+        <>
+            {/* Map container - always mounted */}
+            <div style={mapWrapperStyle}>
+                {mapComponent}
+                {activeView === 'map' && elevationData && (
+                    <div style={{
+                        display: 'block',
+                        position: 'absolute',
+                        width: 'clamp(15rem, 70vw, 50rem)',
+                        backgroundColor: '#ffffff',
+                        bottom: '0.5rem',
+                        left: '0.5rem',
+                        zIndex: 11,
+                        borderRadius: '0.5rem',
+                        overflow: 'hidden',
+                    }}>
+                        <ElevationProfile data={elevationData} height={80} />
+                    </div>
+                )}
+            </div>
+
+            {activeView === 'panorama' && (
+                <>
+                    <ReactPhotoSphereViewer
+                        src={photoSpheres[slug][panoramaIdx].image}
+                        height={"100%"}
+                        width={"100%"}
+                        navbar={false}
+                        loadingTxt={"Ladataan..."}>
+                    </ReactPhotoSphereViewer>
+                    <div className='flex-column align-center justify-center' style={{
+                            position: 'absolute',
+                            top: '0.5rem',
+                            width: '100%'}}>
+                        <div className='flex-row no-stack align-center justify-center' style={{ gap: '1rem' }}>
+                            <p style={{cursor: 'pointer'}} onClick={() => handlePanorama(-1)}>〈</p>
+                            <p>{trail.name}</p>
+                            <p style={{cursor: 'pointer'}} onClick={() => handlePanorama(1)}>〉</p>
+                        </div>
+                        <span><i>{photoSpheres[slug][panoramaIdx].name}</i></span>
+                    </div>
+                </>
+            )}
+
+            {activeView !== 'map' && activeView !== 'panorama' && (
+                <div className="flex-column" style={{ gap: "0.5rem"}}>
                     <div style={{ width: '100%', padding: '1rem' }}>
 
                         {elevationData && (
@@ -460,8 +447,9 @@ function TrailPage() {
                             <p>{trail.description}</p>
                     </div>
                 </div>
-            )
-    }
+            )}
+        </>
+    )
 }
 
 function PhotoViewer({ images, onHighlightedImage }) {
