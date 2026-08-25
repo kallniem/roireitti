@@ -201,6 +201,40 @@ select:hover {
   background-color: inherit
 }
 
+/* POI filters */
+.poi-list {
+  padding: 0.5rem;
+}
+
+.poi-pill-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.poi-pill {
+  border: 1px solid #c8c8c8;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-body);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.poi-pill:hover,
+.poi-pill:focus-visible {
+  border-color: var(--color-text-body);
+}
+
+.poi-pill.is-selected {
+  border-color: var(--color-text-body);
+  background-color: var(--color-text-body);
+  color: var(--color-bg-main);
+}
+
 /* Input */
 input[type="range"] {
   margin: 0.5rem 0;
