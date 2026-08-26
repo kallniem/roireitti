@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Map, Source, Layer, useMap } from 'react-map-gl/maplibre';
+import { Map, Source, Layer, Marker, useMap } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import PoiMarkers from './PoiMarkers';
 
@@ -109,6 +109,7 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
                     [31.7, 70.1]
                 ]}>
                 <PoiMarkers selectedMarkerId={selectedMarkerId} />
+                <UserLocationMarker />
                 <FlyToMarker flyToLocation={flyToLocation} />
                 <FitToBounds fitBounds={fitBounds} duration={duration} />
                 { children }
@@ -132,6 +133,34 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
                 </Source>
                 </Map>
             </>
+    );
+}
+
+function UserLocationMarker() {
+    const [location, setLocation] = useState(null);
+
+    useEffect(() => {
+        if (!navigator.geolocation) return undefined;
+
+        const watchId = navigator.geolocation.watchPosition(
+            ({ coords }) => {
+                if (Number.isFinite(coords.longitude) && Number.isFinite(coords.latitude)) {
+                    setLocation([coords.longitude, coords.latitude]);
+                }
+            },
+            () => {},
+            { enableHighAccuracy: true, maximumAge: 10000 }
+        );
+
+        return () => navigator.geolocation.clearWatch(watchId);
+    }, []);
+
+    if (!location) return null;
+
+    return (
+        <Marker longitude={location[0]} latitude={location[1]} anchor="center">
+            <div className="user-location-marker" aria-label="Oma sijainti" />
+        </Marker>
     );
 }
 
