@@ -5,12 +5,13 @@ import swimmingAreas from '../offline-data/swimming-areas.json';
 import businesses from '../offline-data/businesses.json';
 import huts from '../offline-data/huts.json';
 
-import swimmingIcon from '../assets/swimming.svg';
-import accommodationIcon from '../assets/accommodation.svg';
-import bicycleIcon from '../assets/bicycle.svg';
-import experienceIcon from '../assets/experience.svg';
-import hutIcon from '../assets/hut.svg';
-import shopIcon from '../assets/shop.svg';
+import swimmingIcon from '../assets/poi/swimming.svg';
+import accommodationIcon from '../assets/poi/accommodation.svg';
+import bicycleIcon from '../assets/poi/bicycle.svg';
+import experienceIcon from '../assets/poi/experience.svg';
+import hutIcon from '../assets/poi/hut.svg';
+import shopIcon from '../assets/poi/shop.svg';
+import restaurantIcon from '../assets/poi/restaurant.svg';
 
 function PoiMarkers({ selectedMarkerId = -1 }) {
     const { current: map } = useMap();
@@ -38,6 +39,7 @@ function PoiMarkers({ selectedMarkerId = -1 }) {
                     loadImage(experienceIcon).then((img) => ({ id: 'experience-icon', img })),
                     loadImage(hutIcon).then((img) => ({ id: 'hut-icon', img })),
                     loadImage(shopIcon).then((img) => ({ id: 'shop-icon', img })),
+                    loadImage(restaurantIcon).then((img) => ({ id: 'restaurant-icon', img })),
                 ]);
 
                 images.forEach(({ id, img }) => {
@@ -126,6 +128,7 @@ function PoiMarkers({ selectedMarkerId = -1 }) {
                         'bicycle_shop', 'bicycle-icon',
                         'hut', 'hut-icon',
                         'swimming_area', 'swimming-icon',
+                        'restaurant', 'restaurant-icon',
                         'shop-icon',
                     ],
                     'icon-size': 0.5,
@@ -151,6 +154,7 @@ function PoiMarkers({ selectedMarkerId = -1 }) {
                         'bicycle_shop', 'bicycle-icon',
                         'hut', 'hut-icon',
                         'swimming_area', 'swimming-icon',
+                        'restaurant', 'restaurant-icon',
                         'shop-icon',
                     ],
                     'icon-size': 0.7,

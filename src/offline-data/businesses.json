@@ -65,7 +65,8 @@
     "coordinates": [
       25.729907000000026,
       66.502249
-    ]
+    ],
+    "category": "activity"
   },
   {
     "id": "da0d729d-e57e-4d3f-93b1-bb24a0713421",
@@ -235,7 +236,8 @@
     "coordinates": [
       25.73105499999997,
       66.500761
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "591cd5ef-793d-41c1-bed3-533b6b72ae82",
@@ -610,7 +612,8 @@
     "coordinates": [
       25.732893999999987,
       66.502608
-    ]
+    ],
+    "category": "restaurant"
   },
   {
     "id": "7955f3e7-472f-48a0-90c3-d8b2f7ae7d90",
@@ -671,7 +674,8 @@
     "coordinates": [
       25.734361000000035,
       66.501915
-    ]
+    ],
+    "category": "restaurant"
   },
   {
     "id": "d88c6dfa-fcba-425b-bdea-7799476ad428",
@@ -1046,7 +1050,8 @@
     "coordinates": [
       25.73457099999996,
       66.501461
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "1a0e064d-bd71-4a87-aae1-a0afcee10f6c",
@@ -1182,7 +1187,8 @@
     "coordinates": [
       25.73613899999998,
       66.502028
-    ]
+    ],
+    "category": "restaurant"
   },
   {
     "id": "144e3691-d2d2-4855-883e-80edd0cdd406",
@@ -1756,7 +1762,8 @@
     "coordinates": [
       25.732317999999964,
       66.502757
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "3255ce22-b05a-4a13-a66d-504f6d66703b",
@@ -1858,7 +1865,8 @@
     "coordinates": [
       25.723021000000017,
       66.499257
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "a3c517d3-9906-4247-8e81-83d2e8025f97",
@@ -1894,7 +1902,8 @@
     "coordinates": [
       25.73094329310061,
       66.50140178904986
-    ]
+    ],
+    "category": "bicycle_shop"
   },
   {
     "id": "05ba0823-d4a0-4a4b-bb71-e967aec44b90",
@@ -1982,7 +1991,8 @@
     "coordinates": [
       25.732977981428007,
       66.50017322286678
-    ]
+    ],
+    "category": "activity"
   },
   {
     "id": "3dd2b950-f22b-4c41-858b-496b54dd0f61",
@@ -2052,7 +2062,8 @@
     "coordinates": [
       25.734002000000032,
       66.501227
-    ]
+    ],
+    "category": "activity"
   },
   {
     "id": "ba621162-e935-41e6-b765-8bb45dc891b5",
@@ -3352,7 +3363,8 @@
     "coordinates": [
       25.727852999999982,
       66.501685
-    ]
+    ],
+    "category": "restaurant"
   },
   {
     "id": "5aeb83cb-db0f-4092-a45f-c2dbf40ee02d",
@@ -3948,7 +3960,8 @@
     "coordinates": [
       25.734355999999934,
       66.502575
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "3f7fe12e-1f64-4e35-ac04-b5ab7e48722c",
@@ -5254,7 +5267,8 @@
     "coordinates": [
       25.726752000000033,
       66.500832
-    ]
+    ],
+    "category": "activity"
   },
   {
     "id": "8c8f7b15-510d-468b-93be-ce9647a12278",
@@ -5823,7 +5837,8 @@
     "coordinates": [
       25.72551599999997,
       66.501664
-    ]
+    ],
+    "category": "restaurant"
   },
   {
     "id": "197b033b-46a7-4434-9745-040e07955738",
@@ -6072,7 +6087,8 @@
     "coordinates": [
       25.731092999999987,
       66.49957
-    ]
+    ],
+    "category": "activity"
   },
   {
     "id": "7b247913-17b6-4503-9361-029e04949861",
@@ -7538,7 +7554,8 @@
     "coordinates": [
       25.732952999999952,
       66.502147
-    ]
+    ],
+    "category": "activity"
   },
   {
     "id": "bf719280-6988-4f70-a74e-557ab1e87ca2",
@@ -8146,6 +8163,7 @@
     "coordinates": [
       25.71728200000007,
       66.505739
-    ]
+    ],
+    "category": "accommodation"
   }
 ]

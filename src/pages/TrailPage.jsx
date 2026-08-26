@@ -16,7 +16,7 @@ import fullScreenIcon from '../assets/full-screen.svg';
 import minimizeIcon from '../assets/minimize.svg';
 import backIcon from '../assets/back.svg'
 
-import cameraIcon from '../assets/camera.svg'
+import cameraIcon from '../assets/poi/camera.svg'
 
 import trails from "../offline-data/trails.json";
 import photoSpheres from "../offline-data/photo-spheres.json";

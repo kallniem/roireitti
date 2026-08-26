@@ -119,18 +119,6 @@ function MapView({ children, viewState: externalViewState, onMove, onMarkerClick
                     url={`https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=${MAPTILER_API_KEY}`}
                     tileSize={256}
                 />
-                <Source
-                    id="hillshade"
-                    type="raster-dem"
-                    url={`https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=${MAPTILER_API_KEY}`}
-                    tileSize={256}
-                >
-                <Layer
-                    type="hillshade"
-                    layout={{visibility: 'visible'}}
-                    paint={{'hillshade-shadow-color': '#473B24'}}
-                />
-                </Source>
                 </Map>
             </>
     );
