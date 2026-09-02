@@ -114,7 +114,7 @@ function InfoCard({ item, onClose }) {
             
             let category = item.object.category;
             switch (category) {
-                case "cycling":
+                case "road":
                     category = "Maantiepyöräily";
                     break;
                 case "mtb":

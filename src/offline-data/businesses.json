@@ -1424,7 +1424,8 @@
     "coordinates": [
       25.802452854827152,
       66.47096300857382
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "219c1d5a-d1d4-4e9b-9b28-9e56d508c4c5",
@@ -2546,7 +2547,8 @@
     "coordinates": [
       25.648345469236233,
       66.4841366458517
-    ]
+    ],
+    "category": "accommodation"
   },
   {
     "id": "7ff06062-9edf-4b2c-b73b-d9cfa0ab2e87",
@@ -5887,7 +5889,8 @@
     "coordinates": [
       25.745593999999983,
       66.50177
-    ]
+    ],
+    "category": "restaurant"
   },
   {
     "id": "f356a0eb-842e-4e20-922a-02051b501969",
@@ -7844,7 +7847,8 @@
     "coordinates": [
       25.776711442505075,
       66.48611717583212
-    ]
+    ],
+    "category": "activity"
   },
   {
     "id": "c958cfb7-0051-46ce-b344-9b1a2487fc61",

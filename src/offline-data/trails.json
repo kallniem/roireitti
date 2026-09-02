@@ -2,7 +2,7 @@
   {
     "name": "Central Lapland Gravel Loop",
     "group": "Arctic by Cycle",
-    "category": "cycling",
+    "category": "trek",
     "lengthKm": 1148,
     "municipality": "Rovaniemi",
     "geometry": {
@@ -21966,7 +21966,7 @@
   {
     "name": "Santa's Eastern Gravel Loop",
     "group": "Arctic by Cycle",
-    "category": "cycling",
+    "category": "trek",
     "lengthKm": 472,
     "municipality": "Rovaniemi",
     "geometry": {
@@ -32399,7 +32399,7 @@
   {
     "name": "Santa's Western Gravel Loop",
     "group": "Arctic by Cycle",
-    "category": "cycling",
+    "category": "gravel",
     "lengthKm": 493,
     "municipality": "Rovaniemi",
     "geometry": {
@@ -49765,7 +49765,7 @@
   },
   {
     "name": "Valajaskosken lenkki",
-    "category": "cycling",
+    "category": "road",
     "lengthKm": 32.0,
     "description": "Pyöräilyreitti osittain kevyen liikenteen väylää pitkin, osittain tien pientareella.",
     "municipality": "Rovaniemi",

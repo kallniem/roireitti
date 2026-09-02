@@ -25,17 +25,6 @@ import getTrailBounds from '../functions/trailBounds';
 
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 
-const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY;
-
-const typeLabels = {
-    mtb: "Maastopyöräilyreitit",
-    cycling: "Pyöräilyreitit",
-}
-
-//  TODO: Show the start and end points with for example a flag icon
-
-// const types = ["fill", "line", "symbol", "circle", "heatmap", "fill-extrusion", "raster", "hillshade", "color-relief", "background"];
-
 function TrailPage() {
 
     const { slug } = useParams();
@@ -50,8 +39,6 @@ function TrailPage() {
     const [activeView, setActiveView] = useState("default")
 
     const trailBounds = useMemo(() => getTrailBounds({ type: 'trail', object: trail }), [trail]);
-
-    const colors = ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#a65628', '#f781bf', '#999999'];
 
     const getTrailEndpoints = (geometry) => {
         if (!geometry) return [];

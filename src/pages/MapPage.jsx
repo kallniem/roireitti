@@ -13,10 +13,9 @@ import { MapProvider } from 'react-map-gl/maplibre';
 import PoiList from '../components/PoiList';
 import getTrailBounds from '../functions/trailBounds';
 
-const categoryColors = {
-    mtb: '#377eb8',
-    cycling: '#4daf4a',
-}
+import trailColors from '../trailColors'
+
+const colors = trailColors
 
 function MapPage({ onMarkerClick }) {
 
@@ -30,7 +29,7 @@ function MapPage({ onMarkerClick }) {
         pitch: 70,
     });
     const [filter, setFilter] = useState({
-        type: '',
+        selectedTypes: ['gravel', 'mtb', 'trek', 'road', 'winter'],
         length: 20,
         sort: 'shortest',
     });
@@ -60,7 +59,7 @@ function MapPage({ onMarkerClick }) {
 
     const filteredTrails = trails
         .map((trail, originalIndex) => ({ trail, originalIndex }))
-        .filter(({ trail }) => trail.category === filter.type || filter.type === '');
+        .filter(({ trail }) => filter.selectedTypes.includes(trail.category));
 
     const interactiveLayerIds = [
         ...filteredTrails.map(({ originalIndex }) => `route-line-${originalIndex}`),
@@ -148,7 +147,7 @@ function MapPage({ onMarkerClick }) {
                             trail={trail}
                             index={originalIndex}
                             isSelected={selectedTrailIdx === originalIndex}
-                            categoryColor={categoryColors[trail.category]}
+                            categoryColor={colors[trail.category]}
                         />
                     ))}
                 </MapView>

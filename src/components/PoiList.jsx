@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import businesses from '../offline-data/businesses.json';
+import PillFilter from './PillFilter';
 
 const poiCategories = [
     { value: 'all', label: 'Kaikki' },
@@ -8,6 +10,8 @@ const poiCategories = [
     { value: 'activity', label: 'Aktiviteetit' },
     { value: 'shop', label: 'Kaupat' },
 ];
+
+const weekdays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
 function PoiList() {
     const [selectedCategories, setSelectedCategories] = useState(['all']);
@@ -28,31 +32,54 @@ function PoiList() {
         });
     };
 
+    const visibleBusinesses = businesses.filter((business) =>
+        selectedCategories.includes('all') || selectedCategories.includes(business.category)
+    );
+
+    const weekDay = new Date().getDay();
+
     return (
         <div className="poi-list">
             <PillFilter
-                categories={poiCategories}
-                selectedCategories={selectedCategories}
+                items={poiCategories}
+                selectedItems={selectedCategories}
                 onSelect={handleCategorySelect}
+                ariaLabel="Suodata palveluita"
             />
-        </div>
-    );
-}
+            <div className="poi-service-list" aria-live="polite">
+                {visibleBusinesses.map((business) => {
+                    const address = business.postalAddresses?.[0];
+                    const website = business.websiteUrl || business.webshopUrl;
+                    const todayHours = business.businessHours?.default?.find(
+                        (hours) => hours.weekday === weekdays[weekDay]
+                    );
 
-function PillFilter({ categories, selectedCategories, onSelect }) {
-    return (
-        <div className="poi-pill-filter" aria-label="Suodata palveluita">
-            {categories.map((category) => (
-                <button
-                    className={`poi-pill${selectedCategories.includes(category.value) ? ' is-selected' : ''}`}
-                    key={category.value}
-                    type="button"
-                    aria-pressed={selectedCategories.includes(category.value)}
-                    onClick={() => onSelect(category.value)}
-                >
-                    {category.label}
-                </button>
-            ))}
+                    return (
+                        <article className="poi-service flex-row no-stack" key={business.id}>
+                            <div style={{ borderRadius: '1rem 0 0 1rem', display: 'block', backgroundColor: '#293250', width: '5rem', flexShrink: 0}}></div>
+                            <div style={{ padding: '0.75rem'}}>
+                                <h3>{business.businessName.trim()}</h3>
+                                {address && (
+                                    <p>
+                                        {[address.streetName, address.postalCode, address.city].filter(Boolean).join(', ')}
+                                    </p>
+                                )}
+                                {todayHours ? (
+                                    <p>
+                                        {todayHours.open
+                                            ? <><strong>Avoinna: </strong>{todayHours.opens?.slice(0, 5)}-{todayHours.closes?.slice(0, 5)}</>
+                                            : <strong>Suljettu</strong>}
+                                    </p>
+                                )
+                                :
+                                (
+                                    <p>Aukioloaikoja ei ole ilmoitettu</p>
+                                )}
+                            </div>
+                        </article>
+                    );
+                })}
+            </div>
         </div>
     );
 }

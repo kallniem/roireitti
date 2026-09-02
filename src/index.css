@@ -25,6 +25,13 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: var(--font-family-base);
+  font-optical-sizing:auto;
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-text-size-adjust:100%;
 }
 
 /* Utility flex helpers */
@@ -116,20 +123,6 @@ body {
 body {
   margin:0;
   padding:0;
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-regular);
-  font-size: medium;
-  color: var(--color-text-body);
-  background-color: var(--color-bg-main);
-  display:flex;
-  flex-direction:column;
-
-  font-optical-sizing:auto;
-  font-synthesis:none;
-  text-rendering:optimizeLegibility;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  -webkit-text-size-adjust:100%;
 }
 
 .success {
@@ -203,36 +196,69 @@ select:hover {
 
 /* POI filters */
 .poi-list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
   padding: 0.5rem;
 }
 
-.poi-pill-filter {
+.pill-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.poi-pill {
-  border: 1px solid #c8c8c8;
-  border-radius: 999px;
-  padding: 0.55rem 0.9rem;
+.pill {
+  border: 2px solid #c8c8c8;
+  border-radius: 2rem;
+  padding: 0.5rem 0.8rem;
   background-color: var(--color-bg-main);
   color: var(--color-text-body);
-  font: inherit;
-  font-size: 0.875rem;
   cursor: pointer;
   transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
-.poi-pill:hover,
-.poi-pill:focus-visible {
+.pill:hover,
+.pill:focus-visible {
   border-color: var(--color-text-body);
 }
 
-.poi-pill.is-selected {
+.pill.is-selected {
   border-color: var(--color-text-body);
   background-color: var(--color-text-body);
   color: var(--color-bg-main);
+}
+
+.poi-service-list {
+  display: grid;
+  flex: 1;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.poi-service {
+  border: 1px solid #dedede;
+  border-radius: 1rem;
+}
+
+.poi-service h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.poi-service p {
+  margin: 0 0 0.45rem;
+  color: var(--color-text-muted, #666666);
+  font-size: 0.875rem;
+}
+
+.poi-service a {
+  display: inline-block;
+  margin-right: 0.75rem;
+  font-size: 0.875rem;
 }
 
 /* Input */
