@@ -25,3 +25,7 @@ dist-ssr
 
 # Local environment, use .env.production for commit-safe environment variables
 .env
+
+# Build output
+public
+dist

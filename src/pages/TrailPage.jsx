@@ -206,13 +206,13 @@ function TrailPage() {
         const series = [];
         let cum = 0;
         if (pts.length > 0) {
-            series.push({ distance: 0, elevation: pts[0][2] ?? 0 });
+            series.push({ distance: 0, elevation: pts[0][2] ?? 0, coordinate: pts[0].slice(0, 2) });
             for (let i = 1; i < pts.length; i++) {
                 const prev = pts[i - 1];
                 const cur = pts[i];
                 const d = calculateDistance(prev, cur);
                 cum += d;
-                series.push({ distance: cum, elevation: cur[2] ?? 0 });
+                series.push({ distance: cum, elevation: cur[2] ?? 0, coordinate: cur.slice(0, 2) });
             }
         }
         setElevationData(series);
@@ -249,6 +249,25 @@ function TrailPage() {
                 }
             }}>
             <TrailLine trail={trail} />
+            {hoverInfo && (
+                <Marker
+                    longitude={hoverInfo.longitude}
+                    latitude={hoverInfo.latitude}
+                    anchor="center">
+                    <div
+                        aria-hidden="true"
+                        style={{
+                            width: 16,
+                            height: 16,
+                            borderRadius: '50%',
+                            backgroundColor: '#e41a1c',
+                            border: '3px solid #fff',
+                            boxShadow: '0 1px 5px rgba(0,0,0,0.45)',
+                            pointerEvents: 'none'
+                        }}
+                    />
+                </Marker>
+            )}
             {endpointMarkers.map((endpoint) => {
                 const [lng, lat] = endpoint.coordinate;
                 const label = endpoint.type === 'start' ? 'S' : endpoint.type === 'end' ? 'E' : 'S/E';
@@ -351,7 +370,15 @@ function TrailPage() {
                         borderRadius: '0.5rem',
                         overflow: 'hidden',
                     }}>
-                        <ElevationProfile data={elevationData} height={80} />
+                        <ElevationProfile
+                            data={elevationData}
+                            height={80}
+                            onHover={(point) => setHoverInfo(point ? {
+                                longitude: point.coordinate[0],
+                                latitude: point.coordinate[1],
+                                elevation: point.elevation
+                            } : null)}
+                        />
                     </div>
                 )}
             </div>
@@ -399,7 +426,15 @@ function TrailPage() {
                                     <h2>{trail.name}</h2>
                                     <p>—</p>
                                 </div>
-                                <ElevationProfile data={elevationData} height={80} />
+                                <ElevationProfile
+                                    data={elevationData}
+                                    height={80}
+                                    onHover={(point) => setHoverInfo(point ? {
+                                        longitude: point.coordinate[0],
+                                        latitude: point.coordinate[1],
+                                        elevation: point.elevation
+                                    } : null)}
+                                />
                             </div>
                         )}
 
