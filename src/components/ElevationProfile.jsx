@@ -1,12 +1,29 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 function ElevationProfile({ data, height = 140, onHover }) {
-    const margin = { top: 8, right: 10, bottom: 24, left: 36 };
-    const w = 700; // viewBox width
+    const margin = { top: 8, right: 24, bottom: 24, left: 36 };
+    const containerRef = useRef(null);
+    const [width, setWidth] = useState(700);
+    const w = width;
     const h = height;
     const innerW = w - margin.left - margin.right;
     const innerH = h - margin.top - margin.bottom;
     const [hoveredPoint, setHoveredPoint] = useState(null);
+
+    useEffect(() => {
+        if (!containerRef.current) return undefined;
+
+        const updateWidth = () => {
+            const nextWidth = containerRef.current.clientWidth;
+            if (nextWidth > 0) setWidth(nextWidth);
+        };
+
+        updateWidth();
+        const observer = new ResizeObserver(updateWidth);
+        observer.observe(containerRef.current);
+
+        return () => observer.disconnect();
+    }, []);
 
     const { pathD, minElev, maxElev, ticks, points } = useMemo(() => {
         if (!data || data.length === 0) {
@@ -62,7 +79,7 @@ function ElevationProfile({ data, height = 140, onHover }) {
     };
 
     return (
-        <div style={{ width: '100%', overflow: 'hidden' }} aria-hidden>
+        <div ref={containerRef} style={{ width: '100%', overflow: 'hidden' }} aria-hidden>
             <svg viewBox={`0 0 ${w} ${h}`} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
                 <defs>
                     <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">

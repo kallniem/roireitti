@@ -253,16 +253,15 @@ function TrailPage() {
                 <Marker
                     longitude={hoverInfo.longitude}
                     latitude={hoverInfo.latitude}
-                    anchor="center">
+                    anchor="center"
+                    style={{ zIndex: 0, pointerEvents: 'none' }}>
                     <div
                         aria-hidden="true"
                         style={{
                             width: 16,
                             height: 16,
                             borderRadius: '50%',
-                            backgroundColor: '#e41a1c',
-                            border: '3px solid #fff',
-                            boxShadow: '0 1px 5px rgba(0,0,0,0.45)',
+                            border: '3px dashed #000000',
                             pointerEvents: 'none'
                         }}
                     />
@@ -309,7 +308,8 @@ function TrailPage() {
                     key={index}
                     anchor="center"
                     longitude={image.coordinates[0]}
-                    latitude={image.coordinates[1]}>
+                    latitude={image.coordinates[1]}
+                    style={{ zIndex: 1 }}>
                         <img src={cameraIcon} style={{ width: 28, height: 28 }} onClick={() => {switchToPano(index)}} />
                 </Marker>
             )}
@@ -318,7 +318,8 @@ function TrailPage() {
                     key={photoSpheres[slug][panoramaIdx].name}
                     anchor="center"
                     longitude={photoSpheres[slug][panoramaIdx].coordinates[0]}
-                    latitude={photoSpheres[slug][panoramaIdx].coordinates[1]}>
+                    latitude={photoSpheres[slug][panoramaIdx].coordinates[1]}
+                    style={{ zIndex: 2 }}>
                     <img className="marker-grow" src={cameraIcon} style={{ width: 28, height: 28 }} />
                 </Marker>
             }

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import slugify from "../functions/slugify";
 import PillFilter from "./PillFilter";
 import trailColors from "../trailColors";
+import RangeSlider from "./RangeSlider";
 
 const difficulties = [
     {
@@ -108,7 +109,7 @@ function TrailList({trails, filters = { selectedTypes: ['gravel', 'mtb', 'trek',
                 <PillFilter items={difficulties} selectedItems={selectedDifficulties} onSelect={handleDifficultySelect} />
 
                 <h2>Pituus</h2>
-                <em>TODO</em>
+                <RangeSlider min={0} max={50} step={1} value={filters.length} onChange={(value) => handleFilterChange({ ...filters, length: value })} />
 
                 <h2>Maasto</h2>
                 <PillFilter items={roadTypes} selectedItems={selectedTypes} onSelect={handleTypeSelect} />
