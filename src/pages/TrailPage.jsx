@@ -22,6 +22,7 @@ import trails from "../offline-data/trails.json";
 import photoSpheres from "../offline-data/photo-spheres.json";
 
 import getTrailBounds from '../functions/trailBounds';
+import calculateDuration from '../functions/calculateDuration';
 
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 
@@ -66,34 +67,6 @@ function TrailPage() {
     };
 
     const endpointMarkers = getTrailEndpoints(trail.geometry);
-
-    const getNearestPoint = (lngLat, points) => {
-        // This needs to work for extreme latitudes, so treat each point as a point on a sphere rather than using simple Cartesian distance
-        const R = 6371; // Earth radius in km
-        const toRadians = (deg) => deg * Math.PI / 180;
-        const latRad = toRadians(lngLat.lat);
-        const lngRad = toRadians(lngLat.lng);
-        let nearest = null;
-        let nearestDist = Infinity;
-        for (const point of points) {
-            const [plng, plat] = point;
-            const platRad = toRadians(plat);
-            const plngRad = toRadians(plng);
-            const dLat = platRad - latRad;
-            const dLng = plngRad - lngRad;
-            const a = Math.sin(dLat / 2) ** 2 + Math.cos(latRad) * Math.cos(platRad) * Math.sin(dLng / 2) ** 2;
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            const dist = R * c;
-            if (dist < nearestDist) {
-                nearestDist = dist;
-                nearest = point;
-            }
-        }
-        
-        if (nearestDist < 0.5) { // Only consider points within 500m
-            return nearest;
-        }
-    }
 
     const toggleView = (view) => {
         if (activeView == view) {
@@ -235,38 +208,9 @@ function TrailPage() {
                         ? coords
                         : coords.flat();
                 });
-
-                const nearest = getNearestPoint(e.lngLat, points);
-
-                if (nearest) {
-                    setHoverInfo({
-                        longitude: nearest[0],
-                        latitude: nearest[1],
-                        elevation: nearest[2]
-                    });
-                } else {
-                    setHoverInfo(null);
-                }
             }}>
             <TrailLine trail={trail} />
-            {hoverInfo && (
-                <Marker
-                    longitude={hoverInfo.longitude}
-                    latitude={hoverInfo.latitude}
-                    anchor="center"
-                    style={{ zIndex: 0, pointerEvents: 'none' }}>
-                    <div
-                        aria-hidden="true"
-                        style={{
-                            width: 16,
-                            height: 16,
-                            borderRadius: '50%',
-                            border: '3px dashed #000000',
-                            pointerEvents: 'none'
-                        }}
-                    />
-                </Marker>
-            )}
+
             {endpointMarkers.map((endpoint) => {
                 const [lng, lat] = endpoint.coordinate;
                 const label = endpoint.type === 'start' ? 'S' : endpoint.type === 'end' ? 'E' : 'S/E';
@@ -309,20 +253,48 @@ function TrailPage() {
                     anchor="center"
                     longitude={image.coordinates[0]}
                     latitude={image.coordinates[1]}
-                    style={{ zIndex: 1 }}>
-                        <img src={cameraIcon} style={{ width: 28, height: 28 }} onClick={() => {switchToPano(index)}} />
+                    style={ panoramaIdx === index && activeView == "panorama" ? { zIndex: 2 } : { zIndex: 1 }}>
+                        <img className={ panoramaIdx === index && activeView == "panorama" ? "marker-grow" : null} src={cameraIcon} style={{ width: 28, height: 28 }} onClick={() => {switchToPano(index)}} />
                 </Marker>
             )}
-            {panoramaIdx != null && activeView == "panorama" &&
+
+            {hoverInfo && (
                 <Marker
-                    key={photoSpheres[slug][panoramaIdx].name}
-                    anchor="center"
-                    longitude={photoSpheres[slug][panoramaIdx].coordinates[0]}
-                    latitude={photoSpheres[slug][panoramaIdx].coordinates[1]}
-                    style={{ zIndex: 2 }}>
-                    <img className="marker-grow" src={cameraIcon} style={{ width: 28, height: 28 }} />
+                    longitude={hoverInfo.longitude}
+                    latitude={hoverInfo.latitude}
+                    anchor="top"
+                    style={{ zIndex: 3 }}>
+                    <div
+                        aria-hidden="true"
+                        className="flex-column align-center justify-center"
+                        style={{ margin: '-0.55rem 0 0 0'}}>
+                        <div
+                            style={{
+                                width: 16,
+                                height: 16,
+                                backgroundColor: '#2b7a2b',
+                                borderRadius: '50%',
+                                border: '3px solid #ffffff',
+                                boxShadow: '0 0 6px rgba(0,0,0,0.25)'
+                            }}/>
+                        <div
+                            style={{
+                                marginTop: '0.35rem',
+                                padding: '0.15rem 0.45rem',
+                                borderRadius: '999px',
+                                backgroundColor: 'rgba(255,255,255,0.95)',
+                                border: '1px solid rgba(0,0,0,0.08)',
+                                boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
+                                fontSize: '0.7rem',
+                                fontWeight: 600,
+                                color: '#1f2937',
+                                whiteSpace: 'nowrap'
+                            }}>
+                            {Math.round(hoverInfo.elevation)} m
+                        </div>
+                    </div>
                 </Marker>
-            }
+            )}
 
             <div className='flex-row no-stack bottom-menu'>
                 <div className='flex-column justify-center' onClick={() => toggleView('map')}>
@@ -351,7 +323,7 @@ function TrailPage() {
                 overflow: 'hidden'
             };
         }
-        return { height: '60vh', width: '100%' };
+        return { minHeight: '60vh', width: '100%' };
     })();
 
     return (
@@ -472,7 +444,7 @@ function TrailPage() {
                                         </td>
                                         <td>
                                             <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
-                                                {trail.duration ? trail.duration : '—'}
+                                                {trail.duration ? trail.duration : (trail.lengthKm ? calculateDuration(trail.lengthKm) : '—')}
                                             </div>
                                         </td>
                                         <td>

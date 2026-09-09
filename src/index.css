@@ -267,9 +267,8 @@ input[type="range"] {
 }
 
 /* ==============================
-   Table outlines
+   Tables
    ============================== */
-/* Ensure tables have visible cell borders */
 table {
   border-collapse: collapse;
   text-align: left;
@@ -277,7 +276,7 @@ table {
 
 table th,
 table td {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 /* Map styles */
