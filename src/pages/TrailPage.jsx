@@ -384,11 +384,22 @@ function TrailPage() {
                 <>
 
                 {/* Back button */}
-                <div className='flex-column align-start justify-center' style={{
+                <div className='flex-row no-stack align-start justify-space-between' style={{
                         position: 'absolute',
                         top: '1rem',
-                        left: '1rem'}}>
+                        left: '1rem',
+                        right: '1rem'}}>
                     <img className='icon-button' src={backIcon} alt="Back" onClick={() => navigate('/')} />
+                    <div
+                        style={{
+                            cursor: 'pointer',
+                            backgroundColor: 'white',
+                            padding: '0.25rem 0.5rem',
+                            borderRadius: '1rem',
+                            boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
+                        }}>
+                            GPX
+                    </div>
                 </div>
 
                 <div className="flex-column" style={{ gap: "0.5rem"}}>
