@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router';
 import MapView from '../components/MapView';
 import TrailList from '../components/TrailList';
@@ -13,9 +13,7 @@ import { MapProvider } from 'react-map-gl/maplibre';
 import PoiList from '../components/PoiList';
 import getTrailBounds from '../functions/trailBounds';
 
-import trailColors from '../trailColors'
-
-const colors = trailColors
+import trailTypes from '../trailTypes'
 
 function MapPage({ onMarkerClick }) {
 
@@ -43,10 +41,9 @@ function MapPage({ onMarkerClick }) {
 
     const trailBounds = useMemo(() => getTrailBounds(selected), [selected]);
 
-    const handleFilterChange = (filters) => {
-        console.log(filters);
+    const handleFilterChange = useCallback((filters) => {
         setFilter(filters);
-    }
+    }, []);
 
     const handleMapMove = (evt) => {
         setViewState(evt.viewState);
@@ -124,7 +121,7 @@ function MapPage({ onMarkerClick }) {
                                     </div>
                                     <img width="24" height="24" src={crossIcon} style={{ cursor: 'pointer'}} onClick={() => {setShowMenu(false)}} />
                                 </div>
-                                <TrailList trails={trails} filters={filter} onFilterChange={(filters) => handleFilterChange(filters)}/>
+                                <TrailList trails={trails} filters={filter} onFilterChange={handleFilterChange}/>
                         </div>
                     }
 
@@ -147,7 +144,7 @@ function MapPage({ onMarkerClick }) {
                             trail={trail}
                             index={originalIndex}
                             isSelected={selectedTrailIdx === originalIndex}
-                            categoryColor={colors[trail.category]}
+                            categoryColor={trailTypes[trail.category].color}
                         />
                     ))}
                 </MapView>

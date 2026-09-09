@@ -23,6 +23,7 @@ import photoSpheres from "../offline-data/photo-spheres.json";
 
 import getTrailBounds from '../functions/trailBounds';
 import calculateDuration from '../functions/calculateDuration';
+import trailTypes from '../trailTypes';
 
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 
@@ -397,7 +398,7 @@ function TrailPage() {
                             <div className="flex-row justify-space-between align-center reverse-on-stack">
                                 <div style={{width: "100%"}}>
                                     <h2>{trail.name}</h2>
-                                    <p>—</p>
+                                    <p>{trailTypes[trail.category].label}</p>
                                 </div>
                                 <ElevationProfile
                                     data={elevationData}

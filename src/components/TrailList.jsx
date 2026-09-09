@@ -2,60 +2,17 @@ import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import slugify from "../functions/slugify";
 import PillFilter from "./PillFilter";
-import trailColors from "../trailColors";
+import trailTypes from "../trailTypes";
 import RangeSlider from "./RangeSlider";
 
-const difficulties = [
-    {
-        value: 'easy',
-        label: 'Helppo',
-        color: trailColors['easy']
-    },
-    {
-        value: 'moderate',
-        label: 'Keskitaso',
-        color: trailColors['moderate']
-    },
-    {
-        value: 'hard',
-        label: 'Vaikea',
-        color: trailColors['hard']
-    }
-];
+const difficulties = ["easy", "moderate", "hard"];
+const roadTypes = ["gravel", "mtb", "trek", "road", "winter"];
 
-const roadTypes = [
-    {
-        value: 'gravel',
-        label: 'Gravel',
-        color: trailColors['gravel']
-    },
-    {
-        value: 'mtb',
-        label: 'Maastopyöräily',
-        color: trailColors['mtb']
-    },
-    {
-        value: 'trek',
-        label: 'Retkipyöräily',
-        color: trailColors['trek']
-    },
-    {
-        value: 'road',
-        label: 'Maantiepyöräily',
-        color: trailColors['road']
-    },
-    {
-        value: 'winter',
-        label: 'Talvipyöräily',
-        color: trailColors['winter']
-    }
-];
-
-function TrailList({trails, filters = { selectedTypes: ['gravel', 'mtb', 'trek', 'road', 'winter'], length: 20, sort: "shortest", color: "by-difficulty" }, onFilterChange}) {
+function TrailList({trails, filters = { selectedTypes: roadTypes, length: 20, sort: "shortest", color: "by-difficulty" }, onFilterChange}) {
 
     const [groups, setGroups] = useState([]);
-    const [selectedDifficulties, setSelectedDifficulties] = useState(['easy', 'moderate', 'hard']);
-    const [selectedTypes, setSelectedTypes] = useState([...roadTypes.map(({ value }) => value)]);
+    const [selectedDifficulties, setSelectedDifficulties] = useState(difficulties);
+    const [selectedTypes, setSelectedTypes] = useState(roadTypes);
 
     const handleDifficultySelect = (category) => {
         setSelectedDifficulties((currentDifficulties) => {
@@ -65,20 +22,21 @@ function TrailList({trails, filters = { selectedTypes: ['gravel', 'mtb', 'trek',
 
             return nextDifficulties.length > 0
                 ? nextDifficulties
-                : difficulties.map(({ value }) => value);
+                : [...difficulties];
         });
     };
 
     const handleTypeSelect = (category) => {
-        setSelectedTypes((currentTypes) => {
-            const nextTypes = currentTypes.includes(category)
-                ? currentTypes.filter((value) => value !== category)
-                : [...currentTypes, category];
+        const nextTypes = selectedTypes.includes(category)
+            ? selectedTypes.filter((value) => value !== category)
+            : [...selectedTypes, category];
 
-            return nextTypes.length > 0
-                ? nextTypes
-                : selectedTypes.map(({ value }) => value);
-        });
+        const safeNextTypes = nextTypes.length > 0
+            ? nextTypes
+            : [...roadTypes];
+
+        setSelectedTypes(safeNextTypes);
+        handleFilterChange({ ...filters, selectedTypes: safeNextTypes });
     };
 
     useEffect(() => {
@@ -92,12 +50,8 @@ function TrailList({trails, filters = { selectedTypes: ['gravel', 'mtb', 'trek',
     }, [trails]);
 
     const handleFilterChange = (nextFilters) => {
-        onFilterChange(nextFilters)
+        onFilterChange(nextFilters);
     }
-
-    useEffect(() => {
-        handleFilterChange({ ...filters, selectedTypes });
-    }, [selectedTypes, onFilterChange]);
 
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100%", minHeight: 0 }}>
@@ -106,13 +60,13 @@ function TrailList({trails, filters = { selectedTypes: ['gravel', 'mtb', 'trek',
                     marginBottom: "0.5rem",
                 }}>
                 <h2>Vaativuus</h2>
-                <PillFilter items={difficulties} selectedItems={selectedDifficulties} onSelect={handleDifficultySelect} />
+                <PillFilter items={difficulties.map(d => ({ value: d,label: trailTypes[d].label, color: trailTypes[d].color }))} selectedItems={selectedDifficulties} onSelect={handleDifficultySelect} />
 
                 <h2>Pituus</h2>
                 <RangeSlider min={0} max={50} step={1} value={filters.length} onChange={(value) => handleFilterChange({ ...filters, length: value })} />
 
                 <h2>Maasto</h2>
-                <PillFilter items={roadTypes} selectedItems={selectedTypes} onSelect={handleTypeSelect} />
+                <PillFilter items={roadTypes.map(t => ({ value: t, label: trailTypes[t].label, color: trailTypes[t].color }))} selectedItems={selectedTypes} onSelect={handleTypeSelect} />
 
             </div>
             <div style={{ flex: 1, minHeight: 0, overflowY: "auto",  border: "1px solid #ddd", borderRadius: "1rem", boxShadow: "0 1px 6px rgba(0,0,0,0.1)" }}>
@@ -151,7 +105,7 @@ function ListView({ trails, groups, filters, selectedTypes }) {
                     <h2>{g}</h2>
                     <div className="flex-column" style={{ gap: "0.5rem" }}>
                         {shownTrails.filter(t => t.group === g).map(t => (
-                            <div className="flex-column" key={t.name} style={{ padding: '0.5rem', borderRadius: "0.5rem", cursor: "pointer", boxShadow: `0 0 3px 0px ${trailColors[t.category]}` }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
+                            <div className="flex-column" key={t.name} style={{ padding: '0.5rem', borderRadius: "0.5rem", cursor: "pointer", boxShadow: `0 0 3px 0px ${trailTypes[t.category].color}` }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
                                 <span>{t.name}</span>
                                 <span style={{fontSize: 10, fontWeight: "bold"}}>{t.lengthKm} km</span>
                             </div>
@@ -164,7 +118,7 @@ function ListView({ trails, groups, filters, selectedTypes }) {
                     <h2>Yksittäiset reitit</h2>
                     <div className="flex-column" style={{ gap: "0.5rem" }}>
                         {shownTrails.filter(t => !t.group).map(t => (
-                            <div className="flex-column" key={t.name} style={{ padding: '0.5rem', borderRadius: "0.5rem", cursor: "pointer", boxShadow: `0 0 3px 0px ${trailColors[t.category]}` }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
+                            <div className="flex-column" key={t.name} style={{ padding: '0.5rem', borderRadius: "0.5rem", cursor: "pointer", boxShadow: `0 0 3px 0px ${trailTypes[t.category].color}` }} onClick={() => navigate(`/trails/${slugify(t.name)}`)}>
                                 <span>{t.name}</span>
                                 <span style={{fontSize: 10, fontWeight: "bold"}}>{t.lengthKm} km</span>
                             </div>
