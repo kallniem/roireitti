@@ -49058,10 +49058,10 @@
     "data_source": "LIPAS"
   },
   {
-    "name": "Loiva",
+    "name": "Luppo",
     "group": "Tonttumetsän pyöräilypuisto - Santa's Trail",
     "category": "mtb",
-    "lengthKm": 0.5,
+    "lengthKm": 3.2,
     "description": "",
     "municipality": "Rovaniemi",
     "geometry": {
@@ -49472,10 +49472,10 @@
     "data_source": "LIPAS"
   },
   {
-    "name": "Hupi",
+    "name": "Loiva",
     "group": "Tonttumetsän pyöräilypuisto - Santa's Trail",
     "category": "mtb",
-    "lengthKm": 0.5,
+    "lengthKm": 0.26,
     "description": "",
     "municipality": "Rovaniemi",
     "geometry": {
@@ -49531,10 +49531,10 @@
     "data_source": "LIPAS"
   },
   {
-    "name": "Lysti",
+    "name": "Hupi",
     "group": "Tonttumetsän pyöräilypuisto - Santa's Trail",
     "category": "mtb",
-    "lengthKm": 0.5,
+    "lengthKm": 0.29,
     "description": "",
     "municipality": "Rovaniemi",
     "geometry": {
@@ -49615,10 +49615,10 @@
     "data_source": "LIPAS"
   },
   {
-    "name": "Tonttumetsän pyöräilypuisto - Santa's Trail",
+    "name": "Lysti",
     "group": "Tonttumetsän pyöräilypuisto - Santa's Trail",
     "category": "mtb",
-    "lengthKm": 0.5,
+    "lengthKm": 0.75,
     "description": "",
     "municipality": "Rovaniemi",
     "geometry": {
@@ -49767,7 +49767,8 @@
     "name": "Valajaskosken lenkki",
     "category": "road",
     "lengthKm": 32.0,
-    "description": "Pyöräilyreitti osittain kevyen liikenteen väylää pitkin, osittain tien pientareella.",
+    "difficulty": "easy",
+    "description": "Valajaskosken lenkki tarjoaa pyöräilijälle helpon päiväretken Rovaniemen lähiympäristössä maantietä pitkin. Reitti alkaa ja loppuu Rovaniemen keskusta-alueelta, joten jos asut tai majoitut keskustan läheisyydessä reitille lähtö onnistuu helposti. Matkalla voit pulahtaa uimaan Alakorkalon uimarannalla ja pysähtyä nauttimaan maisemista Valajaskosken voimalaitokselle, sekä Kemijoen itäpuolella kulkevalle Välisaaren kauniille tieosuudelle, jossa tie on molemminpuolin vesistöjen ympäröimä. Matkalla on lisäksi yksi autoilijoiden pysähdyspaikka, joka tarjoaa turvallisen paikan pysähdykselle maantieosuudella.\n\nKemintie puolen reitti on helppoa ja tasaista ja kulkee täysin pyörätietä pitkin. Kemijoen itäpuolen tieosuus kulkee maantietä pitkin ja sisältää muutaman keskivaativan nousun. Kokonaisuudessa reitti tarjoaa mukavan reitin sekä kokeneille että aloitteleville pyöräilijöille. Reitti on kuljettavissa molempiin suuntiin.",
     "municipality": "Rovaniemi",
     "geometry": {
       "type": "LineString",

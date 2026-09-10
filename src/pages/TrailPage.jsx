@@ -383,97 +383,139 @@ function TrailPage() {
             {activeView !== 'map' && activeView !== 'panorama' && (
                 <>
 
-                {/* Back button */}
-                <div className='flex-row no-stack align-start justify-space-between' style={{
-                        position: 'absolute',
-                        top: '1rem',
-                        left: '1rem',
-                        right: '1rem'}}>
-                    <img className='icon-button' src={backIcon} alt="Back" onClick={() => navigate('/')} />
-                    <div
-                        style={{
-                            cursor: 'pointer',
-                            backgroundColor: 'white',
-                            padding: '0.25rem 0.5rem',
-                            borderRadius: '1rem',
-                            boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
-                        }}>
-                            GPX
-                    </div>
-                </div>
-
-                <div className="flex-column" style={{ gap: "0.5rem"}}>
-                    <div style={{ width: '100%', padding: '1rem' }}>
-
-                        {elevationData && (
-                            <div className="flex-row justify-space-between align-center reverse-on-stack">
-                                <div style={{width: "100%"}}>
-                                    <h2>{trail.name}</h2>
-                                    <p>{trailTypes[trail.category].label}</p>
-                                </div>
-                                <ElevationProfile
-                                    data={elevationData}
-                                    height={80}
-                                    onHover={(point) => setHoverInfo(point ? {
-                                        longitude: point.coordinate[0],
-                                        latitude: point.coordinate[1],
-                                        elevation: point.elevation
-                                    } : null)}
-                                />
-                            </div>
-                        )}
-
-                        <div className="flex-column align-center" style={{ width: '100%', padding: '1rem' }}>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <td>
-                                            <div className="flex-row no-stack justify-start align-center">
-                                                <img src={rulerIcon} alt="Test" style={{ width: 24, marginRight: 6 }} />
-                                                <strong>Pituus</strong>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className="flex-row no-stack justify-start align-center">
-                                                <img src={clockIcon} alt="Test" style={{ width: 24, marginRight: 6 }} />
-                                                <strong>Kesto</strong>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className="flex-row no-stack justify-start align-center">
-                                                <img src={gaugeLowIcon} alt="Test" style={{ width: 24, marginRight: 6 }} />
-                                                <strong>Vaikeusaste</strong>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
-                                                {trail.lengthKm ? `${trail.lengthKm} km` : '—'}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
-                                                {trail.duration ? trail.duration : (trail.lengthKm ? calculateDuration(trail.lengthKm) : '—')}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
-                                                {trail.difficulty ? trail.difficulty : '—'}
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    {/* Back button */}
+                    <div className='flex-row no-stack align-start justify-space-between' style={{
+                            position: 'absolute',
+                            top: '1rem',
+                            left: '1rem',
+                            right: '1rem'}}>
+                        <img className='icon-button' src={backIcon} alt="Back" onClick={() => navigate('/')} />
+                        <div
+                            style={{
+                                cursor: 'pointer',
+                                backgroundColor: 'white',
+                                padding: '0.25rem 0.5rem',
+                                borderRadius: '1rem',
+                                boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
+                            }}>
+                                GPX
                         </div>
-
-                        <div style={{ display: 'block', width: '100%', height: '1px', backgroundColor: 'black'}}></div>
-                            <h4>Reittikuvaus</h4>
-                            <p>{trail.description}</p>
                     </div>
-                </div>
+
+                    <div className="flex-column" style={{ gap: "0.5rem"}}>
+                        <div style={{ width: '100%', padding: '1rem' }}>
+
+                            {elevationData && (
+                                <div className="flex-row justify-space-between align-center reverse-on-stack">
+                                    <div style={{width: "100%"}}>
+                                        <h2>{trail.name}</h2>
+                                        <p>{trailTypes[trail.category].label}</p>
+                                    </div>
+                                    <ElevationProfile
+                                        data={elevationData}
+                                        height={80}
+                                        onHover={(point) => setHoverInfo(point ? {
+                                            longitude: point.coordinate[0],
+                                            latitude: point.coordinate[1],
+                                            elevation: point.elevation
+                                        } : null)}
+                                    />
+                                </div>
+                            )}
+
+                            <div className="flex-column align-center" style={{ width: '100%', padding: '1rem' }}>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>
+                                                <div className="flex-row no-stack justify-start align-center">
+                                                    <img src={rulerIcon} alt="Test" style={{ width: 24, marginRight: 6 }} />
+                                                    <strong>Pituus</strong>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className="flex-row no-stack justify-start align-center">
+                                                    <img src={clockIcon} alt="Test" style={{ width: 24, marginRight: 6 }} />
+                                                    <strong>Kesto</strong>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className="flex-row no-stack justify-start align-center">
+                                                    <img src={gaugeLowIcon} alt="Test" style={{ width: 24, marginRight: 6 }} />
+                                                    <strong>Vaikeusaste</strong>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
+                                                    {trail.lengthKm ? `${trail.lengthKm} km` : '—'}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
+                                                    {trail.duration ? trail.duration : (trail.lengthKm ? calculateDuration(trail.lengthKm) : '—')}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
+                                                    {trail.difficulty ? trail.difficulty : '—'}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <hr/>
+                                <h4>Reittikuvaus</h4>
+                                <p>{trail.description}</p>
+                                <h4>Huomiot reitiltä</h4>
+                            <hr/>
+                                <h4>Käyttäjien ilmoittamat huomiot reitiltä</h4>
+                                <em>
+                                    Käyttäjien ilmoittamat huomiot on tarkoitettu varjoittamaan muita reitinkäyttäjiä yllättävistä reitillä ilmenneistä esteistä, vaurioista tai muista asioista jotka vaikuttavat reitillä turvallisesti ajamiseen.
+                                    <br/>
+                                    <br/>
+                                    Voit kommentoida tai poistaa toisten tekemiä huomioita, jos havaitset ettei tilanne ole enää ajankohtainen. Huomiot poistuvat automaattisesti 3kk kuluttua ilmoituksen tekemisestä.
+                                </em>
+                                <h4>Käyttäjien ilmoitukset</h4>
+                                <div style={{ border: '2px solid #DD5D36', padding: 10, borderRadius: "0.25rem"}}>
+                                    {/* TODO */}
+                                </div>
+                                <h4>Lähetä huomio reitistä</h4>
+                                <em>Huomasitko reitillä jotain, mikä vaikuttaa reitin turvalliseen käyttöön? Lähetä ilmoitus tästä varoittaaksesi muita reitin käyttäjiä.</em>
+                                <div style={{ backgroundColor: '#f5f0e9', margin: 10, padding: 10, borderRadius: "0.25rem" }}>
+                                    <form style={{ fontSize: 12 }}>
+                                        <p>Valitse seuraavista vaihtoehdoista tai kuvaile reitillä oleva ongelma:</p>
+
+                                        <input type="radio" id="fallen-tree" name="note" value="fallen-tree"/>
+                                        <label htmlFor="fallen-tree">Kaatunut puu</label><br/>
+                                        
+                                        <input type="radio" id="other-obstruction" name="note" value="other-obstruction"/>
+                                        <label htmlFor="other-obstruction">Muu este</label><br/>
+
+                                        <input type="radio" id="dangerous-hole" name="note" value="dangerous-hole"/>
+                                        <label htmlFor="dangerous-hole">Vaarallinen kuoppa</label><br/>
+
+                                        <input type="radio" id="flood" name="note" value="flood"/>
+                                        <label htmlFor="flood">Reitti tulvii</label><br/>
+
+                                        <input type="radio" id="overgrown" name="note" value="overgrown"/>
+                                        <label htmlFor="overgrown">Reitti on kasvanut umpeen</label><br/>
+
+                                        <input type="radio" id="other" name="note" value="other"/>
+                                        <input type="text" id="other-text" name="other-text" placeholder="Muu huomio..." /><br/>
+
+                                        <strong>Lisätiedot</strong>
+                                        <textarea id="additional-info" name="additional-info" placeholder="Lisätietoja..." style={{ width: "100%", height: 80, marginTop: 5}}></textarea>
+                                        <button type="submit" style={{ marginTop: 10, backgroundColor: '#5F793E', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', border: 'none'}} disabled>Lähetä</button>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
                 </>
             )}
         </>

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "maplibre-gl": "^5.21.1",
+    "multi-range-slider-react": "^2.0.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-map-gl": "^8.1.0",

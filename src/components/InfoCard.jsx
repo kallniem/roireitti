@@ -207,7 +207,7 @@ function CardBase({ children, dataSource = "Please set the data source", onClose
                         { children }
                     <div style={{ padding: '1rem' }}>
                         {dataSource && (
-                            <em style={{ color: '#666' }}>{dataSource}</em>
+                            <em>{dataSource}</em>
                         )}
                     </div>
                 </div>

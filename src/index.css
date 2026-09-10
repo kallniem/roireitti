@@ -155,6 +155,16 @@ nav a:hover:not(.logo) {
   color: var(--color-text-body);
 }
 
+/* Text */
+p {
+  white-space: pre-wrap;
+}
+
+em {
+  font-size: 10pt;
+  color: var(--color-text-link);
+}
+
 /* Breadcrumb */
 .breadcrumb {
   padding: 1rem;
