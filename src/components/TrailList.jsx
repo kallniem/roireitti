@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import slugify from "../functions/slugify";
 import PillFilter from "./PillFilter";
 import trailTypes from "../trailTypes";
@@ -8,11 +8,24 @@ import RangeSlider from "./RangeSlider";
 const difficulties = ["easy", "moderate", "hard"];
 const roadTypes = ["gravel", "mtb", "trek", "road", "winter"];
 
-function TrailList({trails, filters = { selectedTypes: roadTypes, length: 20, sort: "shortest", color: "by-difficulty" }, onFilterChange}) {
+function TrailList({trails, filters = { selectedTypes: roadTypes, length: { min: 0, max: 0 }, sort: "shortest", color: "by-difficulty" }, onFilterChange}) {
 
     const [groups, setGroups] = useState([]);
     const [selectedDifficulties, setSelectedDifficulties] = useState(difficulties);
     const [selectedTypes, setSelectedTypes] = useState(roadTypes);
+
+    const trailLengthRange = useMemo(() => {
+        const lengths = trails.map((trail) => Number(trail.lengthKm) || 0);
+
+        return {
+            min: lengths.length > 0 ? Math.min(...lengths) : 0,
+            max: lengths.length > 0 ? Math.max(...lengths) : 0,
+        };
+    }, [trails]);
+
+    const sliderValue = filters.length && typeof filters.length === "object"
+        ? filters.length
+        : trailLengthRange;
 
     const handleDifficultySelect = (category) => {
         setSelectedDifficulties((currentDifficulties) => {
@@ -63,7 +76,13 @@ function TrailList({trails, filters = { selectedTypes: roadTypes, length: 20, so
                 <PillFilter items={difficulties.map(d => ({ value: d,label: trailTypes[d].label, color: trailTypes[d].color }))} selectedItems={selectedDifficulties} onSelect={handleDifficultySelect} />
 
                 <h2>Pituus</h2>
-                <RangeSlider min={0} max={50} step={1} value={filters.length} onChange={(value) => handleFilterChange({ ...filters, length: value })} />
+                <RangeSlider
+                    min={trailLengthRange.min}
+                    max={trailLengthRange.max}
+                    step={1}
+                    value={sliderValue}
+                    onChange={(value) => handleFilterChange({ ...filters, length: value })}
+                />
 
                 <h2>Maasto</h2>
                 <PillFilter items={roadTypes.map(t => ({ value: t, label: trailTypes[t].label, color: trailTypes[t].color }))} selectedItems={selectedTypes} onSelect={handleTypeSelect} />
@@ -79,12 +98,26 @@ function TrailList({trails, filters = { selectedTypes: roadTypes, length: 20, so
 export default TrailList;
 
 function ListView({ trails, groups, filters, selectedTypes }) {
+    const lengthRange = filters.length && typeof filters.length === "object"
+        ? filters.length
+        : { min: 0, max: Number.POSITIVE_INFINITY };
 
     const shownTrails = trails
         .filter(t => {
             if (!selectedTypes.includes(t.category)) {
                 return false;
             }
+
+            const trailLength = Number(t.lengthKm) || 0;
+
+            if (trailLength < (lengthRange.min ?? 0)) {
+                return false;
+            }
+
+            if (trailLength > (lengthRange.max ?? Number.POSITIVE_INFINITY)) {
+                return false;
+            }
+
             return true;
         })
         .slice()

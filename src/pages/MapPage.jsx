@@ -19,6 +19,15 @@ function MapPage({ onMarkerClick }) {
 
     const navigateTo = useNavigate();
 
+    const trailLengthRange = useMemo(() => {
+        const lengths = trails.map((trail) => Number(trail.lengthKm) || 0);
+
+        return {
+            min: lengths.length > 0 ? Math.min(...lengths) : 0,
+            max: lengths.length > 0 ? Math.max(...lengths) : 0,
+        };
+    }, []);
+
     const [selectedTrailIdx, setSelectedTrailIdx] = useState(null);
     const [viewState, setViewState] = useState({
         zoom: 14,
@@ -28,7 +37,7 @@ function MapPage({ onMarkerClick }) {
     });
     const [filter, setFilter] = useState({
         selectedTypes: ['gravel', 'mtb', 'trek', 'road', 'winter'],
-        length: 20,
+        length: trailLengthRange,
         sort: 'shortest',
     });
     const [showMenu, setShowMenu] = useState(false)
@@ -56,7 +65,19 @@ function MapPage({ onMarkerClick }) {
 
     const filteredTrails = trails
         .map((trail, originalIndex) => ({ trail, originalIndex }))
-        .filter(({ trail }) => filter.selectedTypes.includes(trail.category));
+        .filter(({ trail }) => {
+            if (!filter.selectedTypes.includes(trail.category)) {
+                return false;
+            }
+
+            const trailLength = Number(trail.lengthKm) || 0;
+            const lengthRange = filter.length && typeof filter.length === 'object'
+                ? filter.length
+                : { min: 0, max: Number.POSITIVE_INFINITY };
+
+            return trailLength >= (lengthRange.min ?? 0)
+                && trailLength <= (lengthRange.max ?? Number.POSITIVE_INFINITY);
+        });
 
     const interactiveLayerIds = [
         ...filteredTrails.map(({ originalIndex }) => `route-line-${originalIndex}`),
