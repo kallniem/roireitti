@@ -15,6 +15,7 @@ import panoramaIcon from '../assets/panorama.svg';
 import fullScreenIcon from '../assets/full-screen.svg';
 import minimizeIcon from '../assets/minimize.svg';
 import backIcon from '../assets/back.svg'
+import downloadIcon from '../assets/download.svg'
 
 import cameraIcon from '../assets/poi/camera.svg'
 
@@ -22,6 +23,7 @@ import trails from "../offline-data/trails.json";
 import photoSpheres from "../offline-data/photo-spheres.json";
 
 import getTrailBounds from '../functions/trailBounds';
+import downloadGPX from '../functions/downloadGPX';
 import calculateDuration from '../functions/calculateDuration';
 import trailTypes from '../trailTypes';
 
@@ -297,6 +299,7 @@ function TrailPage() {
                 </Marker>
             )}
 
+            {/* Maximize/minimize toggle */}
             <div className='flex-row no-stack bottom-menu'>
                 <div className='flex-column justify-center' onClick={() => toggleView('map')}>
                     <img className='icon-button' src={activeView == "map" ? minimizeIcon : fullScreenIcon} alt="Map view" />
@@ -382,26 +385,6 @@ function TrailPage() {
 
             {activeView !== 'map' && activeView !== 'panorama' && (
                 <>
-
-                    {/* Back button */}
-                    <div className='flex-row no-stack align-start justify-space-between' style={{
-                            position: 'absolute',
-                            top: '1rem',
-                            left: '1rem',
-                            right: '1rem'}}>
-                        <img className='icon-button' src={backIcon} alt="Back" onClick={() => navigate('/')} />
-                        <div
-                            style={{
-                                cursor: 'pointer',
-                                backgroundColor: 'white',
-                                padding: '0.25rem 0.5rem',
-                                borderRadius: '1rem',
-                                boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
-                            }}>
-                                GPX
-                        </div>
-                    </div>
-
                     <div className="flex-column" style={{ gap: "0.5rem"}}>
                         <div style={{ width: '100%', padding: '1rem' }}>
 
@@ -461,7 +444,7 @@ function TrailPage() {
                                             </td>
                                             <td>
                                                 <div className="flex-row no-stack justify-start align-center" style={{ marginLeft: 30}}>
-                                                    {trail.difficulty ? trail.difficulty : '—'}
+                                                    {trail.difficulty ? trailTypes[trail.difficulty].label : '—'}
                                                 </div>
                                             </td>
                                         </tr>
@@ -514,6 +497,23 @@ function TrailPage() {
                                         <button type="submit" style={{ marginTop: 10, backgroundColor: '#5F793E', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', border: 'none'}} disabled>Lähetä</button>
                                     </form>
                                 </div>
+                        </div>
+                    </div>
+
+                    {/* Back and download buttons */}
+                    <div className='flex-row no-stack align-center justify-space-between top-menu'>
+                        <img className='icon-button' src={backIcon} alt="Back" onClick={() => navigate('/')} />
+                        <div className='flex-row no-stack align-center justify-center'
+                            style={{
+                                cursor: 'pointer',
+                                backgroundColor: 'white',
+                                padding: '0.25rem 0.5rem',
+                                borderRadius: '1rem',
+                                boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
+                                zIndex: 1000}}
+                            onClick={() => downloadGPX(trail, slug)}>
+                            <img style={{ width: 16, marginRight: 6 }} src={downloadIcon} alt="Download" />
+                            GPX
                         </div>
                     </div>
                 </>
