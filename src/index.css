@@ -133,6 +133,55 @@ body {
   background-color: var(--color-error);
 }
 
+.pwa-update-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(33, 53, 71, 0.45);
+}
+
+.pwa-update-modal {
+  width: min(100%, 28rem);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: var(--color-bg-main);
+  color: var(--color-text-body);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.pwa-update-modal h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.pwa-update-modal p {
+  margin: 0.75rem 0 1.5rem;
+}
+
+.pwa-update-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.pwa-update-actions button {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--color-bg-main);
+  color: var(--color-text-body);
+  cursor: pointer;
+}
+
+.pwa-update-actions .pwa-update-confirm {
+  border-color: var(--color-text-body);
+  background: var(--color-text-body);
+  color: var(--color-bg-main);
+}
+
 /* Navbar */
 nav a:not(.logo) {
   border-radius: 1rem;

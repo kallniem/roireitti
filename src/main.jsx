@@ -20,7 +20,25 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/roireitti/sw.js')
       .then(registration => {
         console.log('SW registered: ', registration);
-        // Registration successful
+
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+
+          if (!newWorker) {
+            return;
+          }
+
+          newWorker.addEventListener('statechange', () => {
+            if (
+              newWorker.state === 'installed' &&
+              navigator.serviceWorker.controller
+            ) {
+              window.dispatchEvent(new CustomEvent('pwa-update-available', {
+                detail: { registration },
+              }));
+            }
+          });
+        });
       })
       .catch(registrationError => {
         console.log('SW registration failed: ', registrationError);

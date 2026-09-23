@@ -2,11 +2,13 @@ import { Routes, Route, Link, Outlet } from 'react-router';
 import HomePage from './pages/HomePage';
 import MapPage from './pages/MapPage';
 import TrailPage from './pages/TrailPage';
+import PwaUpdatePrompt from './components/PwaUpdatePrompt';
 
 function App() {
   return (
       <div className="wrapper">
         {/* Persistent Elements */}
+        <PwaUpdatePrompt />
 
         {/* Routes */}
         <Routes>
