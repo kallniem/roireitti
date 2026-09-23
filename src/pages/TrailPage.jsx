@@ -6,6 +6,7 @@ import slugify from '../functions/slugify';
 import { useNavigate, useParams } from 'react-router';
 import TrailLine from '../components/TrailLine';
 import ElevationProfile from '../components/ElevationProfile';
+import StreetView from '../components/StreetView';
 
 import rulerIcon from '../assets/ruler.svg';
 import clockIcon from '../assets/clock.svg';
@@ -93,6 +94,29 @@ function TrailPage() {
             newPanoramaIdx = photoSpheres[slug].length -1;
         };
         setPanoramaIdx(newPanoramaIdx)
+    }
+
+    const handleHover = (point) => {
+        if (point) {
+            let trickPlay = 1
+            if (point.index >= trail.trick_play.start_tick && point.index <= trail.trick_play.end_tick) {
+                trickPlay = Math.round(point.index / trail.trick_play.end_tick * (trail.trick_play.image_count - 1)) + 1
+            }
+
+            if (point.index > trail.trick_play.end_tick) {
+                trickPlay = trail.trick_play.image_count
+            }
+
+            setHoverInfo({
+                index: point.index,
+                longitude: point.coordinate[0],
+                latitude: point.coordinate[1],
+                elevation: point.elevation,
+                trickPlay: trickPlay
+            })
+        } else {
+            setHoverInfo(null)
+        }
     }
 
     useEffect(() => {
@@ -337,25 +361,32 @@ function TrailPage() {
                 {mapComponent}
                 {activeView === 'map' && elevationData && (
                     <div style={{
-                        display: 'block',
                         position: 'absolute',
-                        width: 'clamp(15rem, 70vw, 50rem)',
-                        backgroundColor: '#ffffff',
                         bottom: '0.5rem',
                         left: '0.5rem',
                         zIndex: 11,
-                        borderRadius: '0.5rem',
-                        overflow: 'hidden',
                     }}>
-                        <ElevationProfile
-                            data={elevationData}
-                            height={80}
-                            onHover={(point) => setHoverInfo(point ? {
-                                longitude: point.coordinate[0],
-                                latitude: point.coordinate[1],
-                                elevation: point.elevation
-                            } : null)}
+                        <StreetView
+                            trail={slug}
+                            idx={hoverInfo ? hoverInfo.trickPlay : 1}
+                            style={{
+                                width: 'clamp(15rem, 70vw, 30rem)',
+                                borderRadius: '0.5rem',
+                            }}
                         />
+                        <div style={{
+                            display: 'block',
+                            width: 'clamp(15rem, 70vw, 50rem)',
+                            backgroundColor: '#ffffff',
+                            borderRadius: '0.5rem',
+                            overflow: 'hidden',
+                        }}>
+                            <ElevationProfile
+                                data={elevationData}
+                                height={80}
+                                onHover={handleHover}
+                            />
+                        </div>
                     </div>
                 )}
             </div>
@@ -397,11 +428,7 @@ function TrailPage() {
                                     <ElevationProfile
                                         data={elevationData}
                                         height={80}
-                                        onHover={(point) => setHoverInfo(point ? {
-                                            longitude: point.coordinate[0],
-                                            latitude: point.coordinate[1],
-                                            elevation: point.elevation
-                                        } : null)}
+                                        onHover={handleHover}
                                     />
                                 </div>
                             )}

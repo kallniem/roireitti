@@ -378,6 +378,16 @@ table td {
 
 .marker-grow {
   animation: marker-grow 0.25s ease-out forwards;
+  filter: hue-rotate(-30deg) saturate(1000%);;
+}
+
+.trick-play {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  aspect-ratio: 16/9;
+  background-color: #000000;
+  color: #ffffff
 }
 
 @keyframes marker-grow {

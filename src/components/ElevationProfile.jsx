@@ -43,10 +43,10 @@ function ElevationProfile({ data, height = 140, onHover }) {
 
         const xScale = (d) => (d / totalKm) * innerW || 0;
 
-        const points = data.map(p => {
+        const points = data.map((p, index) => {
             const x = margin.left + xScale(p.distance);
             const y = margin.top + yScale(p.elevation);
-            return { ...p, x, y };
+            return { ...p, index, x, y };
         });
 
         const linePath = points.map((point, i) => `${i === 0 ? 'M' : 'L'} ${point.x.toFixed(2)} ${point.y.toFixed(2)}`).join(' ');
