@@ -87286,8 +87286,8 @@
       ]
     },
     "trick_play": {
-      "start_tick": 280,
-      "end_tick": 7060,
+      "start_idx": 280,
+      "end_idx": 7060,
       "image_count": 300
     },
     "data_source": "Lapin AMK, FrostBit"

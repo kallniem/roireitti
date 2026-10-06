@@ -47,6 +47,39 @@ function TrailPage() {
 
     const trailBounds = useMemo(() => getTrailBounds({ type: 'trail', object: trail }), [trail]);
 
+    const trickPlayGeojson = useMemo(() => {
+        if (!trail?.trick_play) return null;
+
+        const { start_idx, end_idx } = trail.trick_play;
+        if (!Number.isInteger(start_idx) || !Number.isInteger(end_idx) || start_idx < 0 || end_idx <= start_idx) {
+            return null;
+        }
+
+        const lineStrings = trail.geometry.type === 'MultiLineString'
+            ? trail.geometry.coordinates
+            : [trail.geometry.coordinates];
+        let vertexOffset = 0;
+        const features = lineStrings.flatMap((coordinates, routeIndex) => {
+            const lineStart = vertexOffset;
+            vertexOffset += coordinates.length;
+
+            const start = Math.max(start_idx, lineStart);
+            const end = Math.min(end_idx, lineStart + coordinates.length - 1);
+            if (end <= start) return [];
+
+            return [{
+                type: 'Feature',
+                properties: { routeIndex },
+                geometry: {
+                    type: 'LineString',
+                    coordinates: coordinates.slice(start - lineStart, end - lineStart + 1)
+                }
+            }];
+        });
+
+        return { type: 'FeatureCollection', features };
+    }, [trail]);
+
     const getTrailEndpoints = (geometry) => {
         if (!geometry) return [];
 
@@ -116,11 +149,11 @@ function TrailPage() {
         if (point) {
             let trickPlay = 1
             if (trail.trick_play) {
-                if (point.index >= trail.trick_play.start_tick && point.index <= trail.trick_play.end_tick) {
-                    trickPlay = Math.round(point.index / trail.trick_play.end_tick * (trail.trick_play.image_count - 1)) + 1
+                if (point.index >= trail.trick_play.start_idx && point.index <= trail.trick_play.end_idx) {
+                    trickPlay = Math.round(point.index / trail.trick_play.end_idx * (trail.trick_play.image_count - 1)) + 1
                 }
 
-                if (point.index > trail.trick_play.end_tick) {
+                if (point.index > trail.trick_play.end_idx) {
                     trickPlay = trail.trick_play.image_count
                 }
             }
@@ -255,6 +288,35 @@ function TrailPage() {
                 });
             }}>
             <TrailLine trail={trail} />
+
+            {trickPlayGeojson?.features.length > 0 && (
+                <Source id="street-view-route" type="geojson" data={trickPlayGeojson}>
+                    <Layer
+                        id="street-view-route-line-highlight"
+                        type="line"
+                        paint={{
+                            'line-color': trailTypes['trek'].color,
+                            'line-width': 12,
+                            'line-opacity': 1,
+                        }}
+                        layout={{
+                            'line-cap': 'butt',
+                        }}
+                    />
+                    <Layer
+                        id="street-view-route-line"
+                        type="line"
+                        paint={{
+                            'line-color': '#5F793E',
+                            'line-width': 6,
+                            'line-opacity': 1,
+                        }}
+                        layout={{
+                            'line-cap': 'butt',
+                        }}
+                    />
+                </Source>
+            )}
 
             {endpointMarkers.map((endpoint) => {
                 const [lng, lat] = endpoint.coordinate;
