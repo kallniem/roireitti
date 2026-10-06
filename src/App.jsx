@@ -1,8 +1,9 @@
-import { Routes, Route, Link, Outlet } from 'react-router';
+import { Routes, Route, Link, Navigate, Outlet } from 'react-router';
 import HomePage from './pages/HomePage';
 import MapPage from './pages/MapPage';
 import TrailPage from './pages/TrailPage';
 import PwaUpdatePrompt from './components/PwaUpdatePrompt';
+import StreetViewPage from './pages/StreetViewPage';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
             <Route element={<FullscreenLayout />}>
                 <Route path="/" element={<MapPage />} />
                 <Route path="/trails/:slug" element={<TrailPage />} />
+                <Route path="/trails/:slug/streetview" element={<StreetViewPage />} />
             </Route>
+            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
   );
@@ -37,7 +40,7 @@ function DefaultLayout() {
               <Link className="logo" to="/">RoiReitti</Link>
 
               <div className="flex-row align-center"  style={{gap: "2rem"}}>
-              <Link to="/map">Kartta</Link>
+              <Link to="/">Kartta</Link>
               </div>
           </nav>
       </div>

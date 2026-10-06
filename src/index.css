@@ -399,7 +399,6 @@ table td {
 }
 
 .top-menu {
-  cursor: pointer;
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -409,8 +408,11 @@ table td {
   gap: 0.5rem;
 }
 
-.bottom-menu {
+.top-menu * {
   cursor: pointer;
+}
+
+.bottom-menu {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
@@ -419,8 +421,11 @@ table td {
   gap: 0.5rem;
 }
 
-.icon-button {
+.bottom-menu * {
   cursor: pointer;
+}
+
+.icon-button {
   width: 2rem;
   height: 2rem;
 }
