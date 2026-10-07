@@ -171,7 +171,7 @@ function TrailPage() {
     }
 
     useEffect(() => {
-        if (activePano == null) return;
+        if (activePano === null) return;
 
         setFlyToLocation(photoSpheres[slug][activePano].coordinates.slice(0, 2));
     }, [activePano, slug]);
@@ -476,7 +476,7 @@ function TrailPage() {
             {/* Map container - always mounted */}
             <div style={mapWrapperStyle}>
                 {mapComponent}
-                {maximized && !activePano && elevationData && (
+                {maximized && activePano === null && elevationData && (
                     <>
                     {topMenu}
                     <div style={{
