@@ -1,4 +1,4 @@
-import { Map, Layer, Source, Popup, Marker } from 'react-map-gl/maplibre';
+import { Layer, Source, Marker } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useState, useMemo } from 'react';
 import MapView from '../components/MapView';
@@ -8,17 +8,15 @@ import TrailLine from '../components/TrailLine';
 import ElevationProfile from '../components/ElevationProfile';
 import StreetView from '../components/StreetView';
 
-import rulerIcon from '../assets/ruler.svg';
-import clockIcon from '../assets/clock.svg';
-import gaugeLowIcon from '../assets/gauge-low.svg';
-
-import panoramaIcon from '../assets/panorama.svg';
-import fullScreenIcon from '../assets/full-screen.svg';
-import minimizeIcon from '../assets/minimize.svg';
-import backIcon from '../assets/back.svg'
-import arrowRightIcon from '../assets/arrow-right.svg'
-import downloadIcon from '../assets/download.svg'
-
+import rulerIcon from '../assets/ui/ruler.svg';
+import clockIcon from '../assets/ui/clock.svg';
+import gaugeLowIcon from '../assets/ui/gauge-low.svg';
+import finishIcon from '../assets/ui/finish.svg';
+import fullScreenIcon from '../assets/ui/full-screen.svg';
+import minimizeIcon from '../assets/ui/minimize.svg';
+import backIcon from '../assets/ui/back.svg'
+import arrowRightIcon from '../assets/ui/arrow-right.svg'
+import downloadIcon from '../assets/ui/download.svg'
 import cameraIcon from '../assets/poi/camera.svg'
 
 import trails from "../offline-data/trails.json";
@@ -79,33 +77,6 @@ function TrailPage() {
 
         return { type: 'FeatureCollection', features };
     }, [trail]);
-
-    const getTrailEndpoints = (geometry) => {
-        if (!geometry) return [];
-
-        const lineStrings = geometry.type === 'MultiLineString'
-            ? geometry.coordinates
-            : [geometry.coordinates];
-
-        const start = lineStrings[0]?.[0];
-        const lastLine = lineStrings[lineStrings.length - 1] ?? [];
-        const end = lastLine[lastLine.length - 1];
-
-        if (!start || !end) return [];
-
-        const samePoint = start[0] === end[0] && start[1] === end[1];
-
-        if (samePoint) {
-            return [{ type: 'both', coordinate: start }];
-        }
-
-        return [
-            { type: 'start', coordinate: start },
-            { type: 'end', coordinate: end }
-        ];
-    };
-
-    const endpointMarkers = getTrailEndpoints(trail.geometry);
 
     const toggleMaximized = () => {
         if (activePano !== null) {
@@ -318,41 +289,15 @@ function TrailPage() {
                 </Source>
             )}
 
-            {endpointMarkers.map((endpoint) => {
-                const [lng, lat] = endpoint.coordinate;
-                const label = endpoint.type === 'start' ? 'S' : endpoint.type === 'end' ? 'E' : 'S/E';
-                const background = endpoint.type === 'start'
-                    ? '#4daf4a'
-                    : endpoint.type === 'end'
-                        ? '#e41a1c'
-                        : '#4f4f9f';
-
-                return (
-                    <Marker
-                        key={`${endpoint.type}-${lng}-${lat}`}
-                        longitude={lng}
-                        latitude={lat}
-                        anchor="center">
-                        <div
-                            style={{
-                                width: 28,
-                                height: 28,
-                                borderRadius: '50%',
-                                background,
-                                color: '#fff',
-                                border: '2px solid white',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontWeight: 700,
-                                fontSize: '0.75rem',
-                                boxShadow: '0 0 6px rgba(0,0,0,0.25)'
-                            }}>
-                            {label}
-                        </div>
-                    </Marker>
-                );
-            })}
+            {geojson &&
+                <Marker
+                    key={"finish-marker"}
+                    longitude={geojson.features[geojson.features.length - 1].geometry.coordinates[0][0]}
+                    latitude={geojson.features[geojson.features.length - 1].geometry.coordinates[0][1]}
+                    anchor="bottom">
+                        <img src={finishIcon} style={{ width: 36, marginLeft: 20, marginBottom: -5 }} onClick={() => {setactivePano(index)}} />
+                </Marker>
+            }
 
             {photoSpheres[slug] && photoSpheres[slug].map((image, index) => 
                 <Marker
@@ -361,7 +306,7 @@ function TrailPage() {
                     longitude={image.coordinates[0]}
                     latitude={image.coordinates[1]}
                     style={ activePano === index ? { zIndex: 2 } : { zIndex: 1 }}>
-                        <img className={ activePano === index ? "marker-grow" : null} src={cameraIcon} style={{ width: 28, height: 28 }} onClick={() => {setactivePano(index)}} />
+                        <img className={ activePano === index ? "marker-grow" : null} src={cameraIcon} style={{ width: 28 }} onClick={() => {setactivePano(index)}} />
                 </Marker>
             )}
 

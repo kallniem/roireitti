@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
-import linkedinLogo from "../assets/linkedin.svg";
-import youtubeIcon from "../assets/youtube.svg";
-import instagramIcon from "../assets/instagram.svg";
-import facebookIcon from "../assets/facebook.svg";
-import tiktokIcon from "../assets/tiktok.svg";
-import websiteIcon from "../assets/website.svg";
+import linkedinLogo from "../assets/social/linkedin.svg";
+import youtubeIcon from "../assets/social/youtube.svg";
+import instagramIcon from "../assets/social/instagram.svg";
+import facebookIcon from "../assets/social/facebook.svg";
+import tiktokIcon from "../assets/social/tiktok.svg";
+import websiteIcon from "../assets/social/website.svg";
 
 import cyclistProducts from "../offline-data/cyclist-certified-products.json";
 import welcomCyclistIcon from "../assets/welcome-cyclist.png";
 import { useNavigate } from "react-router";
 import slugify from "../functions/slugify";
+import trailTypes from "../trailTypes";
 
 function InfoCard({ item, onClose }) {
     const [isClosing, setIsClosing] = useState(false);
@@ -144,7 +145,7 @@ function InfoCard({ item, onClose }) {
                             height: '200px',
                             borderRadius: '1rem 1rem 0 0',
                             display: 'block',
-                            backgroundColor: '#CFE0A4'}}>
+                            backgroundColor: trailTypes[item.object.category]?.color || 'grey'}}>
                         {hasThumb && (
                             <img
                                 src={`${slug}/thumb.jpg`}

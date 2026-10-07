@@ -2,7 +2,7 @@ import { useNavigate, useParams, useSearchParams } from "react-router";
 import StreetView from "../components/StreetView";
 import { useEffect} from "react";
 
-import backIcon from '../assets/back.svg'
+import backIcon from '../assets/ui/back.svg'
 
 function StreetViewPage({}) {
 

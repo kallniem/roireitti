@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router';
 
-import panoramaIcon from '../assets/panorama.svg';
+import panoramaIcon from '../assets/ui/panorama.svg';
 
 function StreetView({ idx, hideMenu = false, style = { width: '100%' } }) {
 

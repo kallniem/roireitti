@@ -6,9 +6,9 @@ import trails from "../offline-data/trails.json";
 import TrailLine from '../components/TrailLine';
 import InfoCard from '../components/InfoCard';
 
-import routeIcon from "../assets/route.svg"
-import homeIcon from "../assets/home.svg"
-import crossIcon from "../assets/cross.svg"
+import routeIcon from "../assets/ui/route.svg"
+import homeIcon from "../assets/ui/home.svg"
+import crossIcon from "../assets/ui/cross.svg"
 import { MapProvider } from 'react-map-gl/maplibre';
 import PoiList from '../components/PoiList';
 import getTrailBounds from '../functions/trailBounds';
