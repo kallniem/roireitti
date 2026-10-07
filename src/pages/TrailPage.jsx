@@ -108,7 +108,7 @@ function TrailPage() {
     const endpointMarkers = getTrailEndpoints(trail.geometry);
 
     const toggleMaximized = () => {
-        if (activePano) {
+        if (activePano !== null) {
             setactivePano(null);
         } else {
             setMaximized(!maximized);
@@ -426,7 +426,7 @@ function TrailPage() {
             {/* Maximize/minimize toggle */}
             <div className='flex-row no-stack bottom-menu'>
                 <div className='flex-column justify-center' onClick={toggleMaximized}>
-                    <img className='icon-button' src={maximized && !activePano ? minimizeIcon : fullScreenIcon} alt="Map view" />
+                    <img className='icon-button' src={maximized && activePano === null ? minimizeIcon : fullScreenIcon} alt="Map view" />
                 </div>
             </div>
         </MapView>
@@ -435,7 +435,7 @@ function TrailPage() {
     // Always render the map component so it stays mounted between view switches.
     // Change container styles depending on `maximized` to emulate full-screen or minimap.
     const mapWrapperStyle = (() => {
-        if (activePano) {
+        if (activePano !== null) {
             return {
                 position: 'absolute',
                 bottom: '1rem',
@@ -519,7 +519,7 @@ function TrailPage() {
                 )}
             </div>
 
-            {activePano ? (
+            {activePano !== null ? (
                 <>
                     <ReactPhotoSphereViewer
                         src={photoSpheres[slug][activePano].image}
