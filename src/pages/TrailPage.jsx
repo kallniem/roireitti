@@ -134,11 +134,37 @@ function TrailPage() {
                 longitude: point.coordinate[0],
                 latitude: point.coordinate[1],
                 elevation: point.elevation,
-                trickPlay: trickPlay
+                trickPlay: trickPlay,
+                idle: false
+
             })
         } else {
-            setHoverInfo(null)
+            setHoverInfo({...hoverInfo, idle: true})
         }
+    }
+
+    const handleMapHover = (event) => {
+        const isOverTrail = event.features?.some(feature => feature.layer?.id === 'route-line-0');
+        if (!isOverTrail || !elevationData?.length) {
+            handleHover(null);
+            return;
+        }
+
+        const { lng, lat } = event.lngLat;
+        const longitudeScale = Math.cos(lat * Math.PI / 180);
+        let nearestIndex = 0;
+        let nearestDistance = Infinity;
+        elevationData.forEach((candidate, index) => {
+            const longitudeDelta = (candidate.coordinate[0] - lng) * longitudeScale;
+            const latitudeDelta = candidate.coordinate[1] - lat;
+            const distance = longitudeDelta ** 2 + latitudeDelta ** 2;
+            if (distance < nearestDistance) {
+                nearestIndex = index;
+                nearestDistance = distance;
+            }
+        });
+
+        handleHover({ ...elevationData[nearestIndex], index: nearestIndex });
     }
 
     useEffect(() => {
@@ -244,21 +270,13 @@ function TrailPage() {
     // Render the MapView once and change its container styles so it stays mounted
     const mapComponent = (
         <MapView
-            interactiveLayerIds={['route-line']}
+            interactiveLayerIds={['route-line-0']}
             fitBounds={trailBounds}
             duration={0}
             flyToLocation={flyToLocation}
-            onMouseMove={(e) => {
-                if (!geojson) return;
-
-                const points = geojson.features.flatMap(f => {
-                    const coords = f.geometry.coordinates;
-                    return f.geometry.type === 'LineString'
-                        ? coords
-                        : coords.flat();
-                });
-            }}>
-            <TrailLine trail={trail} />
+            onMouseMove={handleMapHover}
+            onMouseLeave={() => handleHover(null)}>
+            <TrailLine trail={trail} index={0} />
 
             {trickPlayGeojson?.features.length > 0 && (
                 <Source id="street-view-route" type="geojson" data={trickPlayGeojson}>
@@ -266,8 +284,8 @@ function TrailPage() {
                         id="street-view-route-line-highlight"
                         type="line"
                         paint={{
-                            'line-color': trailTypes['trek'].color,
-                            'line-width': 12,
+                            'line-color': "white",
+                            'line-width': 2,
                             'line-opacity': 1,
                         }}
                         layout={{
@@ -279,11 +297,12 @@ function TrailPage() {
                         type="line"
                         paint={{
                             'line-color': '#5F793E',
-                            'line-width': 6,
+                            'line-width': 2,
                             'line-opacity': 1,
+                            'line-dasharray': [2, 2],
                         }}
                         layout={{
-                            'line-cap': 'butt',
+                            'line-cap': 'round',
                         }}
                     />
                 </Source>
@@ -306,20 +325,20 @@ function TrailPage() {
                     longitude={image.coordinates[0]}
                     latitude={image.coordinates[1]}
                     style={ activePano === index ? { zIndex: 2 } : { zIndex: 1 }}>
-                        <img className={ activePano === index ? "marker-grow" : null} src={cameraIcon} style={{ width: 28 }} onClick={() => {setactivePano(index)}} />
+                        <img
+                            className={ activePano === index ? "marker-grow" : null}
+                            src={cameraIcon} style={{ width: 28 }}
+                            onClick={() => {setactivePano(index)}}/>
                 </Marker>
             )}
 
             {hoverInfo && (
+                <>
                 <Marker
                     longitude={hoverInfo.longitude}
                     latitude={hoverInfo.latitude}
-                    anchor="top"
-                    style={{ zIndex: 3 }}>
-                    <div
-                        aria-hidden="true"
-                        className="flex-column align-center justify-center"
-                        style={{ margin: '-0.5rem 0 0 0'}}>
+                    anchor="center"
+                    style={{ zIndex: 0 }}>
                         <div
                             style={{
                                 width: 16,
@@ -329,9 +348,16 @@ function TrailPage() {
                                 border: '3px solid #ffffff',
                                 boxShadow: '0 0 6px rgba(0,0,0,0.25)'
                             }}/>
+                </Marker>
+                <Marker
+                    longitude={hoverInfo.longitude}
+                    latitude={hoverInfo.latitude}
+                    anchor="top"
+                    style={{ zIndex: 3 }}>
                         <div
+                            className={ hoverInfo.idle ? 'fade-out' : ''}
                             style={{
-                                marginTop: '0.35rem',
+                                marginTop: '0.75rem',
                                 padding: '0.15rem 0.45rem',
                                 borderRadius: '0.5rem',
                                 backgroundColor: 'rgba(255,255,255,0.95)',
@@ -339,7 +365,6 @@ function TrailPage() {
                                 boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
                                 fontSize: '0.7rem',
                                 fontWeight: 600,
-                                color: '#1f2937',
                                 whiteSpace: 'nowrap'
                             }}>
                             <table style={{ margin: 0 }}>
@@ -364,8 +389,8 @@ function TrailPage() {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
                 </Marker>
+                </>
             )}
 
             {/* Maximize/minimize toggle */}
@@ -457,6 +482,7 @@ function TrailPage() {
                                 data={elevationData}
                                 height={80}
                                 onHover={handleHover}
+                                hoveredIndex={hoverInfo?.index ?? null}
                             />
                         </div>
                     </div>
@@ -502,6 +528,7 @@ function TrailPage() {
                                             data={elevationData}
                                             height={80}
                                             onHover={handleHover}
+                                            hoveredIndex={hoverInfo?.index ?? null}
                                         />
                                     </div>
                                 )}

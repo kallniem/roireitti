@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 
-function ElevationProfile({ data, height = 140, onHover }) {
+function ElevationProfile({ data, height = 140, onHover, hoveredIndex = null }) {
     const margin = { top: 8, right: 24, bottom: 24, left: 36 };
     const containerRef = useRef(null);
+    const activePointerId = useRef(null);
     const [width, setWidth] = useState(700);
     const w = width;
     const h = height;
@@ -62,7 +63,9 @@ function ElevationProfile({ data, height = 140, onHover }) {
 
     if (!data || data.length === 0) return null;
 
-    const handleMouseMove = (event) => {
+    const activePoint = hoveredPoint ?? points[hoveredIndex] ?? null;
+
+    const handlePointerMove = (event) => {
         const bounds = event.currentTarget.getBoundingClientRect();
         const viewBoxX = Math.max(0, Math.min(w, ((event.clientX - bounds.left) / bounds.width) * w));
         const point = points.reduce((closest, candidate) => (
@@ -73,14 +76,47 @@ function ElevationProfile({ data, height = 140, onHover }) {
         onHover?.(point);
     };
 
-    const handleMouseLeave = () => {
+    const clearHover = () => {
         setHoveredPoint(null);
         onHover?.(null);
     };
 
+    const handlePointerDown = (event) => {
+        activePointerId.current = event.pointerId;
+        event.currentTarget.setPointerCapture(event.pointerId);
+        handlePointerMove(event);
+    };
+
+    const handlePointerUp = (event) => {
+        if (activePointerId.current !== event.pointerId) return;
+
+        activePointerId.current = null;
+        if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+            event.currentTarget.releasePointerCapture(event.pointerId);
+        }
+        if (event.pointerType === 'touch') clearHover();
+    };
+
+    const handlePointerCancel = () => {
+        activePointerId.current = null;
+        clearHover();
+    };
+
+    const handlePointerLeave = (event) => {
+        if (activePointerId.current === null && event.pointerType !== 'touch') clearHover();
+    };
+
     return (
         <div ref={containerRef} style={{ width: '100%', overflow: 'hidden' }} aria-hidden>
-            <svg viewBox={`0 0 ${w} ${h}`} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+            <svg
+                viewBox={`0 0 ${w} ${h}`}
+                style={{ touchAction: 'none' }}
+                onPointerDown={handlePointerDown}
+                onPointerMove={handlePointerMove}
+                onPointerUp={handlePointerUp}
+                onPointerCancel={handlePointerCancel}
+                onPointerLeave={handlePointerLeave}
+            >
                 <defs>
                     <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
                         <stop offset="0%" stopColor="#4daf4a" stopOpacity="0.25" />
@@ -92,10 +128,10 @@ function ElevationProfile({ data, height = 140, onHover }) {
                     <path d={pathD.line} fill="none" stroke="#2b7a2b" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" />
                 </g>
 
-                {hoveredPoint && (
+                {activePoint && (
                     <g pointerEvents="none">
-                        <line x1={hoveredPoint.x} x2={hoveredPoint.x} y1={margin.top} y2={h - margin.bottom} stroke="#333" strokeWidth={1} strokeDasharray="3 2" />
-                        <circle cx={hoveredPoint.x} cy={hoveredPoint.y} r={3} fill="#2b7a2b" stroke="#fff" strokeWidth={1} />
+                        <line x1={activePoint.x} x2={activePoint.x} y1={margin.top} y2={h - margin.bottom} stroke="#333" strokeWidth={1} strokeDasharray="3 2" />
+                        <circle cx={activePoint.x} cy={activePoint.y} r={3} fill="#2b7a2b" stroke="#fff" strokeWidth={1} />
                     </g>
                 )}
 

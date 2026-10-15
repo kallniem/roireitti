@@ -435,6 +435,10 @@ table td {
   filter: hue-rotate(-30deg) saturate(1000%);;
 }
 
+.fade-out {
+  animation: fade-out 3s ease-out forwards;
+}
+
 .trick-play {
   border: 1px solid #ccc;
   border-radius: 0.5rem;
@@ -450,6 +454,18 @@ table td {
   }
   100% {
     transform: scale(1.5);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
