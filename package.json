@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "fetch-swimming-areas": "node ./scripts/fetch-swimming-areas.js"
+    "preview": "vite preview"
   },
   "dependencies": {
     "maplibre-gl": "^5.21.1",

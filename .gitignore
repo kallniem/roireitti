@@ -25,6 +25,10 @@ dist-ssr
 
 # Local environment, use .env.production for commit-safe environment variables
 .env
+.venv
+
+# Python cache
+__pycache__
 
 # Build output
 public
