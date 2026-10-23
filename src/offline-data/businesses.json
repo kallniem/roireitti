@@ -28,9 +28,45 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.70784256182708,
-      66.54141571277125
+      25.707780830562115,
+      66.54150501340256
+    ]
+  },
+  {
+    "id": "c99c7868-d204-4a90-9885-69c9109b33cc",
+    "businessEntity": {
+      "businessId": "3407473-7"
+    },
+    "businessName": "Slominski Oy",
+    "officialName": "Slominski Oy",
+    "description": "",
+    "logoThumbnailUrl": null,
+    "logoUrl": null,
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96700",
+        "streetName": "Kuolavaarankuja 17",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "contact@slominski.fi",
+        "phone": "0403233262"
+      }
+    ],
+    "webshopUrl": null,
+    "websiteUrl": "",
+    "businessHours": null,
+    "socialMedia": null,
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.575468130409718,
+      66.46292861569874
     ]
   },
   {
@@ -62,11 +98,11 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "activity",
     "coordinates": [
       25.729907000000026,
       66.502249
-    ],
-    "category": "activity"
+    ]
   },
   {
     "id": "da0d729d-e57e-4d3f-93b1-bb24a0713421",
@@ -97,6 +133,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.729907000000026,
       66.502249
@@ -131,9 +168,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.738277287867504,
-      66.4759721596675
+      25.741537770104287,
+      66.47978543657383
     ]
   },
   {
@@ -165,6 +203,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       26.942679584026337,
       66.30562241160595
@@ -199,6 +238,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.724568999999974,
       66.50307
@@ -233,11 +273,11 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.73105499999997,
       66.500761
-    ],
-    "category": "accommodation"
+    ]
   },
   {
     "id": "591cd5ef-793d-41c1-bed3-533b6b72ae82",
@@ -268,6 +308,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.846017999999958,
       66.543172
@@ -302,9 +343,90 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.707795015352986,
-      66.48895200903618
+      25.705813765525818,
+      66.4900825133305
+    ]
+  },
+  {
+    "id": "633e8733-1464-42e2-b99b-96cb1f29abb8",
+    "businessEntity": {
+      "businessId": "2261531-3"
+    },
+    "businessName": "Mushers Tavern",
+    "officialName": "Husky Travels Oy",
+    "description": "Best arctic flavors in town.\n\nMusher’s Tavern serves as a warm sanctuary in the heart of Santa Claus Village, offering a peaceful restaurant to escape from the Arctic chill. Our kitchen celebrates the wild landscapes of Rovaniemi by bringing authentic Arctic flavors directly to your plate.\n\nDuring the day, we provide delicious, high-quality lunch options perfect for travelers needing a quick and flavorful break. As evening falls, the tavern transforms into a premier dining destination, where guests can indulge in multi-course gourmet dinner featuring the finest local reindeer, salmon, and forest ingredients.\n\nOpen every day!\n\nLunch 11:00–16:00\nOur lunch menu features high-quality, ready-to-serve options, like our signature Reindeer Burger or fresh Arctic salad. Designed to get you back to your adventures in minutes without compromising on flavor. Specialty coffees & a display full of local pastries and other small bites also available during lunch.\n\nhttps://mushers.fi/lunch/\n\nDinner 17:00–22:00\nOur dinner menu features curated 2 and 3-course experiences, showcasing premium cuts of reindeer, cured salmon, and wild forest mushrooms. Pair your meal with a fine wine to complete your northern evening.\n\nhttps://mushers.fi/dinner/\n",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/b5293270-ac16-11f1-bd67-d9a77fdd807c.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/b5293270-ac16-11f1-bd67-d9a77fdd807c.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96930",
+        "streetName": "Pukinpolku 7",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "info@musherstavern.fi",
+        "phone": "+358 44 7448023"
+      }
+    ],
+    "webshopUrl": "",
+    "websiteUrl": "https://mushers.fi/",
+    "businessHours": {
+      "default": [
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "monday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "tuesday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "wednesday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "thursday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "friday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "saturday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "sunday"
+        }
+      ]
+    },
+    "socialMedia": null,
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.84545660763979,
+      66.53344235589287
     ]
   },
   {
@@ -336,9 +458,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.728108812398773,
-      66.49887601750308
+      25.726236775517464,
+      66.49896703196585
     ]
   },
   {
@@ -370,6 +493,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.732776000000058,
       66.501234
@@ -404,6 +528,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.728976999999986,
       66.502958
@@ -438,6 +563,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.728976999999986,
       66.502958
@@ -472,6 +598,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.71153700000002,
       66.502775
@@ -566,9 +693,45 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.725259999999935,
-      66.502646
+      25.72485400000005,
+      66.502617
+    ]
+  },
+  {
+    "id": "75831542-e8be-4621-aaae-16047fbf7e56",
+    "businessEntity": {
+      "businessId": "0186307-8"
+    },
+    "businessName": "Car Rental Rovaniemi",
+    "officialName": "Kuljetus Rova Oy",
+    "description": "We operate a car rental service offering modern and reliable vehicles for tourists, business travelers, and local customers. Our focus is on flexible rentals, excellent customer service, and providing safe and convenient transportation solutions year-round. We also provide professional Northern Lights guiding services, helping our guests experience one of Lapland's most spectacular natural phenomena.",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/68eecba0-ac74-11f1-bd67-d9a77fdd807c.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/68eecba0-ac74-11f1-bd67-d9a77fdd807c.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96910",
+        "streetName": "Rekkatie 1",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "info@carrentalrovaniemi.fi",
+        "phone": "044 2005863"
+      }
+    ],
+    "webshopUrl": "",
+    "websiteUrl": "https://www.carrentalrovaniemi.fi",
+    "businessHours": null,
+    "socialMedia": null,
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.774053186178207,
+      66.53872057574372
     ]
   },
   {
@@ -609,11 +772,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "restaurant",
     "coordinates": [
       25.732893999999987,
       66.502608
-    ],
-    "category": "restaurant"
+    ]
   },
   {
     "id": "7955f3e7-472f-48a0-90c3-d8b2f7ae7d90",
@@ -671,11 +834,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "restaurant",
     "coordinates": [
       25.734361000000035,
       66.501915
-    ],
-    "category": "restaurant"
+    ]
   },
   {
     "id": "d88c6dfa-fcba-425b-bdea-7799476ad428",
@@ -706,6 +869,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.79722300000003,
       66.539187
@@ -740,6 +904,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.730342000000064,
       66.5033
@@ -795,9 +960,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.763175504595097,
-      66.49106135275282
+      25.7684463635087,
+      66.4943813518682
     ]
   },
   {
@@ -829,6 +995,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.718568000000005,
       66.500859
@@ -854,7 +1021,7 @@
     ],
     "contactDetails": [
       {
-        "email": "johanna@wikkela.fi",
+        "email": "merja@wikkela.fi",
         "phone": "+358504718189"
       }
     ],
@@ -890,6 +1057,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.727513000000044,
       66.502243
@@ -924,9 +1092,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.82384194966221,
-      66.54747182507673
+      25.824316442012787,
+      66.54756360149146
     ]
   },
   {
@@ -958,9 +1127,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.71425817910881,
-      66.51206037728338
+      25.47276332974434,
+      66.72520805403617
     ]
   },
   {
@@ -1013,9 +1183,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.84713376122886,
-      66.54208560160617
+      25.847131311893463,
+      66.54209159956726
     ]
   },
   {
@@ -1047,11 +1218,11 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.73457099999996,
       66.501461
-    ],
-    "category": "accommodation"
+    ]
   },
   {
     "id": "1a0e064d-bd71-4a87-aae1-a0afcee10f6c",
@@ -1082,6 +1253,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.689715999999976,
       66.496688
@@ -1116,6 +1288,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.830745999999976,
       66.502029
@@ -1150,9 +1323,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.84713376122886,
-      66.54208560160617
+      25.847131311893463,
+      66.54209159956726
     ]
   },
   {
@@ -1184,11 +1358,11 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "restaurant",
     "coordinates": [
       25.73613899999998,
       66.502028
-    ],
-    "category": "restaurant"
+    ]
   },
   {
     "id": "144e3691-d2d2-4855-883e-80edd0cdd406",
@@ -1246,9 +1420,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.70832941767526,
-      66.50236538208158
+      25.708528496325016,
+      66.50232272397562
     ]
   },
   {
@@ -1282,9 +1457,10 @@
       "socialMediaLinks": []
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.69250278979223,
-      66.48620240356139
+      25.693493373692036,
+      66.48715788972765
     ]
   },
   {
@@ -1343,45 +1519,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.84988999999996,
       66.545958
     ]
-  },
-  {
-    "id": "f1ff0dd8-cbf2-4db9-9ae4-d1c498269a54",
-    "businessEntity": {
-      "businessId": "0210631-9"
-    },
-    "businessName": "Arctic City Hotel",
-    "officialName": "City-hotelli Oy",
-    "description": "",
-    "logoThumbnailUrl": null,
-    "logoUrl": null,
-    "postalAddresses": [
-      {
-        "city": "Rovaniemi",
-        "postalCode": "96200",
-        "streetName": "Pekankatu 9",
-        "location": null
-      }
-    ],
-    "contactDetails": [
-      {
-        "email": "hotel@cityhotel.fi",
-        "phone": "+358 16 3300111"
-      }
-    ],
-    "webshopUrl": null,
-    "websiteUrl": "",
-    "businessHours": null,
-    "socialMedia": null,
-    "data_source": "Visit Finland DataHub, OpenStreetMap",
-    "coordinates": [
-      25.72963500000003,
-      66.501427
-    ],
-    "category": "accommodation"
   },
   {
     "id": "c1f6a65e-31a3-41cf-ac41-8ca1aafb50af",
@@ -1421,11 +1563,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
-      25.802452854827152,
-      66.47096300857382
-    ],
-    "category": "accommodation"
+      25.80276656895876,
+      66.47117554333822
+    ]
   },
   {
     "id": "219c1d5a-d1d4-4e9b-9b28-9e56d508c4c5",
@@ -1456,9 +1598,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.651635935653303,
-      66.55775510669996
+      25.651629120111465,
+      66.55764836412415
     ]
   },
   {
@@ -1490,9 +1633,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.103782068938017,
-      66.62268507624019
+      25.131502524018288,
+      66.59948918023603
     ]
   },
   {
@@ -1524,6 +1668,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.724568999999974,
       66.50307
@@ -1573,9 +1718,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.775565521892418,
-      66.49849961008796
+      25.77501207590103,
+      66.4981360938234
     ]
   },
   {
@@ -1607,6 +1753,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.844804000000067,
       66.543064
@@ -1656,9 +1803,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.775565521892418,
-      66.49849961008796
+      25.77501207590103,
+      66.4981360938234
     ]
   },
   {
@@ -1705,66 +1853,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.718703000000005,
       66.504185
     ]
-  },
-  {
-    "id": "8b3f7604-c691-4f0e-bd83-eee11bc413bb",
-    "businessEntity": {
-      "businessId": "1614402-5"
-    },
-    "businessName": "Santa's Hotels",
-    "officialName": "Hotel Santa Claus Oy",
-    "description": "Travel to the Arctic Circle and come to relax in the Lappish nature or at the Arctic seaside.\nSanta’s Hotels has the best holiday destinations for you: First-class dining, high-quality hotel rooms, premium glass igloos, full-service chalets and fully-equipped apartments.",
-    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/4edac310-d4b9-11eb-a8b5-0d99be0b7375-SHLogo2020.jpg?s=100",
-    "logoUrl": "https://cdn-datahub.visitfinland.com/images/4edac310-d4b9-11eb-a8b5-0d99be0b7375-SHLogo2020.jpg",
-    "postalAddresses": [
-      {
-        "city": "Rovaniemi",
-        "postalCode": "96200",
-        "streetName": "Korkalonkatu 29",
-        "location": null
-      }
-    ],
-    "contactDetails": [
-      {
-        "email": "sales@santashotels.fi",
-        "phone": "+358400102200"
-      }
-    ],
-    "webshopUrl": "https://online.santashotels.fi",
-    "websiteUrl": "https://santashotels.fi",
-    "businessHours": null,
-    "socialMedia": {
-      "socialMediaLinks": [
-        {
-          "linkType": "youtube",
-          "verifiedLink": {
-            "url": "https://www.youtube.com/channel/UC-mlBgnYSCdiMwiSIW08PyA"
-          }
-        },
-        {
-          "linkType": "instagram",
-          "verifiedLink": {
-            "url": "https://www.instagram.com/santashotels/"
-          }
-        },
-        {
-          "linkType": "facebook",
-          "verifiedLink": {
-            "url": "https://www.facebook.com/santashotels"
-          }
-        }
-      ]
-    },
-    "data_source": "Visit Finland DataHub, OpenStreetMap",
-    "coordinates": [
-      25.732317999999964,
-      66.502757
-    ],
-    "category": "accommodation"
   },
   {
     "id": "3255ce22-b05a-4a13-a66d-504f6d66703b",
@@ -1795,9 +1888,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.79775679110344,
-      66.53117260971224
+      25.802928077363504,
+      66.53060651818726
     ]
   },
   {
@@ -1829,6 +1923,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.71634599999993,
       66.506006
@@ -1863,11 +1958,11 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
-      25.723021000000017,
-      66.499257
-    ],
-    "category": "accommodation"
+      25.723422000000028,
+      66.49917
+    ]
   },
   {
     "id": "a3c517d3-9906-4247-8e81-83d2e8025f97",
@@ -1900,11 +1995,11 @@
       "socialMediaLinks": []
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "bicycle_shop",
     "coordinates": [
-      25.73094329310061,
-      66.50140178904986
-    ],
-    "category": "bicycle_shop"
+      25.730345584452152,
+      66.50147117687413
+    ]
   },
   {
     "id": "05ba0823-d4a0-4a4b-bb71-e967aec44b90",
@@ -1989,44 +2084,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "activity",
     "coordinates": [
-      25.732977981428007,
-      66.50017322286678
-    ],
-    "category": "activity"
-  },
-  {
-    "id": "3dd2b950-f22b-4c41-858b-496b54dd0f61",
-    "businessEntity": {
-      "businessId": "0210631-9"
-    },
-    "businessName": "Arctic Light Hotel",
-    "officialName": "City-hotelli Oy",
-    "description": "",
-    "logoThumbnailUrl": null,
-    "logoUrl": null,
-    "postalAddresses": [
-      {
-        "city": "Rovaniemi",
-        "postalCode": "96200",
-        "streetName": "Valtakatu 18",
-        "location": null
-      }
-    ],
-    "contactDetails": [
-      {
-        "email": "hotel@arcticlighthotel.fi",
-        "phone": "0201710100"
-      }
-    ],
-    "webshopUrl": null,
-    "websiteUrl": "",
-    "businessHours": null,
-    "socialMedia": null,
-    "data_source": "Visit Finland DataHub, OpenStreetMap",
-    "coordinates": [
-      25.73457099999996,
-      66.501461
+      25.7330422103405,
+      66.49980810299536
     ]
   },
   {
@@ -2060,44 +2121,10 @@
       "socialMediaLinks": []
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "activity",
     "coordinates": [
       25.734002000000032,
       66.501227
-    ],
-    "category": "activity"
-  },
-  {
-    "id": "ba621162-e935-41e6-b765-8bb45dc891b5",
-    "businessEntity": {
-      "businessId": "0210631-9"
-    },
-    "businessName": "Arctic Light Hotel Oy",
-    "officialName": "City-hotelli Oy",
-    "description": "",
-    "logoThumbnailUrl": null,
-    "logoUrl": null,
-    "postalAddresses": [
-      {
-        "city": "Rovaniemi",
-        "postalCode": "96200",
-        "streetName": "Valtakatu 18",
-        "location": null
-      }
-    ],
-    "contactDetails": [
-      {
-        "email": "hotel@arcticlighthotel.fi",
-        "phone": "0201710100"
-      }
-    ],
-    "webshopUrl": null,
-    "websiteUrl": "",
-    "businessHours": null,
-    "socialMedia": null,
-    "data_source": "Visit Finland DataHub, OpenStreetMap",
-    "coordinates": [
-      25.73457099999996,
-      66.501461
     ]
   },
   {
@@ -2129,6 +2156,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.719071999999983,
       66.49567
@@ -2163,9 +2191,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.849929573113286,
-      66.54657968110044
+      25.849973782896996,
+      66.54661872495069
     ]
   },
   {
@@ -2197,9 +2226,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.24037647185969,
-      66.6144645034315
+      25.24383008480072,
+      66.61668363112051
     ]
   },
   {
@@ -2252,9 +2282,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.763175504595097,
-      66.49106135275282
+      25.50649546086788,
+      66.41977745437494
     ]
   },
   {
@@ -2286,9 +2317,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.738277287867504,
-      66.4759721596675
+      25.741537770104287,
+      66.47978543657383
     ]
   },
   {
@@ -2320,9 +2352,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.789885192198426,
-      66.5150365037019
+      25.789637491106987,
+      66.51559520741212
     ]
   },
   {
@@ -2354,6 +2387,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "restaurant",
     "coordinates": [
       25.73613899999998,
       66.502028
@@ -2397,9 +2431,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.687382568178577,
-      66.4805985467114
+      25.687276013195515,
+      66.4808264946795
     ]
   },
   {
@@ -2440,9 +2475,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.81337426490927,
-      66.48300094450153
+      25.81364829093218,
+      66.4833272453635
     ]
   },
   {
@@ -2489,9 +2525,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.694012701559814,
-      66.51807681904148
+      25.698779834896186,
+      66.51608561090721
     ]
   },
   {
@@ -2544,11 +2581,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
-      25.648345469236233,
-      66.4841366458517
-    ],
-    "category": "accommodation"
+      25.64821433275938,
+      66.48399239318347
+    ]
   },
   {
     "id": "7ff06062-9edf-4b2c-b73b-d9cfa0ab2e87",
@@ -2612,6 +2649,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.417430999999965,
       66.416266
@@ -2646,6 +2684,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.726486000000023,
       66.498708
@@ -2689,9 +2728,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.694012701559814,
-      66.51807681904148
+      25.634449906647205,
+      66.53867212128571
     ]
   },
   {
@@ -2723,11 +2763,11 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.78882299999998,
       66.501886
-    ],
-    "category": "accommodation"
+    ]
   },
   {
     "id": "80c65fd5-4c7f-4931-8353-934b90cba8e4",
@@ -2779,6 +2819,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.743652999999995,
       66.520199
@@ -2879,6 +2920,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.845853000000034,
       66.542562
@@ -2967,9 +3009,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.84860492984967,
-      66.54331666650664
+      25.84832288324833,
+      66.54319800087448
     ]
   },
   {
@@ -3022,9 +3065,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.430770226633854,
-      66.67851182237199
+      25.431629978120327,
+      66.67859640204342
     ]
   },
   {
@@ -3077,11 +3121,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "activity",
     "coordinates": [
       25.737059000000045,
       66.501425
-    ],
-    "category": "activity"
+    ]
   },
   {
     "id": "1b88e34f-9926-4e65-9970-878cfdb4fe17",
@@ -3127,6 +3171,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.72956099999999,
       66.502923
@@ -3176,9 +3221,66 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.791241967359042,
-      66.4893938133292
+      25.79041164368391,
+      66.48936108634109
+    ]
+  },
+  {
+    "id": "932c3a5f-2b11-4be4-a19f-f8f1022f37b3",
+    "businessEntity": {
+      "businessId": "3545410-9"
+    },
+    "businessName": "Uncle Alex Travel",
+    "officialName": "Uncle Alex Travel Oy",
+    "description": "Uncle Alex Travel is a small family-owned travel experiences provider offering guided tours and outdoor activities in Rovaniemi, Finland.",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/743a55a0-8038-11f1-a837-25a499af5612.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/743a55a0-8038-11f1-a837-25a499af5612.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96400",
+        "streetName": "Kuukkelintie 17 K 91",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "contact@unclealextravel.com",
+        "phone": "+358 46 802 7252"
+      }
+    ],
+    "webshopUrl": "https://unclealextravel.com",
+    "websiteUrl": "https://unclealextravel.com",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://instagram.com/unclealextravel"
+          }
+        },
+        {
+          "linkType": "trip_advisor",
+          "verifiedLink": {
+            "url": "https://www.tripadvisor.com/Attraction_Review-g189922-d26694981-Reviews-Uncle_Alex_Travel-Rovaniemi_Lapland.html"
+          }
+        },
+        {
+          "linkType": "whatsapp",
+          "verifiedLink": {
+            "url": "+358468027252"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.771827287971973,
+      66.49002861433466
     ]
   },
   {
@@ -3270,6 +3372,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.734002000000032,
       66.501227
@@ -3313,9 +3416,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.759503548739644,
-      66.48961349345785
+      25.759859941899776,
+      66.48878636398746
     ]
   },
   {
@@ -3362,11 +3466,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "restaurant",
     "coordinates": [
-      25.727852999999982,
-      66.501685
-    ],
-    "category": "restaurant"
+      25.72813199999996,
+      66.501681
+    ]
   },
   {
     "id": "5aeb83cb-db0f-4092-a45f-c2dbf40ee02d",
@@ -3412,9 +3516,45 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.716170738303276,
-      66.50875025440553
+      25.716044045984745,
+      66.50895871397981
+    ]
+  },
+  {
+    "id": "07e4f481-8487-454e-b6fc-59c876edf331",
+    "businessEntity": {
+      "businessId": "3558337-3"
+    },
+    "businessName": "Suma Sauna & Lounge",
+    "officialName": "Löyly Capital Oy",
+    "description": "",
+    "logoThumbnailUrl": null,
+    "logoUrl": null,
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96600",
+        "streetName": "Venetie 6",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "hello@sumasauna.com",
+        "phone": "0413285984"
+      }
+    ],
+    "webshopUrl": null,
+    "websiteUrl": "",
+    "businessHours": null,
+    "socialMedia": null,
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.776816196739674,
+      66.51047872268683
     ]
   },
   {
@@ -3446,9 +3586,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.738277287867504,
-      66.4759721596675
+      25.741537770104287,
+      66.47978543657383
     ]
   },
   {
@@ -3495,9 +3636,66 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.738277287867504,
-      66.4759721596675
+      25.741537770104287,
+      66.47978543657383
+    ]
+  },
+  {
+    "id": "8b3f7604-c691-4f0e-bd83-eee11bc413bb",
+    "businessEntity": {
+      "businessId": "1614402-5"
+    },
+    "businessName": "Santa's Hotels",
+    "officialName": "Hotel Santa Claus Oy",
+    "description": "Santa's Hotels is a Finnish hotel group devoted to merry stays and genuine northern hospitality. Our hotels, glass igloos, villas and apartments offer memorable stays in some of the most beautiful destinations in northern Finland.",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/b0f8dea0-8658-11f1-b1ea-ede3ea94606d.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/b0f8dea0-8658-11f1-b1ea-ede3ea94606d.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96200",
+        "streetName": "Korkalonkatu 29",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "sales@santashotels.fi",
+        "phone": "+358400102200"
+      }
+    ],
+    "webshopUrl": "https://santashotels.fi/",
+    "websiteUrl": "https://santashotels.fi",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "youtube",
+          "verifiedLink": {
+            "url": "https://www.youtube.com/channel/UC-mlBgnYSCdiMwiSIW08PyA"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/santashotels/"
+          }
+        },
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/santashotels"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
+    "coordinates": [
+      25.732317999999964,
+      66.502757
     ]
   },
   {
@@ -3550,6 +3748,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.703966000000037,
       66.501898
@@ -3593,9 +3792,54 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.666953000000035,
       66.484663
+    ]
+  },
+  {
+    "id": "2e0ff06f-fee3-49ce-8942-40d90ecb91f4",
+    "businessEntity": {
+      "businessId": "3560509-3"
+    },
+    "businessName": "Raanupirtti",
+    "officialName": "Raanupirtti Oy",
+    "description": "Raanupirtti is a family-run cultural destination and private event venue on the banks of the Kemijoki River in Oikarainen, near Rovaniemi. Our historic log house and riverside grounds bring together art, local stories and northern hospitality.\n\nThe heritage of Raanupirtti is rooted in the lives and work of textile artist Elsa Montell-Saanio and photographer Matti Saanio. Known for its traditional Lapland raanu weaving, Raanupirtti welcomed visitors from around the world as early as the 1960s. Today, the fourth generation of the family continues this story, opening the doors to guests through personal encounters and experiences.\n\nWe offer private guided cultural visits, lunches and dinners, celebrations, workshops and sauna experiences by advance reservation. Our food draws inspiration from northern ingredients, including local fish, reindeer and wild berries.\n\nWhether gathering around the table, discovering the family’s artistic heritage or enjoying the peaceful riverside setting, our guests are invited to experience a living piece of Lapland’s cultural history.",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/7c83b320-c0dc-11f1-9eeb-4fe1a26112eb.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/7c83b320-c0dc-11f1-9eeb-4fe1a26112eb.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "97610",
+        "streetName": "Kuusamontie 1608",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "info@raanu.fi",
+        "phone": "+358442630866"
+      }
+    ],
+    "webshopUrl": "",
+    "websiteUrl": "https://raanupirtti.fi/",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/raanupirtti/"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      26.942679584026337,
+      66.30562241160595
     ]
   },
   {
@@ -3648,6 +3892,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.850985000000037,
       66.541286
@@ -3748,43 +3993,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.724638000000027,
       66.507564
-    ]
-  },
-  {
-    "id": "4e0ec27c-9c01-4c28-85c1-c5bfe84a3554",
-    "businessEntity": {
-      "businessId": "3185652-2"
-    },
-    "businessName": "Lapland Private Oy",
-    "officialName": "Lapland Private Oy",
-    "description": "Lapland Private is a privately owned Destination Management Company in Finnish Lapland, offering tailor-made travel experiences and personalized holiday itineraries for independent travel groups, private groups, and incentive travel parties.\n\nOur bespoke travel itineraries are designed to meet each client’s specific needs and desires, allowing them to experience Lapland’s magic fully. We work closely with clients to create personalized packages for family adventures, luxury retreats, romantic getaways, and nature escapes.\n\nWith a vast network of reliable, ethical, and professional partners, we design truly authentic and engaging experiences that utilize the entire region as our playground. We carefully select service providers to fit the specific needs of each client, ensuring that every trip is unique and unforgettable.\n\nOur exclusive services include local travel agents, personalized support, experiences by the best providers, optimal chances to see the Northern Lights, Multi-destination travel plans, a range of accommodation options all around Lapland and more.\n\nOur team’s personal touch, “everything is possible” attitude, attention to detail, and excellent organizational skills shine through in our unique Lapland Holiday itineraries.\n\nWe take pride in delivering high-quality travel experiences that meet our clients’ exact requirements, tailoring programs to meet personal travel budgets to make our services available to everyone.\n\nAt Lapland Private, our only standard is to provide exceptional and unforgettable holidays in Lapland.",
-    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/690e1c60-f991-11ed-b821-95e694c35326.png?s=100",
-    "logoUrl": "https://cdn-datahub.visitfinland.com/images/690e1c60-f991-11ed-b821-95e694c35326.png",
-    "postalAddresses": [
-      {
-        "city": "Rovaniemi",
-        "postalCode": "96100",
-        "streetName": "Rovakatu 14 A 33",
-        "location": null
-      }
-    ],
-    "contactDetails": [
-      {
-        "email": "laplandprivate@gmail.com",
-        "phone": "0503747370"
-      }
-    ],
-    "webshopUrl": "",
-    "websiteUrl": "http://www.laplandprivate.com",
-    "businessHours": null,
-    "socialMedia": null,
-    "data_source": "Visit Finland DataHub, OpenStreetMap",
-    "coordinates": [
-      25.72700199999997,
-      66.499463
     ]
   },
   {
@@ -3876,9 +4088,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.849929573113286,
-      66.54657968110044
+      25.849973782896996,
+      66.54661872495069
     ]
   },
   {
@@ -3910,6 +4123,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.847226999999975,
       66.544013
@@ -3959,11 +4173,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.734355999999934,
       66.502575
-    ],
-    "category": "accommodation"
+    ]
   },
   {
     "id": "3f7fe12e-1f64-4e35-ac04-b5ab7e48722c",
@@ -4009,6 +4223,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.70665400000007,
       66.502379
@@ -4019,11 +4234,11 @@
     "businessEntity": {
       "businessId": "2540423-9"
     },
-    "businessName": "Hotel Metsähirvas",
+    "businessName": "Metsähirvas Nature Boutique resort",
     "officialName": "Sirafire Oy",
-    "description": "Our hotel combines modern, high-quality rooms, affordable rates, warm-hearted service and beautiful nature in one place on the riverside of Rovaniemi city - the capital of Lapland. ",
-    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/01ca2a30-96eb-11ec-9e6e-cd72eacf1e96-logo_musta_valko_vihrea_vectorized.png?s=100",
-    "logoUrl": "https://cdn-datahub.visitfinland.com/images/01ca2a30-96eb-11ec-9e6e-cd72eacf1e96-logo_musta_valko_vihrea_vectorized.png",
+    "description": "Metsähirvas Resort offers everything you need in one peaceful, private setting: \nUnique accommodation in our hotel or holiday apartments, excellent and personal service, high-quality small-group activities from husky safaris to Northern Lights tours, transfer services, a restaurant Saihu and lounge bar, beautiful riverside scenery, and the tranquillity of Lapland’s nature.",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/4af05ca0-bd6c-11f1-8d88-efad02d8fdde.jpeg?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/4af05ca0-bd6c-11f1-8d88-efad02d8fdde.jpeg",
     "postalAddresses": [
       {
         "city": "Rovaniemi",
@@ -4109,6 +4324,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.417430999999965,
       66.416266
@@ -4158,9 +4374,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.825167786073393,
-      66.54561477894703
+      25.825042985379696,
+      66.54526399675525
     ]
   },
   {
@@ -4207,11 +4424,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "bicycle_shop",
     "coordinates": [
       25.722628999999984,
       66.498255
-    ],
-    "category": "bicycle_shop"
+    ]
   },
   {
     "id": "daa85f44-658d-4c18-9480-8b8c6fb21fcc",
@@ -4257,9 +4474,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.71379556689658,
-      66.50034979707632
+      25.648711882531643,
+      66.56066100537878
     ]
   },
   {
@@ -4306,9 +4524,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.78109670630863,
-      66.53945938251384
+      25.781205967068672,
+      66.53942682545954
     ]
   },
   {
@@ -4340,6 +4559,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.787933000000066,
       66.508658
@@ -4401,9 +4621,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.470392778781388,
-      66.61432012382241
+      25.46969287097454,
+      66.61368497189137
     ]
   },
   {
@@ -4450,11 +4671,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.737059000000045,
       66.501425
-    ],
-    "category": "activity"
+    ]
   },
   {
     "id": "fac1227a-6825-401e-b7e6-d711b19ac3ae",
@@ -4545,6 +4766,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.847473000000036,
       66.542672
@@ -4624,6 +4846,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.732893999999987,
       66.502608
@@ -4718,9 +4941,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.738277287867504,
-      66.4759721596675
+      25.741537770104287,
+      66.47978543657383
     ]
   },
   {
@@ -4767,9 +4991,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.69924287043682,
-      66.5127841918608
+      25.699005648493767,
+      66.5129158350568
     ]
   },
   {
@@ -4873,9 +5098,60 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.727852999999982,
-      66.501685
+      25.72813199999996,
+      66.501681
+    ]
+  },
+  {
+    "id": "38299e56-bbda-40e4-ab5f-098b50116110",
+    "businessEntity": {
+      "businessId": "3551475-7"
+    },
+    "businessName": "Arctic4 ",
+    "officialName": "Arctic4 Oy",
+    "description": "Arctic4 - Your Personal Arctic Concierge in Rovaniemi\n\nMore than a tour operator – Arctic4 is your complete Arctic concierge in Finnish Lapland. We craft personalized experiences tailored to your vacation dreams.\n\nTell us your Arctic bucket list, and we'll create a customized package that brings it to life. From Northern Lights hunts in our heated glass-roof sleds to curated wilderness adventures and seamless transportation, we handle every detail so you can focus on the experience.\n\nWe combine multiple services into complete packages designed around you – not the other way around. Benefit from our local expertise and personalized support from arrival to departure.\n\nLet Arctic4 transform your Lapland dreams into unforgettable memories.\n",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/823a3e80-a466-11f0-b028-57f77eb42ec2.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/823a3e80-a466-11f0-b028-57f77eb42ec2.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96100",
+        "streetName": "Santamäentie 15",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "Info@arctic4.fi",
+        "phone": "+358400850000"
+      }
+    ],
+    "webshopUrl": "",
+    "websiteUrl": "https://arctic4.fi",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/arctic4lapland/"
+          }
+        },
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/share/1BiAKFmYu1"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.68723799999998,
+      66.500038
     ]
   },
   {
@@ -4961,9 +5237,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.71425817910881,
-      66.51206037728338
+      25.47276332974434,
+      66.72520805403617
     ]
   },
   {
@@ -5022,9 +5299,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.762587060977012,
-      66.60953297488872
+      25.763153694570065,
+      66.6098902841736
     ]
   },
   {
@@ -5056,9 +5334,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.863337405915104,
-      66.51762806020739
+      25.86338482797146,
+      66.51770891954607
     ]
   },
   {
@@ -5144,6 +5423,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.704552000000035,
       66.500058
@@ -5187,9 +5467,45 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.772156389942097,
-      66.49040872966967
+      25.771827287971973,
+      66.49002861433466
+    ]
+  },
+  {
+    "id": "4f74ba40-2ed3-4e48-833f-6feb5e07adf5",
+    "businessEntity": {
+      "businessId": "3561275-2"
+    },
+    "businessName": "Santa's Sleigh Flight VR Experience ",
+    "officialName": "Qbex Solutions Oy",
+    "description": "",
+    "logoThumbnailUrl": null,
+    "logoUrl": null,
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96930",
+        "streetName": "Tähtikuja 1",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "sales@santassleighflight.fi",
+        "phone": "+358453530444"
+      }
+    ],
+    "webshopUrl": null,
+    "websiteUrl": "",
+    "businessHours": null,
+    "socialMedia": null,
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.846017999999958,
+      66.543172
     ]
   },
   {
@@ -5266,11 +5582,11 @@
     },
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "activity",
     "coordinates": [
       25.726752000000033,
       66.500832
-    ],
-    "category": "activity"
+    ]
   },
   {
     "id": "8c8f7b15-510d-468b-93be-ce9647a12278",
@@ -5316,9 +5632,66 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.764470330791937,
-      66.49089800775592
+      25.76420545578003,
+      66.4907012066075
+    ]
+  },
+  {
+    "id": "fd417715-481f-40af-b87f-3945f8984e9e",
+    "businessEntity": {
+      "businessId": "2094592-5"
+    },
+    "businessName": "Lapland Winter Park",
+    "officialName": "Nivankylän ajoharjoittelurata Oy",
+    "description": "",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/fbf070f0-744c-11ef-acbd-2156ce35ca31.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/fbf070f0-744c-11ef-acbd-2156ce35ca31.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96100",
+        "streetName": "Olleronvaarantie 160",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "info@laplandwinterpark.com",
+        "phone": "+358503703577"
+      }
+    ],
+    "webshopUrl": "https://www.laplandwinterpark.com/collections/area-tickets-rovaniemi",
+    "websiteUrl": "https://www.laplandwinterpark.com",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/profile.php?id=61560634207490"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/lapland_winter_park/"
+          }
+        },
+        {
+          "linkType": "trip_advisor",
+          "verifiedLink": {
+            "url": "https://www.tripadvisor.com/Attraction_Review-g189922-d28545959-Reviews-Lapland_Winter_Park-Rovaniemi_Lapland.html"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.61025399999994,
+      66.560447
     ]
   },
   {
@@ -5365,64 +5738,105 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.70784256182708,
-      66.54141571277125
+      25.707780830562115,
+      66.54150501340256
     ]
   },
   {
-    "id": "fd417715-481f-40af-b87f-3945f8984e9e",
+    "id": "18cd4122-667b-457b-9cfe-fd02e1f330ef",
     "businessEntity": {
-      "businessId": "2094592-5"
+      "businessId": "1786621-4"
     },
-    "businessName": "Lapland Winter Park Resort & Activities",
-    "officialName": "Nivankylän ajoharjoittelurata Oy",
-    "description": "",
-    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/fbf070f0-744c-11ef-acbd-2156ce35ca31.png?s=100",
-    "logoUrl": "https://cdn-datahub.visitfinland.com/images/fbf070f0-744c-11ef-acbd-2156ce35ca31.png",
+    "businessName": "Katijuu Arctic Leather&Fur",
+    "officialName": "Nahkaparkki Kati Juujärvi",
+    "description": "Katijuu garments and accessories are handmade of genuine arctic materials such as reindeerleather, redfox and lambfur. Collection includes furhats, reindeerleather mittens and vests. ",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/e08f10e0-70e8-11ee-9fca-6fdb01d69922.jpeg?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/e08f10e0-70e8-11ee-9fca-6fdb01d69922.jpeg",
     "postalAddresses": [
       {
         "city": "Rovaniemi",
         "postalCode": "96100",
-        "streetName": "Olleronvaarantie 160",
+        "streetName": "Kansankatu 12 L 2",
         "location": null
       }
     ],
     "contactDetails": [
       {
-        "email": "info@laplandwinterpark.com",
-        "phone": "+358503703577"
+        "email": "kati@katijuu.fi",
+        "phone": "+358405135470"
       }
     ],
-    "webshopUrl": "https://www.laplandwinterpark.com/collections/area-tickets-rovaniemi",
-    "websiteUrl": "https://www.laplandwinterpark.com",
-    "businessHours": null,
+    "webshopUrl": "https://www.katijuu.fi/",
+    "websiteUrl": "",
+    "businessHours": {
+      "default": [
+        {
+          "closes": "17:00:00",
+          "open": true,
+          "opens": "11:00:00",
+          "weekday": "monday"
+        },
+        {
+          "closes": "17:00:00",
+          "open": true,
+          "opens": "10:00:00",
+          "weekday": "tuesday"
+        },
+        {
+          "closes": "17:00:00",
+          "open": true,
+          "opens": "10:00:00",
+          "weekday": "wednesday"
+        },
+        {
+          "closes": "17:00:00",
+          "open": true,
+          "opens": "10:00:00",
+          "weekday": "thursday"
+        },
+        {
+          "closes": "17:00:00",
+          "open": true,
+          "opens": "10:00:00",
+          "weekday": "friday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "saturday"
+        },
+        {
+          "closes": null,
+          "open": false,
+          "opens": null,
+          "weekday": "sunday"
+        }
+      ]
+    },
     "socialMedia": {
       "socialMediaLinks": [
         {
-          "linkType": "trip_advisor",
-          "verifiedLink": {
-            "url": "https://www.tripadvisor.com/Attraction_Review-g189922-d28545959-Reviews-Lapland_Winter_Park-Rovaniemi_Lapland.html"
-          }
-        },
-        {
           "linkType": "instagram",
           "verifiedLink": {
-            "url": "https://www.instagram.com/lapland_winter_park/"
+            "url": "https://www.instagram.com/katijuudesign/"
           }
         },
         {
           "linkType": "facebook",
           "verifiedLink": {
-            "url": "https://www.facebook.com/profile.php?id=61560634207490"
+            "url": "https://www.facebook.com/katijuudesign"
           }
         }
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.61025399999994,
-      66.560447
+      25.72455500000001,
+      66.499387
     ]
   },
   {
@@ -5514,6 +5928,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.729907000000026,
       66.502249
@@ -5557,9 +5972,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.74980190853887,
-      66.49350132087169
+      25.75415689498186,
+      66.48881512048253
     ]
   },
   {
@@ -5612,9 +6028,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.694132421677068,
-      66.51994369390151
+      25.695024244487286,
+      66.52007105202122
     ]
   },
   {
@@ -5700,6 +6117,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       26.29635600000006,
       66.956036
@@ -5734,6 +6152,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.725463999999988,
       66.507633
@@ -5768,9 +6187,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.776176728126075,
-      66.63719731613288
+      25.77651109546423,
+      66.6373351610071
     ]
   },
   {
@@ -5802,6 +6222,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.726405999999997,
       66.50018
@@ -5836,11 +6257,11 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "restaurant",
     "coordinates": [
       25.72551599999997,
       66.501664
-    ],
-    "category": "restaurant"
+    ]
   },
   {
     "id": "197b033b-46a7-4434-9745-040e07955738",
@@ -5886,11 +6307,67 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "restaurant",
     "coordinates": [
       25.745593999999983,
       66.50177
+    ]
+  },
+  {
+    "id": "52238bd9-4850-45a5-a75d-ff066595b45a",
+    "businessEntity": {
+      "businessId": "3240644-3"
+    },
+    "businessName": "Kotatieva Resort",
+    "officialName": "Kotatieva Oy",
+    "description": "Kotatieva Resort is a unique winter destination located just 10 km from Rovaniemi city centre, surrounded by the peaceful forests of Finnish Lapland.\n\nKotatieva combines a Winter Leisure Park, cosy cabin accommodation, an atmospheric log restaurant and authentic Lapland experiences in one place.\n\nAt the heart of the resort is the original forest skating experience in Lapland, where the ice trail winds through the silent Arctic forest. Visitors can also enjoy sledding, snowshoeing, winter games and other outdoor activities at their own pace.\n\nGuests can meet our reindeer, and book a traditional reindeer sleigh ride. Other experiences include private Santa encounters, Aurora Hunting, guided winter activities and a traditional Finnish sauna with an outdoor hot tub.\n\nCome for a day of winter fun, enjoy dinner at Restaurant Kotatieva, or stay overnight in one of our comfortable cabins surrounded by Arctic nature.\n\nExperience a unique place in a unique way.\n",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/e4a71760-5591-11f0-ae44-c12d0d4b9580.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/e4a71760-5591-11f0-ae44-c12d0d4b9580.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96900",
+        "streetName": "Ounasjoen itäpuolentie 828",
+        "location": null
+      }
     ],
-    "category": "restaurant"
+    "contactDetails": [
+      {
+        "email": "info@kotatieva.fi",
+        "phone": "+358401620862"
+      }
+    ],
+    "webshopUrl": "https://kotatieva.fi/product-category/tickets/",
+    "websiteUrl": "https://kotatieva.fi/",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/Kotatieva"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/kotatieva/"
+          }
+        },
+        {
+          "linkType": "tik_tok",
+          "verifiedLink": {
+            "url": "https://www.tiktok.com/@kotatieva?lang=fi-FI"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.47276332974434,
+      66.72520805403617
+    ]
   },
   {
     "id": "f356a0eb-842e-4e20-922a-02051b501969",
@@ -5921,9 +6398,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.80145926335922,
-      66.5821252145562
+      25.80111164599657,
+      66.58526940160368
     ]
   },
   {
@@ -5982,11 +6460,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.844804000000067,
       66.543064
-    ],
-    "category": "accommodation"
+    ]
   },
   {
     "id": "80802944-b4c7-4194-8dec-db9214d0b1b8",
@@ -6032,9 +6510,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.682023000000072,
-      66.493104
+      25.682271000000014,
+      66.493057
     ]
   },
   {
@@ -6087,122 +6566,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "activity",
     "coordinates": [
       25.731092999999987,
       66.49957
-    ],
-    "category": "activity"
-  },
-  {
-    "id": "7b247913-17b6-4503-9361-029e04949861",
-    "businessEntity": {
-      "businessId": "2261531-3"
-    },
-    "businessName": "Arctic Circle Husky Park",
-    "officialName": "Husky Travels Oy",
-    "description": "Come, see and live experiences you’ll remember fur-ever!\nThe enthusiasm of running dogs, the atmosphere of old days and the exoticism of Lapland. Meet the genuine Siberian Huskies, enjoy the environment and get thrilled by the speed of the sled!",
-    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/bec6ce50-f2f6-11ed-8225-2341bac177e9.png?s=100",
-    "logoUrl": "https://cdn-datahub.visitfinland.com/images/bec6ce50-f2f6-11ed-8225-2341bac177e9.png",
-    "postalAddresses": [
-      {
-        "city": "Rovaniemi",
-        "postalCode": "96930",
-        "streetName": "Joulumaantie 3",
-        "location": null
-      }
-    ],
-    "contactDetails": [
-      {
-        "email": "office@huskypark.fi",
-        "phone": "+358 44 7557736"
-      }
-    ],
-    "webshopUrl": "https://huskypark.fi/",
-    "websiteUrl": "https://huskypark.fi/",
-    "businessHours": {
-      "default": [
-        {
-          "closes": "13:00:00",
-          "open": true,
-          "opens": "11:00:00",
-          "weekday": "monday"
-        },
-        {
-          "closes": "13:00:00",
-          "open": true,
-          "opens": "11:00:00",
-          "weekday": "tuesday"
-        },
-        {
-          "closes": "13:00:00",
-          "open": true,
-          "opens": "11:00:00",
-          "weekday": "wednesday"
-        },
-        {
-          "closes": "13:00:00",
-          "open": true,
-          "opens": "11:00:00",
-          "weekday": "thursday"
-        },
-        {
-          "closes": "13:00:00",
-          "open": true,
-          "opens": "11:00:00",
-          "weekday": "friday"
-        },
-        {
-          "closes": "13:00:00",
-          "open": true,
-          "opens": "11:00:00",
-          "weekday": "saturday"
-        },
-        {
-          "closes": "13:00:00",
-          "open": true,
-          "opens": "11:00:00",
-          "weekday": "sunday"
-        }
-      ]
-    },
-    "socialMedia": {
-      "socialMediaLinks": [
-        {
-          "linkType": "instagram",
-          "verifiedLink": {
-            "url": "https://www.instagram.com/huskyparkarcticcircle/"
-          }
-        },
-        {
-          "linkType": "facebook",
-          "verifiedLink": {
-            "url": "https://www.facebook.com/HuskyParkArcticCircle"
-          }
-        },
-        {
-          "linkType": "youtube",
-          "verifiedLink": {
-            "url": "https://www.youtube.com/channel/UCOJvVMYZdCPLmSoIC7RcjPw"
-          }
-        },
-        {
-          "linkType": "trip_advisor",
-          "verifiedLink": {
-            "url": "https://www.tripadvisor.com/Attraction_Review-g189922-d8491695-Reviews-Arctic_Circle_Husky_Park-Rovaniemi_Lapland.html"
-          }
-        },
-        {
-          "linkType": "tik_tok",
-          "verifiedLink": {
-            "url": "https://www.tiktok.com/@huskyparkarcticcircle"
-          }
-        }
-      ]
-    },
-    "data_source": "Visit Finland DataHub, OpenStreetMap",
-    "coordinates": [
-      25.853992000000062,
-      66.543823
     ]
   },
   {
@@ -6234,9 +6601,84 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.837185447650427,
-      66.50959645254723
+      25.83697948604822,
+      66.50938650144055
+    ]
+  },
+  {
+    "id": "07816a9d-8e7c-41cf-8180-542705d39673",
+    "businessEntity": {
+      "businessId": "3359050-2"
+    },
+    "businessName": "Reset Holidays Oy",
+    "officialName": "Reset Holidays Oy",
+    "description": "\nWe design personalized travel experiences in Finland, Scandinavia, and the Baltics.\n\nCrafted for those who seek authenticity, comfort, and connection.\nEvery journey is private, designed in your language, and guided by our local experts.",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/e9c8cdf0-efac-11f0-abc6-f3555c0b7a54.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/e9c8cdf0-efac-11f0-abc6-f3555c0b7a54.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96910",
+        "streetName": "Pahkatie 5 B7",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "daniel@fernandez.fi",
+        "phone": "+358503718028"
+      }
+    ],
+    "webshopUrl": "https://www.resetholidays.com/contact",
+    "websiteUrl": "https://www.resetholidays.com",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "trip_advisor",
+          "verifiedLink": {
+            "url": "https://www.tripadvisor.com/Attraction_Review-g189934-d25456880-Reviews-Reset_Holidays_Oy-Helsinki_Uusimaa.html"
+          }
+        },
+        {
+          "linkType": "whatsapp",
+          "verifiedLink": {
+            "url": "+358503718028"
+          }
+        },
+        {
+          "linkType": "linkedin",
+          "verifiedLink": {
+            "url": "https://www.linkedin.com/company/reset-holidays/"
+          }
+        },
+        {
+          "linkType": "youtube",
+          "verifiedLink": {
+            "url": "https://www.youtube.com/@ResetHolidays"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/resetholidays/"
+          }
+        },
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/profile.php?id=100093114671375"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.793311782181263,
+      66.53190211887603
     ]
   },
   {
@@ -6340,6 +6782,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.720698999999968,
       66.496877
@@ -6413,9 +6856,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.500748158813167,
-      66.42162512028915
+      25.50649546086788,
+      66.41977745437494
     ]
   },
   {
@@ -6447,9 +6891,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.680246837848813,
-      66.53338039055542
+      25.680138990283012,
+      66.53343381115171
     ]
   },
   {
@@ -6481,9 +6926,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
-      25.810483393764343,
-      66.50478981750568
+      25.809499584138393,
+      66.50427047839428
     ]
   },
   {
@@ -6581,11 +7027,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       26.132720999999947,
       66.46805
-    ],
-    "category": "accommodation"
+    ]
   },
   {
     "id": "a761153e-b736-4401-83fc-5073fe727947",
@@ -6616,9 +7062,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      26.5888841876872,
-      66.47592577257753
+      26.58993322402239,
+      66.47625661198022
     ]
   },
   {
@@ -6677,58 +7124,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.810483393764343,
-      66.50478981750568
-    ]
-  },
-  {
-    "id": "52238bd9-4850-45a5-a75d-ff066595b45a",
-    "businessEntity": {
-      "businessId": "3240644-3"
-    },
-    "businessName": "Kotatieva Resort",
-    "officialName": "Kotatieva Oy",
-    "description": "Kotatieva Resort is a unique winter destination located just 10 km from the centre of Rovaniemi. Nestled in a peaceful snowy forest, it’s the perfect place to escape the city lights and experience the magic of Lapland.\n\nAt the resort, visitors can enjoy a wide range of winter activities, including our one-of-a-kind forest ice-skating trail, sledding, ice bowling, snowshoe disc golf, snowshoeing, sliding snowshoes, and plenty of snow play. A warm and cosy changing room, an open fire for toasting sausages, and a welcoming café add to the comfort and charm of the visit.\n\nDuring the winter season, guests can also meet our friendly reindeer and experience traditional reindeer sleigh rides. In the evenings, our Aurora Skating on Private Sauna and Hot Tub offer a magical chance to witness the northern lights dancing across the Arctic sky. You can also enjoy a delicious dinner made from local ingredients in our atmospheric log restaurant, Restaurant Kotatieva, or savour salmon cooked over an open fire.\n\nAccommodation is offered in charming, small cabins, providing a cosy and peaceful stay in the heart of nature – perfect for a short visit or an extended holiday.\n\nKotatieva Resort is suitable for all ages and offers unforgettable moments in the serene beauty of Lapland!\n",
-    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/e4a71760-5591-11f0-ae44-c12d0d4b9580.png?s=100",
-    "logoUrl": "https://cdn-datahub.visitfinland.com/images/e4a71760-5591-11f0-ae44-c12d0d4b9580.png",
-    "postalAddresses": [
-      {
-        "city": "Rovaniemi",
-        "postalCode": "96900",
-        "streetName": "Ounasjoen itäpuolentie 828",
-        "location": null
-      }
-    ],
-    "contactDetails": [
-      {
-        "email": "info@kotatieva.fi",
-        "phone": "+358401620862"
-      }
-    ],
-    "webshopUrl": "https://kotatieva.fi/product-category/tickets/",
-    "websiteUrl": "https://kotatieva.fi/",
-    "businessHours": null,
-    "socialMedia": {
-      "socialMediaLinks": [
-        {
-          "linkType": "facebook",
-          "verifiedLink": {
-            "url": "https://www.facebook.com/Kotatieva"
-          }
-        },
-        {
-          "linkType": "instagram",
-          "verifiedLink": {
-            "url": "https://www.instagram.com/kotatieva/"
-          }
-        }
-      ]
-    },
-    "data_source": "Visit Finland DataHub, OpenStreetMap",
-    "coordinates": [
-      25.71425817910881,
-      66.51206037728338
+      25.809499584138393,
+      66.50427047839428
     ]
   },
   {
@@ -6760,33 +7159,34 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.651146946021413,
-      66.55510168970348
+      25.62262438237667,
+      66.56681825803203
     ]
   },
   {
-    "id": "633e8733-1464-42e2-b99b-96cb1f29abb8",
+    "id": "511ffaa1-6d6c-4ea1-9bcf-61bb49e001d8",
     "businessEntity": {
-      "businessId": "2261531-3"
+      "businessId": "3626297-7"
     },
-    "businessName": "Musher's Tavern",
-    "officialName": "Husky Travels Oy",
+    "businessName": "Lapland Fox Tours",
+    "officialName": "Lapland Fox Tours Oy",
     "description": "",
     "logoThumbnailUrl": null,
     "logoUrl": null,
     "postalAddresses": [
       {
         "city": "Rovaniemi",
-        "postalCode": "96930",
-        "streetName": "Pukinpolku 7",
+        "postalCode": "96100",
+        "streetName": "Korkalonkatu 11 A 5",
         "location": null
       }
     ],
     "contactDetails": [
       {
-        "email": "info@musherstavern.fi",
-        "phone": "+358 44 7448023"
+        "email": "info@laplandfoxtours.com",
+        "phone": "+358406703961"
       }
     ],
     "webshopUrl": null,
@@ -6794,9 +7194,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.846850474559915,
-      66.53587750331451
+      25.729914000000008,
+      66.499251
     ]
   },
   {
@@ -6843,9 +7244,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.710568161825677,
-      66.50448920590678
+      25.710252821445465,
+      66.50451094619257
     ]
   },
   {
@@ -6910,9 +7312,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      26.166418938440643,
-      66.85573331208857
+      26.166244447231293,
+      66.85653186859294
     ]
   },
   {
@@ -6944,6 +7347,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.745593999999983,
       66.50177
@@ -6978,9 +7382,66 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.725259999999935,
-      66.502646
+      25.72485400000005,
+      66.502617
+    ]
+  },
+  {
+    "id": "9fcdb05b-1e88-4e13-8bed-aef999dc1560",
+    "businessEntity": {
+      "businessId": "3326443-2"
+    },
+    "businessName": "Aava Glass Igloos",
+    "officialName": "Aava Aurora Resort Oy",
+    "description": "",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/25614020-a84b-11f1-bd67-d9a77fdd807c.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/25614020-a84b-11f1-bd67-d9a77fdd807c.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96800",
+        "streetName": "Olleronvaarantie 44",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "sales@aavaglassigloos.com",
+        "phone": "+358444948082"
+      }
+    ],
+    "webshopUrl": "",
+    "websiteUrl": "https://www.aavaglassigloos.com",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/profile.php?id=61587705527315"
+          }
+        },
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/aavaglassigloos"
+          }
+        },
+        {
+          "linkType": "whatsapp",
+          "verifiedLink": {
+            "url": "+358444948082"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.62262438237667,
+      66.56681825803203
     ]
   },
   {
@@ -7078,6 +7539,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       26.20019400000001,
       66.898356
@@ -7166,9 +7628,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.722160953464595,
-      66.5047867340512
+      25.720952823758125,
+      66.50481062543551
     ]
   },
   {
@@ -7200,9 +7663,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      26.197278198259028,
-      66.62263929989462
+      26.19666793725071,
+      66.6224921290956
     ]
   },
   {
@@ -7234,9 +7698,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.776176728126075,
-      66.63719731613288
+      25.77651109546423,
+      66.6373351610071
     ]
   },
   {
@@ -7268,9 +7733,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.804594662040472,
-      66.4841487778721
+      25.804960280656815,
+      66.48410971528415
     ]
   },
   {
@@ -7302,9 +7768,54 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.776176728126075,
-      66.63719731613288
+      25.77651109546423,
+      66.6373351610071
+    ]
+  },
+  {
+    "id": "e9c2748f-2c6e-452d-983f-d00b12494a79",
+    "businessEntity": {
+      "businessId": "3253007-3"
+    },
+    "businessName": "Lapland Glow Resort",
+    "officialName": "Lapland Glow Hotel Oy",
+    "description": "",
+    "logoThumbnailUrl": null,
+    "logoUrl": null,
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96100",
+        "streetName": "Olleronvaarantie 57",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "info@laplandglowhotel.fi",
+        "phone": "+358413253257"
+      }
+    ],
+    "webshopUrl": "https://book.laplandglowhotel.fi/home?_gl=1*gpu740*_gcl_au*MTIyOTM4OTIzMS4xNzg3ODkxMjU4Li0uLS4xNzg3OTEwODAyLjE4OTc2ODY3MDcuMTc4NzkxMDgwMy4xNzg3OTEwODAy*_ga*MjE5Nzg3OTU3LjE3NTUyNTE3Nzk.*_ga_923JVLXG1X*czE3ODg3NTUyNjEkbzMwOCRnMSR0MTc4ODc1NTI2MyRqNTgkbDAkaDA.*_ga_FX2Z9YYYCL*czE3ODg3NTUyNjEkbzM0OCRnMSR0MTc4ODc1NTI2MyRqNTgkbDAkaDA.",
+    "websiteUrl": "https://laplandglowhotel.fi/",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/lapland_glow_resort/#"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.62262438237667,
+      66.56681825803203
     ]
   },
   {
@@ -7420,6 +7931,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       26.01602600000001,
       66.578388
@@ -7454,9 +7966,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.810483393764343,
-      66.50478981750568
+      25.809499584138393,
+      66.50427047839428
     ]
   },
   {
@@ -7554,11 +8067,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "activity",
     "coordinates": [
       25.732952999999952,
       66.502147
-    ],
-    "category": "activity"
+    ]
   },
   {
     "id": "bf719280-6988-4f70-a74e-557ab1e87ca2",
@@ -7616,11 +8129,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.72791099999995,
       66.501371
-    ],
-    "category": "activity"
+    ]
   },
   {
     "id": "fc038268-30cb-498c-8231-4ec748019d3d",
@@ -7651,9 +8164,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.64955294841991,
-      66.4918396648803
+      25.653064101934433,
+      66.49190471228755
     ]
   },
   {
@@ -7685,6 +8199,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.720280000000002,
       66.506303
@@ -7740,58 +8255,10 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.812389439035314,
-      66.54229408832481
-    ]
-  },
-  {
-    "id": "38299e56-bbda-40e4-ab5f-098b50116110",
-    "businessEntity": {
-      "businessId": "3551475-7"
-    },
-    "businessName": "Arctic4 ",
-    "officialName": "Arctic4 Oy",
-    "description": "Arctic4 - Your Personal Arctic Concierge in Rovaniemi\n\nMore than a tour operator – Arctic4 is your complete Arctic concierge in Finnish Lapland. We craft personalized experiences tailored to your vacation dreams.\n\nTell us your Arctic bucket list, and we'll create a customized package that brings it to life. From Northern Lights hunts in our heated glass-roof sleds to curated wilderness adventures and seamless transportation, we handle every detail so you can focus on the experience.\n\nWe combine multiple services into complete packages designed around you – not the other way around. Benefit from our local expertise and personalized support from arrival to departure.\n\nLet Arctic4 transform your Lapland dreams into unforgettable memories.\n",
-    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/823a3e80-a466-11f0-b028-57f77eb42ec2.png?s=100",
-    "logoUrl": "https://cdn-datahub.visitfinland.com/images/823a3e80-a466-11f0-b028-57f77eb42ec2.png",
-    "postalAddresses": [
-      {
-        "city": "Rovaniemi",
-        "postalCode": "96100",
-        "streetName": "Santamäentie 15",
-        "location": null
-      }
-    ],
-    "contactDetails": [
-      {
-        "email": "Info@arctic4.fi",
-        "phone": "+358400850000"
-      }
-    ],
-    "webshopUrl": "",
-    "websiteUrl": "https://arctic4.fi",
-    "businessHours": null,
-    "socialMedia": {
-      "socialMediaLinks": [
-        {
-          "linkType": "facebook",
-          "verifiedLink": {
-            "url": "https://www.facebook.com/share/1BiAKFmYu1"
-          }
-        },
-        {
-          "linkType": "instagram",
-          "verifiedLink": {
-            "url": "https://www.instagram.com/arctic4lapland/"
-          }
-        }
-      ]
-    },
-    "data_source": "Visit Finland DataHub, OpenStreetMap",
-    "coordinates": [
-      25.68723799999998,
-      66.500038
+      25.79371526955697,
+      66.52142537987129
     ]
   },
   {
@@ -7844,11 +8311,11 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "activity",
     "coordinates": [
-      25.776711442505075,
-      66.48611717583212
-    ],
-    "category": "activity"
+      25.775969959795475,
+      66.48609581305956
+    ]
   },
   {
     "id": "c958cfb7-0051-46ce-b344-9b1a2487fc61",
@@ -7879,9 +8346,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.790735185146332,
-      66.53327613341335
+      25.78978568315506,
+      66.53331765578531
     ]
   },
   {
@@ -7913,6 +8381,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.719808000000057,
       66.506464
@@ -7947,9 +8416,123 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.812389439035314,
-      66.54229408832481
+      25.79371526955697,
+      66.52142537987129
+    ]
+  },
+  {
+    "id": "7b247913-17b6-4503-9361-029e04949861",
+    "businessEntity": {
+      "businessId": "2261531-3"
+    },
+    "businessName": "Arctic Circle Husky Park",
+    "officialName": "Husky Travels Oy",
+    "description": "Come, see and live experiences you’ll remember fur-ever!\nThe enthusiasm of running dogs, the atmosphere of old days and the exoticism of Lapland. Meet the genuine Siberian Huskies, enjoy the environment and get thrilled by the speed of the sled!",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/bec6ce50-f2f6-11ed-8225-2341bac177e9.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/bec6ce50-f2f6-11ed-8225-2341bac177e9.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96930",
+        "streetName": "Joulumaantie 3",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "office@huskypark.fi",
+        "phone": "+358 44 7557736"
+      }
+    ],
+    "webshopUrl": "https://huskypark.fi/",
+    "websiteUrl": "https://huskypark.fi/",
+    "businessHours": {
+      "default": [
+        {
+          "closes": "15:15:00",
+          "open": true,
+          "opens": "11:00:00",
+          "weekday": "monday"
+        },
+        {
+          "closes": "15:15:00",
+          "open": true,
+          "opens": "11:00:00",
+          "weekday": "tuesday"
+        },
+        {
+          "closes": "15:15:00",
+          "open": true,
+          "opens": "11:00:00",
+          "weekday": "wednesday"
+        },
+        {
+          "closes": "15:15:00",
+          "open": true,
+          "opens": "11:00:00",
+          "weekday": "thursday"
+        },
+        {
+          "closes": "15:15:00",
+          "open": true,
+          "opens": "11:00:00",
+          "weekday": "friday"
+        },
+        {
+          "closes": "15:15:00",
+          "open": true,
+          "opens": "11:00:00",
+          "weekday": "saturday"
+        },
+        {
+          "closes": "13:15:00",
+          "open": true,
+          "opens": "11:00:00",
+          "weekday": "sunday"
+        }
+      ]
+    },
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/huskyparkarcticcircle/"
+          }
+        },
+        {
+          "linkType": "facebook",
+          "verifiedLink": {
+            "url": "https://www.facebook.com/HuskyParkArcticCircle"
+          }
+        },
+        {
+          "linkType": "youtube",
+          "verifiedLink": {
+            "url": "https://www.youtube.com/channel/UCOJvVMYZdCPLmSoIC7RcjPw"
+          }
+        },
+        {
+          "linkType": "trip_advisor",
+          "verifiedLink": {
+            "url": "https://www.tripadvisor.com/Attraction_Review-g189922-d8491695-Reviews-Arctic_Circle_Husky_Park-Rovaniemi_Lapland.html"
+          }
+        },
+        {
+          "linkType": "tik_tok",
+          "verifiedLink": {
+            "url": "https://www.tiktok.com/@huskyparkarcticcircle"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.853992000000062,
+      66.543823
     ]
   },
   {
@@ -7981,6 +8564,7 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.71123,
       66.49553
@@ -8024,9 +8608,66 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
-      25.697432788758533,
-      66.5287585395325
+      25.69815069437027,
+      66.52776372824685
+    ]
+  },
+  {
+    "id": "4e0ec27c-9c01-4c28-85c1-c5bfe84a3554",
+    "businessEntity": {
+      "businessId": "3185652-2"
+    },
+    "businessName": "Lapland Private Oy",
+    "officialName": "Lapland Private Oy",
+    "description": "Lapland Private is a destination management company based in Rovaniemi, Finland, designing fully personalized itineraries across Finnish, Norwegian, and Swedish Lapland.\n\nEvery trip starts with the client. Before any planning begins, we build a detailed understanding of who they are and what a well-matched Lapland experience means for them specifically. That understanding shapes an itinerary built from the ground up, not adapted from a standard package.\n\nEach trip is managed by a single dedicated travel designer, from the first inquiry to the last day on the ground, with one point of contact, one consolidated payment, and a local team available throughout the stay. We coordinate accommodation, activities, transfers, and every detail between them.\n\nWe are not a travel agency, a booking platform, or a group tour operator. Our team lives and works in Lapland year-round, and we draw on a wide network of partners across the region, each one personally reviewed by us, so that every client is matched with the right provider for their trip.\n\nWe work directly with independent travelers, and with travel agents and tour operators looking for a trusted local partner in the region. ",
+    "logoThumbnailUrl": "https://cdn-datahub.visitfinland.com/images/8f34e250-aabb-11f1-bd67-d9a77fdd807c.png?s=100",
+    "logoUrl": "https://cdn-datahub.visitfinland.com/images/8f34e250-aabb-11f1-bd67-d9a77fdd807c.png",
+    "postalAddresses": [
+      {
+        "city": "Rovaniemi",
+        "postalCode": "96100",
+        "streetName": "Rovakatu 14 A 33",
+        "location": null
+      }
+    ],
+    "contactDetails": [
+      {
+        "email": "info@laplandprivate.com",
+        "phone": "+358449887700"
+      }
+    ],
+    "webshopUrl": "https://laplandprivate.com/en/get-inspired",
+    "websiteUrl": "http://laplandprivate.com/en",
+    "businessHours": null,
+    "socialMedia": {
+      "socialMediaLinks": [
+        {
+          "linkType": "instagram",
+          "verifiedLink": {
+            "url": "https://www.instagram.com/laplandprivate/"
+          }
+        },
+        {
+          "linkType": "trip_advisor",
+          "verifiedLink": {
+            "url": "https://www.tripadvisor.com/Attraction_Review-g189922-d23166311-Reviews-Lapland_Private-Rovaniemi_Lapland.html"
+          }
+        },
+        {
+          "linkType": "linkedin",
+          "verifiedLink": {
+            "url": "https://www.linkedin.com/company/lapland-private-oy/home/?viewAsMember=true"
+          }
+        }
+      ]
+    },
+    "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
+    "coordinates": [
+      25.72700199999997,
+      66.499463
     ]
   },
   {
@@ -8130,6 +8771,7 @@
       ]
     },
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": null,
     "coordinates": [
       25.733537999999953,
       66.503612
@@ -8164,10 +8806,10 @@
     "businessHours": null,
     "socialMedia": null,
     "data_source": "Visit Finland DataHub, OpenStreetMap",
+    "category": "accommodation",
     "coordinates": [
       25.71728200000007,
       66.505739
-    ],
-    "category": "accommodation"
+    ]
   }
 ]

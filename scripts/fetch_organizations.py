@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 
 ROOT = Path(__file__).resolve().parent.parent
+OUTPUT_DIR = ROOT / "src" / "offline-data"
 DATAHUB_ENDPOINT = "https://api.businessfinland.fi/traveldatahub"
 MAPTILER_ENDPOINT = "https://api.maptiler.com/geocoding"
 AFFILIATES = {
@@ -88,6 +89,16 @@ query WelcomeCyclistCertifiedProducts {
     productCertificates {
       certificate
     }
+    productImages {
+      id
+      altText
+      coverPhoto
+      largeUrl
+      originalUrl
+      thumbnailUrl
+      orderIndex
+      copyright
+    }
     postalAddresses {
       id
       city
@@ -148,13 +159,38 @@ def geocode_address(address, api_key):
 
 
 def fetch_businesses(datahub_api_key, maptiler_api_key):
+
+    # get existing records
+    with open(OUTPUT_DIR / "businesses.json", "r", encoding="utf-8") as f:
+        existing_data = json.load(f)
+    print(f"Loaded {len(existing_data)} existing businesses from businesses.json")
+
+    
     companies = post_datahub_query(BUSINESSES_QUERY, datahub_api_key).get("company", [])
     businesses = []
 
     for company in companies:
         business_id = company.get("businessEntity", {}).get("businessId")
-        if business_id not in AFFILIATES:
-            continue
+
+        # This is something that isn't in the DataHub data, but we want to keep it for our own purposes
+        company["data_source"] = "Visit Finland DataHub, OpenStreetMap"
+        for existing_company in existing_data:
+            if existing_company.get("businessEntity", {}).get("businessId") == business_id:
+                company["category"] = existing_company.get("category")
+                print(f"Found existing category for {company.get('businessName', business_id)}: {company.get('category')}")
+                break
+            # otherwise check for words like "hotel", "hostel", "restaurant", etc. in the business name and assign a category based on that
+        if "category" not in company:
+            name = company.get("businessName", "").lower()
+            if any(word in name for word in ["hotel", "hostel", "motel", "inn", "lodge", "resort", "villa"]):
+                company["category"] = "accommodation"
+            elif any(word in name for word in ["restaurant", "cafe", "café", "bar", "pub"]):
+                company["category"] = "food_and_drink"
+            elif any(word in name for word in ["bike", "bicycle", "cycle", "cycling"]):
+                company["category"] = "bike_shop"
+            elif any(word in name for word in ["tour", "tours", "guide", "safari", "safaris", "adventure"]):
+                company["category"] = "activity"
+            print(f"Assigned category for {company.get('businessName', business_id)}: {company.get('category')}")
 
         addresses = company.get("postalAddresses") or []
         if addresses:
@@ -185,11 +221,12 @@ def fetch_businesses(datahub_api_key, maptiler_api_key):
 
 
 def fetch_certified_products(datahub_api_key):
-    return post_datahub_query(CERTIFIED_PRODUCTS_QUERY, datahub_api_key)
+  data = post_datahub_query(CERTIFIED_PRODUCTS_QUERY, datahub_api_key)
+  return data.get("product", [])
 
 
 def write_json(filename, data):
-    output_path = ROOT / filename
+    output_path = OUTPUT_DIR / filename
     with output_path.open("w", encoding="utf-8") as output:
         json.dump(data, output, indent=2, ensure_ascii=False)
     print(f"Wrote {output_path}")

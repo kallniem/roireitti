@@ -9,6 +9,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
+        // Workbox options for caching and offline support
+        maximumFileSizeToCacheInBytes: 5 * 1024 ** 2, // 5 MB or set to something else
+
         // Workbox is Google's Service Worker library
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
         // Specifies file patterns to cache

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import linkedinLogo from "../assets/social/linkedin.svg";
 import youtubeIcon from "../assets/social/youtube.svg";
 import instagramIcon from "../assets/social/instagram.svg";
+import twitterIcon from "../assets/social/twitter.svg";
 import facebookIcon from "../assets/social/facebook.svg";
 import tiktokIcon from "../assets/social/tiktok.svg";
 import websiteIcon from "../assets/social/website.svg";
@@ -44,12 +45,12 @@ function InfoCard({ item, onClose }) {
             description = item.object.description;
             dataSource = item.object.data_source;
 
-            const raw = item.object.socialMedia;
-            const socialMedia = typeof raw === "string"
-            ? (() => { try { return JSON.parse(raw); } catch (e) { console.warn("socialMedia parse failed", e); return {}; } })()
-            : (raw || {});
+            const website = item.object.websiteUrl;
+            const socialMedia = typeof item.object.socialMedia === "string"
+            ? (() => { try { return JSON.parse(item.object.socialMedia); } catch (e) { console.warn("socialMedia parse failed", e); return {}; } })()
+            : (item.object.socialMedia || {});
 
-            const companyProducts = cyclistProducts.product.filter((p) => p.company.businessName === item.object.title);
+            const companyProducts = cyclistProducts.filter((p) => p.company.businessName === item.object.title);
 
             return (
                 <CardBase dataSource={dataSource} onClose={onClose} isClosing={isClosing} handleAnimationEnd={handleAnimationEnd} handleClose={handleClose}>
@@ -57,13 +58,26 @@ function InfoCard({ item, onClose }) {
                         <h3 style={{ margin: '0 0 8px 0', fontSize: 'large' }}>
                             {title}
                         </h3>
-                        <ProductsCarousel products={companyProducts} />
+                        <ProductsCarousel key={title} products={companyProducts} />
                         <div style={{ maxHeight: '10rem', overflowY: 'scroll', margin: '1rem' }}>
                             <p style={{ fontSize: 'medium', margin: '0 0 8px 0', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
                                 {description}
                             </p>
                         </div>
                         <div className='flex-row align-center no-stack' style={{gap: '0.5rem'}}>
+
+                            <a
+                                href={website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ display: 'inline-block', margin: 4 }}>
+                                <img
+                                    src={websiteIcon}
+                                    alt={'website'}
+                                    style={{ width: 24, cursor: 'pointer' }}
+                                />
+                            </a>
+
                             {Object.keys(socialMedia).length > 0 && (
                             socialMedia.socialMediaLinks.map((link, index) => 
                             {
@@ -78,6 +92,9 @@ function InfoCard({ item, onClose }) {
                                     case 'instagram':
                                         icon = instagramIcon
                                         break
+                                    case 'twitter':
+                                        icon = twitterIcon
+                                        break
                                     case 'facebook':
                                         icon = facebookIcon
                                         break
@@ -85,20 +102,19 @@ function InfoCard({ item, onClose }) {
                                         icon = tiktokIcon
                                         break
                                     default:
-                                        icon = websiteIcon
+                                        return;
                                 }
 
                                 return (
                                     <a
-                                    key={link.id ?? index}                     // <-- always give a stable key
+                                    key={index}
                                     href={link.verifiedLink.url}
-                                    target="_blank"                            // open in a new tab
-                                    rel="noopener noreferrer"                  // security + performance
-                                    style={{ display: 'inline-block', margin: 4 }} // optional spacing
-                                    >
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ display: 'inline-block', margin: 4 }}>
                                     <img
                                         src={icon}
-                                        alt={link.linkType ?? 'social media'}   // accessibility
+                                        alt={link.linkType ?? 'social media'}
                                         style={{ width: 24, cursor: 'pointer' }}
                                     />
                                     </a>
@@ -217,23 +233,60 @@ function CardBase({ children, dataSource = "Please set the data source", onClose
 }
 
 function ProductsCarousel({ products }) {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [touchStartX, setTouchStartX] = useState(null);
     if (!products || products.length === 0) return null;
 
     const welcomeCyclistCertified = products.find(p => p.productCertificates?.[0]?.certificate === "welcome_cyclist_certificate");
+    const activeProduct = products[activeIndex];
+    const productInfo = activeProduct.productInformations?.find(info => info.language === "fi")
+        || activeProduct.productInformations?.[0];
+    const images = activeProduct.productImages || [];
+    const image = images.find(productImage => productImage.coverPhoto)
+        || [...images].sort((first, second) => first.orderIndex - second.orderIndex)[0];
+
+    const showPrevious = () => setActiveIndex(index => Math.max(0, index - 1));
+    const showNext = () => setActiveIndex(index => Math.min(products.length - 1, index + 1));
 
     return (
-        <>
-        {welcomeCyclistCertified && (
-            <img src={welcomCyclistIcon} alt="Welcome Cyclist Certified" style={{ width: 64, marginBottom: '0.5rem' }} />
-        )}
-
-        <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', padding: '0.5rem 0' }}>
-            {products.map((product, index) => (
-                <div key={index} style={{ flex: '0 0 auto' }}>
-                    <h4>{product.productInformations[0].name}</h4>
+        <div className="service-carousel">
+            <div
+                className="service-carousel-slide"
+                onTouchStart={event => setTouchStartX(event.changedTouches[0].clientX)}
+                onTouchEnd={event => {
+                    if (touchStartX === null) return;
+                    const touchDelta = event.changedTouches[0].clientX - touchStartX;
+                    if (touchDelta > 40) showPrevious();
+                    if (touchDelta < -40) showNext();
+                    setTouchStartX(null);
+                }}
+            >
+                {image && (
+                    <img
+                        className="service-carousel-image"
+                        src={image.largeUrl || image.thumbnailUrl}
+                        alt={image.altText || productInfo?.name || ""}
+                    />
+                )}
+                {welcomeCyclistCertified && (
+                    <img className="service-carousel-certificate" src={welcomCyclistIcon} alt="Welcome Cyclist Certified" />
+                )}
+                <div className="service-carousel-caption" aria-live="polite">
+                    <h4>{productInfo?.name || "Palvelu"}</h4>
+                    {image?.copyright && <small>{image.copyright}</small>}
                 </div>
-            ))}
+            </div>
+            {products.length > 1 && (
+                <div className="service-carousel-controls">
+                    <button type="button" onClick={showPrevious} disabled={activeIndex === 0} aria-label="Edellinen palvelu">
+                        &#8592;
+                    </button>
+                    <span aria-live="polite">{activeIndex + 1} / {products.length}</span>
+                    <button type="button" onClick={showNext} disabled={activeIndex === products.length - 1} aria-label="Seuraava palvelu">
+                        &#8594;
+                    </button>
+                </div>
+            )}
         </div>
-        </>
     );
 }
