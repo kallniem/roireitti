@@ -150,19 +150,19 @@
         },
         {
             "coordinates": [
-                25.86719565088,
-                66.4847506093517
-            ],
-            "image": "IMG_20261021_144128_00_099.jpg",
-            "name": "Väiskin laavu"
-        },
-        {
-            "coordinates": [
                 25.839502,
                 66.490758
             ],
             "image": "IMG_20261021_143459_00_097.jpg",
             "name": "Ounasvaaran korkein muinaisranta"
+        },
+        {
+            "coordinates": [
+                25.86719565088,
+                66.4847506093517
+            ],
+            "image": "IMG_20261021_144128_00_099.jpg",
+            "name": "Väiskin laavu"
         },
         {
             "coordinates": [
