@@ -130,7 +130,10 @@ function MapPage({ onMarkerClick }) {
                     </div>
 
                     {selected.object &&
-                        <InfoCard key={`${selected.type}-${selected.object.id || selected.object.name}`} item={selected} onClose={() => setSelected({object: null, type: null})}/>
+                        <InfoCard key={`${selected.type}-${selected.object.id || selected.object.name}`} item={selected} onClose={() => {
+                            setSelected({object: null, type: null});
+                            setSelectedTrailIdx(null);
+                        }}/>
                     }
 
                     {showMenu == "trail" &&

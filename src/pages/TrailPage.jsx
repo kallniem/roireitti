@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router';
 import TrailLine from '../components/TrailLine';
 import ElevationProfile from '../components/ElevationProfile';
 import StreetView from '../components/StreetView';
+import ImageCarousel from '../components/ImageCarousel';
 
 import rulerIcon from '../assets/ui/ruler.svg';
 import clockIcon from '../assets/ui/clock.svg';
@@ -20,7 +21,7 @@ import downloadIcon from '../assets/ui/download.svg'
 import cameraIcon from '../assets/poi/camera.svg'
 
 import trails from "../offline-data/trails.json";
-import photoSpheres from "../offline-data/photo-spheres.json";
+import trailMedia from "../offline-data/trail-media.json";
 
 import getTrailBounds from '../functions/trailBounds';
 import downloadGPX from '../functions/downloadGPX';
@@ -35,6 +36,9 @@ function TrailPage() {
     const { slug } = useParams();
     const trail = trails.find(t => slugify(t.name) === slug);
     const navigate = useNavigate();
+
+    const images = trailMedia[slug]?.images;
+    const photoSpheres = trailMedia[slug]?.photospheres;
 
     const [geojson, setGeojson] = useState(null);
     const [elevationData, setElevationData] = useState(null);
@@ -88,12 +92,13 @@ function TrailPage() {
 
     const handlePanorama = (int) => {
         let newactivePano = activePano + int;
-        if (newactivePano == photoSpheres[slug].length) {
+        if (newactivePano == photoSpheres.length) {
             newactivePano = 0;
         };
         if (newactivePano == -1) {
-            newactivePano = photoSpheres[slug].length -1;
+            newactivePano = photoSpheres.length -1;
         };
+        console.log(newactivePano)
         setactivePano(newactivePano)
     }
 
@@ -170,7 +175,7 @@ function TrailPage() {
     useEffect(() => {
         if (activePano === null) return;
 
-        setFlyToLocation(photoSpheres[slug][activePano].coordinates.slice(0, 2));
+        setFlyToLocation(photoSpheres[activePano].coordinates.slice(0, 2));
     }, [activePano, slug]);
 
     useEffect(() => {
@@ -276,37 +281,7 @@ function TrailPage() {
             flyToLocation={flyToLocation}
             onMouseMove={handleMapHover}
             onMouseLeave={() => handleHover(null)}>
-            <TrailLine trail={trail} index={0} />
-
-            {trickPlayGeojson?.features.length > 0 && (
-                <Source id="street-view-route" type="geojson" data={trickPlayGeojson}>
-                    <Layer
-                        id="street-view-route-line-highlight"
-                        type="line"
-                        paint={{
-                            'line-color': "white",
-                            'line-width': 2,
-                            'line-opacity': 1,
-                        }}
-                        layout={{
-                            'line-cap': 'butt',
-                        }}
-                    />
-                    <Layer
-                        id="street-view-route-line"
-                        type="line"
-                        paint={{
-                            'line-color': '#5F793E',
-                            'line-width': 2,
-                            'line-opacity': 1,
-                            'line-dasharray': [2, 2],
-                        }}
-                        layout={{
-                            'line-cap': 'round',
-                        }}
-                    />
-                </Source>
-            )}
+            <TrailLine trail={trail} categoryColor={trailTypes[trail.category].color} index={0} />
 
             {geojson &&
                 <Marker
@@ -318,7 +293,7 @@ function TrailPage() {
                 </Marker>
             }
 
-            {photoSpheres[slug] && photoSpheres[slug].map((image, index) => 
+            {photoSpheres && photoSpheres.map((image, index) => 
                 <Marker
                     key={index}
                     anchor="center"
@@ -332,13 +307,16 @@ function TrailPage() {
                 </Marker>
             )}
 
-            {hoverInfo && (
-                <>
+            {hoverInfo?.index && hoverInfo?.elevation && (
                 <Marker
                     longitude={hoverInfo.longitude}
                     latitude={hoverInfo.latitude}
-                    anchor="center"
-                    style={{ zIndex: 0 }}>
+                    anchor="top"
+                    style={{ zIndex: 3, pointerEvents: 'none' }}>
+                    <div
+                        aria-hidden="true"
+                        className="flex-column align-center justify-center"
+                        style={{ margin: '-0.5rem 0 0 0'}}>
                         <div
                             style={{
                                 width: 16,
@@ -348,16 +326,10 @@ function TrailPage() {
                                 border: '3px solid #ffffff',
                                 boxShadow: '0 0 6px rgba(0,0,0,0.25)'
                             }}/>
-                </Marker>
-                <Marker
-                    longitude={hoverInfo.longitude}
-                    latitude={hoverInfo.latitude}
-                    anchor="top"
-                    style={{ zIndex: 3 }}>
                         <div
                             className={ hoverInfo.idle ? 'fade-out' : ''}
                             style={{
-                                marginTop: '0.75rem',
+                                marginTop: '0.35rem',
                                 padding: '0.15rem 0.45rem',
                                 borderRadius: '0.5rem',
                                 backgroundColor: 'rgba(255,255,255,0.95)',
@@ -365,6 +337,7 @@ function TrailPage() {
                                 boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
                                 fontSize: '0.7rem',
                                 fontWeight: 600,
+                                color: '#1f2937',
                                 whiteSpace: 'nowrap'
                             }}>
                             <table style={{ margin: 0 }}>
@@ -389,8 +362,8 @@ function TrailPage() {
                                 </tbody>
                             </table>
                         </div>
+                    </div>
                 </Marker>
-                </>
             )}
 
             {/* Maximize/minimize toggle */}
@@ -493,22 +466,26 @@ function TrailPage() {
             {activePano !== null ? (
                 <>
                     <ReactPhotoSphereViewer
-                        src={photoSpheres[slug][activePano].image}
+                        src={`${slug}/photospheres/${photoSpheres[activePano].image}`}
                         height={"100%"}
                         width={"100%"}
                         navbar={false}
                         loadingTxt={"Ladataan..."}>
                     </ReactPhotoSphereViewer>
-                    <div className='flex-column align-center justify-center' style={{
+                    <div className='flex-column align-center justify-center'
+                        style={{
                             position: 'absolute',
-                            top: '0.5rem',
-                            width: '100%'}}>
-                        <div className='flex-row no-stack align-center justify-center' style={{ gap: '1rem' }}>
-                            <p style={{cursor: 'pointer'}} onClick={() => handlePanorama(-1)}>〈</p>
-                            <p>{trail.name}</p>
-                            <p style={{cursor: 'pointer'}} onClick={() => handlePanorama(1)}>〉</p>
+                            width: '100%',
+                            backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0))',
+                            paddingBottom: '2rem',
+                            pointerEvents: 'none',
+                        }}>
+                        <div className='flex-row no-stack align-center justify-center' style={{ gap: '1rem', pointerEvents: 'auto' }}>
+                            <p style={{ cursor: 'pointer', color: 'white' }} onClick={() => handlePanorama(-1)}>〈</p>
+                            <p style={{ color: 'white' }}>{trail.name}</p>
+                            <p style={{ cursor: 'pointer', color: 'white' }} onClick={() => handlePanorama(1)}>〉</p>
                         </div>
-                        <span><i>{photoSpheres[slug][activePano].name}</i></span>
+                        <span><i style={{ color: 'white' }}>{photoSpheres[activePano].name}</i></span>
                     </div>
                 </>
             ):(
@@ -580,50 +557,55 @@ function TrailPage() {
                                 </div>
 
                                 <hr/>
-                                    <h4>Reittikuvaus</h4>
-                                    <p>{trail.description}</p>
-                                    <h4>Huomiot reitiltä</h4>
+                                <h4>Reittikuvaus</h4>
+                                <p>{trail.description}</p>
+
+                                {images && images.length > 0 && (
+                                    <ImageCarousel key={slug} images={images} imagePath={`${slug}/images`} trailName={trail.name} />
+                                )}
+
+                                <h4>Huomiot reitiltä</h4>
                                 <hr/>
-                                    <h4>Käyttäjien ilmoittamat huomiot reitiltä</h4>
-                                    <em>
-                                        Käyttäjien ilmoittamat huomiot on tarkoitettu varjoittamaan muita reitinkäyttäjiä yllättävistä reitillä ilmenneistä esteistä, vaurioista tai muista asioista jotka vaikuttavat reitillä turvallisesti ajamiseen.
-                                        <br/>
-                                        <br/>
-                                        Voit kommentoida tai poistaa toisten tekemiä huomioita, jos havaitset ettei tilanne ole enää ajankohtainen. Huomiot poistuvat automaattisesti 3kk kuluttua ilmoituksen tekemisestä.
-                                    </em>
-                                    <h4>Käyttäjien ilmoitukset</h4>
-                                    <div style={{ border: '2px solid #DD5D36', padding: 10, borderRadius: "0.25rem"}}>
-                                        {/* TODO */}
-                                    </div>
-                                    <h4>Lähetä huomio reitistä</h4>
-                                    <em>Huomasitko reitillä jotain, mikä vaikuttaa reitin turvalliseen käyttöön? Lähetä ilmoitus tästä varoittaaksesi muita reitin käyttäjiä.</em>
-                                    <div style={{ backgroundColor: '#f5f0e9', margin: 10, padding: 10, borderRadius: "0.25rem" }}>
-                                        <form style={{ fontSize: 12 }}>
-                                            <p>Valitse seuraavista vaihtoehdoista tai kuvaile reitillä oleva ongelma:</p>
+                                <h4>Käyttäjien ilmoittamat huomiot reitiltä</h4>
+                                <em>
+                                    Käyttäjien ilmoittamat huomiot on tarkoitettu varjoittamaan muita reitinkäyttäjiä yllättävistä reitillä ilmenneistä esteistä, vaurioista tai muista asioista jotka vaikuttavat reitillä turvallisesti ajamiseen.
+                                    <br/>
+                                    <br/>
+                                    Voit kommentoida tai poistaa toisten tekemiä huomioita, jos havaitset ettei tilanne ole enää ajankohtainen. Huomiot poistuvat automaattisesti 3kk kuluttua ilmoituksen tekemisestä.
+                                </em>
+                                <h4>Käyttäjien ilmoitukset</h4>
+                                <div style={{ border: '2px solid #DD5D36', padding: 10, borderRadius: "0.25rem"}}>
+                                    {/* TODO */}
+                                </div>
+                                <h4>Lähetä huomio reitistä</h4>
+                                <em>Huomasitko reitillä jotain, mikä vaikuttaa reitin turvalliseen käyttöön? Lähetä ilmoitus tästä varoittaaksesi muita reitin käyttäjiä.</em>
+                                <div style={{ backgroundColor: '#f5f0e9', margin: 10, padding: 10, borderRadius: "0.25rem" }}>
+                                    <form style={{ fontSize: 12 }}>
+                                        <p>Valitse seuraavista vaihtoehdoista tai kuvaile reitillä oleva ongelma:</p>
 
-                                            <input type="radio" id="fallen-tree" name="note" value="fallen-tree"/>
-                                            <label htmlFor="fallen-tree">Kaatunut puu</label><br/>
-                                            
-                                            <input type="radio" id="other-obstruction" name="note" value="other-obstruction"/>
-                                            <label htmlFor="other-obstruction">Muu este</label><br/>
+                                        <input type="radio" id="fallen-tree" name="note" value="fallen-tree"/>
+                                        <label htmlFor="fallen-tree">Kaatunut puu</label><br/>
+                                        
+                                        <input type="radio" id="other-obstruction" name="note" value="other-obstruction"/>
+                                        <label htmlFor="other-obstruction">Muu este</label><br/>
 
-                                            <input type="radio" id="dangerous-hole" name="note" value="dangerous-hole"/>
-                                            <label htmlFor="dangerous-hole">Vaarallinen kuoppa</label><br/>
+                                        <input type="radio" id="dangerous-hole" name="note" value="dangerous-hole"/>
+                                        <label htmlFor="dangerous-hole">Vaarallinen kuoppa</label><br/>
 
-                                            <input type="radio" id="flood" name="note" value="flood"/>
-                                            <label htmlFor="flood">Reitti tulvii</label><br/>
+                                        <input type="radio" id="flood" name="note" value="flood"/>
+                                        <label htmlFor="flood">Reitti tulvii</label><br/>
 
-                                            <input type="radio" id="overgrown" name="note" value="overgrown"/>
-                                            <label htmlFor="overgrown">Reitti on kasvanut umpeen</label><br/>
+                                        <input type="radio" id="overgrown" name="note" value="overgrown"/>
+                                        <label htmlFor="overgrown">Reitti on kasvanut umpeen</label><br/>
 
-                                            <input type="radio" id="other" name="note" value="other"/>
-                                            <input type="text" id="other-text" name="other-text" placeholder="Muu huomio..." /><br/>
+                                        <input type="radio" id="other" name="note" value="other"/>
+                                        <input type="text" id="other-text" name="other-text" placeholder="Muu huomio..." /><br/>
 
-                                            <strong>Lisätiedot</strong>
-                                            <textarea id="additional-info" name="additional-info" placeholder="Lisätietoja..." style={{ width: "100%", height: 80, marginTop: 5}}></textarea>
-                                            <button type="submit" style={{ marginTop: 10, backgroundColor: '#5F793E', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', border: 'none'}} disabled>Lähetä</button>
-                                        </form>
-                                    </div>
+                                        <strong>Lisätiedot</strong>
+                                        <textarea id="additional-info" name="additional-info" placeholder="Lisätietoja..." style={{ width: "100%", height: 80, marginTop: 5}}></textarea>
+                                        <button type="submit" style={{ marginTop: 10, backgroundColor: '#5F793E', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', border: 'none'}} disabled>Lähetä</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         {topMenu}

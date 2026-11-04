@@ -1,0 +1,193 @@
+{
+    "valajaskosken-lenkki": {
+        "images": [
+            "alakorkalon-uimaranta-2.jpg",
+            "alakorkalon-uimaranta-laavu-2.jpg",
+            "alakorkalon-uimaranta-laavu.jpg",
+            "alakorkalon-uimaranta.jpg",
+            "paavalniemen-risteys-2.jpg",
+            "paavalniemen-risteys.jpg",
+            "pyoraily-2.jpg",
+            "pyoraily.jpg",
+            "pysahdyspaikka-valisaari-2.jpg",
+            "pysahdyspaikka-valisaari-3.jpg",
+            "pysahdyspaikka-valisaari-4.jpg",
+            "pysahdyspaikka-valisaari-5.jpg",
+            "pysahdyspaikka-valisaari.jpg",
+            "risteys-tervola-rovaniemi-2.jpg",
+            "risteys-tervola-rovaniemi.jpg",
+            "taukopaikka.jpg",
+            "valajaskoski-2.jpg",
+            "valajaskoski-3.jpg",
+            "valajaskoski-4.jpg",
+            "valajaskoski-risteys-2.jpg",
+            "valajaskoski-risteys.jpg",
+            "valajaskoski.jpg"
+        ],
+        "photospheres": [
+        {
+            "coordinates": [
+                25.6262927,
+                66.4776894
+            ],
+            "image": "alakorkalon-uimaranta.jpg",
+            "name": "Alakorkalon uimaranta"
+        },
+        {
+            "coordinates": [
+                25.625541115881514,
+                66.47659150921855
+            ],
+            "image": "alakorkalon-laavu.jpg",
+            "name": "Alakorkalon laavu"
+        },
+        {
+            "coordinates": [
+                25.53565079149741,
+                66.4383043998962
+            ],
+            "image": "risteys-valajaskoski.jpg",
+            "name": "Risteys Valajaskoski"
+        },
+        {
+            "coordinates": [
+                25.538527414783935,
+                66.42287557905351
+            ],
+            "image": "pysahdyspaikka-valajaskoski.jpg",
+            "name": "Pysähdyspaikka Valajaskoski"
+        },
+        {
+            "coordinates": [
+                25.582060285061587,
+                66.42021081215792
+            ],
+            "image": "pysahdyspaikka-niemi.jpg",
+            "name": "Pysähdyspaikka Niemi"
+        },
+        {
+            "coordinates": [
+                25.609121892394302,
+                66.43266674064711
+            ],
+            "image": "pysahdyspaikka-maki.jpg",
+            "name": "Pysähdyspaikka Mäki"
+        },
+        {
+            "coordinates": [
+                25.693258557821014,
+                66.47513149423908
+            ],
+            "image": "siirtyma-maantie-pyoratie.jpg",
+            "name": "Siirtymä maantie-pyörätie"
+        },
+        {
+            "coordinates": [
+                25.74483292173011,
+                66.47395370729302
+            ],
+            "image": "risteys-tervola-rovaniemi.jpg",
+            "name": "Risteys Tervola-Rovaniemi"
+        }
+    ]
+    },
+    "ounasvaara-oikarainen": {
+        "images": [
+            "metsatie-1.jpg",
+            "metsatie-2.jpg",
+            "metsatie-3.jpg",
+            "metsatie-4.jpg",
+            "pitkospuut-1.jpg",
+            "pitkospuut-2.jpg",
+            "pitkospuut-3.jpg",
+            "pitkospuut-4.jpg",
+            "soraosuus-1.jpg",
+            "vaiskinlaavu-1.jpg",
+            "vaiskinlaavu-2.jpg",
+            "vaiskinlaavu-3.jpg",
+            "vaiskinlaavu-4.jpg"
+        ],
+        "photospheres": [
+        {
+            "coordinates": [
+                25.769869490960097,
+                66.4982472713591
+            ],
+            "image": "santasport.jpg",
+            "name": "Santasport"
+        },
+        {
+            "coordinates": [
+                25.7905444,
+                66.5006092
+            ],
+            "image": "sky-hotel-risteys.jpg",
+            "name": "Risteys Sky Hotel"
+        },
+        {
+            "coordinates": [
+                25.802734181956797,
+                66.49789804090037
+            ],
+            "image": "risteys-pitkospuiden-jalkeen.jpg",
+            "name": "Risteys Pitkospuiden jälkeen"
+        },
+                {
+            "coordinates": [
+                25.816917,
+                66.493944
+            ],
+            "image": "IMG_20261021_125603_00_088.jpg",
+            "name": "Risteys Väiskin laavu"
+        },
+        {
+            "coordinates": [
+                25.816917,
+                66.493944
+            ],
+            "image": "IMG_20261021_125620_00_089.jpg",
+            "name": "Risteys Väiskin laavu"
+        },
+        {
+            "coordinates": [
+                25.86719565088,
+                66.4847506093517
+            ],
+            "image": "IMG_20261021_144128_00_099.jpg",
+            "name": "Väiskin laavu"
+        },
+        {
+            "coordinates": [
+                25.839502,
+                66.490758
+            ],
+            "image": "IMG_20261021_143459_00_097.jpg",
+            "name": "Ounasvaaran korkein muinaisranta"
+        },
+        {
+            "coordinates": [
+                25.867167,
+                66.484778
+            ],
+            "image": "IMG_20261021_145250_00_102.jpg",
+            "name": "Risteys Sierijärvi"
+        },
+        {
+            "coordinates": [
+                25.777389,
+                66.510167
+            ],
+            "image": "IMG_20261021_153626_00_111.jpg",
+            "name": "Risteys Jäämerentie"
+        },
+        {
+            "coordinates": [
+                25.74672472052569,
+                66.50243613963467
+            ],
+            "image": "IMG_20261021_154336_00_113.jpg",
+            "name": "Alikulku Pullinpuoli"
+        }
+    ]
+    }
+}

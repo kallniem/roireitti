@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Map, Source, Layer, Marker, useMap } from 'react-map-gl/maplibre';
+import { Map, Source, Marker, useMap } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import PoiMarkers from './PoiMarkers';
 
